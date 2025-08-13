@@ -34,6 +34,16 @@ errar. Sendo assim, faz-se necessário um intermediário:
 sudo apt install make
 ```
 
+- Doxygen
+
+Utilizaremos esse software para criar documentações de forma automática.
+
+```
+sudo apt install doxygen graphviz texlive-latex-base
+```
+
+
+
 ... -> Sucessivas necessidades e dependências do sensor.
 
 # Caso Deseje Utilizar
