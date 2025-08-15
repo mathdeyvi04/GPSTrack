@@ -1,19 +1,61 @@
-# Gerando Executável Para Módulo
-all:
+#################################################################
+## Variáveis de Execução
+#################################################################
 
+# Nome do programa
+TARGET      := TrackSense
 
-# Gerando Executável Para Testes
-debug:
+# Fontes do projeto
+SRC         := /src/main.cpp
+OBJ         := $(SRC:.cpp=.o)
+
+# IP e usuário da placa
+PLACA_USER  := root
+PLACA_IP    := 192.168.0.50
+PLACA_PATH  := /usr/local/bin
+
+# Local da Pasta Latex
+LATEX_PATH  := docs/latex
+
+ifndef CXX
+	$(error Certifique-se de rodar 'source caminho_para_sdk_environment_setup')
+endif
+
+#################################################################
+## Comandos de Execução
+#################################################################
+
+# Procedimentos Específicos da Compilação
+all: $(TARGET)
+
+$(TARGET): $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+# Enviando Programas Para Placa
+deploy: $(TARGET)
+	@echo "\e[1;36;40m[INFO] Enviando Binário Para Placa...\e[0m"
+	scp $(TARGET) $(PLACA_USER)@$(PLACA_IP):$(PLACA_PATH)/
+	@echo "\e[1;36;40m[INFO] Ajustando Permissão de Execução...\e[0m"
+	ssh $(PLACA_USER)@$(PLACA_IP) \
+		"chmod +x $(PLACA_PATH)/$(TARGET)"
+	# Adicionar '&& $(PLACA_PATH)/$(TARGET)'
+	# executará o programa na placa
 
 # Gerando Documentação
-.PHONY: docs
 docs:
+	@echo "\e[1;36;40m[INFO] Gerando HTML e LATEX com Doxygen\e[0m"
 	doxygen Doxyfile
+	@echo "\e[1;36;40m[INFO] Compilando PDF na pasta docs/latex\e[0m"
+	$(MAKE) -C $(LATEX_PATH)
+	@echo "\e[1;36;40m[INFO] Trazendo PDF para diretório padrão\e[0m"
+	mv $(LATEX_PATH)/refman.pdf Documentation.pdf
 
-
-# Limpamos documentação
+# Limpamos 
 clean:
-	@rm -rf docs/html docs/latex
+	@rm -rf docs/html docs/latex 
 
 
 
@@ -21,3 +63,5 @@ clean:
 
 
 
+
+.PHONY: docs

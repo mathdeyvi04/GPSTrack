@@ -10,22 +10,51 @@
 Desenvolver uma solução embarcada usando o kit de desenvolvimento **STM32MP1 DK1** e
 o sensor _GPS_, a fim de monitorar de forma remota e contínua qualquer tentativa de violação e/ou comprometimento de uma carga.
 
-Em termos mais técnicos, a aplicação deve conseguir ler e interpretar dados obtidos pelo sensor e enviá-los via UDP socket para
-um determinado servidor.
+Em termos mais técnicos, a aplicação deve conseguir ler e interpretar dados obtidos pelo sensor e enviá-los via UDP socket para um determinado servidor.
 
 # Caso Deseje Contribuir
 
 Supondo que você deseje ser um contribuinte, atente-se às necessidades da aplicação:
 
-- Compilador C++ **Cross Operacional**
+### Conhecimentos a cerca do [Módulo GPS **GY-GPS6MV2**](https://youtu.be/lZumBl7zhoM):
 
-Além do compilador padrão para verificações superficiais, será necessário um compilador específico
-para o módulo que estamos focando:
+- Antena precisa estar suficientemente ao ar    livre;
+- Saída do módulo é de _3,3V_, logo esteja ciente da possível necessidade de um divisor de tensão.
+
+
+### Kit de Desenvolvimento STM32
+
+Além do compilador padrão para verificações superficiais, será necessário um compilador específico para o microcontrolador que estamos focando. 
+
+- Download
+
+Verifique o [link](https://drive.google.com/drive/folders/1wr7YHFre0kxdnQLaE4kMThYUD1u1lBhI) dado pelo professor e realize:
 
 ```
-sudo apt install g++-arm-linux-gnueabihf
+tar -xvf arm-buildroot-linux-gnueabihf_sdk-DK2.tar.gz
 ```
-- Makefile
+
+Isso descompactará o kit de desenvolvimento da placa, permitindo diversas funcionalidades.
+
+- Sobre o Software STM32MP1 DK1
+
+Ao realizar a descompactação, você terá:
+
+```
+arm-buildroot-linux-gnueabihf_sdk-DK2/
+    ├── bin/
+    │   ├── arm-buildroot-linux-gnueabihf-gcc
+    │   ├── arm-buildroot-linux-gnueabihf-g++
+    ├── lib/
+    ├── sysroot/
+    └── environment-setup
+```
+
+Dentro da pasta, execute: `source environment-setup`, isso configurará automaticamente as variáveis de ambiente.
+
+Demais funcionalidades são explicadas dentro do arquivo Makefile.
+
+### Makefile
 
 Caso fôssemos utilizar apenas o compilador, precisaríamos escrever comandos grandes e fácieis de 
 errar. Sendo assim, faz-se necessário um intermediário:
@@ -34,7 +63,7 @@ errar. Sendo assim, faz-se necessário um intermediário:
 sudo apt install make
 ```
 
-- Doxygen
+### Doxygen
 
 Utilizaremos esse software para criar documentações de forma automática. 
 **Não é necessário que todos os contribuintes possuam essa ferramenta**,
@@ -62,11 +91,6 @@ funcionamento do módulo.
 
 Compilará a aplicação utilizando as flags necessárias e o compilador específico, gerando 
 um executável de pronto uso no módulo.
-
-### `make debug`
-
-Compilará a aplicação utilizando o compilador padrão e outras 
-ferramentas de simulação para testarmos a aplicação.
 
 ### `make docs`
 
