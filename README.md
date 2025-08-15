@@ -36,13 +36,16 @@ sudo apt install make
 
 - Doxygen
 
-Utilizaremos esse software para criar documentações de forma automática.
+Utilizaremos esse software para criar documentações de forma automática. 
+**Não é necessário que todos os contribuintes possuam essa ferramenta**,
+entretanto, é estritamente obrigatório a utilização do mesmo [padrão de documentação](PadrãoDoxygen.md)
 
 ```
-sudo apt install doxygen graphviz texlive-latex-base
+sudo apt install doxygen graphviz
+sudo apt install texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-latex-recommended
 ```
 
-
+O segundo download faz referência ao construção do arquivo .pdf.
 
 ... -> Sucessivas necessidades e dependências do sensor.
 
@@ -57,11 +60,20 @@ funcionamento do módulo.
 
 ### `make`
 
-Compilará a aplicação utilizando as flags necessárias e o compilador correto, gerando 
+Compilará a aplicação utilizando as flags necessárias e o compilador específico, gerando 
 um executável de pronto uso no módulo.
 
+### `make debug`
+
+Compilará a aplicação utilizando o compilador padrão e outras 
+ferramentas de simulação para testarmos a aplicação.
+
+### `make docs`
+
+Gerará um PDF contendo a documentação da aplicação geral.
+
 > [!TIP]
-> Este caso é supondo que você deseje contribuir e, portanto, possui as dependências necessárias.
+> Estes últimos casos supõem que você deseje contribuir e, portanto, possui as dependências necessárias.
 
 
 # Descrições Sucintas de Código

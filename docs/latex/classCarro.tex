@@ -1,0 +1,107 @@
+\doxysection{Carro Class Reference}
+\hypertarget{classCarro}{}\label{classCarro}\index{Carro@{Carro}}
+
+
+Representa um carro no sistema.  
+
+
+
+
+{\ttfamily \#include $<$Track\+Sense.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCarro_a4348e3fdb70f8d83f65a7ecafe9823a3}{Carro}} (const std\+::string \&marca, const std\+::string \&modelo)
+\begin{DoxyCompactList}\small\item\em Construtor do carro. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCarro_ae811d14e10499dd97e30c052f1f64ed9}{acelerar}} (int valor)
+\begin{DoxyCompactList}\small\item\em Acelera o carro. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCarro_ae9d9e28134af01f8b83f74623c376c43}{frear}} (int valor)
+\begin{DoxyCompactList}\small\item\em Reduz a velocidade do carro. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCarro_ad15c8a6fbf2b1032e79ff7d2ac1815e5}{get\+Velocidade}} () const
+\begin{DoxyCompactList}\small\item\em Obtém a velocidade atual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa um carro no sistema. 
+
+A classe {\ttfamily \doxylink{classCarro}{Carro}} gerencia informações e comportamentos de um veículo, incluindo sua marca, modelo, velocidade atual e métodos para acelerar, frear e obter dados.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classCarro}{Carro}}\ c(\textcolor{stringliteral}{"{}Toyota"{}},\ \textcolor{stringliteral}{"{}Corolla"{}});}
+\DoxyCodeLine{c.acelerar(20);}
+\DoxyCodeLine{std::cout\ <<\ c.getVelocidade()\ <<\ std::endl;}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCarro_a4348e3fdb70f8d83f65a7ecafe9823a3}\label{classCarro_a4348e3fdb70f8d83f65a7ecafe9823a3} 
+\index{Carro@{Carro}!Carro@{Carro}}
+\index{Carro@{Carro}!Carro@{Carro}}
+\doxysubsubsection{\texorpdfstring{Carro()}{Carro()}}
+{\footnotesize\ttfamily Carro\+::\+Carro (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{marca,  }\item[{const std\+::string \&}]{modelo }\end{DoxyParamCaption})}
+
+
+
+Construtor do carro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em marca} & Marca do carro. \\
+\hline
+{\em modelo} & Modelo do carro. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCarro_ae811d14e10499dd97e30c052f1f64ed9}\label{classCarro_ae811d14e10499dd97e30c052f1f64ed9} 
+\index{Carro@{Carro}!acelerar@{acelerar}}
+\index{acelerar@{acelerar}!Carro@{Carro}}
+\doxysubsubsection{\texorpdfstring{acelerar()}{acelerar()}}
+{\footnotesize\ttfamily void Carro\+::acelerar (\begin{DoxyParamCaption}\item[{int}]{valor }\end{DoxyParamCaption})}
+
+
+
+Acelera o carro. 
+
+Incrementa a velocidade atual pelo valor informado. Se o valor for negativo, ele é ignorado. 
+\begin{DoxyParams}{Parameters}
+{\em valor} & Valor em km/h para aumentar a velocidade. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCarro_ae9d9e28134af01f8b83f74623c376c43}\label{classCarro_ae9d9e28134af01f8b83f74623c376c43} 
+\index{Carro@{Carro}!frear@{frear}}
+\index{frear@{frear}!Carro@{Carro}}
+\doxysubsubsection{\texorpdfstring{frear()}{frear()}}
+{\footnotesize\ttfamily void Carro\+::frear (\begin{DoxyParamCaption}\item[{int}]{valor }\end{DoxyParamCaption})}
+
+
+
+Reduz a velocidade do carro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & Valor em km/h para reduzir a velocidade. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCarro_ad15c8a6fbf2b1032e79ff7d2ac1815e5}\label{classCarro_ad15c8a6fbf2b1032e79ff7d2ac1815e5} 
+\index{Carro@{Carro}!getVelocidade@{getVelocidade}}
+\index{getVelocidade@{getVelocidade}!Carro@{Carro}}
+\doxysubsubsection{\texorpdfstring{getVelocidade()}{getVelocidade()}}
+{\footnotesize\ttfamily int Carro\+::get\+Velocidade (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Obtém a velocidade atual. 
+
+\begin{DoxyReturn}{Returns}
+Velocidade em km/h. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/Track\+Sense.\+hpp\end{DoxyCompactItemize}
