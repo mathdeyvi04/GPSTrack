@@ -6,7 +6,7 @@
 TARGET      := TrackSense
 
 # Fontes do projeto
-SRC         := /src/main.cpp
+SRC         := src/main.cpp
 OBJ         := $(SRC:.cpp=.o)
 
 # IP e usuário da placa
@@ -17,22 +17,21 @@ PLACA_PATH  := /usr/local/bin
 # Local da Pasta Latex
 LATEX_PATH  := docs/latex
 
-ifndef CXX
-	$(error Certifique-se de rodar 'source caminho_para_sdk_environment_setup')
-endif
+# Caminhos Ligados À Compilação
+CXX         := arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-g++
+SYSROOT     := arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot
+CXXFLAGS    := --sysroot=$(SYSROOT) -Wall -O2
+
+
 
 #################################################################
 ## Comandos de Execução
 #################################################################
 
-# Procedimentos Específicos da Compilação
-all: $(TARGET)
+# Executando de forma geral
+all:
+	@$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
 
-$(TARGET): $(OBJ)
-	$(CXX) $(CXXFLAGS) -o $@ $^
-
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Enviando Programas Para Placa
 deploy: $(TARGET)
@@ -44,24 +43,20 @@ deploy: $(TARGET)
 	# Adicionar '&& $(PLACA_PATH)/$(TARGET)'
 	# executará o programa na placa
 
+
 # Gerando Documentação
 docs:
 	@echo "\e[1;36;40m[INFO] Gerando HTML e LATEX com Doxygen\e[0m"
-	doxygen Doxyfile
+	@doxygen Doxyfile
 	@echo "\e[1;36;40m[INFO] Compilando PDF na pasta docs/latex\e[0m"
-	$(MAKE) -C $(LATEX_PATH)
+	@$(MAKE) -C $(LATEX_PATH)
 	@echo "\e[1;36;40m[INFO] Trazendo PDF para diretório padrão\e[0m"
-	mv $(LATEX_PATH)/refman.pdf Documentation.pdf
+	@mv $(LATEX_PATH)/refman.pdf Documentation.pdf
+
 
 # Limpamos 
 clean:
 	@rm -rf docs/html docs/latex 
-
-
-
-
-
-
 
 
 .PHONY: docs

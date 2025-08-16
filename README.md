@@ -21,36 +21,39 @@ Supondo que você deseje ser um contribuinte, atente-se às necessidades da apli
 - Antena precisa estar suficientemente ao ar    livre;
 - Saída do módulo é de _3,3V_, logo esteja ciente da possível necessidade de um divisor de tensão.
 
-
 ### Kit de Desenvolvimento STM32
 
 Além do compilador padrão para verificações superficiais, será necessário um compilador específico para o microcontrolador que estamos focando. 
 
 - Download
 
-Verifique o [link](https://drive.google.com/drive/folders/1wr7YHFre0kxdnQLaE4kMThYUD1u1lBhI) dado pelo professor e realize:
+Verifique o [link](https://drive.google.com/file/d/1qpq3QeK5f7T061LFA0JlJz2fgMQDvyMn/view?usp=drivesdk) dado pelo professor e realize:
 
 ```
-tar -xvf arm-buildroot-linux-gnueabihf_sdk-DK2.tar.gz
+tar -xvf arm-buildroot-linux-gnueabihf_sdk-buildroot.tar.gz
 ```
 
 Isso descompactará o kit de desenvolvimento da placa, permitindo diversas funcionalidades.
+
+> [!WARNING]
+> Não se preocupe com o tempo que demorará.
 
 - Sobre o Software STM32MP1 DK1
 
 Ao realizar a descompactação, você terá:
 
 ```
-arm-buildroot-linux-gnueabihf_sdk-DK2/
-    ├── bin/
-    │   ├── arm-buildroot-linux-gnueabihf-gcc
-    │   ├── arm-buildroot-linux-gnueabihf-g++
-    ├── lib/
-    ├── sysroot/
-    └── environment-setup
+arm-buildroot-linux-gnueabihf_sdk-buildroot/
+    |-- bin/
+    │   |-- arm-buildroot-linux-gnueabihf-gcc
+    │   |-- arm-buildroot-linux-gnueabihf-g++
+    |   ...
+    |-- arm-buildroot-linux-gnueabihf/
+    |   |-- sysroot
+    |   ...
+    |
+    ...
 ```
-
-Dentro da pasta, execute: `source environment-setup`, isso configurará automaticamente as variáveis de ambiente.
 
 Demais funcionalidades são explicadas dentro do arquivo Makefile.
 
