@@ -10,9 +10,10 @@ SRC         := src/main.cpp
 OBJ         := $(SRC:.cpp=.o)
 
 # IP e usuário da placa
-PLACA_USER  := root
-PLACA_IP    := 192.168.0.50
-PLACA_PATH  := /usr/local/bin
+# Ainda precisamos da placa para descobrir mais
+PLACA_USER  := 
+PLACA_IP    := 
+PLACA_PATH  := 
 
 # Local da Pasta Latex
 LATEX_PATH  := docs/latex
@@ -30,7 +31,13 @@ CXXFLAGS    := --sysroot=$(SYSROOT) -Wall -O2
 
 # Executando de forma geral
 all:
-	@$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
+	@echo "\e[1;36;40m[INFO] Buildando Binário Para Placa...\e[0m"
+	@$(CXX) $(CXXFLAGS) $(TARGET) -o $(SRC)
+
+# Executando de forma a debugar nosso código.
+debug:
+	@echo "\e[1;36;40m[INFO] Buildando e Executando Binário Para Debugação...\e[0m"
+	@g++ src/debug.cpp -o debug; ./debug; rm -f debug;
 
 
 # Enviando Programas Para Placa

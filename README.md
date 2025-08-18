@@ -95,6 +95,12 @@ funcionamento do módulo.
 Compilará a aplicação utilizando as flags necessárias e o compilador específico, gerando 
 um executável de pronto uso no módulo.
 
+### `make debug` 
+
+Compilará a aplicação para o Linux, executará e apagará o executável gerável.
+Neste caso, há um simulador para o módulo GPS que estaremos usando a fim de que 
+possamos realmente realizar testes.
+
 ### `make docs`
 
 Gerará um PDF contendo a documentação da aplicação geral.
