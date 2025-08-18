@@ -8,7 +8,7 @@
  */
 #include <cstdio>
 #include "TrackSense.hpp"
-#include "SimulatorGPS6MV2.hpp"
+#include "GPSSim.hpp"
 
 int main(){
 
