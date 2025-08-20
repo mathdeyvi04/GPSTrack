@@ -18,10 +18,12 @@ Supondo que você deseje ser um contribuinte, atente-se às necessidades da apli
 
 ### Conhecimentos a cerca do [Módulo GPS **GY-GPS6MV2**](https://youtu.be/lZumBl7zhoM):
 
-- Antena precisa estar suficientemente ao ar    livre;
-- Saída do módulo é de _3,3V_, logo esteja ciente da possível necessidade de um divisor de tensão.
+No arquivo disponibilizado pelo professor, é instruído detalhadamente o passo a passo para utilizar tanto o módulo quanto o kit.
 
 ### Kit de Desenvolvimento STM32
+
+Como o professor já detalhou esforçadamente o passo a passo da utilização da placa, focaremos em como permitir que você possa emular o 
+compilador necessário.
 
 Além do compilador padrão para verificações superficiais, será necessário um compilador específico para o microcontrolador que estamos focando. 
 
