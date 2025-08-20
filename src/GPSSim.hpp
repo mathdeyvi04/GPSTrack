@@ -394,8 +394,8 @@ public:
         // Configura o terminal filho para simular o módulo real (9600 8N1)
         termios config_com{};              // Cria a estrutura vazia
         ::tcgetattr(_fd_filho, &config_com); // Lê as configurações atuais e armazena na struct
-        ::cfsetispeed(&config_com, B9600);   // Definimos velocidade de entrada e de saída
-        ::cfsetospeed(&config_com, B9600);   // Essa constante está presente dentro do termios.h
+        ::cfsetispeed(&config_com, B115200);   // Definimos velocidade de entrada e de saída
+        ::cfsetospeed(&config_com, B115200);   // Essa constante está presente dentro do termios.h
         // Diversas operações bits a bits
         config_com.c_cflag = (config_com.c_cflag & ~CSIZE) | CS8;  
         config_com.c_cflag |= (CLOCAL | CREAD);                        

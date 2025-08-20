@@ -183,8 +183,8 @@ private:
 			throw std::runtime_error("Erro ao tentar entrar na porta serial, tcgetattr");
 		}
 
-		::cfsetospeed(&tty, B9600);
-        ::cfsetispeed(&tty, B9600);
+		::cfsetospeed(&tty, B115200);
+        ::cfsetispeed(&tty, B115200);
 
         // Diversas operações bit a bit
         tty.c_cflag = (tty.c_cflag & ~CSIZE) | CS8; // 8 bits

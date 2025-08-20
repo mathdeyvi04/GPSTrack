@@ -81,6 +81,28 @@ sudo apt install texlive-latex-extra texlive-fonts-recommended texlive-fonts-ext
 
 O segundo download faz referência ao construção do arquivo .pdf.
 
+### Minicom
+
+Ferramenta de linha de comando que permite abrir portas seriais para comunicação
+com dispositivos externos, como microcontroladores, placas de desenvolvimento (ex: STM32).
+
+```
+sudo apt install minicom
+```
+
+Após conectar a placa:
+
+```
+dmesg | grep tty
+```
+
+Apresentará algo como `now attached to ttyUSB0`, o que significará que um USB foi conectado
+e está registrado em `/dev/ttyUSB0`.
+
+Para abrir a placa, basta executar `sudo minicom`.
+
+Caso seja a primeira vez, podemos configurar as definições da comunicação com `sudo minicom -s`.
+
 ... -> Sucessivas necessidades e dependências do sensor.
 
 # Caso Deseje Utilizar
