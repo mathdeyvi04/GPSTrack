@@ -32,7 +32,7 @@ CXXFLAGS    := --sysroot=$(SYSROOT) -Wall -O2
 # Executando de forma geral
 all:
 	@echo "\e[1;36;40m[INFO] Buildando Binário Para Placa...\e[0m"
-	@$(CXX) $(CXXFLAGS) $(TARGET) -o $(SRC)
+	@$(CXX) $(CXXFLAGS) $(SRC) -o $(TARGET)
 
 # Executando de forma a debugar nosso código.
 debug:

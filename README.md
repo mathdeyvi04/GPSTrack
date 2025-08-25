@@ -8,9 +8,9 @@
 # Objetivo
 
 Desenvolver uma solução embarcada usando o kit de desenvolvimento **STM32MP1 DK1** e
-o sensor _GPS_, a fim de monitorar de forma remota e contínua qualquer tentativa de violação e/ou comprometimento de uma carga.
+o sensor **GY-GPS6MV2**, a fim de monitorar de forma remota e contínua qualquer tentativa de violação e/ou comprometimento de uma carga.
 
-Em termos mais técnicos, a aplicação deve conseguir ler e interpretar dados obtidos pelo sensor e enviá-los via UDP socket para um determinado servidor.
+Em termos mais técnicos, a aplicação deve conseguir ler e interpretar dados obtidos pelo sensor e enviá-los via UDP para um determinado servidor.
 
 # Caso Deseje Contribuir
 
@@ -18,7 +18,7 @@ Supondo que você deseje ser um contribuinte, atente-se às necessidades da apli
 
 ### Conhecimentos a cerca do [Módulo GPS **GY-GPS6MV2**](https://youtu.be/lZumBl7zhoM):
 
-No arquivo disponibilizado pelo professor, é instruído detalhadamente o passo a passo para utilizar tanto o módulo quanto o kit.
+Sugiro a observação do vídeo linkado e busca inteligente no chatgpt.
 
 ### Kit de Desenvolvimento STM32
 
@@ -35,7 +35,7 @@ Verifique o [link](https://drive.google.com/file/d/1qpq3QeK5f7T061LFA0JlJz2fgMQD
 tar -xvf arm-buildroot-linux-gnueabihf_sdk-buildroot.tar.gz
 ```
 
-Isso descompactará o kit de desenvolvimento da placa, permitindo diversas funcionalidades.
+Isso descompactará o kit de desenvolvimento da placa, permitindo diversas funcionalidades. 
 
 > [!WARNING]
 > Não se preocupe com o tempo que demorará.
@@ -57,7 +57,7 @@ arm-buildroot-linux-gnueabihf_sdk-buildroot/
     ...
 ```
 
-Demais funcionalidades são explicadas dentro do arquivo Makefile.
+Demais funcionalidades são explicadas dentro do arquivo Makefile. Utilizaremos o `...g++`.
 
 ### Makefile
 
@@ -72,14 +72,14 @@ sudo apt install make
 
 Utilizaremos esse software para criar documentações de forma automática. 
 **Não é necessário que todos os contribuintes possuam essa ferramenta**,
-entretanto, é estritamente obrigatório a utilização do mesmo [padrão de documentação](PadrãoDoxygen.md)
+entretanto, é estritamente obrigatório a utilização do mesmo padrão de documentação.
 
 ```
 sudo apt install doxygen graphviz
 sudo apt install texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-latex-recommended
 ```
 
-O segundo download faz referência ao construção do arquivo .pdf.
+O segundo download faz referência ao construção do arquivo `.pdf`.
 
 ### Minicom
 
@@ -124,6 +124,9 @@ um executável de pronto uso no módulo.
 Compilará a aplicação para o Linux, executará e apagará o executável gerável.
 Neste caso, há um simulador para o módulo GPS que estaremos usando a fim de que 
 possamos realmente realizar testes.
+
+CASO SEJA POSSÍVEL PLUGARMOS O MÓDULO GPS NO PC, SERÁ POSSÍVEL DESENVLVER AINDA UM 
+MAKE DEBUG DE FATO PARA DEBUGAÇÃO E MAKE SIM SERVIRÁ PARA O SIMULADO.
 
 ### `make docs`
 
