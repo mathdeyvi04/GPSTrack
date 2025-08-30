@@ -61,7 +61,7 @@ Demais funcionalidades são explicadas dentro do arquivo Makefile. Utilizaremos 
 
 ### Makefile
 
-Caso fôssemos utilizar apenas o compilador, precisaríamos escrever comandos grandes e fácieis de 
+Caso fôssemos utilizar apenas o compilador, precisaríamos escrever comandos grandes e fáceis de 
 errar. Sendo assim, faz-se necessário um intermediário:
 
 ```
@@ -81,29 +81,9 @@ sudo apt install texlive-latex-extra texlive-fonts-recommended texlive-fonts-ext
 
 O segundo download faz referência ao construção do arquivo `.pdf`.
 
-### Minicom
+### TeraTerm
 
-Ferramenta de linha de comando que permite abrir portas seriais para comunicação
-com dispositivos externos, como microcontroladores, placas de desenvolvimento (ex: STM32).
-
-```
-sudo apt install minicom
-```
-
-Após conectar a placa:
-
-```
-dmesg | grep tty
-```
-
-Apresentará algo como `now attached to ttyUSB0`, o que significará que um USB foi conectado
-e está registrado em `/dev/ttyUSB0`.
-
-Para abrir a placa, basta executar `sudo minicom`.
-
-Caso seja a primeira vez, podemos configurar as definições da comunicação com `sudo minicom -s`.
-
-... -> Sucessivas necessidades e dependências do sensor.
+[Software](https://github.com/TeraTermProject/teraterm/releases/download/v5.4.1/teraterm-5.4.1.exe) para acesso remoto da placa. Com ele, conseguiremos acesso ao terminal da placa e poderemos realizar comandos específicos.
 
 # Caso Deseje Utilizar
 
@@ -121,12 +101,9 @@ um executável de pronto uso no módulo.
 
 ### `make debug` 
 
-Compilará a aplicação para o Linux, executará e apagará o executável gerável.
+Compilará a aplicação para o Linux, executará e apagará o executável gerado.
 Neste caso, há um simulador para o módulo GPS que estaremos usando a fim de que 
 possamos realmente realizar testes.
-
-CASO SEJA POSSÍVEL PLUGARMOS O MÓDULO GPS NO PC, SERÁ POSSÍVEL DESENVLVER AINDA UM 
-MAKE DEBUG DE FATO PARA DEBUGAÇÃO E MAKE SIM SERVIRÁ PARA O SIMULADO.
 
 ### `make docs`
 
