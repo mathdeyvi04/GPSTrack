@@ -81,10 +81,31 @@ sudo apt install texlive-latex-extra texlive-fonts-recommended texlive-fonts-ext
 
 O segundo download faz referência ao construção do arquivo `.pdf`.
 
-### TeraTerm
+### Acesso à Placa
 
-[Software](https://github.com/TeraTermProject/teraterm/releases/download/v5.4.1/teraterm-5.4.1.exe) para acesso remoto da placa. Com ele, conseguiremos acesso ao terminal da placa e poderemos realizar comandos específicos.
+Utilizaremos o protocolo SSH para acessá-la remotamente. Naturalmente,
+será necessário um cabo Ethernet e que os IP's estejam na mesma faixa.
+É interessante que você utilize a função _ping_ para verificar se estão conectadas corretamente.
 
+Assim que a conexão for confirmada, dentro do PowerShell, execute:
+
+```
+ssh root@192.168.42.2
+```
+
+Será solicitado a senha e, posteriormente, o acesso será permitido.
+
+Para enviar arquivos para a placa, volte novamente ao PowerShell e:
+
+```
+scp TrackSense root@192.168.42.2:/
+```
+
+Assim, o arquivo estará no mesmo local que as pastas root do sistema linux. Além disso, pode ser necessário dar permissão de execução ao binário, para tanto:
+
+```
+chmod +x TrackSense
+```
 # Caso Deseje Utilizar
 
 A seguir, regras de compilação e execução.
@@ -107,14 +128,48 @@ possamos realmente realizar testes.
 
 ### `make docs`
 
-Gerará um PDF contendo a documentação da aplicação geral.
-
-> [!TIP]
-> Estes últimos casos supõem que você deseje contribuir e, portanto, possui as dependências necessárias.
-
+Para contribuintes, gerará um PDF contendo a documentação da aplicação geral.
 
 # Descrições Sucintas de Código
 
-...
+### TrackSense
 
-Caso deseje uma maior profundidade nas explicações, verifique [docs](docs)
+Classe responsável por:
+
+- Ler dados do sensor GPS6MV2
+- Interpretar os dados lidas
+- Enviar as informações 
+
+Cada uma dessas fases ocorrem em uma thread dedicada controlada por métodos `init` e `stop`.
+
+Fluxo de Funcionamento:
+
+- Inicialização
+
+A classe configura um socket UDP para a transmissão dos dados processados e uma porta serial, na qual o sensor GPS 6MV2 enviará os dados.
+
+- Leitura dos Dados:
+
+O método `_ler_dados` coleta os dados diretamente da porta serial em blocos de até 100 caracteres. Caso não haja dados, retornará string vazia.
+
+- Interpretação dos Dados:
+
+A classe distingue os dois principais formatos _NMEA_: **RMC** e **GGA**, a partir dos métodos `_parser_rmc` e `_parser_gga`.
+
+- Envio de informações:
+
+_Ainda não desenvolvido_.
+
+Para informações mais precisas e profundas, sugiro verificar o arquivo 
+[index.html](docs/html/index.html) ou [Documentation.pdf](Documentation.pdf), sendo este último gerado pelo comando `make docs`.
+
+
+
+
+
+
+
+
+
+
+

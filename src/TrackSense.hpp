@@ -227,7 +227,7 @@ private:
 	std::string
 	_ler_dados(){
 
-		char buffer[256];
+		char buffer[100];
 		int ult_indice = read(
 			                  _fd_serial, 
 			                  buffer, 
@@ -241,7 +241,7 @@ private:
         }
 
         std::cout << "\nNada a ser lido..." << std::endl;
-        return {};
+        return "";
 	}
 
 	/**
