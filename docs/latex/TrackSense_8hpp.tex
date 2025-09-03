@@ -1,0 +1,54 @@
+\doxysection{src/\+Track\+Sense.hpp File Reference}
+\hypertarget{TrackSense_8hpp}{}\label{TrackSense_8hpp}\index{src/TrackSense.hpp@{src/TrackSense.hpp}}
+
+
+Implementação da Classe Sensora do Módulo GPS6\+MV2.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$atomic$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$termios.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+Include dependency graph for Track\+Sense.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{TrackSense_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{TrackSense_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classTrackSense}{Track\+Sense}}
+\begin{DoxyCompactList}\small\item\em Representa um sensor GPS (GY-\/\+GPS6\+MV2 ou Simulado). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structTrackSense_1_1GPSData}{Track\+Sense\+::\+GPSData}}
+\begin{DoxyCompactList}\small\item\em Struct para armazenar dados GPS ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementação da Classe Sensora do Módulo GPS6\+MV2. 
+
+Responsável por ler, interpretar e enviar dados via UDP. 

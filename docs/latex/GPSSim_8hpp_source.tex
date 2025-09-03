@@ -1,0 +1,399 @@
+\doxysection{GPSSim.\+hpp}
+\hypertarget{GPSSim_8hpp_source}{}\label{GPSSim_8hpp_source}\index{src/GPSSim.hpp@{src/GPSSim.hpp}}
+\mbox{\hyperlink{GPSSim_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ GPSSim\_HPP}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ GPSSim\_HPP}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ Para\ manipulações\ de\ Tempo\ e\ de\ Data}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <string>}\ \ \ \ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <sstream>}\ \ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <iomanip>}\ \ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ Para\ threads\ e\ sincronizações}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <atomic>}\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ Para\ tratamento\ de\ erros}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ As\ seguintes\ bibliotecas\ possuem\ relevância\ superior}}
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ Por\ se\ tratarem\ de\ bibliotecas\ C,\ utilizaremos\ o\ padrão\ de\ \`{}::`\ para\ explicitar}}
+\DoxyCodeLine{00033\ \textcolor{comment}{//\ que\ algumas\ funções\ advém\ delas.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00035\ \textcolor{comment}{Fornece\ constantes\ e\ funções\ de\ controle\ de\ descritores\ de\ arquivos,\ }}
+\DoxyCodeLine{00036\ \textcolor{comment}{operações\ de\ I/O\ de\ baixo\ nível\ e\ manipulação\ de\ flags\ de\ arquivos.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <fcntl.h>}\ \ \ }
+\DoxyCodeLine{00039\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00040\ \textcolor{comment}{Fornece\ acesso\ a\ chamadas\ do\ OS\ de\ baixo\ nível,\ incluindo\ manipulação}}
+\DoxyCodeLine{00041\ \textcolor{comment}{de\ processos,\ I/O\ de\ arquivos,\ controle\ de\ descritores\ e\ operações\ do}}
+\DoxyCodeLine{00042\ \textcolor{comment}{sistema\ de\ arquivos.}}
+\DoxyCodeLine{00043\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ <unistd.h>}\ \ }
+\DoxyCodeLine{00045\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00046\ \textcolor{comment}{Fornece\ estruturas\ e\ funções\ para\ configurar\ a\ comunicação\ }}
+\DoxyCodeLine{00047\ \textcolor{comment}{em\ sistemas\ Unix.\ Ele\ permite\ o\ controle\ detalhado\ sobre\ interfaces}}
+\DoxyCodeLine{00048\ \textcolor{comment}{de\ terminal\ (TTY)}}
+\DoxyCodeLine{00049\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#include\ <termios.h>}\ }
+\DoxyCodeLine{00051\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00052\ \textcolor{comment}{Fornece\ funções\ para\ criação\ e\ manipulação\ de\ pseudo-\/terminais\ (PTYs),}}
+\DoxyCodeLine{00053\ \textcolor{comment}{um\ mecanismo\ essencial\ em\ sistemas\ Unix\ para\ emular\ terminais\ virtuais.}}
+\DoxyCodeLine{00054\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <pty.h>}\ \ \ \ \ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGPSSim}{GPSSim}}\ \{}
+\DoxyCodeLine{00067\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{comment}{//\ Informações\ Ligadas\ Aos\ Terminais}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGPSSim_a19fbc44ac45a1ddced9b1577e9b3eeb5}{\_fd\_pai}}\{0\},\ \mbox{\hyperlink{classGPSSim_aacca073662a93e81a7cf105e59cb48ee}{\_fd\_filho}}\{0\};}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classGPSSim_af9a569d37ee298c48a7c0948fc74b400}{\_nome\_pt\_filho}}[128];}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//\ Thread\ de\ Execução\ Paralela\ e\ Flag\ de\ Controle}}
+\DoxyCodeLine{00074\ \ \ \ \ std::thread\ \mbox{\hyperlink{classGPSSim_a26e6d0c2ae4e8b86b3872d975bc3564f}{\_thread\_geradora}};}
+\DoxyCodeLine{00075\ \ \ \ \ std::atomic<bool>\ \mbox{\hyperlink{classGPSSim_a8d7bde2dfe108459563278eabea27093}{\_is\_exec}}\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{comment}{//\ Informações\ da\ simulação}}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGPSSim_a4bddd122402c6c27767ecf76db1ee605}{\_lat}},\ \mbox{\hyperlink{classGPSSim_afa1d1721250da96b7430203d059996c9}{\_lon}},\ \mbox{\hyperlink{classGPSSim_a1503ce4821dbe4f3dc5d90bb85dfe7ca}{\_alt}};}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGPSSim_a59411486f4aa129528de40f3da3d0798}{\_velocidade\_nos}};}
+\DoxyCodeLine{00080\ \ \ \ \ std::chrono::milliseconds\ \mbox{\hyperlink{classGPSSim_af50c7456e54f58490c65096699616812}{\_periodo\_atualizacao}};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//\ Configurações\ de\ Trajetória}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \mbox{\hyperlink{classGPSSim_ab67a7b7652fffc234280b15ce6c7e816}{\_mov\_circ}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGPSSim_a8a17be6b70309f9e940747e6308fdabb}{\_raio}}\{20.0\},\ \mbox{\hyperlink{classGPSSim_a7d16accb90634a12f29279542a1ebed3}{\_periodo\_circ}}\{20.0\};}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGPSSim_a1087d219695c39ef323ceb3041ddbe92}{\_lat\_sim}}\{0.0\},\ \mbox{\hyperlink{classGPSSim_a96435e4a82e5fc2f562118d159836d81}{\_lon\_sim}}\{0.0\};}
+\DoxyCodeLine{00086\ \ \ \ \ std::chrono::steady\_clock::time\_point\ \mbox{\hyperlink{classGPSSim_aea7a2892d264b755703d81acefa6d140}{\_start\_time}}\ =\ std::chrono::steady\_clock::now();}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{static}\ std::string}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{classGPSSim_a0488760c495c2f866e78fe5ef2e92711}{formatar\_inteiro}}(}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ valor,}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ quant\_digitos}
+\DoxyCodeLine{00099\ \ \ \ \ )\{}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ std::ostringstream\ oss;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ oss\ <<\ std::setw(quant\_digitos)}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::setfill(\textcolor{charliteral}{'0'})}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ valor;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ oss.str();}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ }
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{classGPSSim_aaf289c32314dfa1d302400e7607e0095}{converter\_graus\_para\_nmea}}(}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ graus\_decimais,}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_lat,}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ std::string\&\ ddmm,}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\&\ hemisf}
+\DoxyCodeLine{00121\ \ \ \ \ )\{}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ hemisf\ =\ (is\_lat)\ ?\ (}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\ graus\_decimais\ >=\ 0\ )\ ?\ \textcolor{charliteral}{'N'}\ :\ \textcolor{charliteral}{'S'}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )\ :}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\ graus\_decimais\ >=\ 0\ )\ ?\ \textcolor{charliteral}{'E'}\ :\ \textcolor{charliteral}{'W'}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ valor\_abs\ =\ std::fabs(graus\_decimais);}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ graus\ \ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(std::floor(valor\_abs));}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ min\ =\ (valor\_abs\ -\/\ graus)\ *\ 60.0;}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Não\ utilizamos\ apenas\ a\ função\ de\ formatar\_inteiro,\ pois}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ utilizaremos\ o\ oss\ em\ seguida.}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ std::ostringstream\ oss;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ is\_lat}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ )\{}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ oss\ <<\ std::setw(2)}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::setfill(\textcolor{charliteral}{'0'})}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ graus}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::fixed}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::setprecision(4)}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::setw(7)}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::setfill(\textcolor{charliteral}{'0'})}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ min;}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ oss\ <<\ std::setw(3)}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::setfill(\textcolor{charliteral}{'0'})}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ graus}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::fixed}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::setprecision(4)}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::setw(7)}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::setfill(\textcolor{charliteral}{'0'})}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ min;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ ddmm\ =\ oss.str();}
+\DoxyCodeLine{00163\ \ \ \ \ \}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ }
+\DoxyCodeLine{00171\ \ \ \ \ \mbox{\hyperlink{classGPSSim_af6d2d9ee9e4c9d1cc216a8152cf3ac4b}{finalizar\_corpo\_de\_frase}}(}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ corpo\_frase}
+\DoxyCodeLine{00173\ \ \ \ \ )\{}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ uint8\_t\ paridade\ =\ 0;}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ caract\ :\ corpo\_frase}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ )\{}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ paridade\ \string^=\ (uint8\_t)caract;}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ std::ostringstream\ oss;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ oss\ <<\ \textcolor{charliteral}{'\$'}}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ corpo\_frase}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{charliteral}{'*'}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::uppercase}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::hex}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::setw(2)}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::setfill(\textcolor{charliteral}{'0'})}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ (int)paridade\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)r\(\backslash\)n"{}};}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ oss.str();}
+\DoxyCodeLine{00195\ \ \ \ \ \}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keyword}{static}\ std::tm\ }
+\DoxyCodeLine{00202\ \ \ \ \ \mbox{\hyperlink{classGPSSim_ae30627814af51ac2b922d11886b22b9a}{obter\_tempo\_utc}}()\{}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ namespace\ }std::chrono;}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ tempo\_atual\ =\ system\_clock::to\_time\_t(system\_clock::now());}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ std::tm\ tempo\_utc\{\};\ }
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ gmtime\_r(\&tempo\_atual,\ \&tempo\_utc);\ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tempo\_utc;}
+\DoxyCodeLine{00209\ \ \ \ \ \}}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00218\ \ \ \ \ std::string\ }
+\DoxyCodeLine{00219\ \ \ \ \ \mbox{\hyperlink{classGPSSim_a23ca3649aba044ae30d3e5cd365756b8}{\_gerar\_corpo\_de\_frase\_rmc}}(}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ lat\_graus,}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ lon\_graus,}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ velocidade\_nos}
+\DoxyCodeLine{00223\ \ \ \ \ )\{}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ tempo\_utc\ =\ \mbox{\hyperlink{classGPSSim_ae30627814af51ac2b922d11886b22b9a}{obter\_tempo\_utc}}();}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ std::string\ lat\_nmea,\ lon\_nmea;\ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ hemisferio\_lat,\ hemisferio\_lon;}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGPSSim_aaf289c32314dfa1d302400e7607e0095}{converter\_graus\_para\_nmea}}(}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ lat\_graus,\ }
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{true},\ }
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ lat\_nmea,}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ hemisferio\_lat}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGPSSim_aaf289c32314dfa1d302400e7607e0095}{converter\_graus\_para\_nmea}}(}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ lon\_graus,}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{false},}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ lon\_nmea,\ }
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ hemisferio\_lon}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Formato:\ hhmmss.ss,A,lat,N/S,lon,E/W,velocidade,curso,data,,,}}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ std::ostringstream\ oss;}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ oss\ <<\ \textcolor{stringliteral}{"{}GPRMC,"{}}\ }
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classGPSSim_a0488760c495c2f866e78fe5ef2e92711}{formatar\_inteiro}}(tempo\_utc.tm\_hour,\ 2)\ }
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classGPSSim_a0488760c495c2f866e78fe5ef2e92711}{formatar\_inteiro}}(tempo\_utc.tm\_min,\ \ 2)\ }
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classGPSSim_a0488760c495c2f866e78fe5ef2e92711}{formatar\_inteiro}}(tempo\_utc.tm\_sec,\ \ 2)\ <<\ \textcolor{stringliteral}{"{}.00,A,"{}}}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ lat\_nmea\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ hemisferio\_lat\ <<\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ lon\_nmea\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ hemisferio\_lon\ <<\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::fixed\ <<\ std::setprecision(2)\ <<\ velocidade\_nos\ <<\ \textcolor{stringliteral}{"{},0.00,"{}}}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classGPSSim_a0488760c495c2f866e78fe5ef2e92711}{formatar\_inteiro}}(tempo\_utc.tm\_mday,\ 2)\ }
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classGPSSim_a0488760c495c2f866e78fe5ef2e92711}{formatar\_inteiro}}(tempo\_utc.tm\_mon\ +\ 1,\ 2)\ }
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classGPSSim_a0488760c495c2f866e78fe5ef2e92711}{formatar\_inteiro}}((tempo\_utc.tm\_year\ +\ 1900)\ \%\ 100,\ 2)}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},,,A"{}};}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGPSSim_af6d2d9ee9e4c9d1cc216a8152cf3ac4b}{finalizar\_corpo\_de\_frase}}(oss.str());}
+\DoxyCodeLine{00257\ \ \ \ \ \}}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00268\ \ \ \ \ std::string\ }
+\DoxyCodeLine{00269\ \ \ \ \ \mbox{\hyperlink{classGPSSim_a58123de7be940ad080865f6e916a88dc}{\_gerar\_corpo\_de\_frase\_gga}}(}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ lat\_graus,\ }
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ lon\_graus,\ }
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ alt\_metros,\ }
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ sat\ =\ 8,\ }
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ hdop\ =\ 0.9}
+\DoxyCodeLine{00275\ \ \ \ \ )\{}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ tempo\_utc\ =\ \mbox{\hyperlink{classGPSSim_ae30627814af51ac2b922d11886b22b9a}{obter\_tempo\_utc}}();}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ std::string\ lat\_nmea,\ lon\_nmea;\ }
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ hemisferio\_lat,\ hemisferio\_lon;}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGPSSim_aaf289c32314dfa1d302400e7607e0095}{converter\_graus\_para\_nmea}}(}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ lat\_graus,\ }
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{true},\ }
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ lat\_nmea,}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ hemisferio\_lat}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGPSSim_aaf289c32314dfa1d302400e7607e0095}{converter\_graus\_para\_nmea}}(}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ lon\_graus,}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{false},}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ lon\_nmea,\ }
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ hemisferio\_lon}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Formato:\ hhmmss.ss,lat,N/S,lon,E/W,qualidade,satelites,HDOP,altitude,M,...}}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ std::ostringstream\ oss;}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ oss\ <<\ \textcolor{stringliteral}{"{}GPGGA,"{}}\ <<\ \mbox{\hyperlink{classGPSSim_a0488760c495c2f866e78fe5ef2e92711}{formatar\_inteiro}}(tempo\_utc.tm\_hour,\ 2)\ }
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classGPSSim_a0488760c495c2f866e78fe5ef2e92711}{formatar\_inteiro}}(tempo\_utc.tm\_min,\ 2)\ }
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classGPSSim_a0488760c495c2f866e78fe5ef2e92711}{formatar\_inteiro}}(tempo\_utc.tm\_sec,\ 2)\ <<\ \textcolor{stringliteral}{"{}.00,"{}}}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ lat\_nmea\ \ \ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ hemisferio\_lat\ <<\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ lon\_nmea\ \ \ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ hemisferio\_lon\ <<\ \textcolor{stringliteral}{"{},1,"{}}}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ sat\ \ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ std::fixed\ <<\ std::setprecision(1)\ <<\ hdop\ <<\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::fixed\ <<\ std::setprecision(1)\ <<\ alt\_metros\ <<\ \textcolor{stringliteral}{"{},M,0.0,M,,"{}};}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGPSSim_af6d2d9ee9e4c9d1cc216a8152cf3ac4b}{finalizar\_corpo\_de\_frase}}(oss.str());}
+\DoxyCodeLine{00304\ \ \ \ \ \}}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{keywordtype}{void}\ }
+\DoxyCodeLine{00310\ \ \ \ \ \mbox{\hyperlink{classGPSSim_a7bc42b6de5e91ce2e8530ef154c58e63}{\_update\_position}}()\{}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGPSSim_ab67a7b7652fffc234280b15ce6c7e816}{\_mov\_circ}})\{\ \textcolor{keywordflow}{return};\ \}}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ namespace\ }std::chrono;}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tempo\_decorrido\ =\ duration<double>(steady\_clock::now()\ -\/\ \mbox{\hyperlink{classGPSSim_aea7a2892d264b755703d81acefa6d140}{\_start\_time}}).count();}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ angulo\ =\ (2.0\ *\ M\_PI)\ *\ std::fmod(tempo\_decorrido\ /\ \mbox{\hyperlink{classGPSSim_a7d16accb90634a12f29279542a1ebed3}{\_periodo\_circ}},\ 1.0);}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Aproximação:\ 1°\ de\ latitude\ =\ 111320\ metros}}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ajuste\ da\ longitude\ pelo\ cosseno\ da\ latitude}}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ delta\_lat\ =\ (\mbox{\hyperlink{classGPSSim_a8a17be6b70309f9e940747e6308fdabb}{\_raio}}\ *\ std::sin(angulo))\ /\ 111320.0;}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ delta\_lon\ =\ (\mbox{\hyperlink{classGPSSim_a8a17be6b70309f9e940747e6308fdabb}{\_raio}}\ *\ std::cos(angulo))\ /\ (111320.0\ *\ std::cos(\mbox{\hyperlink{classGPSSim_a4bddd122402c6c27767ecf76db1ee605}{\_lat}}\ *\ M\_PI\ /\ 180.0));}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGPSSim_a1087d219695c39ef323ceb3041ddbe92}{\_lat\_sim}}\ =\ \mbox{\hyperlink{classGPSSim_a4bddd122402c6c27767ecf76db1ee605}{\_lat}}\ +\ delta\_lat;}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGPSSim_a96435e4a82e5fc2f562118d159836d81}{\_lon\_sim}}\ =\ \mbox{\hyperlink{classGPSSim_afa1d1721250da96b7430203d059996c9}{\_lon}}\ +\ delta\_lon;}
+\DoxyCodeLine{00324\ \ \ \ \ \}}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{keywordtype}{void}\ }
+\DoxyCodeLine{00331\ \ \ \ \ \mbox{\hyperlink{classGPSSim_a5bc8a89ed7ee69e64d2de2e1d3934e0f}{\_loop}}()\{}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Inicializa\ posição\ simulada}}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGPSSim_a1087d219695c39ef323ceb3041ddbe92}{\_lat\_sim}}\ =\ \mbox{\hyperlink{classGPSSim_a4bddd122402c6c27767ecf76db1ee605}{\_lat}};\ }
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGPSSim_a96435e4a82e5fc2f562118d159836d81}{\_lon\_sim}}\ =\ \mbox{\hyperlink{classGPSSim_afa1d1721250da96b7430203d059996c9}{\_lon}};}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{classGPSSim_a8d7bde2dfe108459563278eabea27093}{\_is\_exec}})\{}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Gera\ frases\ NMEA}}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ rmc\ =\ \mbox{\hyperlink{classGPSSim_a23ca3649aba044ae30d3e5cd365756b8}{\_gerar\_corpo\_de\_frase\_rmc}}(\mbox{\hyperlink{classGPSSim_a1087d219695c39ef323ceb3041ddbe92}{\_lat\_sim}},\ \mbox{\hyperlink{classGPSSim_a96435e4a82e5fc2f562118d159836d81}{\_lon\_sim}},\ \mbox{\hyperlink{classGPSSim_a59411486f4aa129528de40f3da3d0798}{\_velocidade\_nos}});}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ gga\ =\ \mbox{\hyperlink{classGPSSim_a58123de7be940ad080865f6e916a88dc}{\_gerar\_corpo\_de\_frase\_gga}}(\mbox{\hyperlink{classGPSSim_a1087d219695c39ef323ceb3041ddbe92}{\_lat\_sim}},\ \mbox{\hyperlink{classGPSSim_a96435e4a82e5fc2f562118d159836d81}{\_lon\_sim}},\ \mbox{\hyperlink{classGPSSim_a1503ce4821dbe4f3dc5d90bb85dfe7ca}{\_alt}},\ 10,\ 0.8);\ \ }
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ saida\ =\ rmc\ +\ gga;}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)033[7mGPS6MV2\ Simulado\ Emitindo:\(\backslash\)033[0m\ \(\backslash\)n"{}}\ <<\ saida\ <<\ std::endl;}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ (void)!::write(\mbox{\hyperlink{classGPSSim_a19fbc44ac45a1ddced9b1577e9b3eeb5}{\_fd\_pai}},\ saida.data(),\ saida.size());}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Aguarda\ o\ próximo\ ciclo}}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ std::this\_thread::sleep\_for(\mbox{\hyperlink{classGPSSim_af50c7456e54f58490c65096699616812}{\_periodo\_atualizacao}});}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGPSSim_a7bc42b6de5e91ce2e8530ef154c58e63}{\_update\_position}}();}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00351\ \ \ \ \ \}}
+\DoxyCodeLine{00352\ \ \ \ \ }
+\DoxyCodeLine{00353\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00371\ \ \ \ \ \textcolor{keyword}{explicit}\ }
+\DoxyCodeLine{00372\ \ \ \ \ \mbox{\hyperlink{classGPSSim_adef287e15001dc2d530ff645dbda5677}{GPSSim}}(}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ latitude\_inicial\_graus,}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ longitude\_inicial\_graus,}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ altitude\_metros\ =\ 10.0,}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ frequencia\_atualizacao\_hz\ =\ 1.0,\ }
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ velocidade\_nos\ =\ 10.0}
+\DoxyCodeLine{00378\ \ \ \ \ )\ :\ \mbox{\hyperlink{classGPSSim_a4bddd122402c6c27767ecf76db1ee605}{\_lat}}(latitude\_inicial\_graus),\ }
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGPSSim_afa1d1721250da96b7430203d059996c9}{\_lon}}(longitude\_inicial\_graus),\ }
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGPSSim_a1503ce4821dbe4f3dc5d90bb85dfe7ca}{\_alt}}(altitude\_metros),}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGPSSim_af50c7456e54f58490c65096699616812}{\_periodo\_atualizacao}}((frequencia\_atualizacao\_hz)\ >\ 0\ ?\ }
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::milliseconds((int)std::llround(1000.0/frequencia\_atualizacao\_hz))\ :}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::milliseconds(1000)),}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGPSSim_a59411486f4aa129528de40f3da3d0798}{\_velocidade\_nos}}(velocidade\_nos)\ }
+\DoxyCodeLine{00385\ \ \ \ \ \{}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Cria\ o\ par\ de\ pseudo-\/terminais}}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ ::openpty(\ \&\mbox{\hyperlink{classGPSSim_a19fbc44ac45a1ddced9b1577e9b3eeb5}{\_fd\_pai}},\ \&\mbox{\hyperlink{classGPSSim_aacca073662a93e81a7cf105e59cb48ee}{\_fd\_filho}},\ \mbox{\hyperlink{classGPSSim_af9a569d37ee298c48a7c0948fc74b400}{\_nome\_pt\_filho}},\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr}\ )\ !=\ 0}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ )\{}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Falha\ ao\ criar\ pseudo-\/terminal"{}});}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Configura\ o\ terminal\ filho\ para\ simular\ o\ módulo\ real\ (9600\ 8N1)}}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ termios\ config\_com\{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Cria\ a\ estrutura\ vazia}}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ ::tcgetattr(\mbox{\hyperlink{classGPSSim_aacca073662a93e81a7cf105e59cb48ee}{\_fd\_filho}},\ \&config\_com);\ \textcolor{comment}{//\ Lê\ as\ configurações\ atuais\ e\ armazena\ na\ struct}}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ ::cfsetispeed(\&config\_com,\ B115200);\ \ \ \textcolor{comment}{//\ Definimos\ velocidade\ de\ entrada\ e\ de\ saída}}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ ::cfsetospeed(\&config\_com,\ B115200);\ \ \ \textcolor{comment}{//\ Essa\ constante\ está\ presente\ dentro\ do\ termios.h}}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Diversas\ operações\ bits\ a\ bits}}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ config\_com.c\_cflag\ =\ (config\_com.c\_cflag\ \&\ \string~CSIZE)\ |\ CS8;\ \ }
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ config\_com.c\_cflag\ |=\ (CLOCAL\ |\ CREAD);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ config\_com.c\_cflag\ \&=\ \string~(PARENB\ |\ CSTOPB);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ config\_com.c\_iflag\ =\ IGNPAR;\ }
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ config\_com.c\_oflag\ =\ 0;\ }
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ config\_com.c\_lflag\ =\ 0;}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ tcsetattr(\mbox{\hyperlink{classGPSSim_aacca073662a93e81a7cf105e59cb48ee}{\_fd\_filho}},\ TCSANOW,\ \&config\_com);\ \ \textcolor{comment}{//\ Aplicamos\ as\ configurações}}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Fecha\ o\ filho\ -\/\ será\ aberto\ pelo\ usuário\ no\ caminho\ correto}}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mantemos\ o\ Pai\ aberto\ para\ procedimentos\ posteriores}}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ ::close(\mbox{\hyperlink{classGPSSim_aacca073662a93e81a7cf105e59cb48ee}{\_fd\_filho}});\ }
+\DoxyCodeLine{00411\ \ \ \ \ \}}
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00418\ \ \ \ \ \mbox{\hyperlink{classGPSSim_a7ee46b13b6a555764c544a5069854d32}{\string~GPSSim}}()\{\ \mbox{\hyperlink{classGPSSim_a114167ff50a457bd15b93f84242a6edc}{stop}}();\ \textcolor{keywordflow}{if}(\ \mbox{\hyperlink{classGPSSim_a19fbc44ac45a1ddced9b1577e9b3eeb5}{\_fd\_pai}}\ >=\ 0\ )\{\ ::close(\mbox{\hyperlink{classGPSSim_a19fbc44ac45a1ddced9b1577e9b3eeb5}{\_fd\_pai}});\ \}\ \}}
+\DoxyCodeLine{00419\ }
+\DoxyCodeLine{00424\ \ \ \ \ std::string}
+\DoxyCodeLine{00425\ \ \ \ \ \mbox{\hyperlink{classGPSSim_adf3762e5a73faff02866fa45b4593f20}{obter\_caminho\_terminal\_filho}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ std::string(\mbox{\hyperlink{classGPSSim_af9a569d37ee298c48a7c0948fc74b400}{\_nome\_pt\_filho}});\ \}}
+\DoxyCodeLine{00426\ }
+\DoxyCodeLine{00435\ \ \ \ \ \textcolor{keywordtype}{void}\ }
+\DoxyCodeLine{00436\ \ \ \ \ \mbox{\hyperlink{classGPSSim_a035f71a80ed040b260f68276d531de79}{init}}()\{}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Variáveis\ atômicas\ possuem\ esta\ funcionalidade}}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGPSSim_a8d7bde2dfe108459563278eabea27093}{\_is\_exec}}.exchange(\textcolor{keyword}{true})}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ )\{}
+\DoxyCodeLine{00441\ }
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00444\ }
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGPSSim_a26e6d0c2ae4e8b86b3872d975bc3564f}{\_thread\_geradora}}\ =\ std::thread(}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Função\ Lambda\ que\ será\ executada\ pela\ thread}}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Observe\ que\ os\ argumentos\ utilizados\ serão\ obtidos\ pelo}}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ this\ inserido\ nos\ colchetes}}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{keyword}{this}]\{\ \mbox{\hyperlink{classGPSSim_a5bc8a89ed7ee69e64d2de2e1d3934e0f}{\_loop}}();\ \}}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00451\ \ \ \ \ \}}
+\DoxyCodeLine{00452\ }
+\DoxyCodeLine{00459\ \ \ \ \ \textcolor{keywordtype}{void}\ }
+\DoxyCodeLine{00460\ \ \ \ \ \mbox{\hyperlink{classGPSSim_a114167ff50a457bd15b93f84242a6edc}{stop}}()\{}
+\DoxyCodeLine{00461\ }
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ !\mbox{\hyperlink{classGPSSim_a8d7bde2dfe108459563278eabea27093}{\_is\_exec}}.exchange(\textcolor{keyword}{false})}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ )\{}
+\DoxyCodeLine{00465\ }
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00468\ }
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGPSSim_a26e6d0c2ae4e8b86b3872d975bc3564f}{\_thread\_geradora}}.joinable()}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ )\{}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGPSSim_a26e6d0c2ae4e8b86b3872d975bc3564f}{\_thread\_geradora}}.join();\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00475\ \ \ \ \ \}}
+\DoxyCodeLine{00476\ }
+\DoxyCodeLine{00480\ \ \ \ \ \textcolor{keywordtype}{void}\ }
+\DoxyCodeLine{00481\ \ \ \ \ \mbox{\hyperlink{classGPSSim_a826208977e01f41005a108b902d427ea}{config\_traj}}(}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ raio\_metros\ =\ 20.0,}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ periodo\_segundos\ =\ 120.0}
+\DoxyCodeLine{00484\ \ \ \ \ )\{}
+\DoxyCodeLine{00485\ }
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ !\mbox{\hyperlink{classGPSSim_ab67a7b7652fffc234280b15ce6c7e816}{\_mov\_circ}}\ )\{\ \textcolor{keywordflow}{return};\ \}}
+\DoxyCodeLine{00487\ }
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGPSSim_a8a17be6b70309f9e940747e6308fdabb}{\_raio}}\ \ \ \ \ \ \ \ \ =\ raio\_metros;}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGPSSim_a7d16accb90634a12f29279542a1ebed3}{\_periodo\_circ}}\ =\ periodo\_segundos;}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGPSSim_ab67a7b7652fffc234280b15ce6c7e816}{\_mov\_circ}}\ \ \ \ \ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00491\ \ \ \ \ \}}
+\DoxyCodeLine{00492\ \};}
+\DoxyCodeLine{00493\ }
+\DoxyCodeLine{00494\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GPSSim\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,7 @@
+<map id="GPSSim::stop" name="GPSSim::stop">
+<area shape="rect" id="Node000001" title="Encerrará a geração de frases NMEA e aguardará a finalização da thread." alt="" coords="196,31,305,56"/>
+<area shape="rect" id="Node000002" href="$debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="49,5,104,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,36,104,25,105,19,182,31"/>
+<area shape="rect" id="Node000003" href="$classGPSSim.html#a7ee46b13b6a555764c544a5069854d32" title="Destrutor do GPSSim." alt="" coords="5,55,148,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="183,55,149,60,148,55,182,50"/>
+</map>

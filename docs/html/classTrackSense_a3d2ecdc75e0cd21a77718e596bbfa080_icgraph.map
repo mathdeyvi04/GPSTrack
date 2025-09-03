@@ -1,0 +1,5 @@
+<map id="TrackSense::_open_serial" name="TrackSense::_open_serial">
+<area shape="rect" id="Node000001" title="Abre e configure a porta serial do GPS, possibilitando a leitura direta." alt="" coords="229,5,415,31"/>
+<area shape="rect" id="Node000002" href="$classTrackSense.html#a13d41ec134d85d7aab623c654ee43f2a" title="Construtor da Classe." alt="" coords="5,5,181,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,21,181,21,181,15,215,15"/>
+</map>

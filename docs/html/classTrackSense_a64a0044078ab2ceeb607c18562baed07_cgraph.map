@@ -1,0 +1,17 @@
+<map id="TrackSense::_loop" name="TrackSense::_loop">
+<area shape="rect" id="Node000001" title="Responsável pelo loop principal de leitura, interpretação e envio via UDP." alt="" coords="5,80,144,105"/>
+<area shape="rect" id="Node000002" href="$classTrackSense.html#aa6189bf1f9a0eece69edd42887d504ac" title="Responsável por ler os dados emitos na porta serial." alt="" coords="200,5,373,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,78,191,39,216,32,217,37,193,45,103,82"/>
+<area shape="rect" id="Node000003" href="$classTrackSense.html#ad2249b2d86c543850346620c0f1a86cc" title="Interpretará os dados caso venham no padrão GGA" alt="" coords="195,55,378,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="144,82,181,77,182,83,145,87"/>
+<area shape="rect" id="Node000006" href="$classTrackSense.html#a989d3a03192dfef312706337b19829f2" title="Interpretará os dados caso venham no padrão RMC." alt="" coords="195,104,378,129"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="145,98,182,102,181,107,144,103"/>
+<area shape="rect" id="Node000007" href="$classTrackSense.html#a09dd49a222513b4d015c7dae17d9e771" title="Função estática auxiliar para formar string .csv." alt="" coords="192,153,381,179"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="104,103,193,139,218,147,216,152,191,145,102,108"/>
+<area shape="rect" id="Node000004" href="$classTrackSense.html#a1644e091e07a2aab03251397a04580a6" title="Função estática auxiliar para converter latitude e longitude para graus decimais." alt="" coords="429,43,595,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="379,63,415,62,416,68,379,68"/>
+<area shape="rect" id="Node000005" href="$classTrackSense.html#af1c448cc7e7fcc6f0fac90abbcfebfa3" title="Função estática auxiliar para separar string em vetores de string. Similar ao método split do python." alt="" coords="447,108,577,133"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="342,78,445,102,444,107,341,83"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="341,101,415,83,416,89,342,106"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="379,116,433,117,433,122,379,121"/>
+</map>

@@ -1,0 +1,428 @@
+\doxysection{Track\+Sense Class Reference}
+\hypertarget{classTrackSense}{}\label{classTrackSense}\index{TrackSense@{TrackSense}}
+
+
+Representa um sensor GPS (GY-\/\+GPS6\+MV2 ou Simulado).  
+
+
+
+
+{\ttfamily \#include $<$Track\+Sense.\+hpp$>$}
+
+
+
+Collaboration diagram for Track\+Sense\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrackSense__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structTrackSense_1_1GPSData}{GPSData}}
+\begin{DoxyCompactList}\small\item\em Struct para armazenar dados GPS ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTrackSense_a13d41ec134d85d7aab623c654ee43f2a}{Track\+Sense}} (const std\+::string \&ip\+\_\+destino, int porta\+\_\+destino, const std\+::string \&porta\+\_\+serial="{}"{})
+\begin{DoxyCompactList}\small\item\em Construtor da Classe. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTrackSense_a99b92a73aca77c357cea5b34dad60cec}{\texorpdfstring{$\sim$}{\string~}\+Track\+Sense}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor da Classe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTrackSense_aea41a182986beda916a8f7ad8f0e5699}{init}} ()
+\begin{DoxyCompactList}\small\item\em Inicia thread de leitura de dados do GPS e envio UDP. Há garantia de instância única. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTrackSense_afbc696c7cc07f34485e81871688265d2}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Finaliza a thread de trabalho. ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTrackSense_a3d2ecdc75e0cd21a77718e596bbfa080}{\+\_\+open\+\_\+serial}} ()
+\begin{DoxyCompactList}\small\item\em Abre e configure a porta serial do GPS, possibilitando a leitura direta. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classTrackSense_aa6189bf1f9a0eece69edd42887d504ac}{\+\_\+ler\+\_\+dados}} ()
+\begin{DoxyCompactList}\small\item\em Responsável por ler os dados emitos na porta serial. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTrackSense_a989d3a03192dfef312706337b19829f2}{\+\_\+parser\+\_\+rmc}} (const std\+::string \&frase, \mbox{\hyperlink{structTrackSense_1_1GPSData}{GPSData}} \&data)
+\begin{DoxyCompactList}\small\item\em Interpretará os dados caso venham no padrão RMC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTrackSense_ad2249b2d86c543850346620c0f1a86cc}{\+\_\+parser\+\_\+gga}} (const std\+::string \&frase, \mbox{\hyperlink{structTrackSense_1_1GPSData}{GPSData}} \&data)
+\begin{DoxyCompactList}\small\item\em Interpretará os dados caso venham no padrão GGA ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTrackSense_a64a0044078ab2ceeb607c18562baed07}{\+\_\+loop}} ()
+\begin{DoxyCompactList}\small\item\em Responsável pelo loop principal de leitura, interpretação e envio via UDP. ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classTrackSense_af1c448cc7e7fcc6f0fac90abbcfebfa3}{split}} (const std\+::string \&string\+\_\+de\+\_\+entrada, char separador)
+\begin{DoxyCompactList}\small\item\em Função estática auxiliar para separar string em vetores de string. Similar ao método {\ttfamily split} do python. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{classTrackSense_a1644e091e07a2aab03251397a04580a6}{converter\+\_\+lat\+\_\+long}} (const std\+::string \&valor, const std\+::string \&hemisf)
+\begin{DoxyCompactList}\small\item\em Função estática auxiliar para converter latitude e longitude para graus decimais. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classTrackSense_a09dd49a222513b4d015c7dae17d9e771}{formatar\+\_\+csv}} (const \mbox{\hyperlink{structTrackSense_1_1GPSData}{GPSData}} \&data)
+\begin{DoxyCompactList}\small\item\em Função estática auxiliar para formar string .csv. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classTrackSense_a9892f94dd5ec674e849850161a99d700}{\+\_\+ip\+\_\+destino}}
+\item 
+int \mbox{\hyperlink{classTrackSense_ad6fdb1cbb5f2a5bb5d5b24e678aa6f7a}{\+\_\+porta\+\_\+destino}}
+\item 
+int \mbox{\hyperlink{classTrackSense_a11ddf21e8846316afe582c3adc300c08}{\+\_\+sockfd}}
+\item 
+sockaddr\+\_\+in \mbox{\hyperlink{classTrackSense_ad5ce2c9bc2faedc646585a0ce154c7d6}{\+\_\+addr\+\_\+dest}}
+\item 
+std\+::thread \mbox{\hyperlink{classTrackSense_a5cece4f565cac71e4b7e99198541dc9e}{\+\_\+worker}}
+\item 
+std\+::atomic$<$ bool $>$ \mbox{\hyperlink{classTrackSense_aeb4164a9c6abe0bed4c8347b0947b785}{\+\_\+is\+\_\+exec}} \{false\}
+\item 
+\mbox{\hyperlink{structTrackSense_1_1GPSData}{GPSData}} \mbox{\hyperlink{classTrackSense_a05badfcbb3e59861fffa077d1227d33e}{\+\_\+last\+\_\+data\+\_\+given}} \{\}
+\item 
+std\+::string \mbox{\hyperlink{classTrackSense_a2c7685e6603b4107468b70d38ba3275d}{\+\_\+porta\+\_\+serial}}
+\item 
+int \mbox{\hyperlink{classTrackSense_ade3ec58704403477d3ef7346fdb99db9}{\+\_\+fd\+\_\+serial}} = -\/1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa um sensor GPS (GY-\/\+GPS6\+MV2 ou Simulado). 
+
+Responsável por\+:
+\begin{DoxyItemize}
+\item Obter informações GNSS reais ou simuladas
+\item Interpretar e armazenar esses dados
+\item Enviar os dados via socket UDP em formato CSV
+\end{DoxyItemize}
+
+Para atender essas necessidades, foi implementada diversas funções independentes em thread e com formas inteligentes de organização. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTrackSense_a13d41ec134d85d7aab623c654ee43f2a}\label{classTrackSense_a13d41ec134d85d7aab623c654ee43f2a} 
+\index{TrackSense@{TrackSense}!TrackSense@{TrackSense}}
+\index{TrackSense@{TrackSense}!TrackSense@{TrackSense}}
+\doxysubsubsection{\texorpdfstring{TrackSense()}{TrackSense()}}
+{\footnotesize\ttfamily Track\+Sense\+::\+Track\+Sense (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ip\+\_\+destino,  }\item[{int}]{porta\+\_\+destino,  }\item[{const std\+::string \&}]{porta\+\_\+serial = {\ttfamily "{}"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor da Classe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip\+\_\+destino} & Endereço IP de destiono. \\
+\hline
+{\em porta\+\_\+destino} & Porta UDP de destino \\
+\hline
+{\em porta\+\_\+serial} & Caminho da porta serial\\
+\hline
+\end{DoxyParams}
+Inicializa ferramentas de conexão socket UDP. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrackSense_a13d41ec134d85d7aab623c654ee43f2a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTrackSense_a99b92a73aca77c357cea5b34dad60cec}\label{classTrackSense_a99b92a73aca77c357cea5b34dad60cec} 
+\index{TrackSense@{TrackSense}!````~TrackSense@{\texorpdfstring{$\sim$}{\string~}TrackSense}}
+\index{````~TrackSense@{\texorpdfstring{$\sim$}{\string~}TrackSense}!TrackSense@{TrackSense}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}TrackSense()}{\string~TrackSense()}}
+{\footnotesize\ttfamily Track\+Sense\+::\texorpdfstring{$\sim$}{\string~}\+Track\+Sense (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destrutor da Classe. 
+
+Interrompe thread e finaliza socket Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrackSense_a99b92a73aca77c357cea5b34dad60cec_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTrackSense_aa6189bf1f9a0eece69edd42887d504ac}\label{classTrackSense_aa6189bf1f9a0eece69edd42887d504ac} 
+\index{TrackSense@{TrackSense}!\_ler\_dados@{\_ler\_dados}}
+\index{\_ler\_dados@{\_ler\_dados}!TrackSense@{TrackSense}}
+\doxysubsubsection{\texorpdfstring{\_ler\_dados()}{\_ler\_dados()}}
+{\footnotesize\ttfamily std\+::string Track\+Sense\+::\+\_\+ler\+\_\+dados (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Responsável por ler os dados emitos na porta serial. 
+
+Utiliza um buffer de 256 caracteres. Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrackSense_aa6189bf1f9a0eece69edd42887d504ac_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTrackSense_a64a0044078ab2ceeb607c18562baed07}\label{classTrackSense_a64a0044078ab2ceeb607c18562baed07} 
+\index{TrackSense@{TrackSense}!\_loop@{\_loop}}
+\index{\_loop@{\_loop}!TrackSense@{TrackSense}}
+\doxysubsubsection{\texorpdfstring{\_loop()}{\_loop()}}
+{\footnotesize\ttfamily void Track\+Sense\+::\+\_\+loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Responsável pelo loop principal de leitura, interpretação e envio via UDP. ~\newline
+ 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrackSense_a64a0044078ab2ceeb607c18562baed07_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrackSense_a64a0044078ab2ceeb607c18562baed07_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTrackSense_a3d2ecdc75e0cd21a77718e596bbfa080}\label{classTrackSense_a3d2ecdc75e0cd21a77718e596bbfa080} 
+\index{TrackSense@{TrackSense}!\_open\_serial@{\_open\_serial}}
+\index{\_open\_serial@{\_open\_serial}!TrackSense@{TrackSense}}
+\doxysubsubsection{\texorpdfstring{\_open\_serial()}{\_open\_serial()}}
+{\footnotesize\ttfamily void Track\+Sense\+::\+\_\+open\+\_\+serial (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Abre e configure a porta serial do GPS, possibilitando a leitura direta. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrackSense_a3d2ecdc75e0cd21a77718e596bbfa080_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTrackSense_ad2249b2d86c543850346620c0f1a86cc}\label{classTrackSense_ad2249b2d86c543850346620c0f1a86cc} 
+\index{TrackSense@{TrackSense}!\_parser\_gga@{\_parser\_gga}}
+\index{\_parser\_gga@{\_parser\_gga}!TrackSense@{TrackSense}}
+\doxysubsubsection{\texorpdfstring{\_parser\_gga()}{\_parser\_gga()}}
+{\footnotesize\ttfamily void Track\+Sense\+::\+\_\+parser\+\_\+gga (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{frase,  }\item[{\mbox{\hyperlink{structTrackSense_1_1GPSData}{GPSData}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Interpretará os dados caso venham no padrão GGA ~\newline
+ 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em frase} & Entrada recebida na porta serial \\
+\hline
+\mbox{\texttt{ out}}  & {\em data} & Último conjunto de dados \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrackSense_ad2249b2d86c543850346620c0f1a86cc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrackSense_ad2249b2d86c543850346620c0f1a86cc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTrackSense_a989d3a03192dfef312706337b19829f2}\label{classTrackSense_a989d3a03192dfef312706337b19829f2} 
+\index{TrackSense@{TrackSense}!\_parser\_rmc@{\_parser\_rmc}}
+\index{\_parser\_rmc@{\_parser\_rmc}!TrackSense@{TrackSense}}
+\doxysubsubsection{\texorpdfstring{\_parser\_rmc()}{\_parser\_rmc()}}
+{\footnotesize\ttfamily void Track\+Sense\+::\+\_\+parser\+\_\+rmc (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{frase,  }\item[{\mbox{\hyperlink{structTrackSense_1_1GPSData}{GPSData}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Interpretará os dados caso venham no padrão RMC. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em frase} & Entrada recebida na porta serial \\
+\hline
+\mbox{\texttt{ out}}  & {\em data} & Último conjunto de dados \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrackSense_a989d3a03192dfef312706337b19829f2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrackSense_a989d3a03192dfef312706337b19829f2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTrackSense_a1644e091e07a2aab03251397a04580a6}\label{classTrackSense_a1644e091e07a2aab03251397a04580a6} 
+\index{TrackSense@{TrackSense}!converter\_lat\_long@{converter\_lat\_long}}
+\index{converter\_lat\_long@{converter\_lat\_long}!TrackSense@{TrackSense}}
+\doxysubsubsection{\texorpdfstring{converter\_lat\_long()}{converter\_lat\_long()}}
+{\footnotesize\ttfamily static double Track\+Sense\+::converter\+\_\+lat\+\_\+long (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{valor,  }\item[{const std\+::string \&}]{hemisf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Função estática auxiliar para converter latitude e longitude para graus decimais. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & String representante da medida de latitude ou longitude. \\
+\hline
+{\em hemisf} & String representante do hemisfério. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrackSense_a1644e091e07a2aab03251397a04580a6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTrackSense_a09dd49a222513b4d015c7dae17d9e771}\label{classTrackSense_a09dd49a222513b4d015c7dae17d9e771} 
+\index{TrackSense@{TrackSense}!formatar\_csv@{formatar\_csv}}
+\index{formatar\_csv@{formatar\_csv}!TrackSense@{TrackSense}}
+\doxysubsubsection{\texorpdfstring{formatar\_csv()}{formatar\_csv()}}
+{\footnotesize\ttfamily static std\+::string Track\+Sense\+::formatar\+\_\+csv (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTrackSense_1_1GPSData}{GPSData}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Função estática auxiliar para formar string .csv. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrackSense_a09dd49a222513b4d015c7dae17d9e771_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTrackSense_aea41a182986beda916a8f7ad8f0e5699}\label{classTrackSense_aea41a182986beda916a8f7ad8f0e5699} 
+\index{TrackSense@{TrackSense}!init@{init}}
+\index{init@{init}!TrackSense@{TrackSense}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Track\+Sense\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inicia thread de leitura de dados do GPS e envio UDP. Há garantia de instância única. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrackSense_aea41a182986beda916a8f7ad8f0e5699_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{classTrackSense_aea41a182986beda916a8f7ad8f0e5699_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTrackSense_af1c448cc7e7fcc6f0fac90abbcfebfa3}\label{classTrackSense_af1c448cc7e7fcc6f0fac90abbcfebfa3} 
+\index{TrackSense@{TrackSense}!split@{split}}
+\index{split@{split}!TrackSense@{TrackSense}}
+\doxysubsubsection{\texorpdfstring{split()}{split()}}
+{\footnotesize\ttfamily static std\+::vector$<$ std\+::string $>$ Track\+Sense\+::split (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{string\+\_\+de\+\_\+entrada,  }\item[{char}]{separador }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Função estática auxiliar para separar string em vetores de string. Similar ao método {\ttfamily split} do python. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrackSense_af1c448cc7e7fcc6f0fac90abbcfebfa3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTrackSense_afbc696c7cc07f34485e81871688265d2}\label{classTrackSense_afbc696c7cc07f34485e81871688265d2} 
+\index{TrackSense@{TrackSense}!stop@{stop}}
+\index{stop@{stop}!TrackSense@{TrackSense}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Track\+Sense\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Finaliza a thread de trabalho. ~\newline
+ 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrackSense_afbc696c7cc07f34485e81871688265d2_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classTrackSense_ad5ce2c9bc2faedc646585a0ce154c7d6}\label{classTrackSense_ad5ce2c9bc2faedc646585a0ce154c7d6} 
+\index{TrackSense@{TrackSense}!\_addr\_dest@{\_addr\_dest}}
+\index{\_addr\_dest@{\_addr\_dest}!TrackSense@{TrackSense}}
+\doxysubsubsection{\texorpdfstring{\_addr\_dest}{\_addr\_dest}}
+{\footnotesize\ttfamily sockaddr\+\_\+in Track\+Sense\+::\+\_\+addr\+\_\+dest\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classTrackSense_ade3ec58704403477d3ef7346fdb99db9}\label{classTrackSense_ade3ec58704403477d3ef7346fdb99db9} 
+\index{TrackSense@{TrackSense}!\_fd\_serial@{\_fd\_serial}}
+\index{\_fd\_serial@{\_fd\_serial}!TrackSense@{TrackSense}}
+\doxysubsubsection{\texorpdfstring{\_fd\_serial}{\_fd\_serial}}
+{\footnotesize\ttfamily int Track\+Sense\+::\+\_\+fd\+\_\+serial = -\/1\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classTrackSense_a9892f94dd5ec674e849850161a99d700}\label{classTrackSense_a9892f94dd5ec674e849850161a99d700} 
+\index{TrackSense@{TrackSense}!\_ip\_destino@{\_ip\_destino}}
+\index{\_ip\_destino@{\_ip\_destino}!TrackSense@{TrackSense}}
+\doxysubsubsection{\texorpdfstring{\_ip\_destino}{\_ip\_destino}}
+{\footnotesize\ttfamily std\+::string Track\+Sense\+::\+\_\+ip\+\_\+destino\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classTrackSense_aeb4164a9c6abe0bed4c8347b0947b785}\label{classTrackSense_aeb4164a9c6abe0bed4c8347b0947b785} 
+\index{TrackSense@{TrackSense}!\_is\_exec@{\_is\_exec}}
+\index{\_is\_exec@{\_is\_exec}!TrackSense@{TrackSense}}
+\doxysubsubsection{\texorpdfstring{\_is\_exec}{\_is\_exec}}
+{\footnotesize\ttfamily std\+::atomic$<$bool$>$ Track\+Sense\+::\+\_\+is\+\_\+exec \{false\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classTrackSense_a05badfcbb3e59861fffa077d1227d33e}\label{classTrackSense_a05badfcbb3e59861fffa077d1227d33e} 
+\index{TrackSense@{TrackSense}!\_last\_data\_given@{\_last\_data\_given}}
+\index{\_last\_data\_given@{\_last\_data\_given}!TrackSense@{TrackSense}}
+\doxysubsubsection{\texorpdfstring{\_last\_data\_given}{\_last\_data\_given}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTrackSense_1_1GPSData}{GPSData}} Track\+Sense\+::\+\_\+last\+\_\+data\+\_\+given \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classTrackSense_ad6fdb1cbb5f2a5bb5d5b24e678aa6f7a}\label{classTrackSense_ad6fdb1cbb5f2a5bb5d5b24e678aa6f7a} 
+\index{TrackSense@{TrackSense}!\_porta\_destino@{\_porta\_destino}}
+\index{\_porta\_destino@{\_porta\_destino}!TrackSense@{TrackSense}}
+\doxysubsubsection{\texorpdfstring{\_porta\_destino}{\_porta\_destino}}
+{\footnotesize\ttfamily int Track\+Sense\+::\+\_\+porta\+\_\+destino\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classTrackSense_a2c7685e6603b4107468b70d38ba3275d}\label{classTrackSense_a2c7685e6603b4107468b70d38ba3275d} 
+\index{TrackSense@{TrackSense}!\_porta\_serial@{\_porta\_serial}}
+\index{\_porta\_serial@{\_porta\_serial}!TrackSense@{TrackSense}}
+\doxysubsubsection{\texorpdfstring{\_porta\_serial}{\_porta\_serial}}
+{\footnotesize\ttfamily std\+::string Track\+Sense\+::\+\_\+porta\+\_\+serial\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classTrackSense_a11ddf21e8846316afe582c3adc300c08}\label{classTrackSense_a11ddf21e8846316afe582c3adc300c08} 
+\index{TrackSense@{TrackSense}!\_sockfd@{\_sockfd}}
+\index{\_sockfd@{\_sockfd}!TrackSense@{TrackSense}}
+\doxysubsubsection{\texorpdfstring{\_sockfd}{\_sockfd}}
+{\footnotesize\ttfamily int Track\+Sense\+::\+\_\+sockfd\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classTrackSense_a5cece4f565cac71e4b7e99198541dc9e}\label{classTrackSense_a5cece4f565cac71e4b7e99198541dc9e} 
+\index{TrackSense@{TrackSense}!\_worker@{\_worker}}
+\index{\_worker@{\_worker}!TrackSense@{TrackSense}}
+\doxysubsubsection{\texorpdfstring{\_worker}{\_worker}}
+{\footnotesize\ttfamily std\+::thread Track\+Sense\+::\+\_\+worker\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{TrackSense_8hpp}{Track\+Sense.\+hpp}}\end{DoxyCompactItemize}

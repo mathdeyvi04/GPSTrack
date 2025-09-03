@@ -1,0 +1,7 @@
+<map id="TrackSense::_parser_rmc" name="TrackSense::_parser_rmc">
+<area shape="rect" id="Node000001" title="Interpretará os dados caso venham no padrão RMC." alt="" coords="5,42,188,67"/>
+<area shape="rect" id="Node000002" href="$classTrackSense.html#a1644e091e07a2aab03251397a04580a6" title="Função estática auxiliar para converter latitude e longitude para graus decimais." alt="" coords="236,5,401,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,40,222,35,223,41,189,45"/>
+<area shape="rect" id="Node000003" href="$classTrackSense.html#af1c448cc7e7fcc6f0fac90abbcfebfa3" title="Função estática auxiliar para separar string em vetores de string. Similar ao método split do python." alt="" coords="253,70,384,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,64,240,70,239,75,188,69"/>
+</map>

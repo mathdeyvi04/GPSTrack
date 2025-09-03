@@ -1,0 +1,14 @@
+<map id="TrackSense::split" name="TrackSense::split">
+<area shape="rect" id="Node000001" title="Função estática auxiliar para separar string em vetores de string. Similar ao método split do python." alt="" coords="697,31,828,56"/>
+<area shape="rect" id="Node000002" href="$classTrackSense.html#ad2249b2d86c543850346620c0f1a86cc" title="Interpretará os dados caso venham no padrão GGA" alt="" coords="467,5,649,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="683,36,649,32,650,27,684,31"/>
+<area shape="rect" id="Node000006" href="$classTrackSense.html#a989d3a03192dfef312706337b19829f2" title="Interpretará os dados caso venham no padrão RMC." alt="" coords="467,55,649,80"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="684,55,650,59,649,54,683,50"/>
+<area shape="rect" id="Node000003" href="$classTrackSense.html#a64a0044078ab2ceeb607c18562baed07" title="Responsável pelo loop principal de leitura, interpretação e envio via UDP." alt="" coords="280,31,419,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="453,33,420,38,419,32,453,28"/>
+<area shape="rect" id="Node000004" href="$classTrackSense.html#aea41a182986beda916a8f7ad8f0e5699" title="Inicia thread de leitura de dados do GPS e envio UDP. Há garantia de instância única." alt="" coords="108,31,232,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="266,46,233,46,233,41,266,41"/>
+<area shape="rect" id="Node000005" href="$debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,60,56"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="94,46,60,46,60,41,94,41"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="453,58,419,54,420,49,453,53"/>
+</map>

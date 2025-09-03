@@ -1,0 +1,7 @@
+<map id="GPSSim::_loop" name="GPSSim::_loop">
+<area shape="rect" id="Node000001" title="Loop principal de geração de dados." alt="" coords="259,5,375,31"/>
+<area shape="rect" id="Node000002" href="$classGPSSim.html#a035f71a80ed040b260f68276d531de79" title="Inicia a geração de frases no padrão NMEA em uma thread separada." alt="" coords="108,5,211,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="245,21,211,21,211,15,245,15"/>
+<area shape="rect" id="Node000003" href="$debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>

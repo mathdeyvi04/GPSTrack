@@ -1,0 +1,14 @@
+<map id="GPSSim::formatar_inteiro" name="GPSSim::formatar_inteiro">
+<area shape="rect" id="Node000001" title="Formatada um número inteiro com dois dígitos, preenchendo com zero à esquerda." alt="" coords="636,45,823,70"/>
+<area shape="rect" id="Node000002" href="$classGPSSim.html#a58123de7be940ad080865f6e916a88dc" title="Gera uma frase GGA (Global Positioning System Fix Data)" alt="" coords="423,5,588,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="626,45,588,40,588,34,627,40"/>
+<area shape="rect" id="Node000006" href="$classGPSSim.html#a23ca3649aba044ae30d3e5cd365756b8" title="Gera uma frase RMC (Recommended Minimum Specific GNSS Data)" alt="" coords="423,69,588,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="627,75,588,80,588,75,626,69"/>
+<area shape="rect" id="Node000003" href="$classGPSSim.html#a5bc8a89ed7ee69e64d2de2e1d3934e0f" title="Loop principal de geração de dados." alt="" coords="259,45,375,70"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="410,44,375,50,375,45,409,39"/>
+<area shape="rect" id="Node000004" href="$classGPSSim.html#a035f71a80ed040b260f68276d531de79" title="Inicia a geração de frases no padrão NMEA em uma thread separada." alt="" coords="108,45,211,70"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="245,60,211,60,211,55,245,55"/>
+<area shape="rect" id="Node000005" href="$debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,45,60,70"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="94,60,60,60,60,55,94,55"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="409,76,375,70,375,65,410,70"/>
+</map>

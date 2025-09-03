@@ -231,6 +231,7 @@ private:
             return std::string(buffer);
         }
 
+        std::cout << "\nNada a ser lido..." << std::endl;
         return {};
 	}
 
@@ -373,6 +374,7 @@ public:
 			_worker.joinable()
 		){
 
+			std::cout << "\nSaindo da thread de leitura." << std::endl;
 			_worker.join();
 		}
 	}

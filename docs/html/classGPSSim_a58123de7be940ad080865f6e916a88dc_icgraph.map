@@ -1,0 +1,9 @@
+<map id="GPSSim::_gerar_corpo_de_frase_gga" name="GPSSim::_gerar_corpo_de_frase_gga">
+<area shape="rect" id="Node000001" title="Gera uma frase GGA (Global Positioning System Fix Data)" alt="" coords="423,5,588,45"/>
+<area shape="rect" id="Node000002" href="$classGPSSim.html#a5bc8a89ed7ee69e64d2de2e1d3934e0f" title="Loop principal de geração de dados." alt="" coords="259,13,375,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="409,28,375,28,375,23,409,23"/>
+<area shape="rect" id="Node000003" href="$classGPSSim.html#a035f71a80ed040b260f68276d531de79" title="Inicia a geração de frases no padrão NMEA em uma thread separada." alt="" coords="108,13,211,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="245,28,211,28,211,23,245,23"/>
+<area shape="rect" id="Node000004" href="$debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,13,60,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="94,28,60,28,60,23,94,23"/>
+</map>
