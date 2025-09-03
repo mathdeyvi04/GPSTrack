@@ -285,7 +285,7 @@
 \DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ gga\ =\ \mbox{\hyperlink{classGPSSim_a58123de7be940ad080865f6e916a88dc}{\_gerar\_corpo\_de\_frase\_gga}}(\mbox{\hyperlink{classGPSSim_a1087d219695c39ef323ceb3041ddbe92}{\_lat\_sim}},\ \mbox{\hyperlink{classGPSSim_a96435e4a82e5fc2f562118d159836d81}{\_lon\_sim}},\ \mbox{\hyperlink{classGPSSim_a1503ce4821dbe4f3dc5d90bb85dfe7ca}{\_alt}},\ 10,\ 0.8);\ \ }
 \DoxyCodeLine{00341\ }
 \DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ saida\ =\ rmc\ +\ gga;}
-\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)033[7mGPS6MV2\ Simulado\ Emitindo:\(\backslash\)033[0m\ \(\backslash\)n"{}}\ <<\ saida\ <<\ std::endl;}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}\(\backslash\)033[7mGPS6MV2\ Simulado\ Emitindo:\(\backslash\)033[0m\ \(\backslash\)n"{}\ <<\ saida\ <<\ std::endl;}}
 \DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ (void)!::write(\mbox{\hyperlink{classGPSSim_a19fbc44ac45a1ddced9b1577e9b3eeb5}{\_fd\_pai}},\ saida.data(),\ saida.size());}
 \DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Aguarda\ o\ próximo\ ciclo}}

@@ -79,7 +79,10 @@
 \contentsline {section}{\numberline {2.2}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}GPSSim.hpp File Reference}{26}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Detailed Description}{27}{subsection.2.2.1}%
 \contentsline {section}{\numberline {2.3}GPSSim.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{27}{section.2.3}%
-\contentsline {section}{\numberline {2.4}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Track\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Sense.hpp File Reference}{32}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Detailed Description}{33}{subsection.2.4.1}%
-\contentsline {section}{\numberline {2.5}Track\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Sense.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{33}{section.2.5}%
-\contentsline {chapter}{Index}{37}{section*.56}%
+\contentsline {section}{\numberline {2.4}src/main.cpp File Reference}{32}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Function Documentation}{32}{subsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.1.1}main()}{32}{subsubsection.2.4.1.1}%
+\contentsline {section}{\numberline {2.5}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Track\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Sense.hpp File Reference}{33}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Detailed Description}{34}{subsection.2.5.1}%
+\contentsline {section}{\numberline {2.6}Track\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Sense.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{34}{section.2.6}%
+\contentsline {chapter}{Index}{39}{section*.59}%

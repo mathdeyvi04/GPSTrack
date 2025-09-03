@@ -28,7 +28,7 @@ int main(){
 			  << "\n";
 	gps_module.init();
 
-    //std::this_thread::sleep_for(std::chrono::seconds(3));
+	std::this_thread::sleep_for(std::chrono::seconds(3));
 
 	TrackSense sensor(
 		"127.0.0.1",
@@ -37,7 +37,7 @@ int main(){
 	);
 	sensor.init();
 
-	std::this_thread::sleep_for(std::chrono::seconds(150));
+	std::this_thread::sleep_for(std::chrono::seconds(10));
 	sensor.stop();
 	gps_module.stop();
 	return 0;

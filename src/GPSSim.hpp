@@ -340,7 +340,7 @@ private:
             auto gga = _gerar_corpo_de_frase_gga(_lat_sim, _lon_sim, _alt, 10, 0.8);  
 
             const std::string saida = rmc + gga;
-            std::cout << "\033[7mGPS6MV2 Simulado Emitindo:\033[0m \n" << saida << std::endl;
+            // std::cout << "\033[7mGPS6MV2 Simulado Emitindo:\033[0m \n" << saida << std::endl;
             (void)!::write(_fd_pai, saida.data(), saida.size());
             
             // Aguarda o próximo ciclo

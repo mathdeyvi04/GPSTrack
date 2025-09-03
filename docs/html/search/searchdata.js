@@ -2,7 +2,7 @@ var indexSectionsWithContent =
 {
   0: "_acdfghilmostv~",
   1: "gt",
-  2: "dgt",
+  2: "dgmt",
   3: "_cfgimost~",
   4: "_ahlstv"
 };

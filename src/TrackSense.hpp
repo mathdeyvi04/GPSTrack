@@ -39,8 +39,8 @@
  * @brief Representa um sensor GPS (GY-GPS6MV2 ou Simulado).
  * @details
  * Responsável por:
- * - Obter informações GNSS reais ou simuladas
- * - Interpretar e armazenar esses dados
+ * - Obter informações GNSS reais ou simuladas ( _ler_dados() )
+ * - Interpretar esses dados ( _parser_rmc && _parser_gga )
  * - Enviar os dados via socket UDP em formato CSV
  * 
  * Para atender essas necessidades, foi implementada diversas funções 
@@ -62,7 +62,6 @@ public:
 		int     sat;
 		double hdop;
 	};
-
 
 private:
 	// Relacionadas ao Envio UDP
@@ -124,7 +123,17 @@ private:
 
 		if( valor.empty() ){ return 0.0; }
 		
-		double valor_cru = std::stod(valor);
+		double valor_cru = 0;
+		try {
+
+			valor_cru = std::stod(valor);
+		}
+		catch (std::invalid_argument&) {
+
+			std::cout << "\033[1;31mErro dentro de converter_lat_long, valor inválido para stod: \033[0m"
+					  << valor
+					  << std::endl;
+		}
 		double graus = floor(valor_cru / 100);
 		double minutos = valor_cru - graus * 100;
 		double dec = (graus + minutos / 60.0) * ( (hemisf == "S" || hemisf == "W" ) ? -1 : 1 );
@@ -168,7 +177,7 @@ private:
 			_fd_serial < 0
 		){
 
-			throw std::runtime_error("Erro ao abrir porta serial do GPS");
+			throw std::runtime_error("\033[1;31mErro ao abrir porta serial do GPS\033[0m");
 		}
 
 		// Verificamos a porta serial de leitura
@@ -180,7 +189,7 @@ private:
 				       ) != 0
 		){
 
-			throw std::runtime_error("Erro ao tentar entrar na porta serial, tcgetattr");
+			throw std::runtime_error("\033[1;31mErro ao tentar entrar na porta serial, especificamente, tcgetattr\033[0m");
 		}
 
 		::cfsetospeed(&tty, B115200);
@@ -206,7 +215,7 @@ private:
         			   ) != 0
         ){
 
-            throw std::runtime_error("Erro tcsetattr");
+            throw std::runtime_error("\033[1;31mErro ao tentar setar configurações na comunicação serial, especificamente, tcsetattr\033[0m");
         }
 	}
 
@@ -254,7 +263,17 @@ private:
 		data.time_utc = campos_de_infos[1];
 		data.lat = converter_lat_long(campos_de_infos[3], campos_de_infos[4]);
 		data.lon = converter_lat_long(campos_de_infos[5], campos_de_infos[6]);
-		data.vel = std::stod(campos_de_infos[7]) * 0.514; // Transformando de nós para m/s
+		try {
+			
+			data.vel = std::stod(campos_de_infos[7]) * 0.514; // Transformando de nós para m/s
+		} 
+		catch (std::invalid_argument&) {
+
+			std::cout << "\033[1;31mErro ao dentro de _parser_rmc, valor inválido para stod: \033[0m"
+					  << campos_de_infos[7]
+					  << std::endl;
+			data.vel = 0;
+		}
 	}
 
 	/**
@@ -304,11 +323,19 @@ private:
 
 					_parser_gga(linha, _last_data_given);
 				}
+				else{
+
+					std::cout << "\033[1;31mNão consigo codificar...: \033[0m" 
+						  << linha 
+						  << std::endl;
+					continue;
+				}	
 			}
 
 			// Então temos os dados.
 			std::cout << "\n\033[7mSensor Interpretando:\033[0m\n"
-					  << formatar_csv(_last_data_given) << std::endl;
+					  << formatar_csv(_last_data_given) 
+					  << std::endl;
 		}
 	}
 
@@ -325,15 +352,18 @@ public:
 	TrackSense(
 		const std::string& ip_destino,
 		int             porta_destino,
-		const std::string& porta_serial = ""
+		const std::string& porta_serial
 
 	) : _ip_destino(ip_destino),
 		_porta_destino(porta_destino),
 		_porta_serial(porta_serial)
 	{
 
+		// As seguintes definições existentes para a comunição UDP.
 		_sockfd = ::socket(AF_INET, SOCK_DGRAM, 0);
-		if( _sockfd < 0 ){ throw std::runtime_error("Erro ao criar socket UDP"); }
+		if( _sockfd < 0 ){
+			throw std::runtime_error("Erro ao criar socket UDP");
+		}
 
 		_addr_dest.sin_family = AF_INET;
 		_addr_dest.sin_port = ::htons(_porta_destino);
@@ -357,6 +387,7 @@ public:
 
 		if( _is_exec.exchange(true) ){ return; }
 
+		std::cout << "\033[1;32mIniciando Thread de Leitura...\033[0m" << std::endl;
 		_worker = std::thread(
 							  [this]{ _loop(); }
 							 );
@@ -374,7 +405,7 @@ public:
 			_worker.joinable()
 		){
 
-			std::cout << "\nSaindo da thread de leitura." << std::endl;
+			std::cout << "\033[1;32mSaindo da thread de leitura.\033[0m" << std::endl;
 			_worker.join();
 		}
 	}

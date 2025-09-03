@@ -155,6 +155,9 @@
 
   \item {main}
     \subitem {debug.cpp}, \hyperpage{26}
+    \subitem {main.cpp}, \hyperpage{32}
+  \item {main.cpp}
+    \subitem {main}, \hyperpage{32}
 
   \indexspace
 
@@ -171,7 +174,8 @@
     \subitem {TrackSense}, \hyperpage{21}
   \item {src/debug.cpp}, \hyperpage{25}
   \item {src/GPSSim.hpp}, \hyperpage{26, 27}
-  \item {src/TrackSense.hpp}, \hyperpage{32, 33}
+  \item {src/main.cpp}, \hyperpage{32}
+  \item {src/TrackSense.hpp}, \hyperpage{33, 34}
   \item {stop}
     \subitem {GPSSim}, \hyperpage{12}
     \subitem {TrackSense}, \hyperpage{22}

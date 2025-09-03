@@ -27,7 +27,7 @@ struct \mbox{\hyperlink{structTrackSense_1_1GPSData}{GPSData}}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classTrackSense_a13d41ec134d85d7aab623c654ee43f2a}{Track\+Sense}} (const std\+::string \&ip\+\_\+destino, int porta\+\_\+destino, const std\+::string \&porta\+\_\+serial="{}"{})
+\mbox{\hyperlink{classTrackSense_adf42fdb8508077c843a4ae10d5165346}{Track\+Sense}} (const std\+::string \&ip\+\_\+destino, int porta\+\_\+destino, const std\+::string \&porta\+\_\+serial)
 \begin{DoxyCompactList}\small\item\em Construtor da Classe. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTrackSense_a99b92a73aca77c357cea5b34dad60cec}{\texorpdfstring{$\sim$}{\string~}\+Track\+Sense}} ()
 \begin{DoxyCompactList}\small\item\em Destrutor da Classe. \end{DoxyCompactList}\item 
@@ -96,11 +96,11 @@ Responsável por\+:
 Para atender essas necessidades, foi implementada diversas funções independentes em thread e com formas inteligentes de organização. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classTrackSense_a13d41ec134d85d7aab623c654ee43f2a}\label{classTrackSense_a13d41ec134d85d7aab623c654ee43f2a} 
+\Hypertarget{classTrackSense_adf42fdb8508077c843a4ae10d5165346}\label{classTrackSense_adf42fdb8508077c843a4ae10d5165346} 
 \index{TrackSense@{TrackSense}!TrackSense@{TrackSense}}
 \index{TrackSense@{TrackSense}!TrackSense@{TrackSense}}
 \doxysubsubsection{\texorpdfstring{TrackSense()}{TrackSense()}}
-{\footnotesize\ttfamily Track\+Sense\+::\+Track\+Sense (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ip\+\_\+destino,  }\item[{int}]{porta\+\_\+destino,  }\item[{const std\+::string \&}]{porta\+\_\+serial = {\ttfamily "{}"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Track\+Sense\+::\+Track\+Sense (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ip\+\_\+destino,  }\item[{int}]{porta\+\_\+destino,  }\item[{const std\+::string \&}]{porta\+\_\+serial }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -115,11 +115,12 @@ Construtor da Classe.
 {\em porta\+\_\+serial} & Caminho da porta serial\\
 \hline
 \end{DoxyParams}
-Inicializa ferramentas de conexão socket UDP. Here is the call graph for this function\+:\nopagebreak
+Inicializa ferramentas de conexão socket UDP. Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classTrackSense_a13d41ec134d85d7aab623c654ee43f2a_cgraph}
+\includegraphics[width=350pt]{classTrackSense_adf42fdb8508077c843a4ae10d5165346_cgraph}
 \end{center}
 \end{figure}
 \Hypertarget{classTrackSense_a99b92a73aca77c357cea5b34dad60cec}\label{classTrackSense_a99b92a73aca77c357cea5b34dad60cec} 
@@ -194,7 +195,8 @@ Here is the caller graph for this function\+:\nopagebreak
 
 Abre e configure a porta serial do GPS, possibilitando a leitura direta. 
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
