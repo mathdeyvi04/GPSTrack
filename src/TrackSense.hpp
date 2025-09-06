@@ -1,8 +1,6 @@
 /**
  * @file TrackSense.hpp
- * @brief Implementação da Classe Sensora do Módulo GPS6MV2
- * @details 
- * Responsável por ler, interpretar e enviar dados via UDP.
+ * @brief Implementação da solução embarcada.
  */
 #ifndef TRACKSENSE_HPP
 #define TRACKSENSE_HPP
@@ -26,7 +24,7 @@
  
 #include <stdexcept>
 
-// Sistemas Linux
+// Específicos de Sistemas Linux
 #include <fcntl.h>
 #include <termios.h>
 #include <unistd.h>
@@ -36,15 +34,12 @@
 
 /**
  * @class TrackSense
- * @brief Representa um sensor GPS (GY-GPS6MV2 ou Simulado).
+ * @brief Classe responsável por obter o tracking da carga.
  * @details
- * Responsável por:
- * - Obter informações GNSS reais ou simuladas ( _ler_dados() )
- * - Interpretar esses dados ( _parser_rmc && _parser_gga )
- * - Enviar os dados via socket UDP em formato CSV
- * 
- * Para atender essas necessidades, foi implementada diversas funções 
- * independentes em thread e com formas inteligentes de organização.
+ * Responsabilidades:
+ * - Obter dados GNSS reais ou simuladas
+ * - Interpretar esses dados, gerando informações
+ * - Enviar as informações via socket UDP em formato CSV
  */
 class TrackSense {
 public:
@@ -65,30 +60,34 @@ public:
 
 private:
 	// Relacionadas ao Envio UDP
-	std::string _ip_destino; 
-	int      _porta_destino;
-	int             _sockfd;
-	sockaddr_in  _addr_dest;
+	std::string ip_destino; 
+	int      porta_destino;
+	int             sockfd;
+	sockaddr_in  addr_dest;
 
-	// Relacionados ao trabalho de leitura
-	std::thread               _worker;
+	// Relacionados ao fluxo de funcionamento
+	std::thread                worker;
 	std::atomic<bool> _is_exec{false};
 
-	// Relacionados aos dados lidos
-	GPSData _last_data_given{};
-	std::string  _porta_serial;
-	int        _fd_serial = -1;
+	// Relacionados à comunicação com o sensor
+	GPSData   last_data_given;
+	std::string  porta_serial;
+	int        fd_serial = -1;
 
 	/**
-	 * @brief Função estática auxiliar para separar string em vetores de string. Similar ao método `split` do python.
+	 * @brief Função estática auxiliar para separar uma string em vetores de string.
+	 * @param string_de_entrada String que será fatiada.
+	 * @param separador Caractere que será a flag de separação. 
+	 * @details
+	 * Similar ao método `split` do python, utiliza ',' caractere separador default.
 	 */
 	static std::vector<std::string>
 	split(
 		const std::string& string_de_entrada,
-		char separador
+		char separador=','
 	){
 
-		std::vector<std::string> elementos;
+		std::vector<std::string>      elementos;
 		std::stringstream ss(string_de_entrada);
 
 		std::string elemento_individual;
@@ -111,62 +110,44 @@ private:
 	}
 
 	/**
-	 * @brief Função estática auxiliar para converter latitude e longitude para graus decimais.
-	 * @param valor String representante da medida de latitude ou longitude.
-	 * @param hemisf String representante do hemisfério.
+	 * @brief Função estática auxiliar para converter coordenadas NMEA (latitude/longitude) para graus decimais.
+	 * @param string_numerica  String com a coordenada em formato NMEA (ex: "2257.34613").
+	 * @param string_hemisf String com o hemisfério correspondente ("N", "S", "E", "W").
+	 * @return Coordenada em graus decimais (negativa para hemisférios Sul e Oeste).
 	 */
-	static double 
-	converter_lat_long(
-		const std::string& valor,
-		const std::string& hemisf
+	static string 
+	converter_lat_lon(
+		const std::string& string_numerica,
+		const std::string& string_hemisf
 	){
 
-		if( valor.empty() ){ return 0.0; }
+		if( string_numerica.empty() ){ return 0.0; }
 		
 		double valor_cru = 0;
 		try {
 
-			valor_cru = std::stod(valor);
+			valor_cru = std::stod(string_numerica);
 		}
 		catch (std::invalid_argument&) {
 
-			std::cout << "\033[1;31mErro dentro de converter_lat_long, valor inválido para stod: \033[0m"
-					  << valor
+			std::cout << "\033[1;31mErro dentro de converter_lat_lon, valor inválido para stod: \033[0m"
+					  << string_numerica
 					  << std::endl;
 		}
-		double graus = floor(valor_cru / 100);
+
+		// Parsing dos valores
+		double graus   = floor(valor_cru / 100);
 		double minutos = valor_cru - graus * 100;
-		double dec = (graus + minutos / 60.0) * ( (hemisf == "S" || hemisf == "W" ) ? -1 : 1 );
+		double dec     = (graus + minutos / 60.0) * ( (string_hemisf == "S" || string_hemisf == "W" ) ? -1 : 1 );
 
 		return dec;
-	}
-
-	/**
-	 * @brief Função estática auxiliar para formar string .csv	
-	 */
-	static std::string
-	formatar_csv(
-		const GPSData& data
-	){
-
-		std::ostringstream oss;
-		oss << data.time_utc << ","
-			<< std::fixed     << std::setprecision(6)
-			<< data.lat       << ","
-			<< data.lon       << ","
-			<< std::setprecision(2) << data.vel << ","
-			<< data.alt << ","
-			<< data.sat << ","
-			<< data.hdop;
-
-		return oss.str();
 	}
 
 	/**
 	 * 	@brief Abre e configure a porta serial do GPS, possibilitando a leitura direta.
 	 */
 	void
-	_open_serial(){
+	open_serial(){
 
 		_fd_serial = ::open(
 							_porta_serial.c_str(),
@@ -192,20 +173,32 @@ private:
 			throw std::runtime_error("\033[1;31mErro ao tentar entrar na porta serial, especificamente, tcgetattr\033[0m");
 		}
 
-		::cfsetospeed(&tty, B115200);
-        ::cfsetispeed(&tty, B115200);
+		::cfsetospeed(&tty, B9600);
+        ::cfsetispeed(&tty, B9600);
 
-        // Diversas operações bit a bit
-        tty.c_cflag = (tty.c_cflag & ~CSIZE) | CS8; // 8 bits
-        tty.c_iflag &= ~IGNBRK;
-        tty.c_lflag = 0;
-        tty.c_oflag = 0;
-        tty.c_cc[VMIN] = 1;
-        tty.c_cc[VTIME] = 1;
-        tty.c_cflag |= (CLOCAL | CREAD);
-        tty.c_cflag &= ~(PARENB | PARODD);
-        tty.c_cflag &= ~CSTOPB;
-        tty.c_cflag &= ~CRTSCTS;
+        cfmakeraw(&tty);
+
+        // Configuração 8N1
+		tty.c_cflag &= ~CSIZE;
+		tty.c_cflag |= CS8;        // 8 bits
+		tty.c_cflag &= ~PARENB;    // sem paridade
+		tty.c_cflag &= ~CSTOPB;    // 1 stop bit
+		tty.c_cflag &= ~CRTSCTS;   // sem controle de fluxo por hardware
+
+		// Habilita leitura e ignora modem control
+		tty.c_cflag |= (CLOCAL | CREAD);
+
+		// Não encerra a comunição serial quando 'desligamos'
+		tty.c_cflag &= ~HUPCL;
+
+		// Modo raw (sem processamento de entrada/saída)
+		tty.c_iflag &= ~IGNBRK;
+		tty.c_iflag &= ~(IXON | IXOFF | IXANY); // sem controle de fluxo por software
+		tty.c_lflag = 0;                        // sem canonical mode, echo, signals
+		tty.c_oflag = 0;
+
+		tty.c_cc[VMIN]  = 1; // lê pelo menos 1 caractere
+		tty.c_cc[VTIME] = 1; // timeout em décimos de segundo (0.1s)
 
         if( 
         	::tcsetattr(
@@ -221,28 +214,42 @@ private:
 
 	/**
 	 * @brief Responsável por ler os dados emitos na porta serial.
-	 * @details
-	 * Utiliza um buffer de 256 caracteres.
 	 */
 	std::string
 	_ler_dados(){
 
-		char buffer[100];
-		int ult_indice = read(
-			                  _fd_serial, 
-			                  buffer, 
-			                  sizeof(buffer) - 1
-			                 );
-        
-        if( ult_indice > 0 ){
+		// Devemos fazer uma leitura mais inteligente.
 
-            buffer[ult_indice] = '\0';
-            return std::string(buffer);
-        }
+		std::string buffer;
+		char caract = '\0';
 
-        std::cout << "\nNada a ser lido..." << std::endl;
-        return "";
+		while(
+			true
+		){
+
+			int n = read(
+						_fd_serial,
+						&caract,
+						1
+						);
+
+			if(n > 0){
+
+				// Então é caractere válido.
+				if(caract == '\n'){ break; }
+				if(caract != '\r'){ buffer += caract; printf("\n- {%c}", caract); } // Ignoramos o \r
+			
+			}
+			else if(n == 0){ break; } // Nada a ser lido
+			else{
+
+				throw std::runtime_error("Erro na leitura");
+			}
+		}
+
+		return buffer;
 	}
+
 
 	/**
 	 * @brief Interpretará os dados caso venham no padrão RMC.	
@@ -261,8 +268,8 @@ private:
 		if( campos_de_infos.size() < 8 ){ return; }
 
 		data.time_utc = campos_de_infos[1];
-		data.lat = converter_lat_long(campos_de_infos[3], campos_de_infos[4]);
-		data.lon = converter_lat_long(campos_de_infos[5], campos_de_infos[6]);
+		data.lat = converter_lat_lon(campos_de_infos[3], campos_de_infos[4]);
+		data.lon = converter_lat_lon(campos_de_infos[5], campos_de_infos[6]);
 		try {
 			
 			data.vel = std::stod(campos_de_infos[7]) * 0.514; // Transformando de nós para m/s
@@ -293,8 +300,8 @@ private:
 		if( campos_de_infos.size() < 10 ){ return; }
 
 		data.time_utc = campos_de_infos[1];
-		data.lat = converter_lat_long(campos_de_infos[2], campos_de_infos[3]);
-		data.lon = converter_lat_long(campos_de_infos[4], campos_de_infos[5]);
+		data.lat = converter_lat_lon(campos_de_infos[2], campos_de_infos[3]);
+		data.lon = converter_lat_lon(campos_de_infos[4], campos_de_infos[5]);
 		data.sat  = std::stoi(campos_de_infos[7]);
 		data.hdop = std::stod(campos_de_infos[8]);
 		data.alt  = std::stod(campos_de_infos[9]);
@@ -311,6 +318,9 @@ private:
 		){
 
 			std::string linha = _ler_dados();
+
+			std::cout << "Estou recebendo de forma crua: " << linha << std::endl;
+
 			if(
 				!linha.empty()
 			){
@@ -330,12 +340,14 @@ private:
 						  << std::endl;
 					continue;
 				}	
+
+				// Então temos os dados já codificados.
+				std::cout << "\n\033[7mSensor Interpretando:\033[0m\n"
+						  << formatar_csv(_last_data_given) 
+						  << std::endl;
 			}
 
-			// Então temos os dados.
-			std::cout << "\n\033[7mSensor Interpretando:\033[0m\n"
-					  << formatar_csv(_last_data_given) 
-					  << std::endl;
+			std::this_thread::sleep_for(std::chrono::seconds(1));
 		}
 	}
 

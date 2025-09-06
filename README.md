@@ -10,24 +10,23 @@
 Desenvolver uma solução embarcada usando o kit de desenvolvimento **STM32MP1 DK1** e
 o sensor **GY-GPS6MV2**, a fim de monitorar de forma remota e contínua qualquer tentativa de violação e/ou comprometimento de uma carga.
 
-Em termos mais técnicos, a aplicação deve conseguir ler e interpretar dados obtidos pelo sensor e enviá-los via UDP para um determinado servidor.
-
 # Caso Deseje Contribuir
 
 Supondo que você deseje ser um contribuinte, atente-se às necessidades da aplicação:
 
-### Conhecimentos a cerca do [Módulo GPS **GY-GPS6MV2**](https://youtu.be/lZumBl7zhoM):
+### Conhecimentos a cerca do Sensor GPS **GY-GPS6MV2**:
 
-Sugiro a observação do vídeo linkado e busca inteligente no chatgpt.
+Sugiro a observação do vídeo [linkado](https://youtu.be/lZumBl7zhoM) e busca inteligente no chatgpt.
 
 ### Kit de Desenvolvimento STM32
 
-Como o professor já detalhou esforçadamente o passo a passo da utilização da placa, focaremos em como permitir que você possa emular o 
-compilador necessário.
+O sensor deve ser conectado à placa da seguinte forma:
+
+![](https://github.com/user-attachments/assets/ea1d0935-fcd3-4160-b46f-a917f578f33d)
 
 Além do compilador padrão para verificações superficiais, será necessário um compilador específico para o microcontrolador que estamos focando. 
 
-- Download
+- Download do Compilador Cross-Plataform
 
 Verifique o [link](https://drive.google.com/file/d/1qpq3QeK5f7T061LFA0JlJz2fgMQDvyMn/view?usp=drivesdk) dado pelo professor e realize:
 
@@ -39,8 +38,6 @@ Isso descompactará o kit de desenvolvimento da placa, permitindo diversas funci
 
 > [!WARNING]
 > Não se preocupe com o tempo que demorará.
-
-- Sobre o Software STM32MP1 DK1
 
 Ao realizar a descompactação, você terá:
 
@@ -57,7 +54,7 @@ arm-buildroot-linux-gnueabihf_sdk-buildroot/
     ...
 ```
 
-Demais funcionalidades são explicadas dentro do arquivo Makefile. Utilizaremos o `...g++`.
+Observe na pasta `bin` a presente dos compiladores `gcc` e `g++`.
 
 ### Makefile
 
@@ -98,7 +95,7 @@ Será solicitado a senha e, posteriormente, o acesso será permitido.
 Para enviar arquivos para a placa, volte novamente ao PowerShell e:
 
 ```
-scp TrackSense root@192.168.42.2:/
+scp -O TrackSense root@192.168.42.2:/
 ```
 
 Assim, o arquivo estará no mesmo local que as pastas root do sistema linux. Além disso, pode ser necessário dar permissão de execução ao binário, para tanto:
@@ -112,8 +109,7 @@ A seguir, regras de compilação e execução.
 
 ### `TrackSense`
 
-O arquivo binário `TrackSense` presente neste diretório já representa o executável a ser inserido no módulo para completo
-funcionamento do módulo.
+O arquivo binário `TrackSense` presente neste diretório já representa o executável a ser inserido na placa para completa operacionalidade.
 
 ### `make`
 
@@ -137,10 +133,11 @@ Para contribuintes, gerará um PDF contendo a documentação da aplicação gera
 Classe responsável por:
 
 - Ler dados do sensor GPS6MV2
-- Interpretar os dados lidas
+- Interpretar os dados lidos
 - Enviar as informações 
 
-Cada uma dessas fases ocorrem em uma thread dedicada controlada por métodos `init` e `stop`.
+Cada uma dessas fases ocorrem em uma thread dedicada controlada por métodos `init` e `stop`. Utilizamos a thread 
+para conseguir controle absoluto sobre tempo de execução.
 
 Fluxo de Funcionamento:
 
@@ -150,26 +147,17 @@ A classe configura um socket UDP para a transmissão dos dados processados e uma
 
 - Leitura dos Dados:
 
-O método `_ler_dados` coleta os dados diretamente da porta serial em blocos de até 100 caracteres. Caso não haja dados, retornará string vazia.
+O método `ler_dados` coleta os dados diretamente da porta serial.
 
 - Interpretação dos Dados:
 
-A classe distingue os dois principais formatos _NMEA_: **RMC** e **GGA**, a partir dos métodos `_parser_rmc` e `_parser_gga`.
+
 
 - Envio de informações:
 
 _Ainda não desenvolvido_.
 
+
 Para informações mais precisas e profundas, sugiro verificar o arquivo 
 [index.html](docs/html/index.html) ou [Documentation.pdf](Documentation.pdf), sendo este último gerado pelo comando `make docs`.
-
-
-
-
-
-
-
-
-
-
 

@@ -1,6 +1,7 @@
 #include "TrackSense.hpp"
 
 
+
 int main(){
 
 	TrackSense ss(
@@ -11,7 +12,7 @@ int main(){
 
 	ss.init();
 
-	std::this_thread::sleep_for(std::chrono::seconds(120));
+	std::this_thread::sleep_for(std::chrono::seconds(10));
 
 	ss.stop();
 
