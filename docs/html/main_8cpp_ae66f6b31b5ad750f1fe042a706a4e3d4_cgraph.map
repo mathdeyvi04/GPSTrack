@@ -1,23 +1,19 @@
 <map id="main" name="main">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,105,60,131"/>
-<area shape="rect" id="Node000002" href="$classTrackSense.html#aea41a182986beda916a8f7ad8f0e5699" title="Inicia thread de leitura de dados do GPS e envio UDP. Há garantia de instância única." alt="" coords="111,80,235,105"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="60,110,97,104,98,109,61,116"/>
-<area shape="rect" id="Node000010" href="$classTrackSense.html#afbc696c7cc07f34485e81871688265d2" title="Finaliza a thread de trabalho." alt="" coords="108,129,239,155"/>
-<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="61,120,95,126,94,131,60,125"/>
-<area shape="rect" id="Node000003" href="$classTrackSense.html#a64a0044078ab2ceeb607c18562baed07" title="Responsável pelo loop principal de leitura, interpretação e envio via UDP." alt="" coords="287,80,425,105"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="236,90,273,90,273,95,236,95"/>
-<area shape="rect" id="Node000004" href="$classTrackSense.html#aa6189bf1f9a0eece69edd42887d504ac" title="Responsável por ler os dados emitos na porta serial." alt="" coords="481,5,655,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="382,78,472,39,497,32,499,37,474,45,384,82"/>
-<area shape="rect" id="Node000005" href="$classTrackSense.html#ad2249b2d86c543850346620c0f1a86cc" title="Interpretará os dados caso venham no padrão GGA" alt="" coords="477,55,659,80"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="426,82,463,77,463,83,426,87"/>
-<area shape="rect" id="Node000008" href="$classTrackSense.html#a989d3a03192dfef312706337b19829f2" title="Interpretará os dados caso venham no padrão RMC." alt="" coords="477,104,659,129"/>
-<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="426,98,463,102,463,107,426,103"/>
-<area shape="rect" id="Node000009" href="$classTrackSense.html#a09dd49a222513b4d015c7dae17d9e771" title="Função estática auxiliar para formar string .csv." alt="" coords="473,153,663,179"/>
-<area shape="poly" id="edge10_Node000003_Node000009" title=" " alt="" coords="385,103,474,139,499,147,497,152,472,145,383,108"/>
-<area shape="rect" id="Node000006" href="$classTrackSense.html#a1644e091e07a2aab03251397a04580a6" title="Função estática auxiliar para converter latitude e longitude para graus decimais." alt="" coords="711,43,876,83"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="660,63,697,62,697,68,660,68"/>
-<area shape="rect" id="Node000007" href="$classTrackSense.html#af1c448cc7e7fcc6f0fac90abbcfebfa3" title="Função estática auxiliar para separar string em vetores de string. Similar ao método split do python." alt="" coords="728,108,859,133"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="623,78,727,102,725,107,622,83"/>
-<area shape="poly" id="edge8_Node000008_Node000006" title=" " alt="" coords="622,101,697,83,698,89,623,106"/>
-<area shape="poly" id="edge9_Node000008_Node000007" title=" " alt="" coords="660,116,714,117,714,122,660,121"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,121,60,146"/>
+<area shape="rect" id="Node000002" href="$classGPSTrack.html#a30cc30a3290df68a9dcc3906811319db" title="Inicializa a thread trabalhadora." alt="" coords="112,95,223,121"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="60,126,98,118,99,124,61,131"/>
+<area shape="rect" id="Node000009" href="$classGPSTrack.html#a3ddcdc3c1599f4efa7f3938d9a5f2eee" title="Finaliza a thread de trabalho de forma segura." alt="" coords="108,145,227,170"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="61,135,95,142,94,147,60,141"/>
+<area shape="rect" id="Node000003" href="$classGPSTrack.html#a862ea0639e829e8dada744bcb7ceff64" title="Executa o loop principal de leitura, interpretação e envio de dados via UDP." alt="" coords="275,95,393,121"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="223,105,261,105,261,111,223,111"/>
+<area shape="rect" id="Node000004" href="$classGPSTrack_1_1GPSData.html#abc5308215475b647cbbb9df696597ad0" title="Setará os dados baseado no padrão de mensagem recebido." alt="" coords="445,5,600,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="360,93,440,55,456,48,458,53,442,60,362,98"/>
+<area shape="rect" id="Node000006" href="$classGPSTrack.html#a6a178747dbf11d8f8f2fb1be523e36a1" title="Lê dados da porta serial até encontrar uma quebra de linha." alt="" coords="441,70,604,95"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="393,97,427,93,428,98,394,103"/>
+<area shape="rect" id="Node000007" href="$classGPSTrack.html#a3167b347c042dc1736aa65d362e9265b" title="Função estática auxiliar para separar uma string em vetores de string." alt="" coords="463,119,582,145"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="394,113,450,120,450,125,393,118"/>
+<area shape="rect" id="Node000008" href="$classGPSTrack_1_1GPSData.html#ac125cfce08d954bf5fdf6c415bf8e5b6" title="Retorna os dados armazenados em formato CSV." alt="" coords="445,169,600,209"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="364,118,442,154,461,161,459,166,440,158,362,123"/>
+<area shape="rect" id="Node000005" href="$classGPSTrack_1_1GPSData.html#a5d80d5bd50eb5389f555be4f04ef7c3b" title="Função estática auxiliar para converter coordenadas NMEA (latitude/longitude) para graus decimais." alt="" coords="652,5,807,45"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="601,23,638,23,638,28,601,28"/>
 </map>

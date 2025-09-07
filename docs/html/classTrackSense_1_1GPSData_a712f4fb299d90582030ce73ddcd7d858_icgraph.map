@@ -1,0 +1,9 @@
+<map id="TrackSense::GPSData::to_csv" name="TrackSense::GPSData::to_csv">
+<area shape="rect" id="Node000001" title="Retorna os dados armazenados em formato CSV." alt="" coords="459,5,619,45"/>
+<area shape="rect" id="Node000002" href="$classTrackSense.html#a90d9871caac61724acd6697d89599909" title="Executa o loop principal de leitura, interpretação e envio de dados via UDP." alt="" coords="280,13,411,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="445,28,411,28,411,23,445,23"/>
+<area shape="rect" id="Node000003" href="$classTrackSense.html#aea41a182986beda916a8f7ad8f0e5699" title="Inicializa a thread trabalhadora." alt="" coords="108,13,232,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="266,28,232,28,232,23,266,23"/>
+<area shape="rect" id="Node000004" href="$debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,13,60,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="94,28,60,28,60,23,94,23"/>
+</map>

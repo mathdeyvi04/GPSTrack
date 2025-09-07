@@ -1,0 +1,5 @@
+<map id="TrackSense::open_serial" name="TrackSense::open_serial">
+<area shape="rect" id="Node000001" title="Abre e configura a porta serial para comunicação o sensor." alt="" coords="229,5,408,31"/>
+<area shape="rect" id="Node000002" href="$classTrackSense.html#a9bb33e84e3284b8d9d29803fe2b8780b" title="Construtor da Classe." alt="" coords="5,5,181,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,21,182,21,182,15,216,15"/>
+</map>

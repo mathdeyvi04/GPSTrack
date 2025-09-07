@@ -1,0 +1,9 @@
+<map id="GPSTrack::read_serial" name="GPSTrack::read_serial">
+<area shape="rect" id="Node000001" title="Lê dados da porta serial até encontrar uma quebra de linha." alt="" coords="433,5,596,31"/>
+<area shape="rect" id="Node000002" href="$classGPSTrack.html#a862ea0639e829e8dada744bcb7ceff64" title="Executa o loop principal de leitura, interpretação e envio de dados via UDP." alt="" coords="267,5,385,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="419,21,386,21,386,15,419,15"/>
+<area shape="rect" id="Node000003" href="$classGPSTrack.html#a30cc30a3290df68a9dcc3906811319db" title="Inicializa a thread trabalhadora." alt="" coords="108,5,219,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="253,21,219,21,219,15,253,15"/>
+<area shape="rect" id="Node000004" href="$debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>

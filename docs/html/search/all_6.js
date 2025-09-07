@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['hdop_0',['hdop',['../structTrackSense_1_1GPSData.html#a5b25b50085283b5266e188688ea90256',1,'TrackSense::GPSData']]]
+  ['init_0',['init',['../classGPSSim.html#a035f71a80ed040b260f68276d531de79',1,'GPSSim::init()'],['../classGPSTrack.html#a30cc30a3290df68a9dcc3906811319db',1,'GPSTrack::init()']]],
+  ['ip_5fdestino_1',['ip_destino',['../classGPSTrack.html#ad8ff2642e0fde838f3622ed9894ea141',1,'GPSTrack']]],
+  ['is_5fexec_2',['is_exec',['../classGPSTrack.html#a570c2e95bac7729fecac0e4b8dae98a6',1,'GPSTrack']]]
 ];

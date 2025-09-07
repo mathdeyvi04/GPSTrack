@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.8.14)  3 SEP 2025 11:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.8.14)  6 SEP 2025 21:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -774,78 +774,118 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 18.66588pt on input line 210.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 22.39185pt on input line 210.
-(./structTrackSense_1_1GPSData.tex
+(./classGPSTrack_1_1GPSData.tex
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 12.9599pt on input line 1.
-
-Underfull \hbox (badness 10000) in paragraph at lines 5--6
-
- []
-
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 11
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 10
 .
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) <./structTrackSense_1_1GPSData__coll__graph.pdf>
-<structTrackSense_1_1GPSData__coll__graph.pdf, id=464, 244.915pt x 209.78375pt>
-
-File: structTrackSense_1_1GPSData__coll__graph.pdf Graphic file (type pdf)
-<use structTrackSense_1_1GPSData__coll__graph.pdf>
-Package pdftex.def Info: structTrackSense_1_1GPSData__coll__graph.pdf  used on 
-input line 19.
-(pdftex.def)             Requested size: 244.0pt x 209.00536pt.
+) <./classGPSTrack_1_1GPSData__coll__graph.pdf>
+<classGPSTrack_1_1GPSData__coll__graph.pdf, id=449, 262.9825pt x 165.61874pt>
+File: classGPSTrack_1_1GPSData__coll__graph.pdf Graphic file (type pdf)
+<use classGPSTrack_1_1GPSData__coll__graph.pdf>
+Package pdftex.def Info: classGPSTrack_1_1GPSData__coll__graph.pdf  used on inp
+ut line 18.
+(pdftex.def)             Requested size: 262.0pt x 165.00676pt.
 LaTeX Font Info:    Trying to load font information for TS1+phv on input line 2
-5.
+4.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 25.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 41.
-
-Underfull \hbox (badness 10000) in paragraph at lines 42--43
-
- []
-
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 50.
-[1
-
-]) (./classGPSSim.tex <./classGPSSim__coll__graph.pdf>
-<classGPSSim__coll__graph.pdf, id=498, 804.00375pt x 253.94875pt>
-File: classGPSSim__coll__graph.pdf Graphic file (type pdf)
-<use classGPSSim__coll__graph.pdf>
-Package pdftex.def Info: classGPSSim__coll__graph.pdf  used on input line 18.
-(pdftex.def)             Requested size: 350.0pt x 110.54817pt.
-[2]
+(Font)              scaled to size 8.99994pt on input line 24.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 8.09995pt on input line 25.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 25.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 8.09995pt on input line 25.
+[1
 
+]
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 10.79993pt on input line 44.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 72.
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
+
+ []
+
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 86.
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 86.
+[2] [3]
+Underfull \hbox (badness 10000) detected at line 99
+[][][]
+ []
+
+ <./classGPSTrack_1_1GPSData_a5d80d5bd50eb5389f555be4f04ef7c3b_icgraph.pdf>
+<classGPSTrack_1_1GPSData_a5d80d5bd50eb5389f555be4f04ef7c3b_icgraph.pdf, id=493
+, 671.50874pt x 110.4125pt>
+File: classGPSTrack_1_1GPSData_a5d80d5bd50eb5389f555be4f04ef7c3b_icgraph.pdf Gr
+aphic file (type pdf)
+<use classGPSTrack_1_1GPSData_a5d80d5bd50eb5389f555be4f04ef7c3b_icgraph.pdf>
+Package pdftex.def Info: classGPSTrack_1_1GPSData_a5d80d5bd50eb5389f555be4f04ef
+7c3b_icgraph.pdf  used on input line 106.
+(pdftex.def)             Requested size: 350.0pt x 57.54791pt.
+
+Underfull \hbox (badness 10000) detected at line 126
+[][][]
+ []
+
+ <./classGPSTrack_1_1GPSData_abc5308215475b647cbbb9df696597ad0_cgraph.pdf>
+<classGPSTrack_1_1GPSData_abc5308215475b647cbbb9df696597ad0_cgraph.pdf, id=501,
+ 349.305pt x 110.4125pt>
+File: classGPSTrack_1_1GPSData_abc5308215475b647cbbb9df696597ad0_cgraph.pdf Gra
+phic file (type pdf)
+<use classGPSTrack_1_1GPSData_abc5308215475b647cbbb9df696597ad0_cgraph.pdf>
+Package pdftex.def Info: classGPSTrack_1_1GPSData_abc5308215475b647cbbb9df69659
+7ad0_cgraph.pdf  used on input line 141.
+(pdftex.def)             Requested size: 348.0pt x 110.00618pt.
+ <./classGPSTrack_1_1GPSData_abc5308215475b647cbbb9df696597ad0_icgraph.pdf>
+<classGPSTrack_1_1GPSData_abc5308215475b647cbbb9df696597ad0_icgraph.pdf, id=509
+, 518.93875pt x 110.4125pt>
+File: classGPSTrack_1_1GPSData_abc5308215475b647cbbb9df696597ad0_icgraph.pdf Gr
+aphic file (type pdf)
+<use classGPSTrack_1_1GPSData_abc5308215475b647cbbb9df696597ad0_icgraph.pdf>
+Package pdftex.def Info: classGPSTrack_1_1GPSData_abc5308215475b647cbbb9df69659
+7ad0_icgraph.pdf  used on input line 148.
+(pdftex.def)             Requested size: 350.0pt x 74.4713pt.
+[4]
+Underfull \hbox (badness 10000) detected at line 161
+[][][]
+ []
+
+ <./classGPSTrack_1_1GPSData_ac125cfce08d954bf5fdf6c415bf8e5b6_icgraph.pdf>
+<classGPSTrack_1_1GPSData_ac125cfce08d954bf5fdf6c415bf8e5b6_icgraph.pdf, id=528
+, 518.93875pt x 110.4125pt>
+File: classGPSTrack_1_1GPSData_ac125cfce08d954bf5fdf6c415bf8e5b6_icgraph.pdf Gr
+aphic file (type pdf)
+<use classGPSTrack_1_1GPSData_ac125cfce08d954bf5fdf6c415bf8e5b6_icgraph.pdf>
+Package pdftex.def Info: classGPSTrack_1_1GPSData_ac125cfce08d954bf5fdf6c415bf8
+e5b6_icgraph.pdf  used on input line 168.
+(pdftex.def)             Requested size: 350.0pt x 74.4713pt.
+) (./classGPSSim.tex <./classGPSSim__coll__graph.pdf>
+<classGPSSim__coll__graph.pdf, id=537, 804.00375pt x 253.94875pt>
+File: classGPSSim__coll__graph.pdf Graphic file (type pdf)
+<use classGPSSim__coll__graph.pdf>
+Package pdftex.def Info: classGPSSim__coll__graph.pdf  used on input line 18.
+(pdftex.def)             Requested size: 350.0pt x 110.54817pt.
+[5]
 Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
  []
 
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 54.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 6.29996pt on input line 54.
 
 Underfull \hbox (badness 10000) in paragraph at lines 54--55
 
  []
 
-[3]
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 109.
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 109.
-[4] <./classGPSSim_a7ee46b13b6a555764c544a5069854d32_cgraph.pdf>
-<classGPSSim_a7ee46b13b6a555764c544a5069854d32_cgraph.pdf, id=600, 306.14375pt 
+[6] [7] <./classGPSSim_a7ee46b13b6a555764c544a5069854d32_cgraph.pdf>
+<classGPSSim_a7ee46b13b6a555764c544a5069854d32_cgraph.pdf, id=641, 306.14375pt 
 x 99.37125pt>
 File: classGPSSim_a7ee46b13b6a555764c544a5069854d32_cgraph.pdf Graphic file (ty
 pe pdf)
@@ -853,13 +893,13 @@ pe pdf)
 Package pdftex.def Info: classGPSSim_a7ee46b13b6a555764c544a5069854d32_cgraph.p
 df  used on input line 146.
 (pdftex.def)             Requested size: 305.0pt x 99.00557pt.
-[5]
+[8]
 Underfull \hbox (badness 10000) detected at line 175
 [][][]
  []
 
  <./classGPSSim_a58123de7be940ad080865f6e916a88dc_cgraph.pdf>
-<classGPSSim_a58123de7be940ad080865f6e916a88dc_cgraph.pdf, id=618, 384.43625pt 
+<classGPSSim_a58123de7be940ad080865f6e916a88dc_cgraph.pdf, id=658, 384.43625pt 
 x 233.87375pt>
 File: classGPSSim_a58123de7be940ad080865f6e916a88dc_cgraph.pdf Graphic file (ty
 pe pdf)
@@ -868,7 +908,7 @@ Package pdftex.def Info: classGPSSim_a58123de7be940ad080865f6e916a88dc_cgraph.p
 df  used on input line 182.
 (pdftex.def)             Requested size: 350.0pt x 212.93962pt.
  <./classGPSSim_a58123de7be940ad080865f6e916a88dc_icgraph.pdf>
-<classGPSSim_a58123de7be940ad080865f6e916a88dc_icgraph.pdf, id=634, 518.93875pt
+<classGPSSim_a58123de7be940ad080865f6e916a88dc_icgraph.pdf, id=673, 518.93875pt
  x 110.4125pt>
 File: classGPSSim_a58123de7be940ad080865f6e916a88dc_icgraph.pdf Graphic file (t
 ype pdf)
@@ -876,13 +916,13 @@ ype pdf)
 Package pdftex.def Info: classGPSSim_a58123de7be940ad080865f6e916a88dc_icgraph.
 pdf  used on input line 189.
 (pdftex.def)             Requested size: 350.0pt x 74.4713pt.
-[6]
+[9]
 Underfull \hbox (badness 10000) detected at line 211
 [][][]
  []
 
  <./classGPSSim_a23ca3649aba044ae30d3e5cd365756b8_cgraph.pdf>
-<classGPSSim_a23ca3649aba044ae30d3e5cd365756b8_cgraph.pdf, id=650, 384.43625pt 
+<classGPSSim_a23ca3649aba044ae30d3e5cd365756b8_cgraph.pdf, id=689, 384.43625pt 
 x 233.87375pt>
 File: classGPSSim_a23ca3649aba044ae30d3e5cd365756b8_cgraph.pdf Graphic file (ty
 pe pdf)
@@ -890,471 +930,371 @@ pe pdf)
 Package pdftex.def Info: classGPSSim_a23ca3649aba044ae30d3e5cd365756b8_cgraph.p
 df  used on input line 218.
 (pdftex.def)             Requested size: 350.0pt x 212.93962pt.
- <./classGPSSim_a23ca3649aba044ae30d3e5cd365756b8_icgraph.pdf>
-<classGPSSim_a23ca3649aba044ae30d3e5cd365756b8_icgraph.pdf, id=665, 518.93875pt
- x 110.4125pt>
-File: classGPSSim_a23ca3649aba044ae30d3e5cd365756b8_icgraph.pdf Graphic file (t
-ype pdf)
-<use classGPSSim_a23ca3649aba044ae30d3e5cd365756b8_icgraph.pdf>
-Package pdftex.def Info: classGPSSim_a23ca3649aba044ae30d3e5cd365756b8_icgraph.
-pdf  used on input line 225.
-(pdftex.def)             Requested size: 350.0pt x 74.4713pt.
  <./classGPSSim_a5bc8a89ed7ee69e64d2de2e1d3934e0f_cgraph.pdf>
-<classGPSSim_a5bc8a89ed7ee69e64d2de2e1d3934e0f_cgraph.pdf, id=673, 527.9725pt x
+<classGPSSim_a5bc8a89ed7ee69e64d2de2e1d3934e0f_cgraph.pdf, id=704, 527.9725pt x
  233.87375pt>
 File: classGPSSim_a5bc8a89ed7ee69e64d2de2e1d3934e0f_cgraph.pdf Graphic file (ty
 pe pdf)
 <use classGPSSim_a5bc8a89ed7ee69e64d2de2e1d3934e0f_cgraph.pdf>
 Package pdftex.def Info: classGPSSim_a5bc8a89ed7ee69e64d2de2e1d3934e0f_cgraph.p
-df  used on input line 242.
+df  used on input line 235.
 (pdftex.def)             Requested size: 350.0pt x 155.03517pt.
-[7] <./classGPSSim_a5bc8a89ed7ee69e64d2de2e1d3934e0f_icgraph.pdf>
-<classGPSSim_a5bc8a89ed7ee69e64d2de2e1d3934e0f_icgraph.pdf, id=697, 358.33875pt
+[10] <./classGPSSim_a5bc8a89ed7ee69e64d2de2e1d3934e0f_icgraph.pdf>
+<classGPSSim_a5bc8a89ed7ee69e64d2de2e1d3934e0f_icgraph.pdf, id=726, 358.33875pt
  x 99.37125pt>
 File: classGPSSim_a5bc8a89ed7ee69e64d2de2e1d3934e0f_icgraph.pdf Graphic file (t
 ype pdf)
 <use classGPSSim_a5bc8a89ed7ee69e64d2de2e1d3934e0f_icgraph.pdf>
 Package pdftex.def Info: classGPSSim_a5bc8a89ed7ee69e64d2de2e1d3934e0f_icgraph.
-pdf  used on input line 249.
+pdf  used on input line 242.
 (pdftex.def)             Requested size: 350.0pt x 97.06473pt.
  <./classGPSSim_a7bc42b6de5e91ce2e8530ef154c58e63_icgraph.pdf>
-<classGPSSim_a7bc42b6de5e91ce2e8530ef154c58e63_icgraph.pdf, id=705, 539.01375pt
+<classGPSSim_a7bc42b6de5e91ce2e8530ef154c58e63_icgraph.pdf, id=734, 539.01375pt
  x 99.37125pt>
 File: classGPSSim_a7bc42b6de5e91ce2e8530ef154c58e63_icgraph.pdf Graphic file (t
 ype pdf)
 <use classGPSSim_a7bc42b6de5e91ce2e8530ef154c58e63_icgraph.pdf>
 Package pdftex.def Info: classGPSSim_a7bc42b6de5e91ce2e8530ef154c58e63_icgraph.
-pdf  used on input line 266.
+pdf  used on input line 259.
 (pdftex.def)             Requested size: 350.0pt x 64.52533pt.
  <./classGPSSim_a826208977e01f41005a108b902d427ea_icgraph.pdf>
-<classGPSSim_a826208977e01f41005a108b902d427ea_icgraph.pdf, id=713, 270.00874pt
+<classGPSSim_a826208977e01f41005a108b902d427ea_icgraph.pdf, id=742, 270.00874pt
  x 99.37125pt>
 File: classGPSSim_a826208977e01f41005a108b902d427ea_icgraph.pdf Graphic file (t
 ype pdf)
 <use classGPSSim_a826208977e01f41005a108b902d427ea_icgraph.pdf>
 Package pdftex.def Info: classGPSSim_a826208977e01f41005a108b902d427ea_icgraph.
-pdf  used on input line 283.
+pdf  used on input line 276.
 (pdftex.def)             Requested size: 269.0pt x 99.00253pt.
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 294--295
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 287--288
 
  []
 
  <./classGPSSim_aaf289c32314dfa1d302400e7607e0095_icgraph.pdf>
-<classGPSSim_aaf289c32314dfa1d302400e7607e0095_icgraph.pdf, id=736, 695.59875pt
+<classGPSSim_aaf289c32314dfa1d302400e7607e0095_icgraph.pdf, id=766, 695.59875pt
  x 158.5925pt>
 File: classGPSSim_aaf289c32314dfa1d302400e7607e0095_icgraph.pdf Graphic file (t
 ype pdf)
 <use classGPSSim_aaf289c32314dfa1d302400e7607e0095_icgraph.pdf>
 Package pdftex.def Info: classGPSSim_aaf289c32314dfa1d302400e7607e0095_icgraph.
-pdf  used on input line 312.
+pdf  used on input line 305.
 (pdftex.def)             Requested size: 350.0pt x 79.79697pt.
-[9]
-Underfull \hbox (badness 10000) detected at line 331
+[12]
+Underfull \hbox (badness 10000) detected at line 324
 [][][]
  []
 
  <./classGPSSim_af6d2d9ee9e4c9d1cc216a8152cf3ac4b_icgraph.pdf>
-<classGPSSim_af6d2d9ee9e4c9d1cc216a8152cf3ac4b_icgraph.pdf, id=752, 687.56876pt
+<classGPSSim_af6d2d9ee9e4c9d1cc216a8152cf3ac4b_icgraph.pdf, id=782, 687.56876pt
  x 158.5925pt>
 File: classGPSSim_af6d2d9ee9e4c9d1cc216a8152cf3ac4b_icgraph.pdf Graphic file (t
 ype pdf)
 <use classGPSSim_af6d2d9ee9e4c9d1cc216a8152cf3ac4b_icgraph.pdf>
 Package pdftex.def Info: classGPSSim_af6d2d9ee9e4c9d1cc216a8152cf3ac4b_icgraph.
-pdf  used on input line 338.
+pdf  used on input line 331.
 (pdftex.def)             Requested size: 350.0pt x 80.72864pt.
 
-Underfull \hbox (badness 10000) detected at line 358
+Underfull \hbox (badness 10000) detected at line 351
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 359--360
+Underfull \hbox (badness 10000) in paragraph at lines 352--353
 
  []
 
  <./classGPSSim_a0488760c495c2f866e78fe5ef2e92711_icgraph.pdf>
-<classGPSSim_a0488760c495c2f866e78fe5ef2e92711_icgraph.pdf, id=768, 695.59875pt
+<classGPSSim_a0488760c495c2f866e78fe5ef2e92711_icgraph.pdf, id=797, 695.59875pt
  x 158.5925pt>
 File: classGPSSim_a0488760c495c2f866e78fe5ef2e92711_icgraph.pdf Graphic file (t
 ype pdf)
 <use classGPSSim_a0488760c495c2f866e78fe5ef2e92711_icgraph.pdf>
 Package pdftex.def Info: classGPSSim_a0488760c495c2f866e78fe5ef2e92711_icgraph.
-pdf  used on input line 366.
+pdf  used on input line 359.
 (pdftex.def)             Requested size: 350.0pt x 79.79697pt.
-[10] <./classGPSSim_a035f71a80ed040b260f68276d531de79_cgraph.pdf>
-<classGPSSim_a035f71a80ed040b260f68276d531de79_cgraph.pdf, id=785, 641.39626pt 
+[13] <./classGPSSim_a035f71a80ed040b260f68276d531de79_cgraph.pdf>
+<classGPSSim_a035f71a80ed040b260f68276d531de79_cgraph.pdf, id=815, 641.39626pt 
 x 233.87375pt>
 File: classGPSSim_a035f71a80ed040b260f68276d531de79_cgraph.pdf Graphic file (ty
 pe pdf)
 <use classGPSSim_a035f71a80ed040b260f68276d531de79_cgraph.pdf>
 Package pdftex.def Info: classGPSSim_a035f71a80ed040b260f68276d531de79_cgraph.p
-df  used on input line 386.
+df  used on input line 379.
 (pdftex.def)             Requested size: 350.0pt x 127.62459pt.
  <./classGPSSim_a035f71a80ed040b260f68276d531de79_icgraph.pdf>
-<classGPSSim_a035f71a80ed040b260f68276d531de79_icgraph.pdf, id=800, 234.8775pt 
+<classGPSSim_a035f71a80ed040b260f68276d531de79_icgraph.pdf, id=830, 234.8775pt 
 x 99.37125pt>
 File: classGPSSim_a035f71a80ed040b260f68276d531de79_icgraph.pdf Graphic file (t
 ype pdf)
 <use classGPSSim_a035f71a80ed040b260f68276d531de79_icgraph.pdf>
 Package pdftex.def Info: classGPSSim_a035f71a80ed040b260f68276d531de79_icgraph.
-pdf  used on input line 393.
+pdf  used on input line 386.
 (pdftex.def)             Requested size: 234.0pt x 98.99951pt.
 
-Underfull \hbox (badness 10000) detected at line 406
+Underfull \hbox (badness 10000) detected at line 399
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 407--408
+Underfull \hbox (badness 10000) in paragraph at lines 400--401
 
  []
 
  <./classGPSSim_adf3762e5a73faff02866fa45b4593f20_icgraph.pdf>
-<classGPSSim_adf3762e5a73faff02866fa45b4593f20_icgraph.pdf, id=808, 292.09125pt
+<classGPSSim_adf3762e5a73faff02866fa45b4593f20_icgraph.pdf, id=838, 292.09125pt
  x 110.4125pt>
 File: classGPSSim_adf3762e5a73faff02866fa45b4593f20_icgraph.pdf Graphic file (t
 ype pdf)
 <use classGPSSim_adf3762e5a73faff02866fa45b4593f20_icgraph.pdf>
 Package pdftex.def Info: classGPSSim_adf3762e5a73faff02866fa45b4593f20_icgraph.
-pdf  used on input line 414.
+pdf  used on input line 407.
 (pdftex.def)             Requested size: 291.0pt x 110.00955pt.
-[11]
-Underfull \hbox (badness 10000) detected at line 427
+[14]
+Underfull \hbox (badness 10000) detected at line 420
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 428--429
+Underfull \hbox (badness 10000) in paragraph at lines 421--422
 
  []
 
  <./classGPSSim_ae30627814af51ac2b922d11886b22b9a_icgraph.pdf>
-<classGPSSim_ae30627814af51ac2b922d11886b22b9a_icgraph.pdf, id=830, 698.61pt x 
+<classGPSSim_ae30627814af51ac2b922d11886b22b9a_icgraph.pdf, id=860, 698.61pt x 
 158.5925pt>
 File: classGPSSim_ae30627814af51ac2b922d11886b22b9a_icgraph.pdf Graphic file (t
 ype pdf)
 <use classGPSSim_ae30627814af51ac2b922d11886b22b9a_icgraph.pdf>
 Package pdftex.def Info: classGPSSim_ae30627814af51ac2b922d11886b22b9a_icgraph.
-pdf  used on input line 435.
+pdf  used on input line 428.
 (pdftex.def)             Requested size: 350.0pt x 79.45332pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 446--447
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
 
  []
 
  <./classGPSSim_a114167ff50a457bd15b93f84242a6edc_icgraph.pdf>
-<classGPSSim_a114167ff50a457bd15b93f84242a6edc_icgraph.pdf, id=838, 306.14375pt
+<classGPSSim_a114167ff50a457bd15b93f84242a6edc_icgraph.pdf, id=868, 306.14375pt
  x 136.51pt>
 File: classGPSSim_a114167ff50a457bd15b93f84242a6edc_icgraph.pdf Graphic file (t
 ype pdf)
 <use classGPSSim_a114167ff50a457bd15b93f84242a6edc_icgraph.pdf>
 Package pdftex.def Info: classGPSSim_a114167ff50a457bd15b93f84242a6edc_icgraph.
-pdf  used on input line 453.
+pdf  used on input line 446.
 (pdftex.def)             Requested size: 305.0pt x 136.00766pt.
-[12] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 541--542
+[15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 534--535
 \T1/pcr/m/n/8 std[]::chrono[]::steady[]_[]clock[]::time[]_[]point GPSSim[]::[]_
 []start[]_[]time = std[]::chrono[]::steady[]_[]clock[]::now()
  []
 
-) (./classTrackSense.tex <./classTrackSense__coll__graph.pdf>
-<classTrackSense__coll__graph.pdf, id=862, 667.49374pt x 290.08376pt>
-File: classTrackSense__coll__graph.pdf Graphic file (type pdf)
-<use classTrackSense__coll__graph.pdf>
-Package pdftex.def Info: classTrackSense__coll__graph.pdf  used on input line 1
-8.
-(pdftex.def)             Requested size: 350.0pt x 152.11034pt.
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
+) (./classGPSTrack.tex <./classGPSTrack__coll__graph.pdf>
+<classGPSTrack__coll__graph.pdf, id=891, 618.31pt x 256.96pt>
+File: classGPSTrack__coll__graph.pdf Graphic file (type pdf)
+<use classGPSTrack__coll__graph.pdf>
+Package pdftex.def Info: classGPSTrack__coll__graph.pdf  used on input line 18.
 
- []
+(pdftex.def)             Requested size: 350.0pt x 145.45712pt.
+[17] [18]
+Overfull \vbox (50.8556pt too high) has occurred while \output is active []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 37--38
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 52--53
-
- []
-
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <9> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 58.
-[15]
-Overfull \vbox (29.86858pt too high) has occurred while \output is active []
-
-[16] <./classTrackSense_adf42fdb8508077c843a4ae10d5165346_cgraph.pdf>
-<classTrackSense_adf42fdb8508077c843a4ae10d5165346_cgraph.pdf, id=940, 388.4512
+[19] <./classGPSTrack_a4db3cce1370f7cb4b559544ed69aaf5b_cgraph.pdf>
+<classGPSTrack_a4db3cce1370f7cb4b559544ed69aaf5b_cgraph.pdf, id=962, 354.32375p
+t x 99.37125pt>
+File: classGPSTrack_a4db3cce1370f7cb4b559544ed69aaf5b_cgraph.pdf Graphic file (
+type pdf)
+<use classGPSTrack_a4db3cce1370f7cb4b559544ed69aaf5b_cgraph.pdf>
+Package pdftex.def Info: classGPSTrack_a4db3cce1370f7cb4b559544ed69aaf5b_cgraph
+.pdf  used on input line 121.
+(pdftex.def)             Requested size: 350.0pt x 98.161pt.
+ <./classGPSTrack_a29db7ef078c4e959b1ee16e9aaf651df_cgraph.pdf>
+<classGPSTrack_a29db7ef078c4e959b1ee16e9aaf651df_cgraph.pdf, id=970, 327.2225pt
+ x 99.37125pt>
+File: classGPSTrack_a29db7ef078c4e959b1ee16e9aaf651df_cgraph.pdf Graphic file (
+type pdf)
+<use classGPSTrack_a29db7ef078c4e959b1ee16e9aaf651df_cgraph.pdf>
+Package pdftex.def Info: classGPSTrack_a29db7ef078c4e959b1ee16e9aaf651df_cgraph
+.pdf  used on input line 145.
+(pdftex.def)             Requested size: 326.0pt x 98.99951pt.
+ <./classGPSTrack_a30cc30a3290df68a9dcc3906811319db_cgraph.pdf>
+<classGPSTrack_a30cc30a3290df68a9dcc3906811319db_cgraph.pdf, id=978, 600.2425pt
+ x 233.87375pt>
+File: classGPSTrack_a30cc30a3290df68a9dcc3906811319db_cgraph.pdf Graphic file (
+type pdf)
+<use classGPSTrack_a30cc30a3290df68a9dcc3906811319db_cgraph.pdf>
+Package pdftex.def Info: classGPSTrack_a30cc30a3290df68a9dcc3906811319db_cgraph
+.pdf  used on input line 165.
+(pdftex.def)             Requested size: 350.0pt x 136.37485pt.
+[20] <./classGPSTrack_a30cc30a3290df68a9dcc3906811319db_icgraph.pdf>
+<classGPSTrack_a30cc30a3290df68a9dcc3906811319db_icgraph.pdf, id=997, 240.9pt x
+ 99.37125pt>
+File: classGPSTrack_a30cc30a3290df68a9dcc3906811319db_icgraph.pdf Graphic file 
+(type pdf)
+<use classGPSTrack_a30cc30a3290df68a9dcc3906811319db_icgraph.pdf>
+Package pdftex.def Info: classGPSTrack_a30cc30a3290df68a9dcc3906811319db_icgrap
+h.pdf  used on input line 172.
+(pdftex.def)             Requested size: 240.0pt x 99.00253pt.
+ <./classGPSTrack_a862ea0639e829e8dada744bcb7ceff64_cgraph.pdf>
+<classGPSTrack_a862ea0639e829e8dada744bcb7ceff64_cgraph.pdf, id=1005, 480.79625
+pt x 233.87375pt>
+File: classGPSTrack_a862ea0639e829e8dada744bcb7ceff64_cgraph.pdf Graphic file (
+type pdf)
+<use classGPSTrack_a862ea0639e829e8dada744bcb7ceff64_cgraph.pdf>
+Package pdftex.def Info: classGPSTrack_a862ea0639e829e8dada744bcb7ceff64_cgraph
+.pdf  used on input line 191.
+(pdftex.def)             Requested size: 350.0pt x 170.25534pt.
+ <./classGPSTrack_a862ea0639e829e8dada744bcb7ceff64_icgraph.pdf>
+<classGPSTrack_a862ea0639e829e8dada744bcb7ceff64_icgraph.pdf, id=1013, 366.3687
+4pt x 99.37125pt>
+File: classGPSTrack_a862ea0639e829e8dada744bcb7ceff64_icgraph.pdf Graphic file 
+(type pdf)
+<use classGPSTrack_a862ea0639e829e8dada744bcb7ceff64_icgraph.pdf>
+Package pdftex.def Info: classGPSTrack_a862ea0639e829e8dada744bcb7ceff64_icgrap
+h.pdf  used on input line 198.
+(pdftex.def)             Requested size: 350.0pt x 94.9374pt.
+[21] <./classGPSTrack_a6c8d0f2c0a318fece9821e67c25bc6b4_icgraph.pdf>
+<classGPSTrack_a6c8d0f2c0a318fece9821e67c25bc6b4_icgraph.pdf, id=1029, 354.3237
 5pt x 99.37125pt>
-File: classTrackSense_adf42fdb8508077c843a4ae10d5165346_cgraph.pdf Graphic file
- (type pdf)
-<use classTrackSense_adf42fdb8508077c843a4ae10d5165346_cgraph.pdf>
-Package pdftex.def Info: classTrackSense_adf42fdb8508077c843a4ae10d5165346_cgra
-ph.pdf  used on input line 123.
-(pdftex.def)             Requested size: 350.0pt x 89.53639pt.
- <./classTrackSense_a99b92a73aca77c357cea5b34dad60cec_cgraph.pdf>
-<classTrackSense_a99b92a73aca77c357cea5b34dad60cec_cgraph.pdf, id=948, 355.3275
+File: classGPSTrack_a6c8d0f2c0a318fece9821e67c25bc6b4_icgraph.pdf Graphic file 
+(type pdf)
+<use classGPSTrack_a6c8d0f2c0a318fece9821e67c25bc6b4_icgraph.pdf>
+Package pdftex.def Info: classGPSTrack_a6c8d0f2c0a318fece9821e67c25bc6b4_icgrap
+h.pdf  used on input line 227.
+(pdftex.def)             Requested size: 350.0pt x 98.161pt.
+ <./classGPSTrack_a6a178747dbf11d8f8f2fb1be523e36a1_icgraph.pdf>
+<classGPSTrack_a6a178747dbf11d8f8f2fb1be523e36a1_icgraph.pdf, id=1037, 524.9612
+4pt x 99.37125pt>
+File: classGPSTrack_a6a178747dbf11d8f8f2fb1be523e36a1_icgraph.pdf Graphic file 
+(type pdf)
+<use classGPSTrack_a6a178747dbf11d8f8f2fb1be523e36a1_icgraph.pdf>
+Package pdftex.def Info: classGPSTrack_a6a178747dbf11d8f8f2fb1be523e36a1_icgrap
+h.pdf  used on input line 249.
+(pdftex.def)             Requested size: 350.0pt x 66.25389pt.
+[22]
+LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 2
+56.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd
+File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
+)
+LaTeX Font Info:    Font shape `TS1/pcr/m/it' in size <8> not available
+(Font)              Font shape `TS1/pcr/m/sl' tried instead on input line 256.
+ <./classGPSTrack_a3167b347c042dc1736aa65d362e9265b_icgraph.pdf>
+<classGPSTrack_a3167b347c042dc1736aa65d362e9265b_icgraph.pdf, id=1052, 491.8375
 pt x 99.37125pt>
-File: classTrackSense_a99b92a73aca77c357cea5b34dad60cec_cgraph.pdf Graphic file
- (type pdf)
-<use classTrackSense_a99b92a73aca77c357cea5b34dad60cec_cgraph.pdf>
-Package pdftex.def Info: classTrackSense_a99b92a73aca77c357cea5b34dad60cec_cgra
-ph.pdf  used on input line 140.
-(pdftex.def)             Requested size: 350.0pt x 97.88504pt.
- <./classTrackSense_aa6189bf1f9a0eece69edd42887d504ac_icgraph.pdf>
-<classTrackSense_aa6189bf1f9a0eece69edd42887d504ac_icgraph.pdf, id=956, 558.085
-pt x 99.37125pt>
-File: classTrackSense_aa6189bf1f9a0eece69edd42887d504ac_icgraph.pdf Graphic fil
-e (type pdf)
-<use classTrackSense_aa6189bf1f9a0eece69edd42887d504ac_icgraph.pdf>
-Package pdftex.def Info: classTrackSense_aa6189bf1f9a0eece69edd42887d504ac_icgr
-aph.pdf  used on input line 160.
-(pdftex.def)             Requested size: 350.0pt x 62.32217pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 171--172
-
- []
-
- <./classTrackSense_a64a0044078ab2ceeb607c18562baed07_cgraph.pdf>
-<classTrackSense_a64a0044078ab2ceeb607c18562baed07_cgraph.pdf, id=964, 523.9575
-pt x 210.7875pt>
-File: classTrackSense_a64a0044078ab2ceeb607c18562baed07_cgraph.pdf Graphic file
- (type pdf)
-<use classTrackSense_a64a0044078ab2ceeb607c18562baed07_cgraph.pdf>
-Package pdftex.def Info: classTrackSense_a64a0044078ab2ceeb607c18562baed07_cgra
-ph.pdf  used on input line 178.
-(pdftex.def)             Requested size: 350.0pt x 140.80876pt.
-[17] <./classTrackSense_a64a0044078ab2ceeb607c18562baed07_icgraph.pdf>
-<classTrackSense_a64a0044078ab2ceeb607c18562baed07_icgraph.pdf, id=981, 391.462
-5pt x 99.37125pt>
-File: classTrackSense_a64a0044078ab2ceeb607c18562baed07_icgraph.pdf Graphic fil
-e (type pdf)
-<use classTrackSense_a64a0044078ab2ceeb607c18562baed07_icgraph.pdf>
-Package pdftex.def Info: classTrackSense_a64a0044078ab2ceeb607c18562baed07_icgr
-aph.pdf  used on input line 185.
-(pdftex.def)             Requested size: 350.0pt x 88.85103pt.
- <./classTrackSense_a3d2ecdc75e0cd21a77718e596bbfa080_icgraph.pdf>
-<classTrackSense_a3d2ecdc75e0cd21a77718e596bbfa080_icgraph.pdf, id=989, 388.451
-25pt x 99.37125pt>
-File: classTrackSense_a3d2ecdc75e0cd21a77718e596bbfa080_icgraph.pdf Graphic fil
-e (type pdf)
-<use classTrackSense_a3d2ecdc75e0cd21a77718e596bbfa080_icgraph.pdf>
-Package pdftex.def Info: classTrackSense_a3d2ecdc75e0cd21a77718e596bbfa080_icgr
-aph.pdf  used on input line 203.
-(pdftex.def)             Requested size: 350.0pt x 89.53639pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 214--215
-
- []
-
-[18] <./classTrackSense_ad2249b2d86c543850346620c0f1a86cc_cgraph.pdf>
-<classTrackSense_ad2249b2d86c543850346620c0f1a86cc_cgraph.pdf, id=1006, 378.413
-76pt x 148.555pt>
-File: classTrackSense_ad2249b2d86c543850346620c0f1a86cc_cgraph.pdf Graphic file
- (type pdf)
-<use classTrackSense_ad2249b2d86c543850346620c0f1a86cc_cgraph.pdf>
-Package pdftex.def Info: classTrackSense_ad2249b2d86c543850346620c0f1a86cc_cgra
-ph.pdf  used on input line 228.
-(pdftex.def)             Requested size: 350.0pt x 137.40215pt.
- <./classTrackSense_ad2249b2d86c543850346620c0f1a86cc_icgraph.pdf>
-<classTrackSense_ad2249b2d86c543850346620c0f1a86cc_icgraph.pdf, id=1014, 565.11
-125pt x 99.37125pt>
-File: classTrackSense_ad2249b2d86c543850346620c0f1a86cc_icgraph.pdf Graphic fil
-e (type pdf)
-<use classTrackSense_ad2249b2d86c543850346620c0f1a86cc_icgraph.pdf>
-Package pdftex.def Info: classTrackSense_ad2249b2d86c543850346620c0f1a86cc_icgr
-aph.pdf  used on input line 235.
-(pdftex.def)             Requested size: 350.0pt x 61.54584pt.
- <./classTrackSense_a989d3a03192dfef312706337b19829f2_cgraph.pdf>
-<classTrackSense_a989d3a03192dfef312706337b19829f2_cgraph.pdf, id=1023, 378.413
-76pt x 148.555pt>
-File: classTrackSense_a989d3a03192dfef312706337b19829f2_cgraph.pdf Graphic file
- (type pdf)
-<use classTrackSense_a989d3a03192dfef312706337b19829f2_cgraph.pdf>
-Package pdftex.def Info: classTrackSense_a989d3a03192dfef312706337b19829f2_cgra
-ph.pdf  used on input line 259.
-(pdftex.def)             Requested size: 350.0pt x 137.40215pt.
-[19] <./classTrackSense_a989d3a03192dfef312706337b19829f2_icgraph.pdf>
-<classTrackSense_a989d3a03192dfef312706337b19829f2_icgraph.pdf, id=1041, 565.11
-125pt x 99.37125pt>
-File: classTrackSense_a989d3a03192dfef312706337b19829f2_icgraph.pdf Graphic fil
-e (type pdf)
-<use classTrackSense_a989d3a03192dfef312706337b19829f2_icgraph.pdf>
-Package pdftex.def Info: classTrackSense_a989d3a03192dfef312706337b19829f2_icgr
-aph.pdf  used on input line 266.
-(pdftex.def)             Requested size: 350.0pt x 61.54584pt.
- <./classTrackSense_a1644e091e07a2aab03251397a04580a6_icgraph.pdf>
-<classTrackSense_a1644e091e07a2aab03251397a04580a6_icgraph.pdf, id=1049, 725.71
-124pt x 136.51pt>
-File: classTrackSense_a1644e091e07a2aab03251397a04580a6_icgraph.pdf Graphic fil
-e (type pdf)
-<use classTrackSense_a1644e091e07a2aab03251397a04580a6_icgraph.pdf>
-Package pdftex.def Info: classTrackSense_a1644e091e07a2aab03251397a04580a6_icgr
-aph.pdf  used on input line 290.
-(pdftex.def)             Requested size: 350.0pt x 65.83858pt.
- <./classTrackSense_a09dd49a222513b4d015c7dae17d9e771_icgraph.pdf>
-<classTrackSense_a09dd49a222513b4d015c7dae17d9e771_icgraph.pdf, id=1058, 570.13
-pt x 99.37125pt>
-File: classTrackSense_a09dd49a222513b4d015c7dae17d9e771_icgraph.pdf Graphic fil
-e (type pdf)
-<use classTrackSense_a09dd49a222513b4d015c7dae17d9e771_icgraph.pdf>
-Package pdftex.def Info: classTrackSense_a09dd49a222513b4d015c7dae17d9e771_icgr
-aph.pdf  used on input line 307.
-(pdftex.def)             Requested size: 350.0pt x 61.00302pt.
-[20] <./classTrackSense_aea41a182986beda916a8f7ad8f0e5699_cgraph.pdf>
-<classTrackSense_aea41a182986beda916a8f7ad8f0e5699_cgraph.pdf, id=1075, 653.441
-25pt x 210.7875pt>
-File: classTrackSense_aea41a182986beda916a8f7ad8f0e5699_cgraph.pdf Graphic file
- (type pdf)
-<use classTrackSense_aea41a182986beda916a8f7ad8f0e5699_cgraph.pdf>
-Package pdftex.def Info: classTrackSense_aea41a182986beda916a8f7ad8f0e5699_cgra
-ph.pdf  used on input line 324.
-(pdftex.def)             Requested size: 350.0pt x 112.90045pt.
- <./classTrackSense_aea41a182986beda916a8f7ad8f0e5699_icgraph.pdf>
-<classTrackSense_aea41a182986beda916a8f7ad8f0e5699_icgraph.pdf, id=1083, 250.93
-75pt x 99.37125pt>
-File: classTrackSense_aea41a182986beda916a8f7ad8f0e5699_icgraph.pdf Graphic fil
-e (type pdf)
-<use classTrackSense_aea41a182986beda916a8f7ad8f0e5699_icgraph.pdf>
-Package pdftex.def Info: classTrackSense_aea41a182986beda916a8f7ad8f0e5699_icgr
-aph.pdf  used on input line 331.
-(pdftex.def)             Requested size: 250.0pt x 99.00557pt.
- <./classTrackSense_af1c448cc7e7fcc6f0fac90abbcfebfa3_icgraph.pdf>
-<classTrackSense_af1c448cc7e7fcc6f0fac90abbcfebfa3_icgraph.pdf, id=1091, 699.61
-375pt x 136.51pt>
-File: classTrackSense_af1c448cc7e7fcc6f0fac90abbcfebfa3_icgraph.pdf Graphic fil
-e (type pdf)
-<use classTrackSense_af1c448cc7e7fcc6f0fac90abbcfebfa3_icgraph.pdf>
-Package pdftex.def Info: classTrackSense_af1c448cc7e7fcc6f0fac90abbcfebfa3_icgr
-aph.pdf  used on input line 348.
-(pdftex.def)             Requested size: 350.0pt x 68.2944pt.
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 359--360
-
- []
-
- <./classTrackSense_afbc696c7cc07f34485e81871688265d2_icgraph.pdf>
-<classTrackSense_afbc696c7cc07f34485e81871688265d2_icgraph.pdf, id=1108, 355.32
-75pt x 136.51pt>
-File: classTrackSense_afbc696c7cc07f34485e81871688265d2_icgraph.pdf Graphic fil
-e (type pdf)
-<use classTrackSense_afbc696c7cc07f34485e81871688265d2_icgraph.pdf>
-Package pdftex.def Info: classTrackSense_afbc696c7cc07f34485e81871688265d2_icgr
-aph.pdf  used on input line 366.
-(pdftex.def)             Requested size: 350.0pt x 134.46834pt.
-[22]) [23] [24
+File: classGPSTrack_a3167b347c042dc1736aa65d362e9265b_icgraph.pdf Graphic file 
+(type pdf)
+<use classGPSTrack_a3167b347c042dc1736aa65d362e9265b_icgraph.pdf>
+Package pdftex.def Info: classGPSTrack_a3167b347c042dc1736aa65d362e9265b_icgrap
+h.pdf  used on input line 273.
+(pdftex.def)             Requested size: 350.0pt x 70.71631pt.
+ <./classGPSTrack_a3ddcdc3c1599f4efa7f3938d9a5f2eee_icgraph.pdf>
+<classGPSTrack_a3ddcdc3c1599f4efa7f3938d9a5f2eee_icgraph.pdf, id=1060, 327.2225
+pt x 136.51pt>
+File: classGPSTrack_a3ddcdc3c1599f4efa7f3938d9a5f2eee_icgraph.pdf Graphic file 
+(type pdf)
+<use classGPSTrack_a3ddcdc3c1599f4efa7f3938d9a5f2eee_icgraph.pdf>
+Package pdftex.def Info: classGPSTrack_a3ddcdc3c1599f4efa7f3938d9a5f2eee_icgrap
+h.pdf  used on input line 290.
+(pdftex.def)             Requested size: 326.0pt x 135.99933pt.
+[23] [24]) [25] [26
 
 ]
 Chapter 2.
 (./debug_8cpp.tex <./debug_8cpp__incl.pdf>
-<debug_8cpp__incl.pdf, id=1133, 1520.68124pt x 209.78375pt>
+<debug_8cpp__incl.pdf, id=1094, 1454.43375pt x 209.78375pt>
 File: debug_8cpp__incl.pdf Graphic file (type pdf)
 <use debug_8cpp__incl.pdf>
 Package pdftex.def Info: debug_8cpp__incl.pdf  used on input line 15.
-(pdftex.def)             Requested size: 350.0pt x 48.28445pt.
+(pdftex.def)             Requested size: 350.0pt x 50.48357pt.
  <./debug_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.pdf>
-<debug_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.pdf, id=1142, 792.9625pt x
- 410.53375pt>
+<debug_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.pdf, id=1103, 777.90625pt 
+x 421.575pt>
 File: debug_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.pdf Graphic file (typ
 e pdf)
 <use debug_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.pdf>
 Package pdftex.def Info: debug_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.pd
 f  used on input line 41.
-(pdftex.def)             Requested size: 350.0pt x 181.20544pt.
-) (./GPSSim_8hpp.tex [25] <./GPSSim_8hpp__incl.pdf>
-<GPSSim_8hpp__incl.pdf, id=1167, 1033.8625pt x 154.5775pt>
+(pdftex.def)             Requested size: 350.0pt x 189.68126pt.
+) (./GPSSim_8hpp.tex [27] <./GPSSim_8hpp__incl.pdf>
+<GPSSim_8hpp__incl.pdf, id=1127, 1033.8625pt x 154.5775pt>
 File: GPSSim_8hpp__incl.pdf Graphic file (type pdf)
 <use GPSSim_8hpp__incl.pdf>
 Package pdftex.def Info: GPSSim_8hpp__incl.pdf  used on input line 26.
 (pdftex.def)             Requested size: 350.0pt x 52.32921pt.
  <./GPSSim_8hpp__dep__incl.pdf>
-<GPSSim_8hpp__dep__incl.pdf, id=1175, 173.64874pt x 154.5775pt>
+<GPSSim_8hpp__dep__incl.pdf, id=1135, 173.64874pt x 154.5775pt>
 File: GPSSim_8hpp__dep__incl.pdf Graphic file (type pdf)
 <use GPSSim_8hpp__dep__incl.pdf>
 Package pdftex.def Info: GPSSim_8hpp__dep__incl.pdf  used on input line 33.
 (pdftex.def)             Requested size: 173.0pt x 154.0063pt.
-[26]) (./GPSSim_8hpp_source.tex [27] [28] [29]
-LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 2
-65.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd
-File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
-) [30] [31]) (./main_8cpp.tex <./main_8cpp__incl.pdf>
-<main_8cpp__incl.pdf, id=1319, 1462.46375pt x 209.78375pt>
+[28]) (./GPSSim_8hpp_source.tex [29] [30] [31] [32] [33]) (./GPSTrack_8hpp.tex 
+<./GPSTrack_8hpp__incl.pdf>
+<GPSTrack_8hpp__incl.pdf, id=1273, 1396.21625pt x 154.5775pt>
+File: GPSTrack_8hpp__incl.pdf Graphic file (type pdf)
+<use GPSTrack_8hpp__incl.pdf>
+Package pdftex.def Info: GPSTrack_8hpp__incl.pdf  used on input line 30.
+(pdftex.def)             Requested size: 350.0pt x 38.74805pt.
+ <./GPSTrack_8hpp__dep__incl.pdf>
+<GPSTrack_8hpp__dep__incl.pdf, id=1281, 261.97874pt x 154.5775pt>
+File: GPSTrack_8hpp__dep__incl.pdf Graphic file (type pdf)
+<use GPSTrack_8hpp__dep__incl.pdf>
+Package pdftex.def Info: GPSTrack_8hpp__dep__incl.pdf  used on input line 37.
+(pdftex.def)             Requested size: 261.0pt x 154.00394pt.
+[34]) (./GPSTrack_8hpp_source.tex [35] [36] [37] [38]) (./main_8cpp.tex <./main
+_8cpp__incl.pdf>
+<main_8cpp__incl.pdf, id=1386, 1396.21625pt x 209.78375pt>
 File: main_8cpp__incl.pdf Graphic file (type pdf)
 <use main_8cpp__incl.pdf>
-Package pdftex.def Info: main_8cpp__incl.pdf  used on input line 9.
-(pdftex.def)             Requested size: 350.0pt x 50.20506pt.
- <./main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.pdf>
-<main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.pdf, id=1328, 735.74875pt x
- 210.7875pt>
+Package pdftex.def Info: main_8cpp__incl.pdf  used on input line 8.
+(pdftex.def)             Requested size: 350.0pt x 52.58664pt.
+[39] <./main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.pdf>
+<main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.pdf, id=1404, 683.55376pt x
+ 233.87375pt>
 File: main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.pdf Graphic file (type
  pdf)
 <use main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.pdf>
 Package pdftex.def Info: main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.pdf
-  used on input line 31.
-(pdftex.def)             Requested size: 350.0pt x 100.27626pt.
-) (./TrackSense_8hpp.tex <./TrackSense_8hpp__incl.pdf>
-<TrackSense_8hpp__incl.pdf, id=1336, 1462.46375pt x 154.5775pt>
-File: TrackSense_8hpp__incl.pdf Graphic file (type pdf)
-<use TrackSense_8hpp__incl.pdf>
-Package pdftex.def Info: TrackSense_8hpp__incl.pdf  used on input line 31.
-(pdftex.def)             Requested size: 350.0pt x 36.99321pt.
-[32] <./TrackSense_8hpp__dep__incl.pdf>
-<TrackSense_8hpp__dep__incl.pdf, id=1354, 261.97874pt x 154.5775pt>
-File: TrackSense_8hpp__dep__incl.pdf Graphic file (type pdf)
-<use TrackSense_8hpp__dep__incl.pdf>
-Package pdftex.def Info: TrackSense_8hpp__dep__incl.pdf  used on input line 39.
-
-(pdftex.def)             Requested size: 261.0pt x 154.00394pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 48--49
-
- []
-
-) (./TrackSense_8hpp_source.tex [33] [34] [35] [36] [37]) [38] (./refman.ind
+  used on input line 29.
+(pdftex.def)             Requested size: 350.0pt x 119.75221pt.
+) [40] (./refman.ind
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 22.39185pt on input line 1.
-[39
+[41
 
 
 
-] [40]) (./refman.aux)
+] [42]) (./refman.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 177D897EBB2EFA8963F8BB5D7EA52571;16323.
+(rerunfilecheck)             Checksum: 81318F27833C032BF53A8EC929E71E9F;15964.
  ) 
 Here is how much of TeX's memory you used:
- 18664 strings out of 476182
- 317831 string characters out of 5795595
+ 18630 strings out of 476182
+ 315341 string characters out of 5795595
  1948975 words of memory out of 5000000
- 40052 multiletter control sequences out of 15000+600000
- 613443 words of font info for 106 fonts, out of 8000000 for 9000
+ 40022 multiletter control sequences out of 15000+600000
+ 613018 words of font info for 105 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 101i,16n,117p,706b,738s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,16n,117p,682b,744s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
-rw/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/
-uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (46 pages, 515449 bytes).
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/cour
+ier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on refman.pdf (48 pages, 508383 bytes).
 PDF statistics:
- 1736 PDF objects out of 2073 (max. 8388607)
- 1494 compressed objects within 15 object streams
- 266 named destinations out of 1000 (max. 500000)
- 917 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1658 PDF objects out of 1728 (max. 8388607)
+ 1417 compressed objects within 15 object streams
+ 262 named destinations out of 1000 (max. 500000)
+ 878 words of extra memory for PDF output out of 10000 (max. 10000000)
 

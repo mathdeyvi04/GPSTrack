@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Track Sense: src/debug.cpp File Reference</title>
+<title>GPSTrack: src/debug.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Track Sense
+   <div id="projectname">GPSTrack
    </div>
   </td>
  </tr>
@@ -82,72 +82,70 @@ $(function() {
 <p>Responsável por prover ferramentas de debug.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
-<code>#include &quot;<a class="el" href="TrackSense_8hpp_source.html">TrackSense.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GPSTrack_8hpp_source.html">GPSTrack.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for debug.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="debug_8cpp__incl.png" border="0" usemap="#asrc_2debug_8cpp" alt=""/></div>
 <map name="asrc_2debug_8cpp" id="asrc_2debug_8cpp">
-<area shape="rect" title="Responsável por prover ferramentas de debug." alt="" coords="667,5,779,31"/>
-<area shape="rect" title=" " alt="" coords="5,152,85,177"/>
-<area shape="poly" title=" " alt="" coords="669,33,99,154,98,149,668,28"/>
-<area shape="rect" href="TrackSense_8hpp.html" title="Implementação da Classe Sensora do Módulo GPS6MV2." alt="" coords="844,79,967,104"/>
-<area shape="poly" title=" " alt="" coords="753,28,864,71,862,76,751,33"/>
-<area shape="rect" href="GPSSim_8hpp.html" title="Implementação da Classe Simuladora do GPS6MV2." alt="" coords="672,79,773,104"/>
-<area shape="poly" title=" " alt="" coords="725,31,725,65,720,65,720,31"/>
-<area shape="poly" title=" " alt="" coords="844,101,786,107,594,119,443,124,292,133,99,155,98,149,292,127,443,119,594,113,785,101,843,96"/>
-<area shape="rect" title=" " alt="" coords="1317,152,1376,177"/>
-<area shape="poly" title=" " alt="" coords="967,97,1117,117,1304,149,1303,155,1116,122,966,102"/>
-<area shape="rect" title=" " alt="" coords="187,152,250,177"/>
-<area shape="poly" title=" " alt="" coords="844,101,786,107,640,118,526,124,411,134,264,155,263,150,410,128,525,119,640,112,785,101,843,96"/>
-<area shape="rect" title=" " alt="" coords="275,152,349,177"/>
-<area shape="poly" title=" " alt="" coords="844,101,601,125,363,155,362,149,601,120,844,96"/>
-<area shape="rect" title=" " alt="" coords="373,152,448,177"/>
-<area shape="poly" title=" " alt="" coords="844,102,676,122,462,155,461,149,675,117,844,96"/>
-<area shape="rect" title=" " alt="" coords="1400,152,1467,177"/>
-<area shape="poly" title=" " alt="" coords="967,95,1151,114,1387,149,1386,155,1151,120,967,100"/>
-<area shape="rect" title=" " alt="" coords="472,152,539,177"/>
-<area shape="poly" title=" " alt="" coords="844,104,710,126,553,155,552,155,551,149,551,149,709,120,843,99"/>
-<area shape="rect" title=" " alt="" coords="563,152,626,177"/>
-<area shape="poly" title=" " alt="" coords="852,107,640,155,639,149,851,101"/>
-<area shape="rect" title=" " alt="" coords="651,152,709,177"/>
-<area shape="poly" title=" " alt="" coords="870,107,723,153,722,147,868,101"/>
-<area shape="rect" title=" " alt="" coords="733,152,797,177"/>
-<area shape="poly" title=" " alt="" coords="884,106,801,148,799,143,882,102"/>
-<area shape="rect" title=" " alt="" coords="821,152,888,177"/>
-<area shape="poly" title=" " alt="" coords="899,106,873,142,869,139,895,103"/>
-<area shape="rect" title=" " alt="" coords="1491,152,1555,177"/>
-<area shape="poly" title=" " alt="" coords="967,93,1189,111,1331,127,1478,149,1477,155,1330,133,1188,116,967,99"/>
-<area shape="rect" title=" " alt="" coords="913,152,999,177"/>
-<area shape="poly" title=" " alt="" coords="916,103,942,139,938,142,912,106"/>
-<area shape="rect" title=" " alt="" coords="1023,152,1086,177"/>
-<area shape="poly" title=" " alt="" coords="930,102,1019,144,1017,148,928,106"/>
-<area shape="rect" title=" " alt="" coords="1110,152,1194,177"/>
-<area shape="poly" title=" " alt="" coords="946,101,1100,146,1098,151,944,107"/>
-<area shape="rect" title=" " alt="" coords="1219,152,1293,177"/>
-<area shape="poly" title=" " alt="" coords="967,101,1205,149,1204,154,966,107"/>
-<area shape="rect" title=" " alt="" coords="1579,152,1682,177"/>
-<area shape="poly" title=" " alt="" coords="967,94,1224,113,1392,129,1566,149,1565,155,1392,134,1224,118,967,99"/>
-<area shape="rect" title=" " alt="" coords="1706,152,1798,177"/>
-<area shape="poly" title=" " alt="" coords="967,92,1275,109,1480,125,1692,149,1692,155,1480,131,1275,114,967,97"/>
-<area shape="rect" title=" " alt="" coords="1823,152,1919,177"/>
-<area shape="poly" title=" " alt="" coords="967,91,1321,107,1561,124,1809,149,1809,155,1561,129,1321,112,967,97"/>
-<area shape="poly" title=" " alt="" coords="774,95,832,101,963,112,1067,119,1171,129,1304,149,1303,155,1171,134,1067,124,963,118,832,107,774,101"/>
-<area shape="poly" title=" " alt="" coords="672,100,496,119,382,135,264,155,263,150,381,130,495,114,672,94"/>
-<area shape="poly" title=" " alt="" coords="672,103,537,124,363,154,362,149,536,118,671,97"/>
-<area shape="poly" title=" " alt="" coords="672,107,462,154,461,149,671,101"/>
-<area shape="poly" title=" " alt="" coords="689,107,553,151,551,146,687,101"/>
-<area shape="poly" title=" " alt="" coords="703,106,629,147,627,143,701,102"/>
-<area shape="poly" title=" " alt="" coords="718,106,696,142,692,139,713,103"/>
-<area shape="poly" title=" " alt="" coords="732,103,754,139,749,142,727,106"/>
-<area shape="poly" title=" " alt="" coords="745,102,822,143,820,148,743,106"/>
-<area shape="poly" title=" " alt="" coords="761,101,906,145,905,151,759,107"/>
-<area shape="poly" title=" " alt="" coords="774,100,1010,149,1009,154,773,105"/>
-<area shape="poly" title=" " alt="" coords="774,97,916,118,1097,149,1096,154,915,124,774,103"/>
-<area shape="poly" title=" " alt="" coords="774,96,989,120,1205,149,1204,155,989,126,773,101"/>
-<area shape="rect" title=" " alt="" coords="109,152,163,177"/>
-<area shape="poly" title=" " alt="" coords="672,98,455,115,316,132,176,155,176,155,175,149,176,149,316,127,455,110,672,93"/>
+<area shape="rect" title="Responsável por prover ferramentas de debug." alt="" coords="672,5,784,31"/>
+<area shape="rect" title=" " alt="" coords="83,152,163,177"/>
+<area shape="poly" title=" " alt="" coords="681,33,177,153,175,148,679,28"/>
+<area shape="rect" href="GPSTrack_8hpp.html" title="Implementação da solução embarcada." alt="" coords="830,79,941,104"/>
+<area shape="poly" title=" " alt="" coords="754,28,848,71,846,75,752,33"/>
+<area shape="rect" href="GPSSim_8hpp.html" title="Implementação da Classe Simuladora do GPS6MV2." alt="" coords="677,79,779,104"/>
+<area shape="poly" title=" " alt="" coords="731,31,731,65,725,65,725,31"/>
+<area shape="poly" title=" " alt="" coords="830,102,791,107,618,120,483,126,348,134,176,155,176,155,175,149,176,149,348,129,483,121,618,115,790,101,830,97"/>
+<area shape="rect" title=" " alt="" coords="395,152,453,177"/>
+<area shape="poly" title=" " alt="" coords="830,102,647,127,467,155,467,150,646,122,829,97"/>
+<area shape="rect" title=" " alt="" coords="478,152,541,177"/>
+<area shape="poly" title=" " alt="" coords="830,104,708,125,555,155,554,149,707,119,829,99"/>
+<area shape="rect" title=" " alt="" coords="565,152,640,177"/>
+<area shape="poly" title=" " alt="" coords="841,107,654,153,653,148,839,101"/>
+<area shape="rect" title=" " alt="" coords="664,152,739,177"/>
+<area shape="poly" title=" " alt="" coords="857,107,745,149,743,144,855,102"/>
+<area shape="rect" title=" " alt="" coords="1764,152,1831,177"/>
+<area shape="poly" title=" " alt="" coords="941,90,1081,94,1280,102,1512,120,1751,149,1750,155,1511,125,1279,108,1081,99,941,96"/>
+<area shape="rect" title=" " alt="" coords="763,152,829,177"/>
+<area shape="poly" title=" " alt="" coords="873,106,823,145,820,141,869,102"/>
+<area shape="rect" title=" " alt="" coords="854,152,917,177"/>
+<area shape="poly" title=" " alt="" coords="888,104,888,138,883,138,883,104"/>
+<area shape="rect" title=" " alt="" coords="941,152,1000,177"/>
+<area shape="poly" title=" " alt="" coords="901,102,948,141,945,145,897,106"/>
+<area shape="rect" title=" " alt="" coords="1024,152,1088,177"/>
+<area shape="poly" title=" " alt="" coords="914,102,1017,144,1015,149,912,106"/>
+<area shape="rect" title=" " alt="" coords="1112,152,1179,177"/>
+<area shape="poly" title=" " alt="" coords="928,101,1100,148,1098,153,926,107"/>
+<area shape="rect" title=" " alt="" coords="1203,152,1290,177"/>
+<area shape="poly" title=" " alt="" coords="942,101,1190,149,1189,154,941,106"/>
+<area shape="rect" title=" " alt="" coords="1314,152,1377,177"/>
+<area shape="poly" title=" " alt="" coords="941,96,1099,116,1301,149,1300,154,1098,121,940,101"/>
+<area shape="rect" title=" " alt="" coords="187,152,271,177"/>
+<area shape="poly" title=" " alt="" coords="830,102,791,107,650,119,540,127,428,136,285,155,285,149,428,131,539,122,650,114,790,101,829,97"/>
+<area shape="rect" title=" " alt="" coords="296,152,371,177"/>
+<area shape="poly" title=" " alt="" coords="830,102,791,107,589,127,499,137,385,155,384,149,499,132,588,122,790,101,829,97"/>
+<area shape="rect" title=" " alt="" coords="1401,152,1503,177"/>
+<area shape="poly" title=" " alt="" coords="941,95,1134,116,1387,149,1387,154,1134,122,940,101"/>
+<area shape="rect" title=" " alt="" coords="1527,152,1619,177"/>
+<area shape="poly" title=" " alt="" coords="941,93,1186,112,1347,128,1514,149,1513,154,1346,133,1185,117,941,99"/>
+<area shape="rect" title=" " alt="" coords="1644,152,1740,177"/>
+<area shape="poly" title=" " alt="" coords="941,92,1232,110,1428,126,1630,149,1630,155,1427,132,1232,115,941,98"/>
+<area shape="poly" title=" " alt="" coords="678,106,467,155,467,155,466,150,466,149,677,101"/>
+<area shape="poly" title=" " alt="" coords="694,107,555,151,553,146,692,101"/>
+<area shape="poly" title=" " alt="" coords="709,106,636,147,634,143,707,102"/>
+<area shape="poly" title=" " alt="" coords="726,105,713,140,708,138,721,103"/>
+<area shape="poly" title=" " alt="" coords="741,102,777,140,773,144,737,106"/>
+<area shape="poly" title=" " alt="" coords="754,102,848,144,846,149,752,106"/>
+<area shape="poly" title=" " alt="" coords="768,101,929,148,927,153,766,107"/>
+<area shape="poly" title=" " alt="" coords="779,100,1011,149,1010,154,778,105"/>
+<area shape="poly" title=" " alt="" coords="779,97,919,117,1099,149,1098,155,918,123,778,102"/>
+<area shape="poly" title=" " alt="" coords="779,96,1190,150,1189,155,778,102"/>
+<area shape="poly" title=" " alt="" coords="779,97,819,101,953,113,1059,120,1165,129,1301,149,1300,155,1165,134,1058,125,953,119,818,107,778,102"/>
+<area shape="poly" title=" " alt="" coords="678,101,508,122,286,155,285,149,507,116,677,96"/>
+<area shape="poly" title=" " alt="" coords="677,103,385,154,384,149,676,98"/>
+<area shape="rect" title=" " alt="" coords="5,152,59,177"/>
+<area shape="poly" title=" " alt="" coords="677,97,570,101,421,111,250,128,72,155,72,150,249,123,421,105,569,96,677,91"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -179,55 +177,45 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="debug_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#adebug_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
 <map name="adebug_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" id="adebug_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph">
-<area shape="rect" title=" " alt="" coords="5,283,60,309"/>
-<area shape="rect" href="classGPSSim.html#a826208977e01f41005a108b902d427ea" title="Configura a trajetória circular para a simulação." alt="" coords="123,155,272,181"/>
-<area shape="poly" title=" " alt="" coords="37,282,62,237,82,211,106,190,116,184,118,189,110,194,86,215,67,240,42,285"/>
-<area shape="rect" href="classGPSSim.html#a035f71a80ed040b260f68276d531de79" title="Inicia a geração de frases no padrão NMEA em uma thread separada." alt="" coords="146,205,249,230"/>
-<area shape="poly" title=" " alt="" coords="47,281,73,259,107,239,132,229,134,234,109,244,76,264,50,285"/>
-<area shape="rect" href="classTrackSense.html#aea41a182986beda916a8f7ad8f0e5699" title="Inicia thread de leitura de dados do GPS e envio UDP. Há garantia de instância única." alt="" coords="135,254,259,279"/>
-<area shape="poly" title=" " alt="" coords="60,289,121,278,122,283,61,294"/>
-<area shape="rect" href="classGPSSim.html#adf3762e5a73faff02866fa45b4593f20" title="Obtém o caminho do terminal que estamos executando de forma filial." alt="" coords="108,304,287,344"/>
-<area shape="poly" title=" " alt="" coords="60,298,95,304,94,309,60,303"/>
-<area shape="rect" href="classGPSSim.html#a114167ff50a457bd15b93f84242a6edc" title="Encerrará a geração de frases NMEA e aguardará a finalização da thread." alt="" coords="143,369,252,394"/>
-<area shape="poly" title=" " alt="" coords="48,307,75,331,109,354,131,363,129,368,107,358,72,335,45,311"/>
-<area shape="rect" href="classTrackSense.html#afbc696c7cc07f34485e81871688265d2" title="Finaliza a thread de trabalho." alt="" coords="132,418,263,443"/>
-<area shape="poly" title=" " alt="" coords="41,308,66,355,85,382,110,405,121,411,118,416,106,409,81,386,61,358,37,310"/>
-<area shape="rect" href="classGPSSim.html#a5bc8a89ed7ee69e64d2de2e1d3934e0f" title="Loop principal de geração de dados." alt="" coords="346,166,462,191"/>
-<area shape="poly" title=" " alt="" coords="249,205,332,189,333,195,250,210"/>
-<area shape="rect" href="classGPSSim.html#a58123de7be940ad080865f6e916a88dc" title="Gera uma frase GGA (Global Positioning System Fix Data)" alt="" coords="535,129,700,169"/>
-<area shape="poly" title=" " alt="" coords="462,168,520,160,521,165,463,173"/>
-<area shape="rect" href="classGPSSim.html#a23ca3649aba044ae30d3e5cd365756b8" title="Gera uma frase RMC (Recommended Minimum Specific GNSS Data)" alt="" coords="535,65,700,105"/>
-<area shape="poly" title=" " alt="" coords="426,163,520,115,538,108,540,113,522,120,428,168"/>
-<area shape="rect" href="classGPSSim.html#a7bc42b6de5e91ce2e8530ef154c58e63" title="Caso seja movimento circular, atualizará a posição." alt="" coords="521,194,713,219"/>
-<area shape="poly" title=" " alt="" coords="463,184,508,190,508,195,462,189"/>
-<area shape="rect" href="classGPSSim.html#aaf289c32314dfa1d302400e7607e0095" title="Converte graus decimais para formato NMEA de localização, (ddmm.mmmm)." alt="" coords="763,5,950,45"/>
-<area shape="poly" title=" " alt="" coords="691,127,712,115,727,101,735,86,744,71,760,55,769,49,772,54,763,59,748,74,740,89,731,104,715,119,693,132"/>
-<area shape="rect" href="classGPSSim.html#af6d2d9ee9e4c9d1cc216a8152cf3ac4b" title="Após calcular a paridade do corpo da frase, adiciona as flags para o padrão NMEA." alt="" coords="769,69,945,109"/>
-<area shape="poly" title=" " alt="" coords="697,127,762,110,764,115,699,132"/>
-<area shape="rect" href="classGPSSim.html#a0488760c495c2f866e78fe5ef2e92711" title="Formatada um número inteiro com dois dígitos, preenchendo com zero à esquerda." alt="" coords="763,134,950,159"/>
-<area shape="poly" title=" " alt="" coords="700,146,749,145,749,151,700,151"/>
-<area shape="rect" href="classGPSSim.html#ae30627814af51ac2b922d11886b22b9a" title="Obtém o tempo UTC atual, horário em Londres." alt="" coords="761,183,952,209"/>
-<area shape="poly" title=" " alt="" coords="701,163,778,178,777,183,700,168"/>
-<area shape="poly" title=" " alt="" coords="697,63,762,46,764,51,699,68"/>
-<area shape="poly" title=" " alt="" coords="700,84,755,85,755,90,700,89"/>
-<area shape="poly" title=" " alt="" coords="697,103,794,128,792,133,695,108"/>
-<area shape="poly" title=" " alt="" coords="693,103,715,115,730,129,739,143,748,156,763,168,777,176,775,181,760,173,744,160,735,146,726,132,712,120,690,108"/>
-<area shape="rect" href="classTrackSense.html#a64a0044078ab2ceeb607c18562baed07" title="Responsável pelo loop principal de leitura, interpretação e envio via UDP." alt="" coords="335,293,473,318"/>
-<area shape="poly" title=" " alt="" coords="260,276,323,287,322,293,259,281"/>
-<area shape="rect" href="classTrackSense.html#aa6189bf1f9a0eece69edd42887d504ac" title="Responsável por ler os dados emitos na porta serial." alt="" coords="531,293,704,318"/>
-<area shape="poly" title=" " alt="" coords="474,303,517,303,517,308,474,308"/>
-<area shape="rect" href="classTrackSense.html#ad2249b2d86c543850346620c0f1a86cc" title="Interpretará os dados caso venham no padrão GGA" alt="" coords="526,391,709,417"/>
-<area shape="poly" title=" " alt="" coords="423,316,466,347,522,378,542,385,540,390,520,382,464,351,420,320"/>
-<area shape="rect" href="classTrackSense.html#a989d3a03192dfef312706337b19829f2" title="Interpretará os dados caso venham no padrão RMC." alt="" coords="526,342,709,367"/>
-<area shape="poly" title=" " alt="" coords="460,315,549,336,548,341,459,321"/>
-<area shape="rect" href="classTrackSense.html#a09dd49a222513b4d015c7dae17d9e771" title="Função estática auxiliar para formar string .csv." alt="" coords="523,243,712,269"/>
-<area shape="poly" title=" " alt="" coords="459,290,548,269,549,274,460,295"/>
-<area shape="rect" href="classTrackSense.html#a1644e091e07a2aab03251397a04580a6" title="Função estática auxiliar para converter latitude e longitude para graus decimais." alt="" coords="774,331,939,371"/>
-<area shape="poly" title=" " alt="" coords="675,389,760,369,761,375,676,394"/>
-<area shape="rect" href="classTrackSense.html#af1c448cc7e7fcc6f0fac90abbcfebfa3" title="Função estática auxiliar para separar string em vetores de string. Similar ao método split do python." alt="" coords="791,395,922,421"/>
-<area shape="poly" title=" " alt="" coords="709,403,778,404,778,409,709,408"/>
-<area shape="poly" title=" " alt="" coords="709,350,760,350,761,355,709,356"/>
-<area shape="poly" title=" " alt="" coords="676,365,787,390,785,395,675,370"/>
+<area shape="rect" title=" " alt="" coords="5,298,60,323"/>
+<area shape="rect" href="classGPSSim.html#a826208977e01f41005a108b902d427ea" title="Configura a trajetória circular para a simulação." alt="" coords="123,170,272,195"/>
+<area shape="poly" title=" " alt="" coords="37,296,63,252,83,227,106,206,119,198,122,203,110,210,86,231,67,255,42,299"/>
+<area shape="rect" href="classGPSSim.html#a035f71a80ed040b260f68276d531de79" title="Inicia a geração de frases no padrão NMEA em uma thread separada." alt="" coords="146,219,249,245"/>
+<area shape="poly" title=" " alt="" coords="47,295,74,275,107,255,131,245,133,250,109,260,77,279,51,300"/>
+<area shape="rect" href="classGPSTrack.html#a30cc30a3290df68a9dcc3906811319db" title="Inicializa a thread trabalhadora." alt="" coords="142,269,253,294"/>
+<area shape="poly" title=" " alt="" coords="60,303,128,291,129,296,61,309"/>
+<area shape="rect" href="classGPSSim.html#adf3762e5a73faff02866fa45b4593f20" title="Obtém o caminho do terminal que estamos executando de forma filial." alt="" coords="108,319,287,359"/>
+<area shape="poly" title=" " alt="" coords="60,313,95,319,94,324,60,318"/>
+<area shape="rect" href="classGPSSim.html#a114167ff50a457bd15b93f84242a6edc" title="Encerrará a geração de frases NMEA e aguardará a finalização da thread." alt="" coords="143,383,252,409"/>
+<area shape="poly" title=" " alt="" coords="48,321,75,345,109,368,131,378,129,383,107,373,72,350,45,325"/>
+<area shape="rect" href="classGPSTrack.html#a3ddcdc3c1599f4efa7f3938d9a5f2eee" title="Finaliza a thread de trabalho de forma segura." alt="" coords="138,433,257,458"/>
+<area shape="poly" title=" " alt="" coords="41,322,66,370,85,397,110,419,126,429,124,433,106,423,81,400,61,373,37,325"/>
+<area shape="rect" href="classGPSSim.html#a5bc8a89ed7ee69e64d2de2e1d3934e0f" title="Loop principal de geração de dados." alt="" coords="336,187,452,213"/>
+<area shape="poly" title=" " alt="" coords="249,221,322,209,323,214,250,226"/>
+<area shape="rect" href="classGPSSim.html#a58123de7be940ad080865f6e916a88dc" title="Gera uma frase GGA (Global Positioning System Fix Data)" alt="" coords="515,123,680,163"/>
+<area shape="poly" title=" " alt="" coords="439,185,512,164,514,169,441,190"/>
+<area shape="rect" href="classGPSSim.html#a7bc42b6de5e91ce2e8530ef154c58e63" title="Caso seja movimento circular, atualizará a posição." alt="" coords="501,187,693,213"/>
+<area shape="poly" title=" " alt="" coords="452,197,488,197,488,203,452,203"/>
+<area shape="rect" href="classGPSSim.html#aaf289c32314dfa1d302400e7607e0095" title="Converte graus decimais para formato NMEA de localização, (ddmm.mmmm)." alt="" coords="743,5,930,45"/>
+<area shape="poly" title=" " alt="" coords="627,120,679,88,740,55,757,48,759,53,742,60,681,92,630,125"/>
+<area shape="rect" href="classGPSSim.html#af6d2d9ee9e4c9d1cc216a8152cf3ac4b" title="Após calcular a paridade do corpo da frase, adiciona as flags para o padrão NMEA." alt="" coords="749,69,925,109"/>
+<area shape="poly" title=" " alt="" coords="680,122,735,109,736,114,681,127"/>
+<area shape="rect" href="classGPSSim.html#a0488760c495c2f866e78fe5ef2e92711" title="Formatada um número inteiro com dois dígitos, preenchendo com zero à esquerda." alt="" coords="743,134,930,159"/>
+<area shape="poly" title=" " alt="" coords="680,141,729,142,729,148,680,147"/>
+<area shape="rect" href="classGPSSim.html#ae30627814af51ac2b922d11886b22b9a" title="Obtém o tempo UTC atual, horário em Londres." alt="" coords="741,183,932,209"/>
+<area shape="poly" title=" " alt="" coords="681,158,766,178,765,183,680,164"/>
+<area shape="rect" href="classGPSTrack.html#a862ea0639e829e8dada744bcb7ceff64" title="Executa o loop principal de leitura, interpretação e envio de dados via UDP." alt="" coords="335,302,453,327"/>
+<area shape="poly" title=" " alt="" coords="253,288,321,300,320,305,252,293"/>
+<area shape="rect" href="classGPSTrack_1_1GPSData.html#abc5308215475b647cbbb9df696597ad0" title="Setará os dados baseado no padrão de mensagem recebido." alt="" coords="520,237,675,277"/>
+<area shape="poly" title=" " alt="" coords="439,299,512,278,514,284,441,305"/>
+<area shape="rect" href="classGPSTrack.html#a6a178747dbf11d8f8f2fb1be523e36a1" title="Lê dados da porta serial até encontrar uma quebra de linha." alt="" coords="516,302,679,327"/>
+<area shape="poly" title=" " alt="" coords="453,312,502,312,502,317,453,317"/>
+<area shape="rect" href="classGPSTrack.html#a3167b347c042dc1736aa65d362e9265b" title="Função estática auxiliar para separar uma string em vetores de string." alt="" coords="538,351,657,377"/>
+<area shape="poly" title=" " alt="" coords="448,325,532,345,531,351,446,330"/>
+<area shape="rect" href="classGPSTrack_1_1GPSData.html#ac125cfce08d954bf5fdf6c415bf8e5b6" title="Retorna os dados armazenados em formato CSV." alt="" coords="520,401,675,441"/>
+<area shape="poly" title=" " alt="" coords="412,325,452,356,503,387,517,394,515,399,500,392,449,360,409,330"/>
+<area shape="rect" href="classGPSTrack_1_1GPSData.html#a5d80d5bd50eb5389f555be4f04ef7c3b" title="Função estática auxiliar para converter coordenadas NMEA (latitude/longitude) para graus decimais." alt="" coords="759,237,914,277"/>
+<area shape="poly" title=" " alt="" coords="675,255,746,255,746,260,675,260"/>
 </map>
 </div>
 

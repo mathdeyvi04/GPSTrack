@@ -1,10 +1,8 @@
-#include "TrackSense.hpp"
-
-
+#include "GPSTrack.hpp"
 
 int main(){
 
-	TrackSense ss(
+	GPSTrack ss(
 		"127.0.0.1",
 		9000,
 		"/dev/ttySTM2"

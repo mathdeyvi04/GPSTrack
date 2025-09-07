@@ -2,7 +2,7 @@
 \hypertarget{TrackSense_8hpp}{}\label{TrackSense_8hpp}\index{src/TrackSense.hpp@{src/TrackSense.hpp}}
 
 
-Implementação da Classe Sensora do Módulo GPS6\+MV2.  
+Implementação da solução embarcada.  
 
 
 {\ttfamily \#include $<$string$>$}\newline
@@ -11,6 +11,7 @@ Implementação da Classe Sensora do Módulo GPS6\+MV2.
 {\ttfamily \#include $<$iomanip$>$}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
 {\ttfamily \#include $<$chrono$>$}\newline
 {\ttfamily \#include $<$cmath$>$}\newline
 {\ttfamily \#include $<$ctime$>$}\newline
@@ -31,8 +32,7 @@ Include dependency graph for Track\+Sense.\+hpp\+:\nopagebreak
 \includegraphics[width=350pt]{TrackSense_8hpp__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -43,13 +43,11 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classTrackSense}{Track\+Sense}}
-\begin{DoxyCompactList}\small\item\em Representa um sensor GPS (GY-\/\+GPS6\+MV2 ou Simulado). \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structTrackSense_1_1GPSData}{Track\+Sense\+::\+GPSData}}
-\begin{DoxyCompactList}\small\item\em Struct para armazenar dados GPS ~\newline
- \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Classe responsável por obter o tracking da carga. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTrackSense_1_1GPSData}{Track\+Sense\+::\+GPSData}}
+\begin{DoxyCompactList}\small\item\em Classe responsável por representar os dados do GPS. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Implementação da Classe Sensora do Módulo GPS6\+MV2. 
+Implementação da solução embarcada. 
 
-Responsável por ler, interpretar e enviar dados via UDP. 

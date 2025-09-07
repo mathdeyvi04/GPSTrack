@@ -1,0 +1,354 @@
+\doxysection{GPSTrack Class Reference}
+\hypertarget{classGPSTrack}{}\label{classGPSTrack}\index{GPSTrack@{GPSTrack}}
+
+
+Classe responsável por obter o tracking da carga.  
+
+
+
+
+{\ttfamily \#include $<$GPSTrack.\+hpp$>$}
+
+
+
+Collaboration diagram for GPSTrack\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGPSTrack__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classGPSTrack_1_1GPSData}{GPSData}}
+\begin{DoxyCompactList}\small\item\em Classe responsável por representar os dados do GPS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGPSTrack_a4db3cce1370f7cb4b559544ed69aaf5b}{GPSTrack}} (const std\+::string \&ip\+\_\+destino\+\_\+, int porta\+\_\+destino\+\_\+, const std\+::string \&porta\+\_\+serial\+\_\+)
+\begin{DoxyCompactList}\small\item\em Construtor da Classe. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGPSTrack_a29db7ef078c4e959b1ee16e9aaf651df}{\texorpdfstring{$\sim$}{\string~}\+GPSTrack}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor da classe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGPSTrack_a30cc30a3290df68a9dcc3906811319db}{init}} ()
+\begin{DoxyCompactList}\small\item\em Inicializa a thread trabalhadora. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGPSTrack_a3ddcdc3c1599f4efa7f3938d9a5f2eee}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Finaliza a thread de trabalho de forma segura. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classGPSTrack_a3167b347c042dc1736aa65d362e9265b}{split}} (const std\+::string \&string\+\_\+de\+\_\+entrada, char separador=\textquotesingle{},\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Função estática auxiliar para separar uma string em vetores de string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGPSTrack_a6c8d0f2c0a318fece9821e67c25bc6b4}{open\+\_\+serial}} ()
+\begin{DoxyCompactList}\small\item\em Abre e configura a porta serial para comunicação o sensor. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classGPSTrack_a6a178747dbf11d8f8f2fb1be523e36a1}{read\+\_\+serial}} ()
+\begin{DoxyCompactList}\small\item\em Lê dados da porta serial até encontrar uma quebra de linha. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGPSTrack_a862ea0639e829e8dada744bcb7ceff64}{loop}} ()
+\begin{DoxyCompactList}\small\item\em Executa o loop principal de leitura, interpretação e envio de dados via UDP. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classGPSTrack_ad8ff2642e0fde838f3622ed9894ea141}{ip\+\_\+destino}}
+\item 
+int \mbox{\hyperlink{classGPSTrack_a2ba64ba9d9ab5bfba95781bb49436fdf}{porta\+\_\+destino}}
+\item 
+int \mbox{\hyperlink{classGPSTrack_a61d86b95297cac9a39eb9f23d0218462}{sockfd}}
+\item 
+sockaddr\+\_\+in \mbox{\hyperlink{classGPSTrack_a2bcd4334a211016814fc68202b9b7fd7}{addr\+\_\+dest}}
+\item 
+std\+::thread \mbox{\hyperlink{classGPSTrack_a7d3d22f55ad6374915413b8bcce9d636}{worker}}
+\item 
+std\+::atomic$<$ bool $>$ \mbox{\hyperlink{classGPSTrack_a570c2e95bac7729fecac0e4b8dae98a6}{is\+\_\+exec}} \{false\}
+\item 
+\mbox{\hyperlink{classGPSTrack_1_1GPSData}{GPSData}} \mbox{\hyperlink{classGPSTrack_a395ef8fd118c1f23bc4f414ad74d218d}{last\+\_\+data\+\_\+given}}
+\item 
+std\+::string \mbox{\hyperlink{classGPSTrack_a0f5873c0551489c3d505f36539b92d55}{porta\+\_\+serial}}
+\item 
+int \mbox{\hyperlink{classGPSTrack_a2d31e6311ccf72389dc521bc8b45ee59}{fd\+\_\+serial}} = -\/1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe responsável por obter o tracking da carga. 
+
+Responsabilidades\+:
+\begin{DoxyItemize}
+\item Obter os dados do sensor NEO6\+MV2
+\item Interpretar esses dados, gerando informações
+\item Enviar as informações via socket UDP em formato CSV
+\end{DoxyItemize}
+
+Cada uma dessas responsabilidades está associada a um método da classe, respectivamente\+:
+
+
+\begin{DoxyItemize}
+\item \doxylink{classGPSTrack_a6a178747dbf11d8f8f2fb1be523e36a1}{read\+\_\+serial()}
+\item \doxylink{classGPSTrack_1_1GPSData_abc5308215475b647cbbb9df696597ad0}{GPSData\+::parsing()}
+\item send()
+\end{DoxyItemize}
+
+Os quais estarão sendo repetidamente executados pela thread worker a fim de manter a continuidade de informações.
+
+Não há necessidade de mais explicações, já que o fluxo de funcionamento é simples. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classGPSTrack_a4db3cce1370f7cb4b559544ed69aaf5b}\label{classGPSTrack_a4db3cce1370f7cb4b559544ed69aaf5b} 
+\index{GPSTrack@{GPSTrack}!GPSTrack@{GPSTrack}}
+\index{GPSTrack@{GPSTrack}!GPSTrack@{GPSTrack}}
+\doxysubsubsection{\texorpdfstring{GPSTrack()}{GPSTrack()}}
+{\footnotesize\ttfamily GPSTrack\+::\+GPSTrack (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ip\+\_\+destino\+\_\+,  }\item[{int}]{porta\+\_\+destino\+\_\+,  }\item[{const std\+::string \&}]{porta\+\_\+serial\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor da Classe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip\+\_\+destino\+\_\+} & Endereço IP de destino. \\
+\hline
+{\em porta\+\_\+destino\+\_\+} & Porta UDP de destino \\
+\hline
+{\em porta\+\_\+serial\+\_\+} & Caminho da porta serial\\
+\hline
+\end{DoxyParams}
+Inicializa a comunicação UDP e abre a comunicação serial. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGPSTrack_a4db3cce1370f7cb4b559544ed69aaf5b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGPSTrack_a29db7ef078c4e959b1ee16e9aaf651df}\label{classGPSTrack_a29db7ef078c4e959b1ee16e9aaf651df} 
+\index{GPSTrack@{GPSTrack}!````~GPSTrack@{\texorpdfstring{$\sim$}{\string~}GPSTrack}}
+\index{````~GPSTrack@{\texorpdfstring{$\sim$}{\string~}GPSTrack}!GPSTrack@{GPSTrack}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GPSTrack()}{\string~GPSTrack()}}
+{\footnotesize\ttfamily GPSTrack\+::\texorpdfstring{$\sim$}{\string~}\+GPSTrack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destrutor da classe. 
+
+Realiza a limpeza adequada dos recursos da classe, garantindo o término seguro das operações.
+
+A ordem de operações é importante\+:
+\begin{DoxyEnumerate}
+\item Interrompe a thread de execução
+\item Fecha o socket de comunicação
+\item Fecha a porta serial 
+\end{DoxyEnumerate}Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{classGPSTrack_a29db7ef078c4e959b1ee16e9aaf651df_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGPSTrack_a30cc30a3290df68a9dcc3906811319db}\label{classGPSTrack_a30cc30a3290df68a9dcc3906811319db} 
+\index{GPSTrack@{GPSTrack}!init@{init}}
+\index{init@{init}!GPSTrack@{GPSTrack}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void GPSTrack\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inicializa a thread trabalhadora. 
+
+Garante que apenas uma única instância da thread de execução será iniciada, utilizando um flag atômico para controle de estado. Se a thread já estiver em execução, a função retorna imediatamente sem realizar nova inicialização. Ao iniciar, exibe uma mensagem colorida no terminal e cria uma thread worker que executa o loop principal de leitura e comunicação. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGPSTrack_a30cc30a3290df68a9dcc3906811319db_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classGPSTrack_a30cc30a3290df68a9dcc3906811319db_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGPSTrack_a862ea0639e829e8dada744bcb7ceff64}\label{classGPSTrack_a862ea0639e829e8dada744bcb7ceff64} 
+\index{GPSTrack@{GPSTrack}!loop@{loop}}
+\index{loop@{loop}!GPSTrack@{GPSTrack}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void GPSTrack\+::loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Executa o loop principal de leitura, interpretação e envio de dados via UDP. 
+
+Esta função realiza continuamente a leitura de dados da porta serial, interpreta as mensagens GPS no formato GPGGA, armazena os dados processados e, se desejado, os exibe em formato CSV.
+
+O loop executa enquanto a flag de execução estiver ativa, com uma pausa de 1 segundo entre cada iteração para evitar consumo excessivo de CPU. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGPSTrack_a862ea0639e829e8dada744bcb7ceff64_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGPSTrack_a862ea0639e829e8dada744bcb7ceff64_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGPSTrack_a6c8d0f2c0a318fece9821e67c25bc6b4}\label{classGPSTrack_a6c8d0f2c0a318fece9821e67c25bc6b4} 
+\index{GPSTrack@{GPSTrack}!open\_serial@{open\_serial}}
+\index{open\_serial@{open\_serial}!GPSTrack@{GPSTrack}}
+\doxysubsubsection{\texorpdfstring{open\_serial()}{open\_serial()}}
+{\footnotesize\ttfamily void GPSTrack\+::open\+\_\+serial (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Abre e configura a porta serial para comunicação o sensor. 
+
+Estabelece a conexão serial utilizando a porta serial especificada. Todos os parâmetros necessários para uma comunicação estável com o dispositivo, incluindo velocidade, formato de dados e controle de fluxo são setados.
+
+A porta é aberta em modo somente leitura (O\+\_\+\+RDONLY) e em modo raw, no qual não há processamento adicional dos caracteres.
+
+Aplicamos as seguintes configurações\+:
+
+
+\begin{DoxyItemize}
+\item 9600 bauds
+\item 8 bits de dados
+\item Sem paridade
+\item 1 bit de parada 
+\end{DoxyItemize}Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGPSTrack_a6c8d0f2c0a318fece9821e67c25bc6b4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGPSTrack_a6a178747dbf11d8f8f2fb1be523e36a1}\label{classGPSTrack_a6a178747dbf11d8f8f2fb1be523e36a1} 
+\index{GPSTrack@{GPSTrack}!read\_serial@{read\_serial}}
+\index{read\_serial@{read\_serial}!GPSTrack@{GPSTrack}}
+\doxysubsubsection{\texorpdfstring{read\_serial()}{read\_serial()}}
+{\footnotesize\ttfamily std\+::string GPSTrack\+::read\+\_\+serial (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Lê dados da porta serial até encontrar uma quebra de linha. 
+
+
+\begin{DoxyItemize}
+\item Caracteres de carriage return (\textquotesingle{}\textbackslash{}r\textquotesingle{}) são ignorados durante a leitura.
+\item A função termina quando encontra \textquotesingle{}\textbackslash{}n\textquotesingle{} ou quando não há mais dados para ler.
+\item A leitura é feita caractere por caractere para garantir processamento correto dos dados do GPS que seguem protocolo NMEA. 
+\end{DoxyItemize}Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGPSTrack_a6a178747dbf11d8f8f2fb1be523e36a1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGPSTrack_a3167b347c042dc1736aa65d362e9265b}\label{classGPSTrack_a3167b347c042dc1736aa65d362e9265b} 
+\index{GPSTrack@{GPSTrack}!split@{split}}
+\index{split@{split}!GPSTrack@{GPSTrack}}
+\doxysubsubsection{\texorpdfstring{split()}{split()}}
+{\footnotesize\ttfamily static std\+::vector$<$ std\+::string $>$ GPSTrack\+::split (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{string\+\_\+de\+\_\+entrada,  }\item[{char}]{separador = {\ttfamily \textquotesingle{},\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Função estática auxiliar para separar uma string em vetores de string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string\+\_\+de\+\_\+entrada} & String que será fatiada. \\
+\hline
+{\em separador} & Caractere que será a flag de separação.\\
+\hline
+\end{DoxyParams}
+Similar ao método {\ttfamily split} do python, utiliza \textquotesingle{},\textquotesingle{} como caractere separador default. Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGPSTrack_a3167b347c042dc1736aa65d362e9265b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGPSTrack_a3ddcdc3c1599f4efa7f3938d9a5f2eee}\label{classGPSTrack_a3ddcdc3c1599f4efa7f3938d9a5f2eee} 
+\index{GPSTrack@{GPSTrack}!stop@{stop}}
+\index{stop@{stop}!GPSTrack@{GPSTrack}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void GPSTrack\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Finaliza a thread de trabalho de forma segura. 
+
+Esta função realiza o desligamento controlado da thread de trabalho. Primeiro, altera o flag de execução para falso usando operação atômica. Se a thread estiver joinable (executando), imprime uma mensagem de confirmação e realiza a operação de join para aguardar a finalização segura da thread. Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{classGPSTrack_a3ddcdc3c1599f4efa7f3938d9a5f2eee_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classGPSTrack_a2bcd4334a211016814fc68202b9b7fd7}\label{classGPSTrack_a2bcd4334a211016814fc68202b9b7fd7} 
+\index{GPSTrack@{GPSTrack}!addr\_dest@{addr\_dest}}
+\index{addr\_dest@{addr\_dest}!GPSTrack@{GPSTrack}}
+\doxysubsubsection{\texorpdfstring{addr\_dest}{addr\_dest}}
+{\footnotesize\ttfamily sockaddr\+\_\+in GPSTrack\+::addr\+\_\+dest\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classGPSTrack_a2d31e6311ccf72389dc521bc8b45ee59}\label{classGPSTrack_a2d31e6311ccf72389dc521bc8b45ee59} 
+\index{GPSTrack@{GPSTrack}!fd\_serial@{fd\_serial}}
+\index{fd\_serial@{fd\_serial}!GPSTrack@{GPSTrack}}
+\doxysubsubsection{\texorpdfstring{fd\_serial}{fd\_serial}}
+{\footnotesize\ttfamily int GPSTrack\+::fd\+\_\+serial = -\/1\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classGPSTrack_ad8ff2642e0fde838f3622ed9894ea141}\label{classGPSTrack_ad8ff2642e0fde838f3622ed9894ea141} 
+\index{GPSTrack@{GPSTrack}!ip\_destino@{ip\_destino}}
+\index{ip\_destino@{ip\_destino}!GPSTrack@{GPSTrack}}
+\doxysubsubsection{\texorpdfstring{ip\_destino}{ip\_destino}}
+{\footnotesize\ttfamily std\+::string GPSTrack\+::ip\+\_\+destino\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classGPSTrack_a570c2e95bac7729fecac0e4b8dae98a6}\label{classGPSTrack_a570c2e95bac7729fecac0e4b8dae98a6} 
+\index{GPSTrack@{GPSTrack}!is\_exec@{is\_exec}}
+\index{is\_exec@{is\_exec}!GPSTrack@{GPSTrack}}
+\doxysubsubsection{\texorpdfstring{is\_exec}{is\_exec}}
+{\footnotesize\ttfamily std\+::atomic$<$bool$>$ GPSTrack\+::is\+\_\+exec \{false\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classGPSTrack_a395ef8fd118c1f23bc4f414ad74d218d}\label{classGPSTrack_a395ef8fd118c1f23bc4f414ad74d218d} 
+\index{GPSTrack@{GPSTrack}!last\_data\_given@{last\_data\_given}}
+\index{last\_data\_given@{last\_data\_given}!GPSTrack@{GPSTrack}}
+\doxysubsubsection{\texorpdfstring{last\_data\_given}{last\_data\_given}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGPSTrack_1_1GPSData}{GPSData}} GPSTrack\+::last\+\_\+data\+\_\+given\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classGPSTrack_a2ba64ba9d9ab5bfba95781bb49436fdf}\label{classGPSTrack_a2ba64ba9d9ab5bfba95781bb49436fdf} 
+\index{GPSTrack@{GPSTrack}!porta\_destino@{porta\_destino}}
+\index{porta\_destino@{porta\_destino}!GPSTrack@{GPSTrack}}
+\doxysubsubsection{\texorpdfstring{porta\_destino}{porta\_destino}}
+{\footnotesize\ttfamily int GPSTrack\+::porta\+\_\+destino\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classGPSTrack_a0f5873c0551489c3d505f36539b92d55}\label{classGPSTrack_a0f5873c0551489c3d505f36539b92d55} 
+\index{GPSTrack@{GPSTrack}!porta\_serial@{porta\_serial}}
+\index{porta\_serial@{porta\_serial}!GPSTrack@{GPSTrack}}
+\doxysubsubsection{\texorpdfstring{porta\_serial}{porta\_serial}}
+{\footnotesize\ttfamily std\+::string GPSTrack\+::porta\+\_\+serial\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classGPSTrack_a61d86b95297cac9a39eb9f23d0218462}\label{classGPSTrack_a61d86b95297cac9a39eb9f23d0218462} 
+\index{GPSTrack@{GPSTrack}!sockfd@{sockfd}}
+\index{sockfd@{sockfd}!GPSTrack@{GPSTrack}}
+\doxysubsubsection{\texorpdfstring{sockfd}{sockfd}}
+{\footnotesize\ttfamily int GPSTrack\+::sockfd\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classGPSTrack_a7d3d22f55ad6374915413b8bcce9d636}\label{classGPSTrack_a7d3d22f55ad6374915413b8bcce9d636} 
+\index{GPSTrack@{GPSTrack}!worker@{worker}}
+\index{worker@{worker}!GPSTrack@{GPSTrack}}
+\doxysubsubsection{\texorpdfstring{worker}{worker}}
+{\footnotesize\ttfamily std\+::thread GPSTrack\+::worker\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{GPSTrack_8hpp}{GPSTrack.\+hpp}}\end{DoxyCompactItemize}

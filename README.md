@@ -95,21 +95,21 @@ Será solicitado a senha e, posteriormente, o acesso será permitido.
 Para enviar arquivos para a placa, volte novamente ao PowerShell e:
 
 ```
-scp -O TrackSense root@192.168.42.2:/
+scp -O GPSTrack root@192.168.42.2:/
 ```
 
 Assim, o arquivo estará no mesmo local que as pastas root do sistema linux. Além disso, pode ser necessário dar permissão de execução ao binário, para tanto:
 
 ```
-chmod +x TrackSense
+chmod +x GPSTrack
 ```
 # Caso Deseje Utilizar
 
 A seguir, regras de compilação e execução.
 
-### `TrackSense`
+### `GPSTrack`
 
-O arquivo binário `TrackSense` presente neste diretório já representa o executável a ser inserido na placa para completa operacionalidade.
+O arquivo binário `GPSTrack` presente neste diretório já representa o executável a ser inserido na placa para completa operacionalidade.
 
 ### `make`
 
@@ -128,7 +128,7 @@ Para contribuintes, gerará um PDF contendo a documentação da aplicação gera
 
 # Descrições Sucintas de Código
 
-### TrackSense
+### GPSTrack
 
 Classe responsável por:
 
@@ -136,8 +136,7 @@ Classe responsável por:
 - Interpretar os dados lidos
 - Enviar as informações 
 
-Cada uma dessas fases ocorrem em uma thread dedicada controlada por métodos `init` e `stop`. Utilizamos a thread 
-para conseguir controle absoluto sobre tempo de execução.
+Cada uma dessas fases ocorrem em uma thread dedicada controlada por métodos `init` e `stop`. Utilizamos a thread para conseguir controle absoluto sobre tempo de execução.
 
 Fluxo de Funcionamento:
 
@@ -147,16 +146,15 @@ A classe configura um socket UDP para a transmissão dos dados processados e uma
 
 - Leitura dos Dados:
 
-O método `ler_dados` coleta os dados diretamente da porta serial.
+O método `read_serial` coleta os dados diretamente da porta serial.
 
 - Interpretação dos Dados:
 
-
+A classe `GPSData` é completamente responsável pelo parsing dos dados, conseguindo, por enquanto, traduzir apenas as mensagens no estilo _GPGGA_.
 
 - Envio de informações:
 
 _Ainda não desenvolvido_.
-
 
 Para informações mais precisas e profundas, sugiro verificar o arquivo 
 [index.html](docs/html/index.html) ou [Documentation.pdf](Documentation.pdf), sendo este último gerado pelo comando `make docs`.

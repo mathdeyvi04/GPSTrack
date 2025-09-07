@@ -55,13 +55,14 @@ um mecanismo essencial em sistemas Unix para emular terminais virtuais.
 #include <pty.h>     
 
 /**
- * @brief Simulador do módulo GPS que gera frases no padrão NMEA.
+ * @brief Versão simulada do sensor GPS que gera frases no padrão NMEA.
  * @details
+ * 
  * Cria um par de pseudo-terminais (PTY) para simular um o módulo GPS real.
  * Gera frases no padrão NMEA (RMC e GGA) em intervalos regulares, permitindo configuração
  * de posição inicial, altitude, velocidade e padrão de movimento.
  * 
- * Perceba que o objeto é simular os dados gerados, logo estes devem ser difíceis 
+ * Confirmo que esta classe foi criada em meio às pressas e necessita de mais polimento.
  */
 class GPSSim {
 private:
@@ -336,10 +337,9 @@ private:
         while (_is_exec){
             
             // Gera frases NMEA
-            auto rmc = _gerar_corpo_de_frase_rmc(_lat_sim, _lon_sim, _velocidade_nos);
             auto gga = _gerar_corpo_de_frase_gga(_lat_sim, _lon_sim, _alt, 10, 0.8);  
 
-            const std::string saida = rmc + gga;
+            const std::string saida = gga;
             // std::cout << "\033[7mGPS6MV2 Simulado Emitindo:\033[0m \n" << saida << std::endl;
             (void)!::write(_fd_pai, saida.data(), saida.size());
             
@@ -394,8 +394,8 @@ public:
         // Configura o terminal filho para simular o módulo real (9600 8N1)
         termios config_com{};              // Cria a estrutura vazia
         ::tcgetattr(_fd_filho, &config_com); // Lê as configurações atuais e armazena na struct
-        ::cfsetispeed(&config_com, B115200);   // Definimos velocidade de entrada e de saída
-        ::cfsetospeed(&config_com, B115200);   // Essa constante está presente dentro do termios.h
+        ::cfsetispeed(&config_com, B9600);   // Definimos velocidade de entrada e de saída
+        ::cfsetospeed(&config_com, B9600);   // Essa constante está presente dentro do termios.h
         // Diversas operações bits a bits
         config_com.c_cflag = (config_com.c_cflag & ~CSIZE) | CS8;  
         config_com.c_cflag |= (CLOCAL | CREAD);                        

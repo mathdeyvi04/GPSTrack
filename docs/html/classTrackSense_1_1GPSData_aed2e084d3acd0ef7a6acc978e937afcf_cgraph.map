@@ -1,0 +1,5 @@
+<map id="TrackSense::GPSData::parsing" name="TrackSense::GPSData::parsing">
+<area shape="rect" id="Node000001" title="Setará os dados baseado no padrão de mensagem recebido." alt="" coords="5,5,165,45"/>
+<area shape="rect" id="Node000002" href="$classTrackSense_1_1GPSData.html#a4e610fb60b8f5c55f0e5df19d577b331" title="Função estática auxiliar para converter coordenadas NMEA (latitude/longitude) para graus decimais." alt="" coords="213,5,373,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,23,199,23,199,28,165,28"/>
+</map>

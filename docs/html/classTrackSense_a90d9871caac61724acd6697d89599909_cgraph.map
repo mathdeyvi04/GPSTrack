@@ -1,0 +1,13 @@
+<map id="TrackSense::loop" name="TrackSense::loop">
+<area shape="rect" id="Node000001" title="Executa o loop principal de leitura, interpretação e envio de dados via UDP." alt="" coords="5,95,136,121"/>
+<area shape="rect" id="Node000002" href="$classTrackSense_1_1GPSData.html#aed2e084d3acd0ef7a6acc978e937afcf" title="Setará os dados baseado no padrão de mensagem recebido." alt="" coords="191,5,351,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,93,183,55,200,48,202,53,185,60,100,98"/>
+<area shape="rect" id="Node000004" href="$classTrackSense.html#a954c90d64e09507529def496951a3429" title="Lê dados da porta serial até encontrar uma quebra de linha." alt="" coords="184,70,359,95"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="136,97,170,93,171,98,137,102"/>
+<area shape="rect" id="Node000005" href="$classTrackSense.html#a20c602897f0d8fa8cd70008bd3c739bf" title="Função estática auxiliar para separar uma string em vetores de string." alt="" coords="206,119,337,145"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="137,113,193,120,192,125,136,118"/>
+<area shape="rect" id="Node000006" href="$classTrackSense_1_1GPSData.html#a712f4fb299d90582030ce73ddcd7d858" title="Retorna os dados armazenados em formato CSV." alt="" coords="191,169,351,209"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="102,118,185,154,206,162,204,167,183,158,100,123"/>
+<area shape="rect" id="Node000003" href="$classTrackSense_1_1GPSData.html#a4e610fb60b8f5c55f0e5df19d577b331" title="Função estática auxiliar para converter coordenadas NMEA (latitude/longitude) para graus decimais." alt="" coords="407,5,567,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="352,23,393,23,393,28,352,28"/>
+</map>

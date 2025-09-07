@@ -1,0 +1,5 @@
+<map id="GPSTrack::GPSData::parsing" name="GPSTrack::GPSData::parsing">
+<area shape="rect" id="Node000001" title="Setará os dados baseado no padrão de mensagem recebido." alt="" coords="5,5,160,45"/>
+<area shape="rect" id="Node000002" href="$classGPSTrack_1_1GPSData.html#a5d80d5bd50eb5389f555be4f04ef7c3b" title="Função estática auxiliar para converter coordenadas NMEA (latitude/longitude) para graus decimais." alt="" coords="208,5,363,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,23,194,23,194,28,160,28"/>
+</map>

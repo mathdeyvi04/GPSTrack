@@ -1,5 +1,5 @@
 <map id="TrackSense::~TrackSense" name="TrackSense::~TrackSense">
-<area shape="rect" id="Node000001" title="Destrutor da Classe." alt="" coords="5,5,192,31"/>
-<area shape="rect" id="Node000002" href="$classTrackSense.html#afbc696c7cc07f34485e81871688265d2" title="Finaliza a thread de trabalho." alt="" coords="240,5,371,31"/>
+<area shape="rect" id="Node000001" title="Destrutor da classe." alt="" coords="5,5,192,31"/>
+<area shape="rect" id="Node000002" href="$classTrackSense.html#afbc696c7cc07f34485e81871688265d2" title="Finaliza a thread de trabalho de forma segura." alt="" coords="240,5,371,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,15,227,15,227,21,192,21"/>
 </map>

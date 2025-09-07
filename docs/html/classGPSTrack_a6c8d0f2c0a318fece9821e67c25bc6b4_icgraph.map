@@ -1,0 +1,5 @@
+<map id="GPSTrack::open_serial" name="GPSTrack::open_serial">
+<area shape="rect" id="Node000001" title="Abre e configura a porta serial para comunicação o sensor." alt="" coords="204,5,369,31"/>
+<area shape="rect" id="Node000002" href="$classGPSTrack.html#a4db3cce1370f7cb4b559544ed69aaf5b" title="Construtor da Classe." alt="" coords="5,5,156,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,21,156,21,156,15,190,15"/>
+</map>

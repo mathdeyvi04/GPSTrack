@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['lat_0',['lat',['../structTrackSense_1_1GPSData.html#a2ac28c6eb58a0829eb0c7b6d37a01de5',1,'TrackSense::GPSData']]],
-  ['lon_1',['lon',['../structTrackSense_1_1GPSData.html#a5b2c3805154f047e232369a0838d1376',1,'TrackSense::GPSData']]]
+  ['main_0',['main',['../debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;debug.cpp'],['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main.cpp']]],
+  ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]]
 ];

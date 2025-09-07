@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['obter_5fcaminho_5fterminal_5ffilho_0',['obter_caminho_terminal_filho',['../classGPSSim.html#adf3762e5a73faff02866fa45b4593f20',1,'GPSSim']]],
-  ['obter_5ftempo_5futc_1',['obter_tempo_utc',['../classGPSSim.html#ae30627814af51ac2b922d11886b22b9a',1,'GPSSim']]]
+  ['main_0',['main',['../debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;debug.cpp'],['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main.cpp']]]
 ];

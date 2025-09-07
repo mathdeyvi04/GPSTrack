@@ -1,0 +1,15 @@
+<map id="GPSTrack::init" name="GPSTrack::init">
+<area shape="rect" id="Node000001" title="Inicializa a thread trabalhadora." alt="" coords="5,95,116,121"/>
+<area shape="rect" id="Node000002" href="$classGPSTrack.html#a862ea0639e829e8dada744bcb7ceff64" title="Executa o loop principal de leitura, interpretação e envio de dados via UDP." alt="" coords="164,95,283,121"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,105,150,105,150,111,116,111"/>
+<area shape="rect" id="Node000003" href="$classGPSTrack_1_1GPSData.html#abc5308215475b647cbbb9df696597ad0" title="Setará os dados baseado no padrão de mensagem recebido." alt="" coords="335,5,489,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="249,93,330,55,345,48,347,53,332,60,251,98"/>
+<area shape="rect" id="Node000005" href="$classGPSTrack.html#a6a178747dbf11d8f8f2fb1be523e36a1" title="Lê dados da porta serial até encontrar uma quebra de linha." alt="" coords="331,70,493,95"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="283,97,317,93,317,98,283,103"/>
+<area shape="rect" id="Node000006" href="$classGPSTrack.html#a3167b347c042dc1736aa65d362e9265b" title="Função estática auxiliar para separar uma string em vetores de string." alt="" coords="353,119,471,145"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="283,113,340,120,339,125,283,118"/>
+<area shape="rect" id="Node000007" href="$classGPSTrack_1_1GPSData.html#ac125cfce08d954bf5fdf6c415bf8e5b6" title="Retorna os dados armazenados em formato CSV." alt="" coords="335,169,489,209"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="254,118,332,154,350,161,348,166,330,158,251,123"/>
+<area shape="rect" id="Node000004" href="$classGPSTrack_1_1GPSData.html#a5d80d5bd50eb5389f555be4f04ef7c3b" title="Função estática auxiliar para converter coordenadas NMEA (latitude/longitude) para graus decimais." alt="" coords="541,5,696,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="490,23,528,23,528,28,490,28"/>
+</map>

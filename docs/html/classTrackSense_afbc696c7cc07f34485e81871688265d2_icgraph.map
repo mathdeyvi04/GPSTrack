@@ -1,7 +1,7 @@
 <map id="TrackSense::stop" name="TrackSense::stop">
-<area shape="rect" id="Node000001" title="Finaliza a thread de trabalho." alt="" coords="240,31,371,56"/>
+<area shape="rect" id="Node000001" title="Finaliza a thread de trabalho de forma segura." alt="" coords="240,31,371,56"/>
 <area shape="rect" id="Node000002" href="$debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="71,5,126,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="226,36,126,24,127,19,226,31"/>
-<area shape="rect" id="Node000003" href="$classTrackSense.html#a99b92a73aca77c357cea5b34dad60cec" title="Destrutor da Classe." alt="" coords="5,55,192,80"/>
+<area shape="rect" id="Node000003" href="$classTrackSense.html#a99b92a73aca77c357cea5b34dad60cec" title="Destrutor da classe." alt="" coords="5,55,192,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="226,55,192,59,192,54,226,50"/>
 </map>

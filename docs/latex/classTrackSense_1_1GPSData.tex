@@ -1,0 +1,198 @@
+\doxysection{Track\+Sense\+::GPSData Class Reference}
+\hypertarget{classTrackSense_1_1GPSData}{}\label{classTrackSense_1_1GPSData}\index{TrackSense::GPSData@{TrackSense::GPSData}}
+
+
+Classe responsável por representar os dados do GPS.  
+
+
+
+
+{\ttfamily \#include $<$Track\+Sense.\+hpp$>$}
+
+
+
+Collaboration diagram for Track\+Sense\+::GPSData\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classTrackSense_1_1GPSData__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTrackSense_1_1GPSData_a31437fc9c2695109385598c29d451ca5}{GPSData}} ()
+\begin{DoxyCompactList}\small\item\em Construtor Default. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTrackSense_1_1GPSData_aed2e084d3acd0ef7a6acc978e937afcf}{parsing}} (int code\+\_\+pattern, const std\+::vector$<$ std\+::string $>$ \&data\+\_\+splitted)
+\begin{DoxyCompactList}\small\item\em Setará os dados baseado no padrão de mensagem recebido. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classTrackSense_1_1GPSData_a712f4fb299d90582030ce73ddcd7d858}{to\+\_\+csv}} () const
+\begin{DoxyCompactList}\small\item\em Retorna os dados armazenados em formato CSV. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classTrackSense_1_1GPSData_a4e610fb60b8f5c55f0e5df19d577b331}{converter\+\_\+lat\+\_\+lon}} (const std\+::string \&string\+\_\+numerica, const std\+::string \&string\+\_\+hemisf)
+\begin{DoxyCompactList}\small\item\em Função estática auxiliar para converter coordenadas NMEA (latitude/longitude) para graus decimais. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classTrackSense_1_1GPSData_a80bd447d53fa5c68206d3b9bb6ff28fb}{pattern}}
+\begin{DoxyCompactList}\small\item\em Sempre será GPGGA. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classTrackSense_1_1GPSData_acd734c8facf5b0fa47ec857bce21c731}{data}}
+\begin{DoxyCompactList}\small\item\em Organização de dados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe responsável por representar os dados do GPS. 
+
+Utilizar struct mostrou-\/se básico demais para atenter as necessidades de representação dos dados do GPS. Com isso, a evolução para Class tornou-\/se inevitável.
+
+O sensor inicia a comunicação enviando mensagens do tipo \$\+GPTXT. Essas mensagens são mensagens de texto informativas, geralmente vazias. Esse é um comportamento normal nos primeiros segundos após energizar o módulo.
+
+Após adquirir sinais de satélites e iniciar a navegação, o módulo passa a enviar sentenças NMEA padrão, que trazem informações úteis\+:
+
+
+\begin{DoxyItemize}
+\item \$\+GPRMC (Recommended Minimum Navigation Information)\+: Fornece dados essenciais de navegação, como horário UTC, status, latitude, longitude, velocidade, curso e data.
+\item \$\+GPVTG (Course over Ground and Ground Speed)\+: Informa direção do movimento (rumo) e velocidade sobre o solo.
+\item \$\+GPGGA (Global Positioning System Fix Data)\+: Dados de fixação do GPS, incluindo número de satélites usados, qualidade do sinal, altitude e posição.
+\item \$\+GPGSA (GNSS DOP and Active Satellites)\+: Status dos satélites em uso e precisão (DOP -\/ Dilution of Precision).
+\item \$\+GPGSV (GNSS Satellites in View)\+: Informações sobre os satélites visíveis, como elevação, azimute e intensidade de sinal.
+\item \$\+GPGLL (Geographic Position -\/ Latitude/\+Longitude)\+: Posição geográfica em latitude e longitude, com horário associado.
+\end{DoxyItemize}
+
+Sendo assim, o sensor sai de um modo de inicialização para operacionalidade completa.
+
+Como nosso próposito é apenas localização, nos interessa apenas o padrão GGA, o qual oferece dados profundos de localização. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTrackSense_1_1GPSData_a31437fc9c2695109385598c29d451ca5}\label{classTrackSense_1_1GPSData_a31437fc9c2695109385598c29d451ca5} 
+\index{TrackSense::GPSData@{TrackSense::GPSData}!GPSData@{GPSData}}
+\index{GPSData@{GPSData}!TrackSense::GPSData@{TrackSense::GPSData}}
+\doxysubsubsection{\texorpdfstring{GPSData()}{GPSData()}}
+{\footnotesize\ttfamily Track\+Sense\+::\+GPSData\+::\+GPSData (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor Default. 
+
+Reserva no vetor de dados 4 strings, respectivamente para horário UTC, latitude, longitude e altitude. ~\newline
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTrackSense_1_1GPSData_a4e610fb60b8f5c55f0e5df19d577b331}\label{classTrackSense_1_1GPSData_a4e610fb60b8f5c55f0e5df19d577b331} 
+\index{TrackSense::GPSData@{TrackSense::GPSData}!converter\_lat\_lon@{converter\_lat\_lon}}
+\index{converter\_lat\_lon@{converter\_lat\_lon}!TrackSense::GPSData@{TrackSense::GPSData}}
+\doxysubsubsection{\texorpdfstring{converter\_lat\_lon()}{converter\_lat\_lon()}}
+{\footnotesize\ttfamily static std\+::string Track\+Sense\+::\+GPSData\+::converter\+\_\+lat\+\_\+lon (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{string\+\_\+numerica,  }\item[{const std\+::string \&}]{string\+\_\+hemisf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Função estática auxiliar para converter coordenadas NMEA (latitude/longitude) para graus decimais. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string\+\_\+numerica} & String com a coordenada em formato NMEA (ex\+: "{}2257.\+34613"{}). \\
+\hline
+{\em string\+\_\+hemisf} & String com o hemisfério correspondente ("{}\+N"{}, "{}\+S"{}, "{}\+E"{}, "{}\+W"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String coordenada em graus decimais (negativa para hemisférios Sul e Oeste). 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrackSense_1_1GPSData_a4e610fb60b8f5c55f0e5df19d577b331_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTrackSense_1_1GPSData_aed2e084d3acd0ef7a6acc978e937afcf}\label{classTrackSense_1_1GPSData_aed2e084d3acd0ef7a6acc978e937afcf} 
+\index{TrackSense::GPSData@{TrackSense::GPSData}!parsing@{parsing}}
+\index{parsing@{parsing}!TrackSense::GPSData@{TrackSense::GPSData}}
+\doxysubsubsection{\texorpdfstring{parsing()}{parsing()}}
+{\footnotesize\ttfamily bool Track\+Sense\+::\+GPSData\+::parsing (\begin{DoxyParamCaption}\item[{int}]{code\+\_\+pattern,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{data\+\_\+splitted }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setará os dados baseado no padrão de mensagem recebido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code\+\_\+pattern} & Código para informar que padrão de mensagem recebeu. \\
+\hline
+{\em data\+\_\+splitted} & Vetor de dados da mensagem recebida. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retornará true caso seja bem sucedido. False, caso contrário.
+\end{DoxyReturn}
+Tradução de códigos\+:
+
+
+\begin{DoxyItemize}
+\item 0 == GPGGA
+\end{DoxyItemize}
+
+A partir do padrão de mensagem recebida, organizaremos o vetor com dados relevantes. ~\newline
+ Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrackSense_1_1GPSData_aed2e084d3acd0ef7a6acc978e937afcf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrackSense_1_1GPSData_aed2e084d3acd0ef7a6acc978e937afcf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTrackSense_1_1GPSData_a712f4fb299d90582030ce73ddcd7d858}\label{classTrackSense_1_1GPSData_a712f4fb299d90582030ce73ddcd7d858} 
+\index{TrackSense::GPSData@{TrackSense::GPSData}!to\_csv@{to\_csv}}
+\index{to\_csv@{to\_csv}!TrackSense::GPSData@{TrackSense::GPSData}}
+\doxysubsubsection{\texorpdfstring{to\_csv()}{to\_csv()}}
+{\footnotesize\ttfamily std\+::string Track\+Sense\+::\+GPSData\+::to\+\_\+csv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna os dados armazenados em formato CSV. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string Linha CSV com os valores. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrackSense_1_1GPSData_a712f4fb299d90582030ce73ddcd7d858_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classTrackSense_1_1GPSData_acd734c8facf5b0fa47ec857bce21c731}\label{classTrackSense_1_1GPSData_acd734c8facf5b0fa47ec857bce21c731} 
+\index{TrackSense::GPSData@{TrackSense::GPSData}!data@{data}}
+\index{data@{data}!TrackSense::GPSData@{TrackSense::GPSData}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Track\+Sense\+::\+GPSData\+::data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Organização de dados. 
+
+\Hypertarget{classTrackSense_1_1GPSData_a80bd447d53fa5c68206d3b9bb6ff28fb}\label{classTrackSense_1_1GPSData_a80bd447d53fa5c68206d3b9bb6ff28fb} 
+\index{TrackSense::GPSData@{TrackSense::GPSData}!pattern@{pattern}}
+\index{pattern@{pattern}!TrackSense::GPSData@{TrackSense::GPSData}}
+\doxysubsubsection{\texorpdfstring{pattern}{pattern}}
+{\footnotesize\ttfamily std\+::string Track\+Sense\+::\+GPSData\+::pattern\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sempre será GPGGA. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{TrackSense_8hpp}{Track\+Sense.\+hpp}}\end{DoxyCompactItemize}

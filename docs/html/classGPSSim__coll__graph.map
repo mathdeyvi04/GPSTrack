@@ -1,5 +1,5 @@
 <map id="GPSSim" name="GPSSim">
-<area shape="rect" id="Node000001" title="Simulador do módulo GPS que gera frases no padrão NMEA." alt="" coords="408,211,482,236"/>
+<area shape="rect" id="Node000001" title="Versão simulada do sensor GPS que gera frases no padrão NMEA." alt="" coords="408,211,482,236"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="6,5,44,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="19,45,12,77,8,115,13,153,20,170,31,185,50,193,86,201,192,211,408,219,408,224,192,217,85,206,48,198,27,189,15,172,8,154,3,115,6,76,14,43"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="90,5,141,31"/>

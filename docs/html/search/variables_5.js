@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['time_5futc_0',['time_utc',['../structTrackSense_1_1GPSData.html#a5e2a7292c9993bfca52d00dac16ce032',1,'TrackSense::GPSData']]]
+  ['last_5fdata_5fgiven_0',['last_data_given',['../classGPSTrack.html#a395ef8fd118c1f23bc4f414ad74d218d',1,'GPSTrack']]]
 ];

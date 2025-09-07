@@ -7,7 +7,7 @@
  * de ferramentas que possibilitam a debugação de nosso código.
  */
 #include <iostream>
-#include "TrackSense.hpp"
+#include "GPSTrack.hpp"
 #include "GPSSim.hpp"
 
 // IME - -22.9559, -43.1659
@@ -28,9 +28,9 @@ int main(){
 			  << "\n";
 	gps_module.init();
 
-	std::this_thread::sleep_for(std::chrono::seconds(3));
+	std::this_thread::sleep_for(std::chrono::seconds(1));
 
-	TrackSense sensor(
+	GPSTrack sensor(
 		"127.0.0.1",
 		9000,
 		gps_module.obter_caminho_terminal_filho()

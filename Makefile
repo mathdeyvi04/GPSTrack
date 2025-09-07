@@ -3,17 +3,11 @@
 #################################################################
 
 # Nome do programa
-TARGET      := TrackSense
+TARGET      := GPSTrack
 
 # Fontes do projeto
 SRC         := src/main.cpp
 OBJ         := $(SRC:.cpp=.o)
-
-# IP e usuário da placa
-# Ainda precisamos da placa para descobrir mais
-PLACA_USER  := 
-PLACA_IP    := 
-PLACA_PATH  := 
 
 # Local da Pasta Latex
 LATEX_PATH  := docs/latex
@@ -22,8 +16,6 @@ LATEX_PATH  := docs/latex
 CXX         := arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-g++
 SYSROOT     := arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot
 CXXFLAGS    := --sysroot=$(SYSROOT) -Wall -O2
-
-
 
 #################################################################
 ## Comandos de Execução
@@ -47,7 +39,6 @@ docs:
 	@$(MAKE) -C $(LATEX_PATH)
 	@echo "\e[1;36m[INFO] Trazendo PDF para diretório padrão\e[0m"
 	@mv $(LATEX_PATH)/refman.pdf Documentation.pdf
-
 
 # Limpamos 
 clean:
