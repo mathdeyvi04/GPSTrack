@@ -1,0 +1,99 @@
+\doxysection{GPSSim\+::NMEAGenerator Class Reference}
+\hypertarget{classGPSSim_1_1NMEAGenerator}{}\label{classGPSSim_1_1NMEAGenerator}\index{GPSSim::NMEAGenerator@{GPSSim::NMEAGenerator}}
+
+
+Classe responsável por agrupar as funções geradoras de sentenças NMEA.  
+
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classGPSSim_1_1NMEAGenerator_a8966ba1016d3c2545b1efec67b4a087d}{generate\+\_\+gga}} (int lat\+\_\+graus, int lon\+\_\+graus, int alt\+\_\+metros)
+\begin{DoxyCompactList}\small\item\em Gera uma frase GGA (Global Positioning System Fix Data) \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classGPSSim_1_1NMEAGenerator_aeebf8c2237ee7692b1c35c22d8eb4de1}{generate\+\_\+rmc}} (int lat\+\_\+graus, int lon\+\_\+graus, int alt\+\_\+metros)
+\begin{DoxyCompactList}\small\item\em Gera uma frase GGA (Recommended Minimum Navigation Information) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe responsável por agrupar as funções geradoras de sentenças NMEA. 
+
+Contém apenas os métodos estáticos que constroem a informação a ser posta na string NMEA. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGPSSim_1_1NMEAGenerator_a8966ba1016d3c2545b1efec67b4a087d}\label{classGPSSim_1_1NMEAGenerator_a8966ba1016d3c2545b1efec67b4a087d} 
+\index{GPSSim::NMEAGenerator@{GPSSim::NMEAGenerator}!generate\_gga@{generate\_gga}}
+\index{generate\_gga@{generate\_gga}!GPSSim::NMEAGenerator@{GPSSim::NMEAGenerator}}
+\doxysubsubsection{\texorpdfstring{generate\_gga()}{generate\_gga()}}
+{\footnotesize\ttfamily static std\+::string GPSSim\+::\+NMEAGenerator\+::generate\+\_\+gga (\begin{DoxyParamCaption}\item[{int}]{lat\+\_\+graus,  }\item[{int}]{lon\+\_\+graus,  }\item[{int}]{alt\+\_\+metros }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Gera uma frase GGA (Global Positioning System Fix Data) 
+
+Apesar de usar apenas valores de lat, long e alt, zera os demais valores.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lat\+\_\+graus} & Latitude em graus decimais \\
+\hline
+{\em lon\+\_\+graus} & Longitude em graus decimais \\
+\hline
+{\em alt\+\_\+metros} & Altitude em metros \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String correspondendo ao corpo de frase GGA 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGPSSim_1_1NMEAGenerator_a8966ba1016d3c2545b1efec67b4a087d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGPSSim_1_1NMEAGenerator_a8966ba1016d3c2545b1efec67b4a087d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGPSSim_1_1NMEAGenerator_aeebf8c2237ee7692b1c35c22d8eb4de1}\label{classGPSSim_1_1NMEAGenerator_aeebf8c2237ee7692b1c35c22d8eb4de1} 
+\index{GPSSim::NMEAGenerator@{GPSSim::NMEAGenerator}!generate\_rmc@{generate\_rmc}}
+\index{generate\_rmc@{generate\_rmc}!GPSSim::NMEAGenerator@{GPSSim::NMEAGenerator}}
+\doxysubsubsection{\texorpdfstring{generate\_rmc()}{generate\_rmc()}}
+{\footnotesize\ttfamily static std\+::string GPSSim\+::\+NMEAGenerator\+::generate\+\_\+rmc (\begin{DoxyParamCaption}\item[{int}]{lat\+\_\+graus,  }\item[{int}]{lon\+\_\+graus,  }\item[{int}]{alt\+\_\+metros }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Gera uma frase GGA (Recommended Minimum Navigation Information) 
+
+Apesar de usar apenas valores de lat, long e alt, zera os demais valores.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lat\+\_\+graus} & Latitude em graus decimais \\
+\hline
+{\em lon\+\_\+graus} & Longitude em graus decimais \\
+\hline
+{\em alt\+\_\+metros} & Altitude em metros \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String correspondendo ao corpo de frase GGA 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGPSSim_1_1NMEAGenerator_aeebf8c2237ee7692b1c35c22d8eb4de1_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{GPSSim_8hpp}{GPSSim.\+hpp}}\end{DoxyCompactItemize}

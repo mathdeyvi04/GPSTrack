@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['addr_5fdest_0',['addr_dest',['../classGPSTrack.html#a2bcd4334a211016814fc68202b9b7fd7',1,'GPSTrack']]]
+  ['build_5fnmea_5fstring_0',['build_nmea_string',['../classGPSSim.html#ab8935cddbaf6da72e856280cd6a8fd91',1,'GPSSim']]]
 ];

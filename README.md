@@ -4,6 +4,7 @@
 - [Caso Deseje **Contribuir**](#caso-deseje-contribuir)
 - [Caso Deseje **Utilizar**](#caso-deseje-utilizar)
 - [Descrições Sucintas de Código](#descrições-sucintas-de-código)
+- [Confirmação de Leitura de Dados](#confirmação-de-leitura-de-dados)
 
 # Objetivo
 
@@ -122,6 +123,8 @@ Compilará a aplicação para o Linux, executará e apagará o executável gerad
 Neste caso, há um simulador para o módulo GPS que estaremos usando a fim de que 
 possamos realmente realizar testes.
 
+Esse modo também é interessante para aqueles que não possuem o sensor, nem a placa.
+
 ### `make docs`
 
 Para contribuintes, gerará um PDF contendo a documentação da aplicação geral.
@@ -150,7 +153,8 @@ O método `read_serial` coleta os dados diretamente da porta serial.
 
 - Interpretação dos Dados:
 
-A classe `GPSData` é completamente responsável pelo parsing dos dados, conseguindo, por enquanto, traduzir apenas as mensagens no estilo _GPGGA_.
+A classe `GPSData` é completamente responsável pelo parsing dos dados, conseguindo, por enquanto, traduzir apenas as mensagens no estilo _GPGGA_, a partir da qual podemos obter com
+segurança informações de horário em UTC, latitude, longitude e altitude.
 
 - Envio de informações:
 
@@ -159,3 +163,39 @@ _Ainda não desenvolvido_.
 Para informações mais precisas e profundas, sugiro verificar o arquivo 
 [index.html](docs/html/index.html) ou [Documentation.pdf](Documentation.pdf), sendo este último gerado pelo comando `make docs`.
 
+# Confirmação de Leitura de Dados
+
+Como nem todas as placas são iguais, não como definir com propriedade o procedimento para visualização dos dados. 
+
+Em nosso caso, o sensor conectou-se pelo terminal serial `/dev/ttySTM2`.
+
+### Caso deseje ver a comunicação entre o sensor e a placa em tempo real
+
+```
+cat /dev/ttySTM2
+```
+
+Dependendo de quando o comando foi executado, diferentes formas de texto surgirão.
+
+- Caso tenha sido imediatamente após ligá-lo:
+
+![](https://github.com/user-attachments/assets/147db746-8515-40b2-8a8a-10a0ac17ed0e)
+
+- Caso tenha sido após tempo _suficientemente_ longo e em local aberto:
+
+![](https://github.com/user-attachments/assets/c890a3d0-9aae-40e2-99f5-d13a59aba50e)
+
+### Para executar a aplicação
+
+Considerando que um determinado tempo foi esperado, execute:
+
+```
+./GPSTrack
+```
+
+Então as seguintes mensagens devem surgir à tela:
+
+![](https://github.com/user-attachments/assets/a2d1d5bd-6fc6-433d-9291-4bf4f3961b08)
+
+Observe como nossa aplicação apenas interpreta o padrão _GGA_ lançado pelo sensor, retornando
+as informações de _Hora_em_UTC_, _Latitude_, _Longitude_, _Altitude_.

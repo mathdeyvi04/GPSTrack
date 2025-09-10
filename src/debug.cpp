@@ -18,13 +18,10 @@ int main(){
 	GPSSim gps_module(
 		-22.9559,
 		-43.1659,
-		760.0,
-		1.0,
-		2.0
+		760.0
 	);
-	gps_module.config_traj();
 	std::cout << "Executando simulator_gps_module em: "
-			  << gps_module.obter_caminho_terminal_filho()
+			  << gps_module.get_path_pseudo_term()
 			  << "\n";
 	gps_module.init();
 
@@ -33,7 +30,7 @@ int main(){
 	GPSTrack sensor(
 		"127.0.0.1",
 		9000,
-		gps_module.obter_caminho_terminal_filho()
+		gps_module.get_path_pseudo_term()
 	);
 	sensor.init();
 

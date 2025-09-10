@@ -99,7 +99,7 @@ public:
 	class GPSData {
 	private:
 
-		std::string pattern;  ///< Por enquanto, será apenas GPGGA
+		std::string pattern;
 		std::vector<std::string> data; ///< Organizaremos os dados neste vetor.
 
 	public:

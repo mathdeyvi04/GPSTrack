@@ -1,19 +1,13 @@
 <map id="GPSSim" name="GPSSim">
-<area shape="rect" id="Node000001" title="Versão simulada do sensor GPS que gera frases no padrão NMEA." alt="" coords="408,211,482,236"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="6,5,44,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="19,45,12,77,8,115,13,153,20,170,31,185,50,193,86,201,192,211,408,219,408,224,192,217,85,206,48,198,27,189,15,172,8,154,3,115,6,76,14,43"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="90,5,141,31"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="109,45,101,76,96,114,100,152,107,170,118,185,131,192,159,198,239,208,408,218,408,223,238,213,158,203,130,197,114,189,102,172,95,154,91,114,96,75,104,43"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="218,5,282,31"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="243,44,234,76,229,113,232,152,238,169,248,185,258,193,274,199,316,209,409,218,408,224,315,215,272,204,256,197,244,188,234,172,227,153,224,113,229,75,238,43"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="312,5,437,31"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="374,44,375,111,383,150,398,185,409,198,423,209,420,213,406,202,394,188,378,151,370,112,369,44"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="461,5,528,31"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="494,45,483,110,464,188,454,212,449,209,459,186,478,109,489,44"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="556,5,660,31"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="609,45,601,124,593,163,581,188,559,205,533,216,483,225,482,220,532,211,556,201,576,185,588,161,596,123,604,44"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="756,5,806,31"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="783,45,775,125,767,163,754,188,733,201,704,210,630,221,550,226,482,226,482,220,549,220,630,216,703,205,731,196,750,185,762,161,770,124,778,44"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="836,5,928,31"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="889,44,891,77,889,116,878,155,868,173,855,189,834,198,797,205,693,215,482,224,482,219,693,210,797,200,833,193,852,185,864,170,873,153,884,115,886,77,884,44"/>
+<area shape="rect" id="Node000001" title="Versão Simulada do Sensor GPS, gerando frases no padrão NMEA." alt="" coords="303,123,376,148"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,44,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="28,44,33,73,40,86,49,97,67,107,94,115,163,126,238,131,302,132,302,137,238,136,162,131,93,120,65,112,46,101,35,89,28,74,22,45"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="83,5,134,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="108,44,109,72,114,86,121,97,133,105,151,112,200,122,303,131,302,136,199,127,150,117,131,110,117,101,109,88,104,73,102,45"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="287,5,351,31"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="326,44,340,122,335,123,321,45"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="375,5,501,31"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="428,44,411,72,389,101,360,124,357,120,385,97,407,69,424,42"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="525,5,591,31"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="543,43,514,73,478,101,426,122,377,132,376,127,425,117,475,96,511,70,539,40"/>
 </map>

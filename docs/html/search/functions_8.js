@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['parsing_0',['parsing',['../classGPSTrack_1_1GPSData.html#abc5308215475b647cbbb9df696597ad0',1,'GPSTrack::GPSData']]]
+  ['open_5fserial_0',['open_serial',['../classGPSTrack.html#a6c8d0f2c0a318fece9821e67c25bc6b4',1,'GPSTrack']]]
 ];

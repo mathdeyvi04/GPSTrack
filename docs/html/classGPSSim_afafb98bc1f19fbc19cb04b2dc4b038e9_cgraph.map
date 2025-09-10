@@ -1,0 +1,13 @@
+<map id="GPSSim::loop" name="GPSSim::loop">
+<area shape="rect" id="Node000001" title="Loop principal responsável pela geração e transmissão de dados simulados." alt="" coords="5,95,115,121"/>
+<area shape="rect" id="Node000002" href="$classGPSSim_1_1NMEAGenerator.html#a8966ba1016d3c2545b1efec67b4a087d" title="Gera uma frase GGA (Global Positioning System Fix Data)" alt="" coords="163,88,348,128"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,105,149,105,149,111,115,111"/>
+<area shape="rect" id="Node000003" href="$classGPSSim.html#ab8935cddbaf6da72e856280cd6a8fd91" title="Finaliza uma sentença NMEA a partir do corpo da frase." alt="" coords="417,5,574,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="310,85,395,55,418,47,420,52,397,60,312,90"/>
+<area shape="rect" id="Node000004" href="$classGPSSim.html#a506709c04b71f7582b59a2cf318f7740" title="Converte graus decimais para formato NMEA de localização, (ddmm.mmmm)." alt="" coords="396,70,595,95"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="348,96,382,92,383,97,348,101"/>
+<area shape="rect" id="Node000005" href="$classGPSSim.html#ad9340c7234c96b2ef5197df8ff3b32f1" title="Formatada um número inteiro com dois dígitos, preenchendo com zero à esquerda." alt="" coords="406,119,585,145"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="348,115,393,119,392,124,348,120"/>
+<area shape="rect" id="Node000006" href="$classGPSSim.html#a68331c508bc9324c323d76799b03b46f" title="Obtém o tempo UTC atual, horário em Londres." alt="" coords="412,169,579,194"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="312,126,397,153,429,163,428,168,395,159,311,131"/>
+</map>

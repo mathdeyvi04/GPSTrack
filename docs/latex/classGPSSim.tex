@@ -2,7 +2,7 @@
 \hypertarget{classGPSSim}{}\label{classGPSSim}\index{GPSSim@{GPSSim}}
 
 
-Versão simulada do sensor GPS que gera frases no padrão NMEA.  
+Versão Simulada do Sensor GPS, gerando frases no padrão NMEA.  
 
 
 
@@ -11,110 +11,88 @@ Versão simulada do sensor GPS que gera frases no padrão NMEA.
 
 
 
-Collaboration diagram for GPSSim\+:\nopagebreak
+Collaboration diagram for GPSSim\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classGPSSim__coll__graph}
 \end{center}
 \end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classGPSSim_1_1NMEAGenerator}{NMEAGenerator}}
+\begin{DoxyCompactList}\small\item\em Classe responsável por agrupar as funções geradoras de sentenças NMEA. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classGPSSim_adef287e15001dc2d530ff645dbda5677}{GPSSim}} (double latitude\+\_\+inicial\+\_\+graus, double longitude\+\_\+inicial\+\_\+graus, double altitude\+\_\+metros=10.\+0, double frequencia\+\_\+atualizacao\+\_\+hz=1.\+0, double velocidade\+\_\+nos=10.\+0)
+\mbox{\hyperlink{classGPSSim_af71018b7b54d324cd2ccfd619b220a9e}{GPSSim}} (double latitude\+\_\+inicial\+\_\+graus, double longitude\+\_\+inicial\+\_\+graus, double altitude\+\_\+metros)
 \begin{DoxyCompactList}\small\item\em Construtor do \doxylink{classGPSSim}{GPSSim}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classGPSSim_a7ee46b13b6a555764c544a5069854d32}{\texorpdfstring{$\sim$}{\string~}\+GPSSim}} ()
 \begin{DoxyCompactList}\small\item\em Destrutor do \doxylink{classGPSSim}{GPSSim}. \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{classGPSSim_adf3762e5a73faff02866fa45b4593f20}{obter\+\_\+caminho\+\_\+terminal\+\_\+filho}} () const
-\begin{DoxyCompactList}\small\item\em Obtém o caminho do terminal que estamos executando de forma filial. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classGPSSim_a035f71a80ed040b260f68276d531de79}{init}} ()
 \begin{DoxyCompactList}\small\item\em Inicia a geração de frases no padrão NMEA em uma thread separada. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classGPSSim_a114167ff50a457bd15b93f84242a6edc}{stop}} ()
 \begin{DoxyCompactList}\small\item\em Encerrará a geração de frases NMEA e aguardará a finalização da thread. ~\newline
  \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classGPSSim_a826208977e01f41005a108b902d427ea}{config\+\_\+traj}} (double raio\+\_\+metros=20.\+0, double periodo\+\_\+segundos=120.\+0)
-\begin{DoxyCompactList}\small\item\em Configura a trajetória circular para a simulação. \end{DoxyCompactList}\end{DoxyCompactItemize}
+std\+::string \mbox{\hyperlink{classGPSSim_a9dd6c5b066c8dcb0ebbdfb7c526ff856}{get\+\_\+path\+\_\+pseudo\+\_\+term}} () const
+\begin{DoxyCompactList}\small\item\em Obtém o caminho do terminal que estamos executando de forma filial. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-std\+::string \mbox{\hyperlink{classGPSSim_a23ca3649aba044ae30d3e5cd365756b8}{\+\_\+gerar\+\_\+corpo\+\_\+de\+\_\+frase\+\_\+rmc}} (double lat\+\_\+graus, double lon\+\_\+graus, double velocidade\+\_\+nos)
-\begin{DoxyCompactList}\small\item\em Gera uma frase RMC (Recommended Minimum Specific GNSS Data) \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{classGPSSim_a58123de7be940ad080865f6e916a88dc}{\+\_\+gerar\+\_\+corpo\+\_\+de\+\_\+frase\+\_\+gga}} (double lat\+\_\+graus, double lon\+\_\+graus, double alt\+\_\+metros, int sat=8, double hdop=0.\+9)
-\begin{DoxyCompactList}\small\item\em Gera uma frase GGA (Global Positioning System Fix Data) \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classGPSSim_a7bc42b6de5e91ce2e8530ef154c58e63}{\+\_\+update\+\_\+position}} ()
-\begin{DoxyCompactList}\small\item\em Caso seja movimento circular, atualizará a posição. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classGPSSim_a5bc8a89ed7ee69e64d2de2e1d3934e0f}{\+\_\+loop}} ()
-\begin{DoxyCompactList}\small\item\em Loop principal de geração de dados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classGPSSim_afafb98bc1f19fbc19cb04b2dc4b038e9}{loop}} ()
+\begin{DoxyCompactList}\small\item\em Loop principal responsável pela geração e transmissão de dados simulados. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static std\+::string \mbox{\hyperlink{classGPSSim_a0488760c495c2f866e78fe5ef2e92711}{formatar\+\_\+inteiro}} (int valor, int quant\+\_\+digitos)
-\begin{DoxyCompactList}\small\item\em Formatada um número inteiro com dois dígitos, preenchendo com zero à esquerda. \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{classGPSSim_aaf289c32314dfa1d302400e7607e0095}{converter\+\_\+graus\+\_\+para\+\_\+nmea}} (double graus\+\_\+decimais, bool is\+\_\+lat, std\+::string \&ddmm, char \&hemisf)
+static void \mbox{\hyperlink{classGPSSim_a506709c04b71f7582b59a2cf318f7740}{degrees\+\_\+to\+\_\+\+NMEA}} (double graus\+\_\+decimais, bool is\+\_\+lat, std\+::string \&ddmm, char \&hemisf)
 \begin{DoxyCompactList}\small\item\em Converte graus decimais para formato NMEA de localização, (ddmm.\+mmmm). ~\newline
  \end{DoxyCompactList}\item 
-static std\+::string \mbox{\hyperlink{classGPSSim_af6d2d9ee9e4c9d1cc216a8152cf3ac4b}{finalizar\+\_\+corpo\+\_\+de\+\_\+frase}} (const std\+::string \&corpo\+\_\+frase)
-\begin{DoxyCompactList}\small\item\em Após calcular a paridade do corpo da frase, adiciona as flags para o padrão NMEA. \end{DoxyCompactList}\item 
-static std\+::tm \mbox{\hyperlink{classGPSSim_ae30627814af51ac2b922d11886b22b9a}{obter\+\_\+tempo\+\_\+utc}} ()
-\begin{DoxyCompactList}\small\item\em Obtém o tempo UTC atual, horário em Londres. \end{DoxyCompactList}\end{DoxyCompactItemize}
+static std\+::string \mbox{\hyperlink{classGPSSim_ad9340c7234c96b2ef5197df8ff3b32f1}{format\+\_\+integer}} (int valor, int quant\+\_\+digitos)
+\begin{DoxyCompactList}\small\item\em Formatada um número inteiro com dois dígitos, preenchendo com zero à esquerda. \end{DoxyCompactList}\item 
+static std\+::tm \mbox{\hyperlink{classGPSSim_a68331c508bc9324c323d76799b03b46f}{get\+\_\+utc\+\_\+time}} ()
+\begin{DoxyCompactList}\small\item\em Obtém o tempo UTC atual, horário em Londres. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classGPSSim_ab8935cddbaf6da72e856280cd6a8fd91}{build\+\_\+nmea\+\_\+string}} (const std\+::string \&corpo\+\_\+frase)
+\begin{DoxyCompactList}\small\item\em Finaliza uma sentença NMEA a partir do corpo da frase. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{classGPSSim_a19fbc44ac45a1ddced9b1577e9b3eeb5}{\+\_\+fd\+\_\+pai}} \{0\}
+int \mbox{\hyperlink{classGPSSim_a84ed7c00ac7830606fccd20379dda0fd}{fd\+\_\+pai}} \{0\}
 \item 
-int \mbox{\hyperlink{classGPSSim_aacca073662a93e81a7cf105e59cb48ee}{\+\_\+fd\+\_\+filho}} \{0\}
+int \mbox{\hyperlink{classGPSSim_a942f51db3911123b3ce391abecb4821f}{fd\+\_\+filho}} \{0\}
 \item 
-char \mbox{\hyperlink{classGPSSim_af9a569d37ee298c48a7c0948fc74b400}{\+\_\+nome\+\_\+pt\+\_\+filho}} \mbox{[}128\mbox{]}
+char \mbox{\hyperlink{classGPSSim_ad66808a3957267a3ba625a334fd50a37}{caminho\+\_\+do\+\_\+pseudo\+\_\+terminal}} \mbox{[}128\mbox{]}
 \item 
-std\+::thread \mbox{\hyperlink{classGPSSim_a26e6d0c2ae4e8b86b3872d975bc3564f}{\+\_\+thread\+\_\+geradora}}
+std\+::thread \mbox{\hyperlink{classGPSSim_aa74e5845eb8c1426edf7737c600c2ecd}{worker}}
 \item 
-std\+::atomic$<$ bool $>$ \mbox{\hyperlink{classGPSSim_a8d7bde2dfe108459563278eabea27093}{\+\_\+is\+\_\+exec}} \{false\}
+std\+::atomic$<$ bool $>$ \mbox{\hyperlink{classGPSSim_a65eb27b7b4b7962e1163a02895fb591d}{is\+\_\+exec}} \{false\}
 \item 
-double \mbox{\hyperlink{classGPSSim_a4bddd122402c6c27767ecf76db1ee605}{\+\_\+lat}}
+double \mbox{\hyperlink{classGPSSim_a052ca80ee24743edd53c0d08c47d9a19}{lat}}
 \item 
-double \mbox{\hyperlink{classGPSSim_afa1d1721250da96b7430203d059996c9}{\+\_\+lon}}
+double \mbox{\hyperlink{classGPSSim_a9d7528c00cf9bc3335017739f1e9ff98}{lon}}
 \item 
-double \mbox{\hyperlink{classGPSSim_a1503ce4821dbe4f3dc5d90bb85dfe7ca}{\+\_\+alt}}
-\item 
-double \mbox{\hyperlink{classGPSSim_a59411486f4aa129528de40f3da3d0798}{\+\_\+velocidade\+\_\+nos}}
-\item 
-std\+::chrono\+::milliseconds \mbox{\hyperlink{classGPSSim_af50c7456e54f58490c65096699616812}{\+\_\+periodo\+\_\+atualizacao}}
-\item 
-bool \mbox{\hyperlink{classGPSSim_ab67a7b7652fffc234280b15ce6c7e816}{\+\_\+mov\+\_\+circ}} = false
-\item 
-double \mbox{\hyperlink{classGPSSim_a8a17be6b70309f9e940747e6308fdabb}{\+\_\+raio}} \{20.\+0\}
-\item 
-double \mbox{\hyperlink{classGPSSim_a7d16accb90634a12f29279542a1ebed3}{\+\_\+periodo\+\_\+circ}} \{20.\+0\}
-\item 
-double \mbox{\hyperlink{classGPSSim_a1087d219695c39ef323ceb3041ddbe92}{\+\_\+lat\+\_\+sim}} \{0.\+0\}
-\item 
-double \mbox{\hyperlink{classGPSSim_a96435e4a82e5fc2f562118d159836d81}{\+\_\+lon\+\_\+sim}} \{0.\+0\}
-\item 
-std\+::chrono\+::steady\+\_\+clock\+::time\+\_\+point \mbox{\hyperlink{classGPSSim_aea7a2892d264b755703d81acefa6d140}{\+\_\+start\+\_\+time}} = std\+::chrono\+::steady\+\_\+clock\+::now()
+double \mbox{\hyperlink{classGPSSim_a4c280076655fb8a2440b90e514ce65a0}{alt}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Versão simulada do sensor GPS que gera frases no padrão NMEA. 
+Versão Simulada do Sensor GPS, gerando frases no padrão NMEA. 
 
-Cria um par de pseudo-\/terminais (PTY) para simular um o módulo GPS real. Gera frases no padrão NMEA (RMC e GGA) em intervalos regulares, permitindo configuração de posição inicial, altitude, velocidade e padrão de movimento.
-
-Confirmo que esta classe foi criada em meio às pressas e necessita de mais polimento. 
+Criará um par de pseudo-\/terminais (PTY) para simular o funcionamento do sensor. Intervaladamente, gera frases NMEA simuladas. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classGPSSim_adef287e15001dc2d530ff645dbda5677}\label{classGPSSim_adef287e15001dc2d530ff645dbda5677} 
+\Hypertarget{classGPSSim_af71018b7b54d324cd2ccfd619b220a9e}\label{classGPSSim_af71018b7b54d324cd2ccfd619b220a9e} 
 \index{GPSSim@{GPSSim}!GPSSim@{GPSSim}}
 \index{GPSSim@{GPSSim}!GPSSim@{GPSSim}}
 \doxysubsubsection{\texorpdfstring{GPSSim()}{GPSSim()}}
-{\footnotesize\ttfamily GPSSim\+::\+GPSSim (\begin{DoxyParamCaption}\item[{double}]{latitude\+\_\+inicial\+\_\+graus,  }\item[{double}]{longitude\+\_\+inicial\+\_\+graus,  }\item[{double}]{altitude\+\_\+metros = {\ttfamily 10.0},  }\item[{double}]{frequencia\+\_\+atualizacao\+\_\+hz = {\ttfamily 1.0},  }\item[{double}]{velocidade\+\_\+nos = {\ttfamily 10.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+{\footnotesize\ttfamily GPSSim\+::\+GPSSim (\begin{DoxyParamCaption}\item[{double}]{latitude\+\_\+inicial\+\_\+graus,  }\item[{double}]{longitude\+\_\+inicial\+\_\+graus,  }\item[{double}]{altitude\+\_\+metros }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Construtor do \doxylink{classGPSSim}{GPSSim}. 
 
 Inicializa alguns parâmetros de posição simulada e, criando os pseudo-\/terminais, configura-\/os para o padrão do módulo real.
-
-Utilizou-\/se o termo {\ttfamily explict} para impedir que futuras conversões implicitas sejam impedidas. Além disso, foi pensado em utilizar o padrão de {\ttfamily Singleton} para manter apenas uma instância da classe. Entretanto, após outras reuniões, percebeu-\/se a falta de necessidade.
 
 
 \begin{DoxyParams}{Parameters}
@@ -123,10 +101,6 @@ Utilizou-\/se o termo {\ttfamily explict} para impedir que futuras conversões i
 {\em longitude\+\_\+inicial\+\_\+graus} & Longitude inicial em graus decimais \\
 \hline
 {\em altitude\+\_\+metros} & Altitude inicial em metros, setada para 10. \\
-\hline
-{\em frequencia\+\_\+atualizacao\+\_\+hz} & Frequência de atualização das frases NMEA em Hertz, setada para 1 \\
-\hline
-{\em velocidade\+\_\+nos} & Velocidade sobre o fundo em nós (para frase RMC), setada para 0 \\
 \hline
 \end{DoxyParams}
 \Hypertarget{classGPSSim_a7ee46b13b6a555764c544a5069854d32}\label{classGPSSim_a7ee46b13b6a555764c544a5069854d32} 
@@ -149,138 +123,39 @@ Chama a função {\ttfamily \doxylink{classGPSSim_a114167ff50a457bd15b93f84242a6
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classGPSSim_a58123de7be940ad080865f6e916a88dc}\label{classGPSSim_a58123de7be940ad080865f6e916a88dc} 
-\index{GPSSim@{GPSSim}!\_gerar\_corpo\_de\_frase\_gga@{\_gerar\_corpo\_de\_frase\_gga}}
-\index{\_gerar\_corpo\_de\_frase\_gga@{\_gerar\_corpo\_de\_frase\_gga}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{\_gerar\_corpo\_de\_frase\_gga()}{\_gerar\_corpo\_de\_frase\_gga()}}
-{\footnotesize\ttfamily std\+::string GPSSim\+::\+\_\+gerar\+\_\+corpo\+\_\+de\+\_\+frase\+\_\+gga (\begin{DoxyParamCaption}\item[{double}]{lat\+\_\+graus,  }\item[{double}]{lon\+\_\+graus,  }\item[{double}]{alt\+\_\+metros,  }\item[{int}]{sat = {\ttfamily 8},  }\item[{double}]{hdop = {\ttfamily 0.9} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+\Hypertarget{classGPSSim_ab8935cddbaf6da72e856280cd6a8fd91}\label{classGPSSim_ab8935cddbaf6da72e856280cd6a8fd91} 
+\index{GPSSim@{GPSSim}!build\_nmea\_string@{build\_nmea\_string}}
+\index{build\_nmea\_string@{build\_nmea\_string}!GPSSim@{GPSSim}}
+\doxysubsubsection{\texorpdfstring{build\_nmea\_string()}{build\_nmea\_string()}}
+{\footnotesize\ttfamily static std\+::string GPSSim\+::build\+\_\+nmea\+\_\+string (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{corpo\+\_\+frase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
 
 
 
-Gera uma frase GGA (Global Positioning System Fix Data) 
+Finaliza uma sentença NMEA a partir do corpo da frase. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em lat\+\_\+graus} & Latitude em graus decimais \\
-\hline
-{\em lon\+\_\+graus} & Longitude em graus decimais \\
-\hline
-{\em alt\+\_\+metros} & Altitude em metros \\
-\hline
-{\em sat} & Número de satélites visíveis \\
-\hline
-{\em hdop} & Horizontal Dilution of Precision \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-String correspondendo ao corpo de frase GGA 
-\end{DoxyReturn}
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classGPSSim_a58123de7be940ad080865f6e916a88dc_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classGPSSim_a58123de7be940ad080865f6e916a88dc_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{classGPSSim_a23ca3649aba044ae30d3e5cd365756b8}\label{classGPSSim_a23ca3649aba044ae30d3e5cd365756b8} 
-\index{GPSSim@{GPSSim}!\_gerar\_corpo\_de\_frase\_rmc@{\_gerar\_corpo\_de\_frase\_rmc}}
-\index{\_gerar\_corpo\_de\_frase\_rmc@{\_gerar\_corpo\_de\_frase\_rmc}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{\_gerar\_corpo\_de\_frase\_rmc()}{\_gerar\_corpo\_de\_frase\_rmc()}}
-{\footnotesize\ttfamily std\+::string GPSSim\+::\+\_\+gerar\+\_\+corpo\+\_\+de\+\_\+frase\+\_\+rmc (\begin{DoxyParamCaption}\item[{double}]{lat\+\_\+graus,  }\item[{double}]{lon\+\_\+graus,  }\item[{double}]{velocidade\+\_\+nos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
-
-
-
-Gera uma frase RMC (Recommended Minimum Specific GNSS Data) 
+Calcula o valor de paridade (checksum) do corpo da frase fornecida, em seguida adiciona os delimitadores e flags no formato NMEA (prefixo \textquotesingle{}\$\textquotesingle{}, sufixo \textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{}, valor de paridade em hexadecimal e "{}\textbackslash{}r\textbackslash{}n"{}).
 
 
 \begin{DoxyParams}{Parameters}
-{\em lat\+\_\+graus} & Latitude em graus decimais \\
-\hline
-{\em lon\+\_\+graus} & Longitude em graus decimais \\
-\hline
-{\em velocidade\+\_\+nos} & Velocidade em nós \\
+{\em corpo\+\_\+frase} & Corpo da frase NMEA sem os indicadores iniciais (\textquotesingle{}\$\textquotesingle{}) e finais (\textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{} e checksum). \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-String correspondendo ao corpo de Frase RMC 
+std\+::string Sentença NMEA completa, pronta para transmissão. 
 \end{DoxyReturn}
-Here is the call graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classGPSSim_a23ca3649aba044ae30d3e5cd365756b8_cgraph}
+\includegraphics[width=350pt]{classGPSSim_ab8935cddbaf6da72e856280cd6a8fd91_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{classGPSSim_a5bc8a89ed7ee69e64d2de2e1d3934e0f}\label{classGPSSim_a5bc8a89ed7ee69e64d2de2e1d3934e0f} 
-\index{GPSSim@{GPSSim}!\_loop@{\_loop}}
-\index{\_loop@{\_loop}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{\_loop()}{\_loop()}}
-{\footnotesize\ttfamily void GPSSim\+::\+\_\+loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
-
-
-
-Loop principal de geração de dados. 
-
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classGPSSim_a5bc8a89ed7ee69e64d2de2e1d3934e0f_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classGPSSim_a5bc8a89ed7ee69e64d2de2e1d3934e0f_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{classGPSSim_a7bc42b6de5e91ce2e8530ef154c58e63}\label{classGPSSim_a7bc42b6de5e91ce2e8530ef154c58e63} 
-\index{GPSSim@{GPSSim}!\_update\_position@{\_update\_position}}
-\index{\_update\_position@{\_update\_position}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{\_update\_position()}{\_update\_position()}}
-{\footnotesize\ttfamily void GPSSim\+::\+\_\+update\+\_\+position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
-
-
-
-Caso seja movimento circular, atualizará a posição. 
-
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classGPSSim_a7bc42b6de5e91ce2e8530ef154c58e63_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{classGPSSim_a826208977e01f41005a108b902d427ea}\label{classGPSSim_a826208977e01f41005a108b902d427ea} 
-\index{GPSSim@{GPSSim}!config\_traj@{config\_traj}}
-\index{config\_traj@{config\_traj}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{config\_traj()}{config\_traj()}}
-{\footnotesize\ttfamily void GPSSim\+::config\+\_\+traj (\begin{DoxyParamCaption}\item[{double}]{raio\+\_\+metros = {\ttfamily 20.0},  }\item[{double}]{periodo\+\_\+segundos = {\ttfamily 120.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Configura a trajetória circular para a simulação. 
-
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=269pt]{classGPSSim_a826208977e01f41005a108b902d427ea_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{classGPSSim_aaf289c32314dfa1d302400e7607e0095}\label{classGPSSim_aaf289c32314dfa1d302400e7607e0095} 
-\index{GPSSim@{GPSSim}!converter\_graus\_para\_nmea@{converter\_graus\_para\_nmea}}
-\index{converter\_graus\_para\_nmea@{converter\_graus\_para\_nmea}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{converter\_graus\_para\_nmea()}{converter\_graus\_para\_nmea()}}
-{\footnotesize\ttfamily static void GPSSim\+::converter\+\_\+graus\+\_\+para\+\_\+nmea (\begin{DoxyParamCaption}\item[{double}]{graus\+\_\+decimais,  }\item[{bool}]{is\+\_\+lat,  }\item[{std\+::string \&}]{ddmm,  }\item[{char \&}]{hemisf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+\Hypertarget{classGPSSim_a506709c04b71f7582b59a2cf318f7740}\label{classGPSSim_a506709c04b71f7582b59a2cf318f7740} 
+\index{GPSSim@{GPSSim}!degrees\_to\_NMEA@{degrees\_to\_NMEA}}
+\index{degrees\_to\_NMEA@{degrees\_to\_NMEA}!GPSSim@{GPSSim}}
+\doxysubsubsection{\texorpdfstring{degrees\_to\_NMEA()}{degrees\_to\_NMEA()}}
+{\footnotesize\ttfamily static void GPSSim\+::degrees\+\_\+to\+\_\+\+NMEA (\begin{DoxyParamCaption}\item[{double}]{graus\+\_\+decimais,  }\item[{bool}]{is\+\_\+lat,  }\item[{std\+::string \&}]{ddmm,  }\item[{char \&}]{hemisf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
 
 
 
@@ -298,44 +173,19 @@ Converte graus decimais para formato NMEA de localização, (ddmm.\+mmmm). ~\new
 \mbox{\texttt{ out}}  & {\em hemisf} & Caractere indicando Hemisfério \\
 \hline
 \end{DoxyParams}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classGPSSim_aaf289c32314dfa1d302400e7607e0095_icgraph}
+\includegraphics[width=350pt]{classGPSSim_a506709c04b71f7582b59a2cf318f7740_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{classGPSSim_af6d2d9ee9e4c9d1cc216a8152cf3ac4b}\label{classGPSSim_af6d2d9ee9e4c9d1cc216a8152cf3ac4b} 
-\index{GPSSim@{GPSSim}!finalizar\_corpo\_de\_frase@{finalizar\_corpo\_de\_frase}}
-\index{finalizar\_corpo\_de\_frase@{finalizar\_corpo\_de\_frase}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{finalizar\_corpo\_de\_frase()}{finalizar\_corpo\_de\_frase()}}
-{\footnotesize\ttfamily static std\+::string GPSSim\+::finalizar\+\_\+corpo\+\_\+de\+\_\+frase (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{corpo\+\_\+frase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
-
-
-
-Após calcular a paridade do corpo da frase, adiciona as flags para o padrão NMEA. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em corpo\+\_\+frase} & Frase sem os indicadores \$ e \texorpdfstring{$\ast$}{*} ~\newline
- \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-String contendo a frase completa, com todas as informações e flags. 
-\end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classGPSSim_af6d2d9ee9e4c9d1cc216a8152cf3ac4b_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{classGPSSim_a0488760c495c2f866e78fe5ef2e92711}\label{classGPSSim_a0488760c495c2f866e78fe5ef2e92711} 
-\index{GPSSim@{GPSSim}!formatar\_inteiro@{formatar\_inteiro}}
-\index{formatar\_inteiro@{formatar\_inteiro}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{formatar\_inteiro()}{formatar\_inteiro()}}
-{\footnotesize\ttfamily static std\+::string GPSSim\+::formatar\+\_\+inteiro (\begin{DoxyParamCaption}\item[{int}]{valor,  }\item[{int}]{quant\+\_\+digitos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+\Hypertarget{classGPSSim_ad9340c7234c96b2ef5197df8ff3b32f1}\label{classGPSSim_ad9340c7234c96b2ef5197df8ff3b32f1} 
+\index{GPSSim@{GPSSim}!format\_integer@{format\_integer}}
+\index{format\_integer@{format\_integer}!GPSSim@{GPSSim}}
+\doxysubsubsection{\texorpdfstring{format\_integer()}{format\_integer()}}
+{\footnotesize\ttfamily static std\+::string GPSSim\+::format\+\_\+integer (\begin{DoxyParamCaption}\item[{int}]{valor,  }\item[{int}]{quant\+\_\+digitos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
 
 
 
@@ -352,11 +202,56 @@ Formatada um número inteiro com dois dígitos, preenchendo com zero à esquerda
 string formatada ~\newline
  
 \end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classGPSSim_a0488760c495c2f866e78fe5ef2e92711_icgraph}
+\includegraphics[width=350pt]{classGPSSim_ad9340c7234c96b2ef5197df8ff3b32f1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGPSSim_a9dd6c5b066c8dcb0ebbdfb7c526ff856}\label{classGPSSim_a9dd6c5b066c8dcb0ebbdfb7c526ff856} 
+\index{GPSSim@{GPSSim}!get\_path\_pseudo\_term@{get\_path\_pseudo\_term}}
+\index{get\_path\_pseudo\_term@{get\_path\_pseudo\_term}!GPSSim@{GPSSim}}
+\doxysubsubsection{\texorpdfstring{get\_path\_pseudo\_term()}{get\_path\_pseudo\_term()}}
+{\footnotesize\ttfamily std\+::string GPSSim\+::get\+\_\+path\+\_\+pseudo\+\_\+term (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtém o caminho do terminal que estamos executando de forma filial. 
+
+\begin{DoxyReturn}{Returns}
+String correspondendo ao caminho do dispositivo. ~\newline
+ 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classGPSSim_a9dd6c5b066c8dcb0ebbdfb7c526ff856_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGPSSim_a68331c508bc9324c323d76799b03b46f}\label{classGPSSim_a68331c508bc9324c323d76799b03b46f} 
+\index{GPSSim@{GPSSim}!get\_utc\_time@{get\_utc\_time}}
+\index{get\_utc\_time@{get\_utc\_time}!GPSSim@{GPSSim}}
+\doxysubsubsection{\texorpdfstring{get\_utc\_time()}{get\_utc\_time()}}
+{\footnotesize\ttfamily static std\+::tm GPSSim\+::get\+\_\+utc\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Obtém o tempo UTC atual, horário em Londres. 
+
+\begin{DoxyReturn}{Returns}
+Struct std\+::tm contendo o tempo em UTC ~\newline
+ 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGPSSim_a68331c508bc9324c323d76799b03b46f_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{classGPSSim_a035f71a80ed040b260f68276d531de79}\label{classGPSSim_a035f71a80ed040b260f68276d531de79} 
@@ -369,10 +264,11 @@ Here is the caller graph for this function\+:\nopagebreak
 
 Inicia a geração de frases no padrão NMEA em uma thread separada. 
 
-Garante a criação de apenas uma thread utilizando uma variável atômica. O padrão NMEA é o protocolo padrão usado por módulos GPS, cada mensagem começa com \$ e termina com \textbackslash{}r\textbackslash{}n. Exemplo\+:
+O padrão NMEA é o protocolo padrão usado por módulos GPS, cada mensagem começa com \$ e termina com \textbackslash{}r\textbackslash{}n. Exemplo\+:
 \begin{DoxyItemize}
 \item \$origem,codificacao\+\_\+usada,dados1,dados2,...\texorpdfstring{$\ast$}{*}paridade 
-\end{DoxyItemize}Here is the call graph for this function\+:\nopagebreak
+\end{DoxyItemize}Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -386,46 +282,44 @@ Here is the caller graph for this function\+:\nopagebreak
 \includegraphics[width=234pt]{classGPSSim_a035f71a80ed040b260f68276d531de79_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{classGPSSim_adf3762e5a73faff02866fa45b4593f20}\label{classGPSSim_adf3762e5a73faff02866fa45b4593f20} 
-\index{GPSSim@{GPSSim}!obter\_caminho\_terminal\_filho@{obter\_caminho\_terminal\_filho}}
-\index{obter\_caminho\_terminal\_filho@{obter\_caminho\_terminal\_filho}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{obter\_caminho\_terminal\_filho()}{obter\_caminho\_terminal\_filho()}}
-{\footnotesize\ttfamily std\+::string GPSSim\+::obter\+\_\+caminho\+\_\+terminal\+\_\+filho (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+\Hypertarget{classGPSSim_afafb98bc1f19fbc19cb04b2dc4b038e9}\label{classGPSSim_afafb98bc1f19fbc19cb04b2dc4b038e9} 
+\index{GPSSim@{GPSSim}!loop@{loop}}
+\index{loop@{loop}!GPSSim@{GPSSim}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void GPSSim\+::loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
 
 
-Obtém o caminho do terminal que estamos executando de forma filial. 
+Loop principal responsável pela geração e transmissão de dados simulados. 
 
-\begin{DoxyReturn}{Returns}
-string correspondendo ao caminho do dispositivo. ~\newline
- 
-\end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
+Esta função executa um laço contínuo enquanto o simulador estiver ativo ({\ttfamily \+\_\+is\+\_\+exec}). Em cada iteração\+:
+\begin{DoxyItemize}
+\item Inicializa ou atualiza a posição simulada (latitude e longitude).
+\item Gera uma sentença NMEA do tipo GGA a partir da posição atual.
+\item Transmite a sentença gerada através do descritor de escrita {\ttfamily \+\_\+fd\+\_\+pai}.
+\item Aguarda o período de atualização definido em {\ttfamily \+\_\+periodo\+\_\+atualizacao}.
+\item Atualiza a posição simulada chamando {\ttfamily \+\_\+update\+\_\+position()}.
+\end{DoxyItemize}
+
+O loop termina automaticamente quando {\ttfamily \+\_\+is\+\_\+exec} é definido como falso.
+
+\begin{DoxyNote}{Note}
+Esta função é bloqueante e deve ser executada em uma thread dedicada para não interromper o fluxo principal do programa. 
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=291pt]{classGPSSim_adf3762e5a73faff02866fa45b4593f20_icgraph}
+\includegraphics[width=350pt]{classGPSSim_afafb98bc1f19fbc19cb04b2dc4b038e9_cgraph}
 \end{center}
 \end{figure}
-\Hypertarget{classGPSSim_ae30627814af51ac2b922d11886b22b9a}\label{classGPSSim_ae30627814af51ac2b922d11886b22b9a} 
-\index{GPSSim@{GPSSim}!obter\_tempo\_utc@{obter\_tempo\_utc}}
-\index{obter\_tempo\_utc@{obter\_tempo\_utc}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{obter\_tempo\_utc()}{obter\_tempo\_utc()}}
-{\footnotesize\ttfamily static std\+::tm GPSSim\+::obter\+\_\+tempo\+\_\+utc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
-
-
-
-Obtém o tempo UTC atual, horário em Londres. 
-
-\begin{DoxyReturn}{Returns}
-Struct std\+::tm contendo o tempo em UTC ~\newline
- 
-\end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classGPSSim_ae30627814af51ac2b922d11886b22b9a_icgraph}
+\includegraphics[width=350pt]{classGPSSim_afafb98bc1f19fbc19cb04b2dc4b038e9_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{classGPSSim_a114167ff50a457bd15b93f84242a6edc}\label{classGPSSim_a114167ff50a457bd15b93f84242a6edc} 
@@ -449,101 +343,53 @@ Verifica a execução da thread e encerra-\/a caso exista. Força a finalizaçã
 
 
 \doxysubsection{Member Data Documentation}
-\Hypertarget{classGPSSim_a1503ce4821dbe4f3dc5d90bb85dfe7ca}\label{classGPSSim_a1503ce4821dbe4f3dc5d90bb85dfe7ca} 
-\index{GPSSim@{GPSSim}!\_alt@{\_alt}}
-\index{\_alt@{\_alt}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{\_alt}{\_alt}}
-{\footnotesize\ttfamily double GPSSim\+::\+\_\+alt\hspace{0.3cm}{\ttfamily [private]}}
+\Hypertarget{classGPSSim_a4c280076655fb8a2440b90e514ce65a0}\label{classGPSSim_a4c280076655fb8a2440b90e514ce65a0} 
+\index{GPSSim@{GPSSim}!alt@{alt}}
+\index{alt@{alt}!GPSSim@{GPSSim}}
+\doxysubsubsection{\texorpdfstring{alt}{alt}}
+{\footnotesize\ttfamily double GPSSim\+::alt\hspace{0.3cm}{\ttfamily [private]}}
 
-\Hypertarget{classGPSSim_aacca073662a93e81a7cf105e59cb48ee}\label{classGPSSim_aacca073662a93e81a7cf105e59cb48ee} 
-\index{GPSSim@{GPSSim}!\_fd\_filho@{\_fd\_filho}}
-\index{\_fd\_filho@{\_fd\_filho}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{\_fd\_filho}{\_fd\_filho}}
-{\footnotesize\ttfamily int GPSSim\+::\+\_\+fd\+\_\+filho \{0\}\hspace{0.3cm}{\ttfamily [private]}}
+\Hypertarget{classGPSSim_ad66808a3957267a3ba625a334fd50a37}\label{classGPSSim_ad66808a3957267a3ba625a334fd50a37} 
+\index{GPSSim@{GPSSim}!caminho\_do\_pseudo\_terminal@{caminho\_do\_pseudo\_terminal}}
+\index{caminho\_do\_pseudo\_terminal@{caminho\_do\_pseudo\_terminal}!GPSSim@{GPSSim}}
+\doxysubsubsection{\texorpdfstring{caminho\_do\_pseudo\_terminal}{caminho\_do\_pseudo\_terminal}}
+{\footnotesize\ttfamily char GPSSim\+::caminho\+\_\+do\+\_\+pseudo\+\_\+terminal\mbox{[}128\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
 
-\Hypertarget{classGPSSim_a19fbc44ac45a1ddced9b1577e9b3eeb5}\label{classGPSSim_a19fbc44ac45a1ddced9b1577e9b3eeb5} 
-\index{GPSSim@{GPSSim}!\_fd\_pai@{\_fd\_pai}}
-\index{\_fd\_pai@{\_fd\_pai}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{\_fd\_pai}{\_fd\_pai}}
-{\footnotesize\ttfamily int GPSSim\+::\+\_\+fd\+\_\+pai \{0\}\hspace{0.3cm}{\ttfamily [private]}}
+\Hypertarget{classGPSSim_a942f51db3911123b3ce391abecb4821f}\label{classGPSSim_a942f51db3911123b3ce391abecb4821f} 
+\index{GPSSim@{GPSSim}!fd\_filho@{fd\_filho}}
+\index{fd\_filho@{fd\_filho}!GPSSim@{GPSSim}}
+\doxysubsubsection{\texorpdfstring{fd\_filho}{fd\_filho}}
+{\footnotesize\ttfamily int GPSSim\+::fd\+\_\+filho \{0\}\hspace{0.3cm}{\ttfamily [private]}}
 
-\Hypertarget{classGPSSim_a8d7bde2dfe108459563278eabea27093}\label{classGPSSim_a8d7bde2dfe108459563278eabea27093} 
-\index{GPSSim@{GPSSim}!\_is\_exec@{\_is\_exec}}
-\index{\_is\_exec@{\_is\_exec}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{\_is\_exec}{\_is\_exec}}
-{\footnotesize\ttfamily std\+::atomic$<$bool$>$ GPSSim\+::\+\_\+is\+\_\+exec \{false\}\hspace{0.3cm}{\ttfamily [private]}}
+\Hypertarget{classGPSSim_a84ed7c00ac7830606fccd20379dda0fd}\label{classGPSSim_a84ed7c00ac7830606fccd20379dda0fd} 
+\index{GPSSim@{GPSSim}!fd\_pai@{fd\_pai}}
+\index{fd\_pai@{fd\_pai}!GPSSim@{GPSSim}}
+\doxysubsubsection{\texorpdfstring{fd\_pai}{fd\_pai}}
+{\footnotesize\ttfamily int GPSSim\+::fd\+\_\+pai \{0\}\hspace{0.3cm}{\ttfamily [private]}}
 
-\Hypertarget{classGPSSim_a4bddd122402c6c27767ecf76db1ee605}\label{classGPSSim_a4bddd122402c6c27767ecf76db1ee605} 
-\index{GPSSim@{GPSSim}!\_lat@{\_lat}}
-\index{\_lat@{\_lat}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{\_lat}{\_lat}}
-{\footnotesize\ttfamily double GPSSim\+::\+\_\+lat\hspace{0.3cm}{\ttfamily [private]}}
+\Hypertarget{classGPSSim_a65eb27b7b4b7962e1163a02895fb591d}\label{classGPSSim_a65eb27b7b4b7962e1163a02895fb591d} 
+\index{GPSSim@{GPSSim}!is\_exec@{is\_exec}}
+\index{is\_exec@{is\_exec}!GPSSim@{GPSSim}}
+\doxysubsubsection{\texorpdfstring{is\_exec}{is\_exec}}
+{\footnotesize\ttfamily std\+::atomic$<$bool$>$ GPSSim\+::is\+\_\+exec \{false\}\hspace{0.3cm}{\ttfamily [private]}}
 
-\Hypertarget{classGPSSim_a1087d219695c39ef323ceb3041ddbe92}\label{classGPSSim_a1087d219695c39ef323ceb3041ddbe92} 
-\index{GPSSim@{GPSSim}!\_lat\_sim@{\_lat\_sim}}
-\index{\_lat\_sim@{\_lat\_sim}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{\_lat\_sim}{\_lat\_sim}}
-{\footnotesize\ttfamily double GPSSim\+::\+\_\+lat\+\_\+sim \{0.\+0\}\hspace{0.3cm}{\ttfamily [private]}}
+\Hypertarget{classGPSSim_a052ca80ee24743edd53c0d08c47d9a19}\label{classGPSSim_a052ca80ee24743edd53c0d08c47d9a19} 
+\index{GPSSim@{GPSSim}!lat@{lat}}
+\index{lat@{lat}!GPSSim@{GPSSim}}
+\doxysubsubsection{\texorpdfstring{lat}{lat}}
+{\footnotesize\ttfamily double GPSSim\+::lat\hspace{0.3cm}{\ttfamily [private]}}
 
-\Hypertarget{classGPSSim_afa1d1721250da96b7430203d059996c9}\label{classGPSSim_afa1d1721250da96b7430203d059996c9} 
-\index{GPSSim@{GPSSim}!\_lon@{\_lon}}
-\index{\_lon@{\_lon}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{\_lon}{\_lon}}
-{\footnotesize\ttfamily double GPSSim\+::\+\_\+lon\hspace{0.3cm}{\ttfamily [private]}}
+\Hypertarget{classGPSSim_a9d7528c00cf9bc3335017739f1e9ff98}\label{classGPSSim_a9d7528c00cf9bc3335017739f1e9ff98} 
+\index{GPSSim@{GPSSim}!lon@{lon}}
+\index{lon@{lon}!GPSSim@{GPSSim}}
+\doxysubsubsection{\texorpdfstring{lon}{lon}}
+{\footnotesize\ttfamily double GPSSim\+::lon\hspace{0.3cm}{\ttfamily [private]}}
 
-\Hypertarget{classGPSSim_a96435e4a82e5fc2f562118d159836d81}\label{classGPSSim_a96435e4a82e5fc2f562118d159836d81} 
-\index{GPSSim@{GPSSim}!\_lon\_sim@{\_lon\_sim}}
-\index{\_lon\_sim@{\_lon\_sim}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{\_lon\_sim}{\_lon\_sim}}
-{\footnotesize\ttfamily double GPSSim\+::\+\_\+lon\+\_\+sim \{0.\+0\}\hspace{0.3cm}{\ttfamily [private]}}
-
-\Hypertarget{classGPSSim_ab67a7b7652fffc234280b15ce6c7e816}\label{classGPSSim_ab67a7b7652fffc234280b15ce6c7e816} 
-\index{GPSSim@{GPSSim}!\_mov\_circ@{\_mov\_circ}}
-\index{\_mov\_circ@{\_mov\_circ}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{\_mov\_circ}{\_mov\_circ}}
-{\footnotesize\ttfamily bool GPSSim\+::\+\_\+mov\+\_\+circ = false\hspace{0.3cm}{\ttfamily [private]}}
-
-\Hypertarget{classGPSSim_af9a569d37ee298c48a7c0948fc74b400}\label{classGPSSim_af9a569d37ee298c48a7c0948fc74b400} 
-\index{GPSSim@{GPSSim}!\_nome\_pt\_filho@{\_nome\_pt\_filho}}
-\index{\_nome\_pt\_filho@{\_nome\_pt\_filho}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{\_nome\_pt\_filho}{\_nome\_pt\_filho}}
-{\footnotesize\ttfamily char GPSSim\+::\+\_\+nome\+\_\+pt\+\_\+filho\mbox{[}128\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
-
-\Hypertarget{classGPSSim_af50c7456e54f58490c65096699616812}\label{classGPSSim_af50c7456e54f58490c65096699616812} 
-\index{GPSSim@{GPSSim}!\_periodo\_atualizacao@{\_periodo\_atualizacao}}
-\index{\_periodo\_atualizacao@{\_periodo\_atualizacao}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{\_periodo\_atualizacao}{\_periodo\_atualizacao}}
-{\footnotesize\ttfamily std\+::chrono\+::milliseconds GPSSim\+::\+\_\+periodo\+\_\+atualizacao\hspace{0.3cm}{\ttfamily [private]}}
-
-\Hypertarget{classGPSSim_a7d16accb90634a12f29279542a1ebed3}\label{classGPSSim_a7d16accb90634a12f29279542a1ebed3} 
-\index{GPSSim@{GPSSim}!\_periodo\_circ@{\_periodo\_circ}}
-\index{\_periodo\_circ@{\_periodo\_circ}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{\_periodo\_circ}{\_periodo\_circ}}
-{\footnotesize\ttfamily double GPSSim\+::\+\_\+periodo\+\_\+circ \{20.\+0\}\hspace{0.3cm}{\ttfamily [private]}}
-
-\Hypertarget{classGPSSim_a8a17be6b70309f9e940747e6308fdabb}\label{classGPSSim_a8a17be6b70309f9e940747e6308fdabb} 
-\index{GPSSim@{GPSSim}!\_raio@{\_raio}}
-\index{\_raio@{\_raio}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{\_raio}{\_raio}}
-{\footnotesize\ttfamily double GPSSim\+::\+\_\+raio \{20.\+0\}\hspace{0.3cm}{\ttfamily [private]}}
-
-\Hypertarget{classGPSSim_aea7a2892d264b755703d81acefa6d140}\label{classGPSSim_aea7a2892d264b755703d81acefa6d140} 
-\index{GPSSim@{GPSSim}!\_start\_time@{\_start\_time}}
-\index{\_start\_time@{\_start\_time}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{\_start\_time}{\_start\_time}}
-{\footnotesize\ttfamily std\+::chrono\+::steady\+\_\+clock\+::time\+\_\+point GPSSim\+::\+\_\+start\+\_\+time = std\+::chrono\+::steady\+\_\+clock\+::now()\hspace{0.3cm}{\ttfamily [private]}}
-
-\Hypertarget{classGPSSim_a26e6d0c2ae4e8b86b3872d975bc3564f}\label{classGPSSim_a26e6d0c2ae4e8b86b3872d975bc3564f} 
-\index{GPSSim@{GPSSim}!\_thread\_geradora@{\_thread\_geradora}}
-\index{\_thread\_geradora@{\_thread\_geradora}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{\_thread\_geradora}{\_thread\_geradora}}
-{\footnotesize\ttfamily std\+::thread GPSSim\+::\+\_\+thread\+\_\+geradora\hspace{0.3cm}{\ttfamily [private]}}
-
-\Hypertarget{classGPSSim_a59411486f4aa129528de40f3da3d0798}\label{classGPSSim_a59411486f4aa129528de40f3da3d0798} 
-\index{GPSSim@{GPSSim}!\_velocidade\_nos@{\_velocidade\_nos}}
-\index{\_velocidade\_nos@{\_velocidade\_nos}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{\_velocidade\_nos}{\_velocidade\_nos}}
-{\footnotesize\ttfamily double GPSSim\+::\+\_\+velocidade\+\_\+nos\hspace{0.3cm}{\ttfamily [private]}}
+\Hypertarget{classGPSSim_aa74e5845eb8c1426edf7737c600c2ecd}\label{classGPSSim_aa74e5845eb8c1426edf7737c600c2ecd} 
+\index{GPSSim@{GPSSim}!worker@{worker}}
+\index{worker@{worker}!GPSSim@{GPSSim}}
+\doxysubsubsection{\texorpdfstring{worker}{worker}}
+{\footnotesize\ttfamily std\+::thread GPSSim\+::worker\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

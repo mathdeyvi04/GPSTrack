@@ -10,7 +10,7 @@ int main(){
 
 	ss.init();
 
-	std::this_thread::sleep_for(std::chrono::seconds(10));
+	std::this_thread::sleep_for(std::chrono::seconds(60));
 
 	ss.stop();
 

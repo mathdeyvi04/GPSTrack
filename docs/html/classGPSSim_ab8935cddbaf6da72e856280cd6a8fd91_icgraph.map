@@ -1,0 +1,13 @@
+<map id="GPSSim::build_nmea_string" name="GPSSim::build_nmea_string">
+<area shape="rect" id="Node000001" title="Finaliza uma sentença NMEA a partir do corpo da frase." alt="" coords="649,37,807,77"/>
+<area shape="rect" id="Node000002" href="$classGPSSim_1_1NMEAGenerator.html#a8966ba1016d3c2545b1efec67b4a087d" title="Gera uma frase GGA (Global Positioning System Fix Data)" alt="" coords="416,5,601,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="635,47,601,41,602,36,636,41"/>
+<area shape="rect" id="Node000006" href="$classGPSSim_1_1NMEAGenerator.html#aeebf8c2237ee7692b1c35c22d8eb4de1" title="Gera uma frase GGA (Recommended Minimum Navigation Information)" alt="" coords="416,69,601,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="636,73,602,78,601,73,635,68"/>
+<area shape="rect" id="Node000003" href="$classGPSSim.html#afafb98bc1f19fbc19cb04b2dc4b038e9" title="Loop principal responsável pela geração e transmissão de dados simulados." alt="" coords="259,13,368,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="402,28,368,28,368,23,402,23"/>
+<area shape="rect" id="Node000004" href="$classGPSSim.html#a035f71a80ed040b260f68276d531de79" title="Inicia a geração de frases no padrão NMEA em uma thread separada." alt="" coords="108,13,211,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="245,28,211,28,211,23,245,23"/>
+<area shape="rect" id="Node000005" href="$debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,13,60,38"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="94,28,60,28,60,23,94,23"/>
+</map>

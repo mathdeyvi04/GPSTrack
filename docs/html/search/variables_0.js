@@ -1,19 +1,5 @@
 var searchData=
 [
-  ['_5falt_0',['_alt',['../classGPSSim.html#a1503ce4821dbe4f3dc5d90bb85dfe7ca',1,'GPSSim']]],
-  ['_5ffd_5ffilho_1',['_fd_filho',['../classGPSSim.html#aacca073662a93e81a7cf105e59cb48ee',1,'GPSSim']]],
-  ['_5ffd_5fpai_2',['_fd_pai',['../classGPSSim.html#a19fbc44ac45a1ddced9b1577e9b3eeb5',1,'GPSSim']]],
-  ['_5fis_5fexec_3',['_is_exec',['../classGPSSim.html#a8d7bde2dfe108459563278eabea27093',1,'GPSSim']]],
-  ['_5flat_4',['_lat',['../classGPSSim.html#a4bddd122402c6c27767ecf76db1ee605',1,'GPSSim']]],
-  ['_5flat_5fsim_5',['_lat_sim',['../classGPSSim.html#a1087d219695c39ef323ceb3041ddbe92',1,'GPSSim']]],
-  ['_5flon_6',['_lon',['../classGPSSim.html#afa1d1721250da96b7430203d059996c9',1,'GPSSim']]],
-  ['_5flon_5fsim_7',['_lon_sim',['../classGPSSim.html#a96435e4a82e5fc2f562118d159836d81',1,'GPSSim']]],
-  ['_5fmov_5fcirc_8',['_mov_circ',['../classGPSSim.html#ab67a7b7652fffc234280b15ce6c7e816',1,'GPSSim']]],
-  ['_5fnome_5fpt_5ffilho_9',['_nome_pt_filho',['../classGPSSim.html#af9a569d37ee298c48a7c0948fc74b400',1,'GPSSim']]],
-  ['_5fperiodo_5fatualizacao_10',['_periodo_atualizacao',['../classGPSSim.html#af50c7456e54f58490c65096699616812',1,'GPSSim']]],
-  ['_5fperiodo_5fcirc_11',['_periodo_circ',['../classGPSSim.html#a7d16accb90634a12f29279542a1ebed3',1,'GPSSim']]],
-  ['_5fraio_12',['_raio',['../classGPSSim.html#a8a17be6b70309f9e940747e6308fdabb',1,'GPSSim']]],
-  ['_5fstart_5ftime_13',['_start_time',['../classGPSSim.html#aea7a2892d264b755703d81acefa6d140',1,'GPSSim']]],
-  ['_5fthread_5fgeradora_14',['_thread_geradora',['../classGPSSim.html#a26e6d0c2ae4e8b86b3872d975bc3564f',1,'GPSSim']]],
-  ['_5fvelocidade_5fnos_15',['_velocidade_nos',['../classGPSSim.html#a59411486f4aa129528de40f3da3d0798',1,'GPSSim']]]
+  ['addr_5fdest_0',['addr_dest',['../classGPSTrack.html#a2bcd4334a211016814fc68202b9b7fd7',1,'GPSTrack']]],
+  ['alt_1',['alt',['../classGPSSim.html#a4c280076655fb8a2440b90e514ce65a0',1,'GPSSim']]]
 ];

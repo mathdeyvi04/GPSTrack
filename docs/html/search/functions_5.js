@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loop_0',['loop',['../classGPSTrack.html#a862ea0639e829e8dada744bcb7ceff64',1,'GPSTrack']]]
+  ['init_0',['init',['../classGPSSim.html#a035f71a80ed040b260f68276d531de79',1,'GPSSim::init()'],['../classGPSTrack.html#a30cc30a3290df68a9dcc3906811319db',1,'GPSTrack::init()']]]
 ];

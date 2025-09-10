@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['_7egpssim_0',['~GPSSim',['../classGPSSim.html#a7ee46b13b6a555764c544a5069854d32',1,'GPSSim']]],
-  ['_7egpstrack_1',['~GPSTrack',['../classGPSTrack.html#a29db7ef078c4e959b1ee16e9aaf651df',1,'GPSTrack']]]
+  ['worker_0',['worker',['../classGPSSim.html#aa74e5845eb8c1426edf7737c600c2ecd',1,'GPSSim::worker'],['../classGPSTrack.html#a7d3d22f55ad6374915413b8bcce9d636',1,'GPSTrack::worker']]]
 ];
