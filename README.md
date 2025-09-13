@@ -23,7 +23,7 @@ Sugiro a observação do vídeo [linkado](https://youtu.be/lZumBl7zhoM) e busca 
 
 O sensor deve ser conectado à placa da seguinte forma:
 
-![](https://github.com/user-attachments/assets/ea1d0935-fcd3-4160-b46f-a917f578f33d)
+![](https://github.com/user-attachments/assets/025067fb-335d-4f40-8720-4efb961b8a75)
 
 Além do compilador padrão para verificações superficiais, será necessário um compilador específico para o microcontrolador que estamos focando. 
 
