@@ -196,7 +196,7 @@ Dependendo de quando o comando foi executado, diferentes formas de texto surgir�
 Considerando que um determinado tempo foi esperado, execute:
 
 ```
-./GPSTrack
+./GPSTrack <ip_de_destino> <porta_de_destino>
 ```
 
 Então as seguintes mensagens devem surgir à tela:
