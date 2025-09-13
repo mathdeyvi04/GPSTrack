@@ -44,35 +44,37 @@
 \contentsline {subsubsection}{\numberline {1.3.3.2}loop()}{16}{subsubsection.1.3.3.2}%
 \contentsline {subsubsection}{\numberline {1.3.3.3}open\_serial()}{17}{subsubsection.1.3.3.3}%
 \contentsline {subsubsection}{\numberline {1.3.3.4}read\_serial()}{18}{subsubsection.1.3.3.4}%
-\contentsline {subsubsection}{\numberline {1.3.3.5}split()}{18}{subsubsection.1.3.3.5}%
-\contentsline {subsubsection}{\numberline {1.3.3.6}stop()}{18}{subsubsection.1.3.3.6}%
-\contentsline {subsection}{\numberline {1.3.4}Member Data Documentation}{19}{subsection.1.3.4}%
-\contentsline {subsubsection}{\numberline {1.3.4.1}addr\_dest}{19}{subsubsection.1.3.4.1}%
-\contentsline {subsubsection}{\numberline {1.3.4.2}fd\_serial}{19}{subsubsection.1.3.4.2}%
-\contentsline {subsubsection}{\numberline {1.3.4.3}ip\_destino}{19}{subsubsection.1.3.4.3}%
-\contentsline {subsubsection}{\numberline {1.3.4.4}is\_exec}{19}{subsubsection.1.3.4.4}%
-\contentsline {subsubsection}{\numberline {1.3.4.5}last\_data\_given}{19}{subsubsection.1.3.4.5}%
-\contentsline {subsubsection}{\numberline {1.3.4.6}porta\_destino}{19}{subsubsection.1.3.4.6}%
-\contentsline {subsubsection}{\numberline {1.3.4.7}porta\_serial}{20}{subsubsection.1.3.4.7}%
-\contentsline {subsubsection}{\numberline {1.3.4.8}sockfd}{20}{subsubsection.1.3.4.8}%
-\contentsline {subsubsection}{\numberline {1.3.4.9}worker}{20}{subsubsection.1.3.4.9}%
-\contentsline {section}{\numberline {1.4}GPSSim\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::NMEAGenerator Class Reference}{20}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}Detailed Description}{20}{subsection.1.4.1}%
-\contentsline {subsection}{\numberline {1.4.2}Member Function Documentation}{20}{subsection.1.4.2}%
-\contentsline {subsubsection}{\numberline {1.4.2.1}generate\_gga()}{20}{subsubsection.1.4.2.1}%
-\contentsline {subsubsection}{\numberline {1.4.2.2}generate\_rmc()}{21}{subsubsection.1.4.2.2}%
-\contentsline {chapter}{\numberline {2}File Documentation}{23}{chapter.2}%
-\contentsline {section}{\numberline {2.1}src/debug.cpp File Reference}{23}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Detailed Description}{23}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Function Documentation}{24}{subsection.2.1.2}%
-\contentsline {subsubsection}{\numberline {2.1.2.1}main()}{24}{subsubsection.2.1.2.1}%
-\contentsline {section}{\numberline {2.2}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}GPSSim.hpp File Reference}{24}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Detailed Description}{25}{subsection.2.2.1}%
-\contentsline {section}{\numberline {2.3}GPSSim.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{25}{section.2.3}%
-\contentsline {section}{\numberline {2.4}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}GPSTrack.hpp File Reference}{29}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Detailed Description}{30}{subsection.2.4.1}%
-\contentsline {section}{\numberline {2.5}GPSTrack.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{30}{section.2.5}%
-\contentsline {section}{\numberline {2.6}src/main.cpp File Reference}{35}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}Function Documentation}{35}{subsection.2.6.1}%
-\contentsline {subsubsection}{\numberline {2.6.1.1}main()}{35}{subsubsection.2.6.1.1}%
-\contentsline {chapter}{Index}{37}{section*.58}%
+\contentsline {subsubsection}{\numberline {1.3.3.5}send()}{18}{subsubsection.1.3.3.5}%
+\contentsline {subsubsection}{\numberline {1.3.3.6}split()}{19}{subsubsection.1.3.3.6}%
+\contentsline {subsubsection}{\numberline {1.3.3.7}stop()}{19}{subsubsection.1.3.3.7}%
+\contentsline {subsection}{\numberline {1.3.4}Member Data Documentation}{20}{subsection.1.3.4}%
+\contentsline {subsubsection}{\numberline {1.3.4.1}addr\_dest}{20}{subsubsection.1.3.4.1}%
+\contentsline {subsubsection}{\numberline {1.3.4.2}fd\_serial}{20}{subsubsection.1.3.4.2}%
+\contentsline {subsubsection}{\numberline {1.3.4.3}ip\_destino}{20}{subsubsection.1.3.4.3}%
+\contentsline {subsubsection}{\numberline {1.3.4.4}is\_exec}{20}{subsubsection.1.3.4.4}%
+\contentsline {subsubsection}{\numberline {1.3.4.5}last\_data\_given}{20}{subsubsection.1.3.4.5}%
+\contentsline {subsubsection}{\numberline {1.3.4.6}porta\_destino}{20}{subsubsection.1.3.4.6}%
+\contentsline {subsubsection}{\numberline {1.3.4.7}porta\_serial}{21}{subsubsection.1.3.4.7}%
+\contentsline {subsubsection}{\numberline {1.3.4.8}sockfd}{21}{subsubsection.1.3.4.8}%
+\contentsline {subsubsection}{\numberline {1.3.4.9}worker}{21}{subsubsection.1.3.4.9}%
+\contentsline {section}{\numberline {1.4}GPSSim\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::NMEAGenerator Class Reference}{21}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Detailed Description}{21}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Member Function Documentation}{21}{subsection.1.4.2}%
+\contentsline {subsubsection}{\numberline {1.4.2.1}generate\_gga()}{21}{subsubsection.1.4.2.1}%
+\contentsline {subsubsection}{\numberline {1.4.2.2}generate\_rmc()}{22}{subsubsection.1.4.2.2}%
+\contentsline {chapter}{\numberline {2}File Documentation}{25}{chapter.2}%
+\contentsline {section}{\numberline {2.1}src/debug.cpp File Reference}{25}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Detailed Description}{25}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Function Documentation}{26}{subsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.2.1}main()}{26}{subsubsection.2.1.2.1}%
+\contentsline {section}{\numberline {2.2}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}GPSSim.hpp File Reference}{26}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Detailed Description}{27}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.3}GPSSim.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{27}{section.2.3}%
+\contentsline {section}{\numberline {2.4}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}GPSTrack.hpp File Reference}{31}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Detailed Description}{32}{subsection.2.4.1}%
+\contentsline {section}{\numberline {2.5}GPSTrack.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{32}{section.2.5}%
+\contentsline {section}{\numberline {2.6}src/main.cpp File Reference}{37}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Detailed Description}{37}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Function Documentation}{37}{subsection.2.6.2}%
+\contentsline {subsubsection}{\numberline {2.6.2.1}main()}{37}{subsubsection.2.6.2.1}%
+\contentsline {chapter}{Index}{39}{section*.59}%

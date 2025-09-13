@@ -104,6 +104,7 @@ Assim, o arquivo estará no mesmo local que as pastas root do sistema linux. Al�
 ```
 chmod +x GPSTrack
 ```
+
 # Caso Deseje Utilizar
 
 A seguir, regras de compilação e execução.
@@ -111,6 +112,10 @@ A seguir, regras de compilação e execução.
 ### `GPSTrack`
 
 O arquivo binário `GPSTrack` presente neste diretório já representa o executável a ser inserido na placa para completa operacionalidade.
+
+Com a adição da feature de envio via rede, torna-se necessário a entrada de novos argumentos, o _ip e a porta de destino_.
+
+Sendo assim, a execução fica, por exemplo: `./GPSTrack 127.0.0.1 1234`.
 
 ### `make`
 
@@ -123,7 +128,8 @@ Compilará a aplicação para o Linux, executará e apagará o executável gerad
 Neste caso, há um simulador para o módulo GPS que estaremos usando a fim de que 
 possamos realmente realizar testes.
 
-Esse modo também é interessante para aqueles que não possuem o sensor, nem a placa.
+Esse modo também é interessante para aqueles que não possuem o sensor, nem a placa. Neste caso, 
+a aplicação via as informações para o localhost e para a porta 9000.
 
 ### `make docs`
 
@@ -158,7 +164,7 @@ segurança informações de horário em UTC, latitude, longitude e altitude.
 
 - Envio de informações:
 
-_Ainda não desenvolvido_.
+A função `send` envia as informações via socket UDP para uma determinada máquina e porta.
 
 Para informações mais precisas e profundas, sugiro verificar o arquivo 
 [index.html](docs/html/index.html) ou [Documentation.pdf](Documentation.pdf), sendo este último gerado pelo comando `make docs`.
@@ -195,7 +201,14 @@ Considerando que um determinado tempo foi esperado, execute:
 
 Então as seguintes mensagens devem surgir à tela:
 
-![](https://github.com/user-attachments/assets/a2d1d5bd-6fc6-433d-9291-4bf4f3961b08)
+![](https://github.com/user-attachments/assets/2acdb632-2ac4-4a12-98da-76a99bce8713)
 
 Observe como nossa aplicação apenas interpreta o padrão _GGA_ lançado pelo sensor, retornando
 as informações de _Hora_em_UTC_, _Latitude_, _Longitude_, _Altitude_.
+
+### Visualização na Máquina Conectada
+
+Utilizando NetCat para filtrar as entradas em uma porta específica da máquina, é possível ver o fluxo de dados entrando no servidor.
+
+![](https://github.com/user-attachments/assets/ae476e05-20e1-4470-b4e1-daf2db0c7e3e)
+

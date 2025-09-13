@@ -46,6 +46,8 @@ void \mbox{\hyperlink{classGPSTrack_a6c8d0f2c0a318fece9821e67c25bc6b4}{open\+\_\
 \begin{DoxyCompactList}\small\item\em Abre e configura a porta serial para comunicação o sensor. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{classGPSTrack_a6a178747dbf11d8f8f2fb1be523e36a1}{read\+\_\+serial}} ()
 \begin{DoxyCompactList}\small\item\em Lê dados da porta serial até encontrar uma quebra de linha. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGPSTrack_acf3e1e392823490cd75981e14eb1747d}{send}} (const std\+::string \&mensagem)
+\begin{DoxyCompactList}\small\item\em Envia uma string via socket UDP para um servidor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classGPSTrack_a862ea0639e829e8dada744bcb7ceff64}{loop}} ()
 \begin{DoxyCompactList}\small\item\em Executa o loop principal de leitura, interpretação e envio de dados via UDP. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
@@ -57,7 +59,7 @@ int \mbox{\hyperlink{classGPSTrack_a2ba64ba9d9ab5bfba95781bb49436fdf}{porta\+\_\
 \item 
 int \mbox{\hyperlink{classGPSTrack_a61d86b95297cac9a39eb9f23d0218462}{sockfd}}
 \item 
-sockaddr\+\_\+in \mbox{\hyperlink{classGPSTrack_a2bcd4334a211016814fc68202b9b7fd7}{addr\+\_\+dest}}
+sockaddr\+\_\+in \mbox{\hyperlink{classGPSTrack_a2bcd4334a211016814fc68202b9b7fd7}{addr\+\_\+dest}} \{\}
 \item 
 std\+::thread \mbox{\hyperlink{classGPSTrack_a7d3d22f55ad6374915413b8bcce9d636}{worker}}
 \item 
@@ -87,7 +89,7 @@ Cada uma dessas responsabilidades está associada a um método da classe, respec
 \begin{DoxyItemize}
 \item \doxylink{classGPSTrack_a6a178747dbf11d8f8f2fb1be523e36a1}{read\+\_\+serial()}
 \item \doxylink{classGPSTrack_1_1GPSData_abc5308215475b647cbbb9df696597ad0}{GPSData\+::parsing()}
-\item send()
+\item \doxylink{classGPSTrack_acf3e1e392823490cd75981e14eb1747d}{send()}
 \end{DoxyItemize}
 
 Os quais estarão sendo repetidamente executados pela thread worker a fim de manter a continuidade de informações.
@@ -249,6 +251,31 @@ Lê dados da porta serial até encontrar uma quebra de linha.
 \includegraphics[width=350pt]{classGPSTrack_a6a178747dbf11d8f8f2fb1be523e36a1_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{classGPSTrack_acf3e1e392823490cd75981e14eb1747d}\label{classGPSTrack_acf3e1e392823490cd75981e14eb1747d} 
+\index{GPSTrack@{GPSTrack}!send@{send}}
+\index{send@{send}!GPSTrack@{GPSTrack}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily bool GPSTrack\+::send (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{mensagem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Envia uma string via socket UDP para um servidor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mensagem} & String a ser enviada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True se a mensagem foi enviada com sucesso. False, caso contrário. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGPSTrack_acf3e1e392823490cd75981e14eb1747d_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{classGPSTrack_a3167b347c042dc1736aa65d362e9265b}\label{classGPSTrack_a3167b347c042dc1736aa65d362e9265b} 
 \index{GPSTrack@{GPSTrack}!split@{split}}
 \index{split@{split}!GPSTrack@{GPSTrack}}
@@ -297,7 +324,7 @@ Esta função realiza o desligamento controlado da thread de trabalho. Primeiro,
 \index{GPSTrack@{GPSTrack}!addr\_dest@{addr\_dest}}
 \index{addr\_dest@{addr\_dest}!GPSTrack@{GPSTrack}}
 \doxysubsubsection{\texorpdfstring{addr\_dest}{addr\_dest}}
-{\footnotesize\ttfamily sockaddr\+\_\+in GPSTrack\+::addr\+\_\+dest\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily sockaddr\+\_\+in GPSTrack\+::addr\+\_\+dest \{\}\hspace{0.3cm}{\ttfamily [private]}}
 
 \Hypertarget{classGPSTrack_a2d31e6311ccf72389dc521bc8b45ee59}\label{classGPSTrack_a2d31e6311ccf72389dc521bc8b45ee59} 
 \index{GPSTrack@{GPSTrack}!fd\_serial@{fd\_serial}}

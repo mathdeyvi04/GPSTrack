@@ -226,6 +226,8 @@ public:
 		        oss << data[i];
 		    }
 
+		    oss << "\n";
+
 		    return oss.str();
 		}
 	};
@@ -270,7 +272,7 @@ private:
 	std::string ip_destino; 
 	int      porta_destino;
 	int             sockfd;
-	sockaddr_in  addr_dest;
+	sockaddr_in  addr_dest{};
 
 	// Relacionados ao fluxo de funcionamento
 	std::thread                worker;
@@ -403,6 +405,31 @@ private:
 	}
 
 	/**
+	 * @brief Envia uma string via socket UDP para um servidor.
+	 * @param mensagem String a ser enviada.
+	 * @return True se a mensagem foi enviada com sucesso. False, caso contrário.
+	 */
+	bool
+	send(
+		const std::string& mensagem
+	){
+
+		ssize_t bytes = ::sendto(
+								 sockfd,
+								 mensagem.c_str(),
+								 mensagem.size(),
+								 0,
+								 reinterpret_cast<struct sockaddr*>(&addr_dest),
+								 sizeof(addr_dest)
+			                     );
+
+		if(bytes < 0){ std::cout << "Erro ao enviar" << std::endl; return false;}
+
+		return true;
+	}
+
+
+	/**
 	 * @brief Executa o loop principal de leitura, interpretação e envio de dados via UDP.
 	 * @details 
 	 * 
@@ -441,10 +468,16 @@ private:
 					parsed
 				){
 
+					std::string mensagem = last_data_given.to_csv();
+
 					std::cout << "Interpretando: \033[7m" 
-							  << last_data_given.to_csv()
+							  << mensagem
 							  << "\033[0m"
 							  << std::endl;
+
+					send(
+						mensagem
+					);
 					parsed = false;
 					printf("\n");
 				}
