@@ -23,6 +23,7 @@
   <td id="projectalign">
    <div id="projectname">GPSTrack
    </div>
+   <div id="projectbrief">Paz para Você, Proteção para Sua Carga. Tecnologia a Seu Favor.</div>
   </td>
  </tr>
  </tbody>
@@ -89,19 +90,9 @@ Collaboration diagram for GPSSim:</div>
 <div class="dyncontent">
 <div class="center"><img src="classGPSSim__coll__graph.png" border="0" usemap="#aGPSSim_coll__map" alt="Collaboration graph"/></div>
 <map name="aGPSSim_coll__map" id="aGPSSim_coll__map">
-<area shape="rect" title="Versão Simulada do Sensor GPS, gerando frases no padrão NMEA." alt="" coords="303,123,376,148"/>
-<area shape="rect" title=" " alt="" coords="5,5,44,31"/>
-<area shape="poly" title=" " alt="" coords="28,44,33,73,40,86,49,97,67,107,94,115,163,126,238,131,302,132,302,137,238,136,162,131,93,120,65,112,46,101,35,89,28,74,22,45"/>
-<area shape="rect" title=" " alt="" coords="83,5,134,31"/>
-<area shape="poly" title=" " alt="" coords="108,44,109,72,114,86,121,97,133,105,151,112,200,122,303,131,302,136,199,127,150,117,131,110,117,101,109,88,104,73,102,45"/>
-<area shape="rect" title=" " alt="" coords="287,5,351,31"/>
-<area shape="poly" title=" " alt="" coords="326,44,340,122,335,123,321,45"/>
-<area shape="rect" title=" " alt="" coords="375,5,501,31"/>
-<area shape="poly" title=" " alt="" coords="428,44,411,72,389,101,360,124,357,120,385,97,407,69,424,42"/>
-<area shape="rect" title=" " alt="" coords="525,5,591,31"/>
-<area shape="poly" title=" " alt="" coords="543,43,514,73,478,101,426,122,377,132,376,127,425,117,475,96,511,70,539,40"/>
+<area shape="rect" title="Versão Simulada do Sensor GPS, gerando frases no padrão NMEA." alt="" coords="5,5,199,611"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -172,6 +163,8 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Versão Simulada do Sensor GPS, gerando frases no padrão NMEA. </p>
 <p>Criará um par de pseudo-terminais (PTY) para simular o funcionamento do sensor. Intervaladamente, gera frases NMEA simuladas. </p>
+
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00064">64</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af71018b7b54d324cd2ccfd619b220a9e" name="af71018b7b54d324cd2ccfd619b220a9e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af71018b7b54d324cd2ccfd619b220a9e">&#9670;&#160;</a></span>GPSSim()</h2>
@@ -224,6 +217,8 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00363">363</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
+
 </div>
 </div>
 <a id="a7ee46b13b6a555764c544a5069854d32" name="a7ee46b13b6a555764c544a5069854d32"></a>
@@ -251,16 +246,8 @@ Private Attributes</h2></td></tr>
 
 <p>Destrutor do <a class="el" href="classGPSSim.html" title="Versão Simulada do Sensor GPS, gerando frases no padrão NMEA.">GPSSim</a>. </p>
 <p>Chama a função <code><a class="el" href="classGPSSim.html#a114167ff50a457bd15b93f84242a6edc" title="Encerrará a geração de frases NMEA e aguardará a finalização da thread.">stop()</a></code> e, após verificar existência de terminal Pai, fecha-o. </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classGPSSim_a7ee46b13b6a555764c544a5069854d32_cgraph.png" border="0" usemap="#aclassGPSSim_a7ee46b13b6a555764c544a5069854d32_cgraph" alt=""/></div>
-<map name="aclassGPSSim_a7ee46b13b6a555764c544a5069854d32_cgraph" id="aclassGPSSim_a7ee46b13b6a555764c544a5069854d32_cgraph">
-<area shape="rect" title="Destrutor do GPSSim." alt="" coords="5,5,148,31"/>
-<area shape="rect" href="classGPSSim.html#a114167ff50a457bd15b93f84242a6edc" title="Encerrará a geração de frases NMEA e aguardará a finalização da thread." alt="" coords="196,5,305,31"/>
-<area shape="poly" title=" " alt="" coords="148,15,182,15,182,21,148,21"/>
-</map>
-</div>
+
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00404">404</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
 
 </div>
 </div>
@@ -298,24 +285,8 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string Sentença NMEA completa, pronta para transmissão. </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classGPSSim_ab8935cddbaf6da72e856280cd6a8fd91_icgraph.png" border="0" usemap="#aclassGPSSim_ab8935cddbaf6da72e856280cd6a8fd91_icgraph" alt=""/></div>
-<map name="aclassGPSSim_ab8935cddbaf6da72e856280cd6a8fd91_icgraph" id="aclassGPSSim_ab8935cddbaf6da72e856280cd6a8fd91_icgraph">
-<area shape="rect" title="Finaliza uma sentença NMEA a partir do corpo da frase." alt="" coords="649,37,807,77"/>
-<area shape="rect" href="classGPSSim_1_1NMEAGenerator.html#a8966ba1016d3c2545b1efec67b4a087d" title="Gera uma frase GGA (Global Positioning System Fix Data)" alt="" coords="416,5,601,45"/>
-<area shape="poly" title=" " alt="" coords="635,47,601,41,602,36,636,41"/>
-<area shape="rect" href="classGPSSim_1_1NMEAGenerator.html#aeebf8c2237ee7692b1c35c22d8eb4de1" title="Gera uma frase GGA (Recommended Minimum Navigation Information)" alt="" coords="416,69,601,109"/>
-<area shape="poly" title=" " alt="" coords="636,73,602,78,601,73,635,68"/>
-<area shape="rect" href="classGPSSim.html#afafb98bc1f19fbc19cb04b2dc4b038e9" title="Loop principal responsável pela geração e transmissão de dados simulados." alt="" coords="259,13,368,38"/>
-<area shape="poly" title=" " alt="" coords="402,28,368,28,368,23,402,23"/>
-<area shape="rect" href="classGPSSim.html#a035f71a80ed040b260f68276d531de79" title="Inicia a geração de frases no padrão NMEA em uma thread separada." alt="" coords="108,13,211,38"/>
-<area shape="poly" title=" " alt="" coords="245,28,211,28,211,23,245,23"/>
-<area shape="rect" href="debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,13,60,38"/>
-<area shape="poly" title=" " alt="" coords="94,28,60,28,60,23,94,23"/>
-</map>
-</div>
+
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00180">180</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
 
 </div>
 </div>
@@ -376,24 +347,8 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classGPSSim_a506709c04b71f7582b59a2cf318f7740_icgraph.png" border="0" usemap="#aclassGPSSim_a506709c04b71f7582b59a2cf318f7740_icgraph" alt=""/></div>
-<map name="aclassGPSSim_a506709c04b71f7582b59a2cf318f7740_icgraph" id="aclassGPSSim_a506709c04b71f7582b59a2cf318f7740_icgraph">
-<area shape="rect" title="Converte graus decimais para formato NMEA de localização, (ddmm.mmmm)." alt="" coords="649,45,848,70"/>
-<area shape="rect" href="classGPSSim_1_1NMEAGenerator.html#a8966ba1016d3c2545b1efec67b4a087d" title="Gera uma frase GGA (Global Positioning System Fix Data)" alt="" coords="416,5,601,45"/>
-<area shape="poly" title=" " alt="" coords="640,45,601,40,602,35,640,40"/>
-<area shape="rect" href="classGPSSim_1_1NMEAGenerator.html#aeebf8c2237ee7692b1c35c22d8eb4de1" title="Gera uma frase GGA (Recommended Minimum Navigation Information)" alt="" coords="416,69,601,109"/>
-<area shape="poly" title=" " alt="" coords="640,74,602,80,601,74,640,69"/>
-<area shape="rect" href="classGPSSim.html#afafb98bc1f19fbc19cb04b2dc4b038e9" title="Loop principal responsável pela geração e transmissão de dados simulados." alt="" coords="259,13,368,38"/>
-<area shape="poly" title=" " alt="" coords="402,28,368,28,368,23,402,23"/>
-<area shape="rect" href="classGPSSim.html#a035f71a80ed040b260f68276d531de79" title="Inicia a geração de frases no padrão NMEA em uma thread separada." alt="" coords="108,13,211,38"/>
-<area shape="poly" title=" " alt="" coords="245,28,211,28,211,23,245,23"/>
-<area shape="rect" href="debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,13,60,38"/>
-<area shape="poly" title=" " alt="" coords="94,28,60,28,60,23,94,23"/>
-</map>
-</div>
+
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00086">86</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
 
 </div>
 </div>
@@ -441,24 +396,8 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>string formatada <br  />
  </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classGPSSim_ad9340c7234c96b2ef5197df8ff3b32f1_icgraph.png" border="0" usemap="#aclassGPSSim_ad9340c7234c96b2ef5197df8ff3b32f1_icgraph" alt=""/></div>
-<map name="aclassGPSSim_ad9340c7234c96b2ef5197df8ff3b32f1_icgraph" id="aclassGPSSim_ad9340c7234c96b2ef5197df8ff3b32f1_icgraph">
-<area shape="rect" title="Formatada um número inteiro com dois dígitos, preenchendo com zero à esquerda." alt="" coords="649,45,828,70"/>
-<area shape="rect" href="classGPSSim_1_1NMEAGenerator.html#a8966ba1016d3c2545b1efec67b4a087d" title="Gera uma frase GGA (Global Positioning System Fix Data)" alt="" coords="416,5,601,45"/>
-<area shape="poly" title=" " alt="" coords="635,46,601,41,602,36,636,40"/>
-<area shape="rect" href="classGPSSim_1_1NMEAGenerator.html#aeebf8c2237ee7692b1c35c22d8eb4de1" title="Gera uma frase GGA (Recommended Minimum Navigation Information)" alt="" coords="416,69,601,109"/>
-<area shape="poly" title=" " alt="" coords="636,74,602,79,601,74,635,69"/>
-<area shape="rect" href="classGPSSim.html#afafb98bc1f19fbc19cb04b2dc4b038e9" title="Loop principal responsável pela geração e transmissão de dados simulados." alt="" coords="259,13,368,38"/>
-<area shape="poly" title=" " alt="" coords="402,28,368,28,368,23,402,23"/>
-<area shape="rect" href="classGPSSim.html#a035f71a80ed040b260f68276d531de79" title="Inicia a geração de frases no padrão NMEA em uma thread separada." alt="" coords="108,13,211,38"/>
-<area shape="poly" title=" " alt="" coords="245,28,211,28,211,23,245,23"/>
-<area shape="rect" href="debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,13,60,38"/>
-<area shape="poly" title=" " alt="" coords="94,28,60,28,60,23,94,23"/>
-</map>
-</div>
+
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00142">142</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
 
 </div>
 </div>
@@ -488,16 +427,8 @@ Here is the caller graph for this function:</div>
 <p>Obtém o caminho do terminal que estamos executando de forma filial. </p>
 <dl class="section return"><dt>Returns</dt><dd>String correspondendo ao caminho do dispositivo. <br  />
  </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classGPSSim_a9dd6c5b066c8dcb0ebbdfb7c526ff856_icgraph.png" border="0" usemap="#aclassGPSSim_a9dd6c5b066c8dcb0ebbdfb7c526ff856_icgraph" alt=""/></div>
-<map name="aclassGPSSim_a9dd6c5b066c8dcb0ebbdfb7c526ff856_icgraph" id="aclassGPSSim_a9dd6c5b066c8dcb0ebbdfb7c526ff856_icgraph">
-<area shape="rect" title="Obtém o caminho do terminal que estamos executando de forma filial." alt="" coords="108,5,339,31"/>
-<area shape="rect" href="debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
-<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
-</map>
-</div>
+
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00449">449</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
 
 </div>
 </div>
@@ -527,24 +458,8 @@ Here is the caller graph for this function:</div>
 <p>Obtém o tempo UTC atual, horário em Londres. </p>
 <dl class="section return"><dt>Returns</dt><dd>Struct std::tm contendo o tempo em UTC <br  />
  </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classGPSSim_a68331c508bc9324c323d76799b03b46f_icgraph.png" border="0" usemap="#aclassGPSSim_a68331c508bc9324c323d76799b03b46f_icgraph" alt=""/></div>
-<map name="aclassGPSSim_a68331c508bc9324c323d76799b03b46f_icgraph" id="aclassGPSSim_a68331c508bc9324c323d76799b03b46f_icgraph">
-<area shape="rect" title="Obtém o tempo UTC atual, horário em Londres." alt="" coords="649,45,816,70"/>
-<area shape="rect" href="classGPSSim_1_1NMEAGenerator.html#a8966ba1016d3c2545b1efec67b4a087d" title="Gera uma frase GGA (Global Positioning System Fix Data)" alt="" coords="416,5,601,45"/>
-<area shape="poly" title=" " alt="" coords="635,46,601,41,602,36,636,41"/>
-<area shape="rect" href="classGPSSim_1_1NMEAGenerator.html#aeebf8c2237ee7692b1c35c22d8eb4de1" title="Gera uma frase GGA (Recommended Minimum Navigation Information)" alt="" coords="416,69,601,109"/>
-<area shape="poly" title=" " alt="" coords="636,74,602,79,601,73,635,69"/>
-<area shape="rect" href="classGPSSim.html#afafb98bc1f19fbc19cb04b2dc4b038e9" title="Loop principal responsável pela geração e transmissão de dados simulados." alt="" coords="259,13,368,38"/>
-<area shape="poly" title=" " alt="" coords="402,28,368,28,368,23,402,23"/>
-<area shape="rect" href="classGPSSim.html#a035f71a80ed040b260f68276d531de79" title="Inicia a geração de frases no padrão NMEA em uma thread separada." alt="" coords="108,13,211,38"/>
-<area shape="poly" title=" " alt="" coords="245,28,211,28,211,23,245,23"/>
-<area shape="rect" href="debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,13,60,38"/>
-<area shape="poly" title=" " alt="" coords="94,28,60,28,60,23,94,23"/>
-</map>
-</div>
+
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00159">159</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
 
 </div>
 </div>
@@ -575,36 +490,8 @@ Here is the caller graph for this function:</div>
 <p>O padrão NMEA é o protocolo padrão usado por módulos GPS, cada mensagem começa com $ e termina com \r\n. Exemplo:</p><ul>
 <li>$origem,codificacao_usada,dados1,dados2,...*paridade </li>
 </ul>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classGPSSim_a035f71a80ed040b260f68276d531de79_cgraph.png" border="0" usemap="#aclassGPSSim_a035f71a80ed040b260f68276d531de79_cgraph" alt=""/></div>
-<map name="aclassGPSSim_a035f71a80ed040b260f68276d531de79_cgraph" id="aclassGPSSim_a035f71a80ed040b260f68276d531de79_cgraph">
-<area shape="rect" title="Inicia a geração de frases no padrão NMEA em uma thread separada." alt="" coords="5,95,108,121"/>
-<area shape="rect" href="classGPSSim.html#afafb98bc1f19fbc19cb04b2dc4b038e9" title="Loop principal responsável pela geração e transmissão de dados simulados." alt="" coords="156,95,265,121"/>
-<area shape="poly" title=" " alt="" coords="108,105,142,105,142,111,108,111"/>
-<area shape="rect" href="classGPSSim_1_1NMEAGenerator.html#a8966ba1016d3c2545b1efec67b4a087d" title="Gera uma frase GGA (Global Positioning System Fix Data)" alt="" coords="313,88,499,128"/>
-<area shape="poly" title=" " alt="" coords="266,105,300,105,300,111,266,111"/>
-<area shape="rect" href="classGPSSim.html#ab8935cddbaf6da72e856280cd6a8fd91" title="Finaliza uma sentença NMEA a partir do corpo da frase." alt="" coords="567,5,725,45"/>
-<area shape="poly" title=" " alt="" coords="461,85,546,55,569,47,570,52,548,60,462,90"/>
-<area shape="rect" href="classGPSSim.html#a506709c04b71f7582b59a2cf318f7740" title="Converte graus decimais para formato NMEA de localização, (ddmm.mmmm)." alt="" coords="547,70,745,95"/>
-<area shape="poly" title=" " alt="" coords="498,96,533,92,533,97,499,101"/>
-<area shape="rect" href="classGPSSim.html#ad9340c7234c96b2ef5197df8ff3b32f1" title="Formatada um número inteiro com dois dígitos, preenchendo com zero à esquerda." alt="" coords="557,119,735,145"/>
-<area shape="poly" title=" " alt="" coords="499,115,543,119,543,124,498,120"/>
-<area shape="rect" href="classGPSSim.html#a68331c508bc9324c323d76799b03b46f" title="Obtém o tempo UTC atual, horário em Londres." alt="" coords="563,169,729,194"/>
-<area shape="poly" title=" " alt="" coords="463,126,547,153,580,163,578,168,546,159,461,131"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classGPSSim_a035f71a80ed040b260f68276d531de79_icgraph.png" border="0" usemap="#aclassGPSSim_a035f71a80ed040b260f68276d531de79_icgraph" alt=""/></div>
-<map name="aclassGPSSim_a035f71a80ed040b260f68276d531de79_icgraph" id="aclassGPSSim_a035f71a80ed040b260f68276d531de79_icgraph">
-<area shape="rect" title="Inicia a geração de frases no padrão NMEA em uma thread separada." alt="" coords="108,5,211,31"/>
-<area shape="rect" href="debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
-<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
-</map>
-</div>
+
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00415">415</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
 
 </div>
 </div>
@@ -641,36 +528,8 @@ Here is the caller graph for this function:</div>
 </ul>
 <p>O loop termina automaticamente quando <code>_is_exec</code> é definido como falso.</p>
 <dl class="section note"><dt>Note</dt><dd>Esta função é bloqueante e deve ser executada em uma thread dedicada para não interromper o fluxo principal do programa. </dd></dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classGPSSim_afafb98bc1f19fbc19cb04b2dc4b038e9_cgraph.png" border="0" usemap="#aclassGPSSim_afafb98bc1f19fbc19cb04b2dc4b038e9_cgraph" alt=""/></div>
-<map name="aclassGPSSim_afafb98bc1f19fbc19cb04b2dc4b038e9_cgraph" id="aclassGPSSim_afafb98bc1f19fbc19cb04b2dc4b038e9_cgraph">
-<area shape="rect" title="Loop principal responsável pela geração e transmissão de dados simulados." alt="" coords="5,95,115,121"/>
-<area shape="rect" href="classGPSSim_1_1NMEAGenerator.html#a8966ba1016d3c2545b1efec67b4a087d" title="Gera uma frase GGA (Global Positioning System Fix Data)" alt="" coords="163,88,348,128"/>
-<area shape="poly" title=" " alt="" coords="115,105,149,105,149,111,115,111"/>
-<area shape="rect" href="classGPSSim.html#ab8935cddbaf6da72e856280cd6a8fd91" title="Finaliza uma sentença NMEA a partir do corpo da frase." alt="" coords="417,5,574,45"/>
-<area shape="poly" title=" " alt="" coords="310,85,395,55,418,47,420,52,397,60,312,90"/>
-<area shape="rect" href="classGPSSim.html#a506709c04b71f7582b59a2cf318f7740" title="Converte graus decimais para formato NMEA de localização, (ddmm.mmmm)." alt="" coords="396,70,595,95"/>
-<area shape="poly" title=" " alt="" coords="348,96,382,92,383,97,348,101"/>
-<area shape="rect" href="classGPSSim.html#ad9340c7234c96b2ef5197df8ff3b32f1" title="Formatada um número inteiro com dois dígitos, preenchendo com zero à esquerda." alt="" coords="406,119,585,145"/>
-<area shape="poly" title=" " alt="" coords="348,115,393,119,392,124,348,120"/>
-<area shape="rect" href="classGPSSim.html#a68331c508bc9324c323d76799b03b46f" title="Obtém o tempo UTC atual, horário em Londres." alt="" coords="412,169,579,194"/>
-<area shape="poly" title=" " alt="" coords="312,126,397,153,429,163,428,168,395,159,311,131"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classGPSSim_afafb98bc1f19fbc19cb04b2dc4b038e9_icgraph.png" border="0" usemap="#aclassGPSSim_afafb98bc1f19fbc19cb04b2dc4b038e9_icgraph" alt=""/></div>
-<map name="aclassGPSSim_afafb98bc1f19fbc19cb04b2dc4b038e9_icgraph" id="aclassGPSSim_afafb98bc1f19fbc19cb04b2dc4b038e9_icgraph">
-<area shape="rect" title="Loop principal responsável pela geração e transmissão de dados simulados." alt="" coords="259,5,368,31"/>
-<area shape="rect" href="classGPSSim.html#a035f71a80ed040b260f68276d531de79" title="Inicia a geração de frases no padrão NMEA em uma thread separada." alt="" coords="108,5,211,31"/>
-<area shape="poly" title=" " alt="" coords="245,21,211,21,211,15,245,15"/>
-<area shape="rect" href="debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
-<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
-</map>
-</div>
+
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00335">335</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
 
 </div>
 </div>
@@ -700,18 +559,8 @@ Here is the caller graph for this function:</div>
 <p>Encerrará a geração de frases NMEA e aguardará a finalização da thread. <br  />
  </p>
 <p>Verifica a execução da thread e encerra-a caso exista. Força a finalização da thread geradora de mensagens. </p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classGPSSim_a114167ff50a457bd15b93f84242a6edc_icgraph.png" border="0" usemap="#aclassGPSSim_a114167ff50a457bd15b93f84242a6edc_icgraph" alt=""/></div>
-<map name="aclassGPSSim_a114167ff50a457bd15b93f84242a6edc_icgraph" id="aclassGPSSim_a114167ff50a457bd15b93f84242a6edc_icgraph">
-<area shape="rect" title="Encerrará a geração de frases NMEA e aguardará a finalização da thread." alt="" coords="196,31,305,56"/>
-<area shape="rect" href="debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="49,5,104,31"/>
-<area shape="poly" title=" " alt="" coords="182,36,104,25,105,19,182,31"/>
-<area shape="rect" href="classGPSSim.html#a7ee46b13b6a555764c544a5069854d32" title="Destrutor do GPSSim." alt="" coords="5,55,148,80"/>
-<area shape="poly" title=" " alt="" coords="183,55,149,60,148,55,182,50"/>
-</map>
-</div>
+
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00432">432</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
 
 </div>
 </div>
@@ -736,6 +585,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00076">76</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
+
 </div>
 </div>
 <a id="ad66808a3957267a3ba625a334fd50a37" name="ad66808a3957267a3ba625a334fd50a37"></a>
@@ -757,6 +608,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00069">69</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
 
 </div>
 </div>
@@ -780,6 +633,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00068">68</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
+
 </div>
 </div>
 <a id="a84ed7c00ac7830606fccd20379dda0fd" name="a84ed7c00ac7830606fccd20379dda0fd"></a>
@@ -801,6 +656,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00068">68</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
 
 </div>
 </div>
@@ -824,6 +681,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00073">73</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
+
 </div>
 </div>
 <a id="a052ca80ee24743edd53c0d08c47d9a19" name="a052ca80ee24743edd53c0d08c47d9a19"></a>
@@ -845,6 +704,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00076">76</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
 
 </div>
 </div>
@@ -868,6 +729,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00076">76</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
+
 </div>
 </div>
 <a id="aa74e5845eb8c1426edf7737c600c2ecd" name="aa74e5845eb8c1426edf7737c600c2ecd"></a>
@@ -889,6 +752,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00072">72</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
 
 </div>
 </div>

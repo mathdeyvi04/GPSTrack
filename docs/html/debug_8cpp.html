@@ -23,6 +23,7 @@
   <td id="projectalign">
    <div id="projectname">GPSTrack
    </div>
+   <div id="projectbrief">Paz para Você, Proteção para Sua Carga. Tecnologia a Seu Favor.</div>
   </td>
  </tr>
  </tbody>
@@ -148,7 +149,9 @@ Include dependency graph for debug.cpp:</div>
 <area shape="poly" title=" " alt="" coords="677,97,570,101,421,111,250,128,72,155,72,150,249,123,421,105,569,96,677,91"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="debug_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
@@ -157,6 +160,8 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Responsável por prover ferramentas de debug. </p>
 <p>Já que a aplicação deve ser executada dentro da placa, não conseguiríamos executá-la no DeskTop. Para tanto, fez-se necessário o desenvolvimento de ferramentas que possibilitam a debugação de nosso código. </p>
+
+<p class="definition">Definition in file <a class="el" href="debug_8cpp_source.html">debug.cpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&#160;</a></span>main()</h2>
@@ -172,50 +177,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="debug_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#adebug_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
-<map name="adebug_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" id="adebug_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph">
-<area shape="rect" title=" " alt="" coords="5,263,60,289"/>
-<area shape="rect" href="classGPSSim.html#a9dd6c5b066c8dcb0ebbdfb7c526ff856" title="Obtém o caminho do terminal que estamos executando de forma filial." alt="" coords="108,165,339,190"/>
-<area shape="poly" title=" " alt="" coords="41,261,68,230,107,200,125,192,127,197,109,205,72,234,45,265"/>
-<area shape="rect" href="classGPSSim.html#a035f71a80ed040b260f68276d531de79" title="Inicia a geração de frases no padrão NMEA em uma thread separada." alt="" coords="172,214,275,239"/>
-<area shape="poly" title=" " alt="" coords="59,264,107,249,158,237,159,242,109,255,61,269"/>
-<area shape="rect" href="classGPSTrack.html#a30cc30a3290df68a9dcc3906811319db" title="Inicializa a thread trabalhadora." alt="" coords="168,263,279,289"/>
-<area shape="poly" title=" " alt="" coords="60,273,154,273,154,279,60,279"/>
-<area shape="rect" href="classGPSSim.html#a114167ff50a457bd15b93f84242a6edc" title="Encerrará a geração de frases NMEA e aguardará a finalização da thread." alt="" coords="169,313,278,338"/>
-<area shape="poly" title=" " alt="" coords="61,283,109,299,156,310,154,315,107,304,59,288"/>
-<area shape="rect" href="classGPSTrack.html#a3ddcdc3c1599f4efa7f3938d9a5f2eee" title="Finaliza a thread de trabalho de forma segura." alt="" coords="164,362,283,387"/>
-<area shape="poly" title=" " alt="" coords="45,287,71,318,89,335,109,348,151,364,149,369,107,353,86,339,68,322,41,291"/>
-<area shape="rect" href="classGPSSim.html#afafb98bc1f19fbc19cb04b2dc4b038e9" title="Loop principal responsável pela geração e transmissão de dados simulados." alt="" coords="391,190,501,215"/>
-<area shape="poly" title=" " alt="" coords="275,219,377,207,378,213,275,224"/>
-<area shape="rect" href="classGPSSim_1_1NMEAGenerator.html#a8966ba1016d3c2545b1efec67b4a087d" title="Gera uma frase GGA (Global Positioning System Fix Data)" alt="" coords="553,112,739,152"/>
-<area shape="poly" title=" " alt="" coords="482,187,575,154,577,159,484,192"/>
-<area shape="rect" href="classGPSSim.html#ab8935cddbaf6da72e856280cd6a8fd91" title="Finaliza uma sentença NMEA a partir do corpo da frase." alt="" coords="807,5,965,45"/>
-<area shape="poly" title=" " alt="" coords="680,110,729,82,786,55,804,48,806,53,788,60,731,87,682,114"/>
-<area shape="rect" href="classGPSSim.html#a506709c04b71f7582b59a2cf318f7740" title="Converte graus decimais para formato NMEA de localização, (ddmm.mmmm)." alt="" coords="787,70,985,95"/>
-<area shape="poly" title=" " alt="" coords="738,110,809,96,810,101,739,116"/>
-<area shape="rect" href="classGPSSim.html#ad9340c7234c96b2ef5197df8ff3b32f1" title="Formatada um número inteiro com dois dígitos, preenchendo com zero à esquerda." alt="" coords="797,119,975,145"/>
-<area shape="poly" title=" " alt="" coords="739,129,783,129,783,135,739,135"/>
-<area shape="rect" href="classGPSSim.html#a68331c508bc9324c323d76799b03b46f" title="Obtém o tempo UTC atual, horário em Londres." alt="" coords="803,169,969,194"/>
-<area shape="poly" title=" " alt="" coords="739,148,810,163,809,168,738,154"/>
-<area shape="rect" href="classGPSTrack.html#a862ea0639e829e8dada744bcb7ceff64" title="Executa o loop principal de leitura, interpretação e envio de dados via UDP." alt="" coords="387,287,505,313"/>
-<area shape="poly" title=" " alt="" coords="279,279,373,289,372,295,279,285"/>
-<area shape="rect" href="classGPSTrack_1_1GPSData.html#abc5308215475b647cbbb9df696597ad0" title="Setará os dados baseado no padrão de mensagem recebido." alt="" coords="569,197,723,237"/>
-<area shape="poly" title=" " alt="" coords="472,285,552,248,574,240,575,245,554,253,474,290"/>
-<area shape="rect" href="classGPSTrack.html#a6a178747dbf11d8f8f2fb1be523e36a1" title="Lê dados da porta serial até encontrar uma quebra de linha." alt="" coords="565,262,727,287"/>
-<area shape="poly" title=" " alt="" coords="505,290,551,284,551,289,506,295"/>
-<area shape="rect" href="classGPSTrack.html#acf3e1e392823490cd75981e14eb1747d" title="Envia uma string via socket UDP para um servidor." alt="" coords="585,311,707,337"/>
-<area shape="poly" title=" " alt="" coords="506,304,572,313,572,318,505,310"/>
-<area shape="rect" href="classGPSTrack.html#a3167b347c042dc1736aa65d362e9265b" title="Função estática auxiliar para separar uma string em vetores de string." alt="" coords="587,361,705,386"/>
-<area shape="poly" title=" " alt="" coords="473,310,554,347,577,354,576,359,552,352,471,315"/>
-<area shape="rect" href="classGPSTrack_1_1GPSData.html#ac125cfce08d954bf5fdf6c415bf8e5b6" title="Retorna os dados armazenados em formato CSV." alt="" coords="569,411,723,451"/>
-<area shape="poly" title=" " alt="" coords="460,311,499,352,526,376,555,396,566,402,563,407,552,401,522,380,495,356,456,315"/>
-<area shape="rect" href="classGPSTrack_1_1GPSData.html#a5d80d5bd50eb5389f555be4f04ef7c3b" title="Função estática auxiliar para converter coordenadas NMEA (latitude/longitude) para graus decimais." alt="" coords="809,219,963,259"/>
-<area shape="poly" title=" " alt="" coords="724,222,795,228,795,233,723,227"/>
-</map>
-</div>
+
+<p class="definition">Definition at line <a class="el" href="debug_8cpp_source.html#l00015">15</a> of file <a class="el" href="debug_8cpp_source.html">debug.cpp</a>.</p>
 
 </div>
 </div>

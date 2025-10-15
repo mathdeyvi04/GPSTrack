@@ -15,7 +15,7 @@ Collaboration diagram for GPSTrack\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classGPSTrack__coll__graph}
+\includegraphics[height=550pt]{classGPSTrack__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Classes}
@@ -96,6 +96,10 @@ Os quais estarão sendo repetidamente executados pela thread worker a fim de man
 
 Não há necessidade de mais explicações, já que o fluxo de funcionamento é simples. 
 
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00054}{54}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classGPSTrack_a4db3cce1370f7cb4b559544ed69aaf5b}\label{classGPSTrack_a4db3cce1370f7cb4b559544ed69aaf5b} 
 \index{GPSTrack@{GPSTrack}!GPSTrack@{GPSTrack}}
@@ -116,13 +120,10 @@ Construtor da Classe.
 {\em porta\+\_\+serial\+\_\+} & Caminho da porta serial\\
 \hline
 \end{DoxyParams}
-Inicializa a comunicação UDP e abre a comunicação serial. Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classGPSTrack_a4db3cce1370f7cb4b559544ed69aaf5b_cgraph}
-\end{center}
-\end{figure}
+Inicializa a comunicação UDP e abre a comunicação serial. 
+
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00501}{501}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
+
 \Hypertarget{classGPSTrack_a29db7ef078c4e959b1ee16e9aaf651df}\label{classGPSTrack_a29db7ef078c4e959b1ee16e9aaf651df} 
 \index{GPSTrack@{GPSTrack}!````~GPSTrack@{\texorpdfstring{$\sim$}{\string~}GPSTrack}}
 \index{````~GPSTrack@{\texorpdfstring{$\sim$}{\string~}GPSTrack}!GPSTrack@{GPSTrack}}
@@ -140,13 +141,10 @@ A ordem de operações é importante\+:
 \item Interrompe a thread de execução
 \item Fecha o socket de comunicação
 \item Fecha a porta serial 
-\end{DoxyEnumerate}Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=326pt]{classGPSTrack_a29db7ef078c4e959b1ee16e9aaf651df_cgraph}
-\end{center}
-\end{figure}
+\end{DoxyEnumerate}
+
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00536}{536}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
+
 
 
 \doxysubsection{Member Function Documentation}
@@ -160,20 +158,10 @@ A ordem de operações é importante\+:
 
 Inicializa a thread trabalhadora. 
 
-Garante que apenas uma única instância da thread de execução será iniciada, utilizando um flag atômico para controle de estado. Se a thread já estiver em execução, a função retorna imediatamente sem realizar nova inicialização. Ao iniciar, exibe uma mensagem colorida no terminal e cria uma thread worker que executa o loop principal de leitura e comunicação. Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classGPSTrack_a30cc30a3290df68a9dcc3906811319db_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=240pt]{classGPSTrack_a30cc30a3290df68a9dcc3906811319db_icgraph}
-\end{center}
-\end{figure}
+Garante que apenas uma única instância da thread de execução será iniciada, utilizando um flag atômico para controle de estado. Se a thread já estiver em execução, a função retorna imediatamente sem realizar nova inicialização. Ao iniciar, exibe uma mensagem colorida no terminal e cria uma thread worker que executa o loop principal de leitura e comunicação. 
+
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00549}{549}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
+
 \Hypertarget{classGPSTrack_a862ea0639e829e8dada744bcb7ceff64}\label{classGPSTrack_a862ea0639e829e8dada744bcb7ceff64} 
 \index{GPSTrack@{GPSTrack}!loop@{loop}}
 \index{loop@{loop}!GPSTrack@{GPSTrack}}
@@ -186,20 +174,10 @@ Executa o loop principal de leitura, interpretação e envio de dados via UDP.
 
 Esta função realiza continuamente a leitura de dados da porta serial, interpreta as mensagens GPS no formato GPGGA, armazena os dados processados e, se desejado, os exibe em formato CSV.
 
-O loop executa enquanto a flag de execução estiver ativa, com uma pausa de 1 segundo entre cada iteração para evitar consumo excessivo de CPU. Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classGPSTrack_a862ea0639e829e8dada744bcb7ceff64_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classGPSTrack_a862ea0639e829e8dada744bcb7ceff64_icgraph}
-\end{center}
-\end{figure}
+O loop executa enquanto a flag de execução estiver ativa, com uma pausa de 1 segundo entre cada iteração para evitar consumo excessivo de CPU. 
+
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00443}{443}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
+
 \Hypertarget{classGPSTrack_a6c8d0f2c0a318fece9821e67c25bc6b4}\label{classGPSTrack_a6c8d0f2c0a318fece9821e67c25bc6b4} 
 \index{GPSTrack@{GPSTrack}!open\_serial@{open\_serial}}
 \index{open\_serial@{open\_serial}!GPSTrack@{GPSTrack}}
@@ -222,13 +200,10 @@ Aplicamos as seguintes configurações\+:
 \item 8 bits de dados
 \item Sem paridade
 \item 1 bit de parada 
-\end{DoxyItemize}Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classGPSTrack_a6c8d0f2c0a318fece9821e67c25bc6b4_icgraph}
-\end{center}
-\end{figure}
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00305}{305}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
+
 \Hypertarget{classGPSTrack_a6a178747dbf11d8f8f2fb1be523e36a1}\label{classGPSTrack_a6a178747dbf11d8f8f2fb1be523e36a1} 
 \index{GPSTrack@{GPSTrack}!read\_serial@{read\_serial}}
 \index{read\_serial@{read\_serial}!GPSTrack@{GPSTrack}}
@@ -244,13 +219,10 @@ Lê dados da porta serial até encontrar uma quebra de linha.
 \item Caracteres de carriage return (\textquotesingle{}\textbackslash{}r\textquotesingle{}) são ignorados durante a leitura.
 \item A função termina quando encontra \textquotesingle{}\textbackslash{}n\textquotesingle{} ou quando não há mais dados para ler.
 \item A leitura é feita caractere por caractere para garantir processamento correto dos dados do GPS que seguem protocolo NMEA. 
-\end{DoxyItemize}Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classGPSTrack_a6a178747dbf11d8f8f2fb1be523e36a1_icgraph}
-\end{center}
-\end{figure}
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00374}{374}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
+
 \Hypertarget{classGPSTrack_acf3e1e392823490cd75981e14eb1747d}\label{classGPSTrack_acf3e1e392823490cd75981e14eb1747d} 
 \index{GPSTrack@{GPSTrack}!send@{send}}
 \index{send@{send}!GPSTrack@{GPSTrack}}
@@ -269,13 +241,10 @@ Envia uma string via socket UDP para um servidor.
 \begin{DoxyReturn}{Returns}
 True se a mensagem foi enviada com sucesso. False, caso contrário. 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classGPSTrack_acf3e1e392823490cd75981e14eb1747d_icgraph}
-\end{center}
-\end{figure}
+
+
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00413}{413}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
+
 \Hypertarget{classGPSTrack_a3167b347c042dc1736aa65d362e9265b}\label{classGPSTrack_a3167b347c042dc1736aa65d362e9265b} 
 \index{GPSTrack@{GPSTrack}!split@{split}}
 \index{split@{split}!GPSTrack@{GPSTrack}}
@@ -293,13 +262,10 @@ Função estática auxiliar para separar uma string em vetores de string.
 {\em separador} & Caractere que será a flag de separação.\\
 \hline
 \end{DoxyParams}
-Similar ao método {\ttfamily split} do python, utiliza \textquotesingle{},\textquotesingle{} como caractere separador default. Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classGPSTrack_a3167b347c042dc1736aa65d362e9265b_icgraph}
-\end{center}
-\end{figure}
+Similar ao método {\ttfamily split} do python, utiliza \textquotesingle{},\textquotesingle{} como caractere separador default. 
+
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00243}{243}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
+
 \Hypertarget{classGPSTrack_a3ddcdc3c1599f4efa7f3938d9a5f2eee}\label{classGPSTrack_a3ddcdc3c1599f4efa7f3938d9a5f2eee} 
 \index{GPSTrack@{GPSTrack}!stop@{stop}}
 \index{stop@{stop}!GPSTrack@{GPSTrack}}
@@ -310,13 +276,10 @@ Similar ao método {\ttfamily split} do python, utiliza \textquotesingle{},\text
 
 Finaliza a thread de trabalho de forma segura. 
 
-Esta função realiza o desligamento controlado da thread de trabalho. Primeiro, altera o flag de execução para falso usando operação atômica. Se a thread estiver joinable (executando), imprime uma mensagem de confirmação e realiza a operação de join para aguardar a finalização segura da thread. Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=326pt]{classGPSTrack_a3ddcdc3c1599f4efa7f3938d9a5f2eee_icgraph}
-\end{center}
-\end{figure}
+Esta função realiza o desligamento controlado da thread de trabalho. Primeiro, altera o flag de execução para falso usando operação atômica. Se a thread estiver joinable (executando), imprime uma mensagem de confirmação e realiza a operação de join para aguardar a finalização segura da thread. 
+
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00568}{568}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
+
 
 
 \doxysubsection{Member Data Documentation}
@@ -326,11 +289,19 @@ Esta função realiza o desligamento controlado da thread de trabalho. Primeiro,
 \doxysubsubsection{\texorpdfstring{addr\_dest}{addr\_dest}}
 {\footnotesize\ttfamily sockaddr\+\_\+in GPSTrack\+::addr\+\_\+dest \{\}\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00275}{275}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
+
 \Hypertarget{classGPSTrack_a2d31e6311ccf72389dc521bc8b45ee59}\label{classGPSTrack_a2d31e6311ccf72389dc521bc8b45ee59} 
 \index{GPSTrack@{GPSTrack}!fd\_serial@{fd\_serial}}
 \index{fd\_serial@{fd\_serial}!GPSTrack@{GPSTrack}}
 \doxysubsubsection{\texorpdfstring{fd\_serial}{fd\_serial}}
 {\footnotesize\ttfamily int GPSTrack\+::fd\+\_\+serial = -\/1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00284}{284}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
 
 \Hypertarget{classGPSTrack_ad8ff2642e0fde838f3622ed9894ea141}\label{classGPSTrack_ad8ff2642e0fde838f3622ed9894ea141} 
 \index{GPSTrack@{GPSTrack}!ip\_destino@{ip\_destino}}
@@ -338,11 +309,19 @@ Esta função realiza o desligamento controlado da thread de trabalho. Primeiro,
 \doxysubsubsection{\texorpdfstring{ip\_destino}{ip\_destino}}
 {\footnotesize\ttfamily std\+::string GPSTrack\+::ip\+\_\+destino\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00272}{272}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
+
 \Hypertarget{classGPSTrack_a570c2e95bac7729fecac0e4b8dae98a6}\label{classGPSTrack_a570c2e95bac7729fecac0e4b8dae98a6} 
 \index{GPSTrack@{GPSTrack}!is\_exec@{is\_exec}}
 \index{is\_exec@{is\_exec}!GPSTrack@{GPSTrack}}
 \doxysubsubsection{\texorpdfstring{is\_exec}{is\_exec}}
 {\footnotesize\ttfamily std\+::atomic$<$bool$>$ GPSTrack\+::is\+\_\+exec \{false\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00279}{279}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
 
 \Hypertarget{classGPSTrack_a395ef8fd118c1f23bc4f414ad74d218d}\label{classGPSTrack_a395ef8fd118c1f23bc4f414ad74d218d} 
 \index{GPSTrack@{GPSTrack}!last\_data\_given@{last\_data\_given}}
@@ -350,11 +329,19 @@ Esta função realiza o desligamento controlado da thread de trabalho. Primeiro,
 \doxysubsubsection{\texorpdfstring{last\_data\_given}{last\_data\_given}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classGPSTrack_1_1GPSData}{GPSData}} GPSTrack\+::last\+\_\+data\+\_\+given\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00282}{282}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
+
 \Hypertarget{classGPSTrack_a2ba64ba9d9ab5bfba95781bb49436fdf}\label{classGPSTrack_a2ba64ba9d9ab5bfba95781bb49436fdf} 
 \index{GPSTrack@{GPSTrack}!porta\_destino@{porta\_destino}}
 \index{porta\_destino@{porta\_destino}!GPSTrack@{GPSTrack}}
 \doxysubsubsection{\texorpdfstring{porta\_destino}{porta\_destino}}
 {\footnotesize\ttfamily int GPSTrack\+::porta\+\_\+destino\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00273}{273}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
 
 \Hypertarget{classGPSTrack_a0f5873c0551489c3d505f36539b92d55}\label{classGPSTrack_a0f5873c0551489c3d505f36539b92d55} 
 \index{GPSTrack@{GPSTrack}!porta\_serial@{porta\_serial}}
@@ -362,17 +349,29 @@ Esta função realiza o desligamento controlado da thread de trabalho. Primeiro,
 \doxysubsubsection{\texorpdfstring{porta\_serial}{porta\_serial}}
 {\footnotesize\ttfamily std\+::string GPSTrack\+::porta\+\_\+serial\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00283}{283}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
+
 \Hypertarget{classGPSTrack_a61d86b95297cac9a39eb9f23d0218462}\label{classGPSTrack_a61d86b95297cac9a39eb9f23d0218462} 
 \index{GPSTrack@{GPSTrack}!sockfd@{sockfd}}
 \index{sockfd@{sockfd}!GPSTrack@{GPSTrack}}
 \doxysubsubsection{\texorpdfstring{sockfd}{sockfd}}
 {\footnotesize\ttfamily int GPSTrack\+::sockfd\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00274}{274}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
+
 \Hypertarget{classGPSTrack_a7d3d22f55ad6374915413b8bcce9d636}\label{classGPSTrack_a7d3d22f55ad6374915413b8bcce9d636} 
 \index{GPSTrack@{GPSTrack}!worker@{worker}}
 \index{worker@{worker}!GPSTrack@{GPSTrack}}
 \doxysubsubsection{\texorpdfstring{worker}{worker}}
 {\footnotesize\ttfamily std\+::thread GPSTrack\+::worker\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00278}{278}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
 
 
 

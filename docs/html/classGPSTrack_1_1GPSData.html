@@ -23,6 +23,7 @@
   <td id="projectalign">
    <div id="projectname">GPSTrack
    </div>
+   <div id="projectbrief">Paz para Você, Proteção para Sua Carga. Tecnologia a Seu Favor.</div>
   </td>
  </tr>
  </tbody>
@@ -91,13 +92,9 @@ Collaboration diagram for GPSTrack::GPSData:</div>
 <div class="dyncontent">
 <div class="center"><img src="classGPSTrack_1_1GPSData__coll__graph.png" border="0" usemap="#aGPSTrack_1_1GPSData_coll__map" alt="Collaboration graph"/></div>
 <map name="aGPSTrack_1_1GPSData_coll__map" id="aGPSTrack_1_1GPSData_coll__map">
-<area shape="rect" title="Classe responsável por representar os dados do GPS." alt="" coords="28,93,175,119"/>
-<area shape="rect" title=" " alt="" coords="5,5,64,31"/>
-<area shape="poly" title=" " alt="" coords="54,40,94,91,90,94,50,43"/>
-<area shape="rect" title=" " alt="" coords="89,5,247,31"/>
-<area shape="poly" title=" " alt="" coords="153,43,131,71,113,95,109,91,127,68,149,40"/>
+<area shape="rect" title="Classe responsável por representar os dados do GPS." alt="" coords="5,5,251,268"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -140,6 +137,8 @@ Private Attributes</h2></td></tr>
 </ul>
 <p>Sendo assim, o sensor sai de um modo de inicialização para operacionalidade completa.</p>
 <p>Como nosso próposito é apenas localização, nos interessa apenas o padrão GGA, o qual oferece dados profundos de localização. </p>
+
+<p class="definition">Definition at line <a class="el" href="GPSTrack_8hpp_source.html#l00099">99</a> of file <a class="el" href="GPSTrack_8hpp_source.html">GPSTrack.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aec2bc4689d91138801e067eb223d0132" name="aec2bc4689d91138801e067eb223d0132"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aec2bc4689d91138801e067eb223d0132">&#9670;&#160;</a></span>GPSData()</h2>
@@ -167,6 +166,8 @@ Private Attributes</h2></td></tr>
 <p>Construtor Default. </p>
 <p>Reserva no vetor de dados 4 strings, respectivamente para horário UTC, latitude, longitude e altitude. <br  />
  </p>
+
+<p class="definition">Definition at line <a class="el" href="GPSTrack_8hpp_source.html#l00114">114</a> of file <a class="el" href="GPSTrack_8hpp_source.html">GPSTrack.hpp</a>.</p>
 
 </div>
 </div>
@@ -214,24 +215,8 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String coordenada em graus decimais (negativa para hemisférios Sul e Oeste). </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classGPSTrack_1_1GPSData_a5d80d5bd50eb5389f555be4f04ef7c3b_icgraph.png" border="0" usemap="#aclassGPSTrack_1_1GPSData_a5d80d5bd50eb5389f555be4f04ef7c3b_icgraph" alt=""/></div>
-<map name="aclassGPSTrack_1_1GPSData_a5d80d5bd50eb5389f555be4f04ef7c3b_icgraph" id="aclassGPSTrack_1_1GPSData_a5d80d5bd50eb5389f555be4f04ef7c3b_icgraph">
-<area shape="rect" title="Função estática auxiliar para converter coordenadas NMEA (latitude/longitude) para graus decimais." alt="" coords="636,23,791,63"/>
-<area shape="rect" href="classGPSTrack_1_1GPSData.html#abc5308215475b647cbbb9df696597ad0" title="Setará os dados baseado no padrão de mensagem recebido." alt="" coords="433,23,588,63"/>
-<area shape="poly" title=" " alt="" coords="622,46,589,46,589,41,622,41"/>
-<area shape="rect" href="classGPSTrack.html#a862ea0639e829e8dada744bcb7ceff64" title="Executa o loop principal de leitura, interpretação e envio de dados via UDP." alt="" coords="267,31,385,56"/>
-<area shape="poly" title=" " alt="" coords="420,46,385,46,385,41,420,41"/>
-<area shape="rect" href="classGPSTrack.html#a30cc30a3290df68a9dcc3906811319db" title="Inicializa a thread trabalhadora." alt="" coords="108,31,219,56"/>
-<area shape="poly" title=" " alt="" coords="253,46,219,46,219,41,253,41"/>
-<area shape="rect" href="debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
-<area shape="poly" title=" " alt="" coords="94,33,60,26,61,21,95,27"/>
-<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,55,60,80"/>
-<area shape="poly" title=" " alt="" coords="95,59,61,65,60,60,94,53"/>
-</map>
-</div>
+
+<p class="definition">Definition at line <a class="el" href="GPSTrack_8hpp_source.html#l00123">123</a> of file <a class="el" href="GPSTrack_8hpp_source.html">GPSTrack.hpp</a>.</p>
 
 </div>
 </div>
@@ -284,32 +269,8 @@ Here is the caller graph for this function:</div>
 </ul>
 <p>A partir do padrão de mensagem recebida, organizaremos o vetor com dados relevantes. <br  />
  </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classGPSTrack_1_1GPSData_abc5308215475b647cbbb9df696597ad0_cgraph.png" border="0" usemap="#aclassGPSTrack_1_1GPSData_abc5308215475b647cbbb9df696597ad0_cgraph" alt=""/></div>
-<map name="aclassGPSTrack_1_1GPSData_abc5308215475b647cbbb9df696597ad0_cgraph" id="aclassGPSTrack_1_1GPSData_abc5308215475b647cbbb9df696597ad0_cgraph">
-<area shape="rect" title="Setará os dados baseado no padrão de mensagem recebido." alt="" coords="5,5,160,45"/>
-<area shape="rect" href="classGPSTrack_1_1GPSData.html#a5d80d5bd50eb5389f555be4f04ef7c3b" title="Função estática auxiliar para converter coordenadas NMEA (latitude/longitude) para graus decimais." alt="" coords="208,5,363,45"/>
-<area shape="poly" title=" " alt="" coords="160,23,194,23,194,28,160,28"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classGPSTrack_1_1GPSData_abc5308215475b647cbbb9df696597ad0_icgraph.png" border="0" usemap="#aclassGPSTrack_1_1GPSData_abc5308215475b647cbbb9df696597ad0_icgraph" alt=""/></div>
-<map name="aclassGPSTrack_1_1GPSData_abc5308215475b647cbbb9df696597ad0_icgraph" id="aclassGPSTrack_1_1GPSData_abc5308215475b647cbbb9df696597ad0_icgraph">
-<area shape="rect" title="Setará os dados baseado no padrão de mensagem recebido." alt="" coords="433,23,588,63"/>
-<area shape="rect" href="classGPSTrack.html#a862ea0639e829e8dada744bcb7ceff64" title="Executa o loop principal de leitura, interpretação e envio de dados via UDP." alt="" coords="267,31,385,56"/>
-<area shape="poly" title=" " alt="" coords="420,46,385,46,385,41,420,41"/>
-<area shape="rect" href="classGPSTrack.html#a30cc30a3290df68a9dcc3906811319db" title="Inicializa a thread trabalhadora." alt="" coords="108,31,219,56"/>
-<area shape="poly" title=" " alt="" coords="253,46,219,46,219,41,253,41"/>
-<area shape="rect" href="debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
-<area shape="poly" title=" " alt="" coords="94,33,60,26,61,21,95,27"/>
-<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,55,60,80"/>
-<area shape="poly" title=" " alt="" coords="95,59,61,65,60,60,94,53"/>
-</map>
-</div>
+
+<p class="definition">Definition at line <a class="el" href="GPSTrack_8hpp_source.html#l00164">164</a> of file <a class="el" href="GPSTrack_8hpp_source.html">GPSTrack.hpp</a>.</p>
 
 </div>
 </div>
@@ -338,22 +299,8 @@ Here is the caller graph for this function:</div>
 
 <p>Retorna os dados armazenados em formato CSV. </p>
 <dl class="section return"><dt>Returns</dt><dd>std::string Linha CSV com os valores. </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classGPSTrack_1_1GPSData_ac125cfce08d954bf5fdf6c415bf8e5b6_icgraph.png" border="0" usemap="#aclassGPSTrack_1_1GPSData_ac125cfce08d954bf5fdf6c415bf8e5b6_icgraph" alt=""/></div>
-<map name="aclassGPSTrack_1_1GPSData_ac125cfce08d954bf5fdf6c415bf8e5b6_icgraph" id="aclassGPSTrack_1_1GPSData_ac125cfce08d954bf5fdf6c415bf8e5b6_icgraph">
-<area shape="rect" title="Retorna os dados armazenados em formato CSV." alt="" coords="433,23,588,63"/>
-<area shape="rect" href="classGPSTrack.html#a862ea0639e829e8dada744bcb7ceff64" title="Executa o loop principal de leitura, interpretação e envio de dados via UDP." alt="" coords="267,31,385,56"/>
-<area shape="poly" title=" " alt="" coords="420,46,385,46,385,41,420,41"/>
-<area shape="rect" href="classGPSTrack.html#a30cc30a3290df68a9dcc3906811319db" title="Inicializa a thread trabalhadora." alt="" coords="108,31,219,56"/>
-<area shape="poly" title=" " alt="" coords="253,46,219,46,219,41,253,41"/>
-<area shape="rect" href="debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
-<area shape="poly" title=" " alt="" coords="94,33,60,26,61,21,95,27"/>
-<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,55,60,80"/>
-<area shape="poly" title=" " alt="" coords="95,59,61,65,60,60,94,53"/>
-</map>
-</div>
+
+<p class="definition">Definition at line <a class="el" href="GPSTrack_8hpp_source.html#l00216">216</a> of file <a class="el" href="GPSTrack_8hpp_source.html">GPSTrack.hpp</a>.</p>
 
 </div>
 </div>
@@ -380,6 +327,8 @@ Here is the caller graph for this function:</div>
 
 <p>Organizaremos os dados neste vetor. </p>
 
+<p class="definition">Definition at line <a class="el" href="GPSTrack_8hpp_source.html#l00103">103</a> of file <a class="el" href="GPSTrack_8hpp_source.html">GPSTrack.hpp</a>.</p>
+
 </div>
 </div>
 <a id="a490160fc5fc89ea9fc0ff9b2d15dce36" name="a490160fc5fc89ea9fc0ff9b2d15dce36"></a>
@@ -401,6 +350,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GPSTrack_8hpp_source.html#l00102">102</a> of file <a class="el" href="GPSTrack_8hpp_source.html">GPSTrack.hpp</a>.</p>
 
 </div>
 </div>

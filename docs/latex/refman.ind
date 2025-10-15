@@ -1,188 +1,188 @@
 \begin{theindex}
 
   \item {\texorpdfstring{$\sim$}{\string~}GPSSim}
-    \subitem {GPSSim}, \hyperpage{6}
+    \subitem {GPSSim}, \hyperpage{11}
   \item {\texorpdfstring{$\sim$}{\string~}GPSTrack}
-    \subitem {GPSTrack}, \hyperpage{15}
+    \subitem {GPSTrack}, \hyperpage{18}
 
   \indexspace
 
   \item {addr\_dest}
-    \subitem {GPSTrack}, \hyperpage{20}
+    \subitem {GPSTrack}, \hyperpage{21}
   \item {alt}
-    \subitem {GPSSim}, \hyperpage{12}
+    \subitem {GPSSim}, \hyperpage{14}
 
   \indexspace
 
   \item {build\_nmea\_string}
-    \subitem {GPSSim}, \hyperpage{7}
+    \subitem {GPSSim}, \hyperpage{11}
 
   \indexspace
 
   \item {caminho\_do\_pseudo\_terminal}
-    \subitem {GPSSim}, \hyperpage{12}
+    \subitem {GPSSim}, \hyperpage{14}
   \item {converter\_lat\_lon}
-    \subitem {GPSTrack::GPSData}, \hyperpage{2}
+    \subitem {GPSTrack::GPSData}, \hyperpage{7}
 
   \indexspace
 
   \item {data}
-    \subitem {GPSTrack::GPSData}, \hyperpage{4}
+    \subitem {GPSTrack::GPSData}, \hyperpage{8}
   \item {debug.cpp}
-    \subitem {main}, \hyperpage{26}
+    \subitem {main}, \hyperpage{25}
   \item {degrees\_to\_NMEA}
-    \subitem {GPSSim}, \hyperpage{7}
+    \subitem {GPSSim}, \hyperpage{12}
 
   \indexspace
 
   \item {fd\_filho}
-    \subitem {GPSSim}, \hyperpage{12}
+    \subitem {GPSSim}, \hyperpage{14}
   \item {fd\_pai}
-    \subitem {GPSSim}, \hyperpage{12}
+    \subitem {GPSSim}, \hyperpage{14}
   \item {fd\_serial}
-    \subitem {GPSTrack}, \hyperpage{20}
+    \subitem {GPSTrack}, \hyperpage{21}
   \item {format\_integer}
-    \subitem {GPSSim}, \hyperpage{8}
+    \subitem {GPSSim}, \hyperpage{12}
 
   \indexspace
 
   \item {generate\_gga}
-    \subitem {GPSSim::NMEAGenerator}, \hyperpage{21}
+    \subitem {GPSSim::NMEAGenerator}, \hyperpage{23}
   \item {generate\_rmc}
-    \subitem {GPSSim::NMEAGenerator}, \hyperpage{22}
+    \subitem {GPSSim::NMEAGenerator}, \hyperpage{23}
   \item {get\_path\_pseudo\_term}
-    \subitem {GPSSim}, \hyperpage{8}
+    \subitem {GPSSim}, \hyperpage{12}
   \item {get\_utc\_time}
-    \subitem {GPSSim}, \hyperpage{9}
+    \subitem {GPSSim}, \hyperpage{13}
   \item {GPSData}
-    \subitem {GPSTrack::GPSData}, \hyperpage{2}
-  \item {GPSSim}, \hyperpage{5}
-    \subitem {\texorpdfstring{$\sim$}{\string~}GPSSim}, \hyperpage{6}
-    \subitem {alt}, \hyperpage{12}
-    \subitem {build\_nmea\_string}, \hyperpage{7}
-    \subitem {caminho\_do\_pseudo\_terminal}, \hyperpage{12}
-    \subitem {degrees\_to\_NMEA}, \hyperpage{7}
-    \subitem {fd\_filho}, \hyperpage{12}
-    \subitem {fd\_pai}, \hyperpage{12}
-    \subitem {format\_integer}, \hyperpage{8}
-    \subitem {get\_path\_pseudo\_term}, \hyperpage{8}
-    \subitem {get\_utc\_time}, \hyperpage{9}
-    \subitem {GPSSim}, \hyperpage{6}
-    \subitem {init}, \hyperpage{9}
-    \subitem {is\_exec}, \hyperpage{12}
-    \subitem {lat}, \hyperpage{12}
-    \subitem {lon}, \hyperpage{12}
-    \subitem {loop}, \hyperpage{10}
-    \subitem {stop}, \hyperpage{11}
-    \subitem {worker}, \hyperpage{12}
-  \item {GPSSim::NMEAGenerator}, \hyperpage{21}
-    \subitem {generate\_gga}, \hyperpage{21}
-    \subitem {generate\_rmc}, \hyperpage{22}
-  \item {GPSTrack}, \hyperpage{13}
+    \subitem {GPSTrack::GPSData}, \hyperpage{7}
+  \item {GPSSim}, \hyperpage{9}
+    \subitem {\texorpdfstring{$\sim$}{\string~}GPSSim}, \hyperpage{11}
+    \subitem {alt}, \hyperpage{14}
+    \subitem {build\_nmea\_string}, \hyperpage{11}
+    \subitem {caminho\_do\_pseudo\_terminal}, \hyperpage{14}
+    \subitem {degrees\_to\_NMEA}, \hyperpage{12}
+    \subitem {fd\_filho}, \hyperpage{14}
+    \subitem {fd\_pai}, \hyperpage{14}
+    \subitem {format\_integer}, \hyperpage{12}
+    \subitem {get\_path\_pseudo\_term}, \hyperpage{12}
+    \subitem {get\_utc\_time}, \hyperpage{13}
+    \subitem {GPSSim}, \hyperpage{11}
+    \subitem {init}, \hyperpage{13}
+    \subitem {is\_exec}, \hyperpage{14}
+    \subitem {lat}, \hyperpage{14}
+    \subitem {lon}, \hyperpage{14}
+    \subitem {loop}, \hyperpage{13}
+    \subitem {stop}, \hyperpage{13}
+    \subitem {worker}, \hyperpage{15}
+  \item {GPSSim::NMEAGenerator}, \hyperpage{22}
+    \subitem {generate\_gga}, \hyperpage{23}
+    \subitem {generate\_rmc}, \hyperpage{23}
+  \item {GPSTrack}, \hyperpage{15}
     \subitem {\texorpdfstring{$\sim$}{\string~}GPSTrack}, 
-		\hyperpage{15}
-    \subitem {addr\_dest}, \hyperpage{20}
-    \subitem {fd\_serial}, \hyperpage{20}
-    \subitem {GPSTrack}, \hyperpage{14}
-    \subitem {init}, \hyperpage{15}
-    \subitem {ip\_destino}, \hyperpage{20}
-    \subitem {is\_exec}, \hyperpage{20}
-    \subitem {last\_data\_given}, \hyperpage{20}
-    \subitem {loop}, \hyperpage{16}
-    \subitem {open\_serial}, \hyperpage{17}
-    \subitem {porta\_destino}, \hyperpage{20}
-    \subitem {porta\_serial}, \hyperpage{20}
-    \subitem {read\_serial}, \hyperpage{18}
-    \subitem {send}, \hyperpage{18}
-    \subitem {sockfd}, \hyperpage{21}
-    \subitem {split}, \hyperpage{19}
-    \subitem {stop}, \hyperpage{19}
-    \subitem {worker}, \hyperpage{21}
-  \item {GPSTrack::GPSData}, \hyperpage{1}
-    \subitem {converter\_lat\_lon}, \hyperpage{2}
-    \subitem {data}, \hyperpage{4}
-    \subitem {GPSData}, \hyperpage{2}
-    \subitem {parsing}, \hyperpage{3}
-    \subitem {pattern}, \hyperpage{4}
-    \subitem {to\_csv}, \hyperpage{4}
+		\hyperpage{18}
+    \subitem {addr\_dest}, \hyperpage{21}
+    \subitem {fd\_serial}, \hyperpage{21}
+    \subitem {GPSTrack}, \hyperpage{18}
+    \subitem {init}, \hyperpage{19}
+    \subitem {ip\_destino}, \hyperpage{21}
+    \subitem {is\_exec}, \hyperpage{21}
+    \subitem {last\_data\_given}, \hyperpage{21}
+    \subitem {loop}, \hyperpage{19}
+    \subitem {open\_serial}, \hyperpage{19}
+    \subitem {porta\_destino}, \hyperpage{21}
+    \subitem {porta\_serial}, \hyperpage{22}
+    \subitem {read\_serial}, \hyperpage{19}
+    \subitem {send}, \hyperpage{20}
+    \subitem {sockfd}, \hyperpage{22}
+    \subitem {split}, \hyperpage{20}
+    \subitem {stop}, \hyperpage{20}
+    \subitem {worker}, \hyperpage{22}
+  \item {GPSTrack::GPSData}, \hyperpage{5}
+    \subitem {converter\_lat\_lon}, \hyperpage{7}
+    \subitem {data}, \hyperpage{8}
+    \subitem {GPSData}, \hyperpage{7}
+    \subitem {parsing}, \hyperpage{7}
+    \subitem {pattern}, \hyperpage{8}
+    \subitem {to\_csv}, \hyperpage{8}
 
   \indexspace
 
   \item {init}
-    \subitem {GPSSim}, \hyperpage{9}
-    \subitem {GPSTrack}, \hyperpage{15}
+    \subitem {GPSSim}, \hyperpage{13}
+    \subitem {GPSTrack}, \hyperpage{19}
   \item {ip\_destino}
-    \subitem {GPSTrack}, \hyperpage{20}
+    \subitem {GPSTrack}, \hyperpage{21}
   \item {is\_exec}
-    \subitem {GPSSim}, \hyperpage{12}
-    \subitem {GPSTrack}, \hyperpage{20}
+    \subitem {GPSSim}, \hyperpage{14}
+    \subitem {GPSTrack}, \hyperpage{21}
 
   \indexspace
 
   \item {last\_data\_given}
-    \subitem {GPSTrack}, \hyperpage{20}
+    \subitem {GPSTrack}, \hyperpage{21}
   \item {lat}
-    \subitem {GPSSim}, \hyperpage{12}
+    \subitem {GPSSim}, \hyperpage{14}
   \item {lon}
-    \subitem {GPSSim}, \hyperpage{12}
+    \subitem {GPSSim}, \hyperpage{14}
   \item {loop}
-    \subitem {GPSSim}, \hyperpage{10}
-    \subitem {GPSTrack}, \hyperpage{16}
+    \subitem {GPSSim}, \hyperpage{13}
+    \subitem {GPSTrack}, \hyperpage{19}
 
   \indexspace
 
   \item {main}
-    \subitem {debug.cpp}, \hyperpage{26}
-    \subitem {main.cpp}, \hyperpage{37}
+    \subitem {debug.cpp}, \hyperpage{25}
+    \subitem {main.cpp}, \hyperpage{38}
   \item {main.cpp}
-    \subitem {main}, \hyperpage{37}
+    \subitem {main}, \hyperpage{38}
 
   \indexspace
 
   \item {open\_serial}
-    \subitem {GPSTrack}, \hyperpage{17}
+    \subitem {GPSTrack}, \hyperpage{19}
 
   \indexspace
 
   \item {parsing}
-    \subitem {GPSTrack::GPSData}, \hyperpage{3}
+    \subitem {GPSTrack::GPSData}, \hyperpage{7}
   \item {pattern}
-    \subitem {GPSTrack::GPSData}, \hyperpage{4}
+    \subitem {GPSTrack::GPSData}, \hyperpage{8}
   \item {porta\_destino}
-    \subitem {GPSTrack}, \hyperpage{20}
+    \subitem {GPSTrack}, \hyperpage{21}
   \item {porta\_serial}
-    \subitem {GPSTrack}, \hyperpage{20}
+    \subitem {GPSTrack}, \hyperpage{22}
 
   \indexspace
 
   \item {read\_serial}
-    \subitem {GPSTrack}, \hyperpage{18}
+    \subitem {GPSTrack}, \hyperpage{19}
 
   \indexspace
 
   \item {send}
-    \subitem {GPSTrack}, \hyperpage{18}
+    \subitem {GPSTrack}, \hyperpage{20}
   \item {sockfd}
-    \subitem {GPSTrack}, \hyperpage{21}
+    \subitem {GPSTrack}, \hyperpage{22}
   \item {split}
-    \subitem {GPSTrack}, \hyperpage{19}
-  \item {src/debug.cpp}, \hyperpage{25}
+    \subitem {GPSTrack}, \hyperpage{20}
+  \item {src/debug.cpp}, \hyperpage{25, 26}
   \item {src/GPSSim.hpp}, \hyperpage{26, 27}
   \item {src/GPSTrack.hpp}, \hyperpage{31, 32}
-  \item {src/main.cpp}, \hyperpage{37}
+  \item {src/main.cpp}, \hyperpage{37, 38}
   \item {stop}
-    \subitem {GPSSim}, \hyperpage{11}
-    \subitem {GPSTrack}, \hyperpage{19}
+    \subitem {GPSSim}, \hyperpage{13}
+    \subitem {GPSTrack}, \hyperpage{20}
 
   \indexspace
 
   \item {to\_csv}
-    \subitem {GPSTrack::GPSData}, \hyperpage{4}
+    \subitem {GPSTrack::GPSData}, \hyperpage{8}
 
   \indexspace
 
   \item {worker}
-    \subitem {GPSSim}, \hyperpage{12}
-    \subitem {GPSTrack}, \hyperpage{21}
+    \subitem {GPSSim}, \hyperpage{15}
+    \subitem {GPSTrack}, \hyperpage{22}
 
 \end{theindex}

@@ -1,0 +1,40 @@
+\doxysection{debug.\+cpp}
+\hypertarget{debug_8cpp_source}{}\label{debug_8cpp_source}\index{src/debug.cpp@{src/debug.cpp}}
+\mbox{\hyperlink{debug_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GPSTrack_8hpp}{GPSTrack.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GPSSim_8hpp}{GPSSim.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00013}00013\ \textcolor{comment}{//\ IME\ -\/\ -\/22.9559,\ -\/43.1659}}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00015}\mbox{\hyperlink{debug_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00015}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{debug_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\{}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{comment}{//\ Inicializamos\ o\ módulo\ gps\ simulado}}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{classGPSSim}{GPSSim}}\ gps\_module(}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ -\/22.9559,}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ -\/43.1659,}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ 760.0}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00022}00022\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00023}00023\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Executando\ simulator\_gps\_module\ em:\ "{}}}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ gps\_module.\mbox{\hyperlink{classGPSSim_a9dd6c5b066c8dcb0ebbdfb7c526ff856}{get\_path\_pseudo\_term}}()}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00026}00026\ \ \ \ \ gps\_module.\mbox{\hyperlink{classGPSSim_a035f71a80ed040b260f68276d531de79}{init}}();}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00028}00028\ \ \ \ \ std::this\_thread::sleep\_for(std::chrono::seconds(1));}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{classGPSTrack}{GPSTrack}}\ sensor(}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}127.0.0.1"{}},}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ 9000,}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ gps\_module.\mbox{\hyperlink{classGPSSim_a9dd6c5b066c8dcb0ebbdfb7c526ff856}{get\_path\_pseudo\_term}}()}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00034}00034\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00035}00035\ \ \ \ \ sensor.\mbox{\hyperlink{classGPSTrack_a30cc30a3290df68a9dcc3906811319db}{init}}();}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00037}00037\ \ \ \ \ std::this\_thread::sleep\_for(std::chrono::seconds(10));}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00038}00038\ \ \ \ \ sensor.\mbox{\hyperlink{classGPSTrack_a3ddcdc3c1599f4efa7f3938d9a5f2eee}{stop}}();}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00039}00039\ \ \ \ \ gps\_module.\mbox{\hyperlink{classGPSSim_a114167ff50a457bd15b93f84242a6edc}{stop}}();}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00041}00041\ \}}
+
+\end{DoxyCode}

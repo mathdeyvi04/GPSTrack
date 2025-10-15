@@ -15,7 +15,7 @@ Collaboration diagram for GPSTrack\+::GPSData\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=262pt]{classGPSTrack_1_1GPSData__coll__graph}
+\includegraphics[width=264pt]{classGPSTrack_1_1GPSData__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
@@ -64,6 +64,10 @@ Sendo assim, o sensor sai de um modo de inicialização para operacionalidade co
 
 Como nosso próposito é apenas localização, nos interessa apenas o padrão GGA, o qual oferece dados profundos de localização. 
 
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00099}{99}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classGPSTrack_1_1GPSData_aec2bc4689d91138801e067eb223d0132}\label{classGPSTrack_1_1GPSData_aec2bc4689d91138801e067eb223d0132} 
 \index{GPSTrack::GPSData@{GPSTrack::GPSData}!GPSData@{GPSData}}
@@ -77,6 +81,10 @@ Construtor Default.
 
 Reserva no vetor de dados 4 strings, respectivamente para horário UTC, latitude, longitude e altitude. ~\newline
  
+
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00114}{114}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
+
+
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{classGPSTrack_1_1GPSData_a5d80d5bd50eb5389f555be4f04ef7c3b}\label{classGPSTrack_1_1GPSData_a5d80d5bd50eb5389f555be4f04ef7c3b} 
@@ -99,13 +107,10 @@ Função estática auxiliar para converter coordenadas NMEA (latitude/longitude)
 \begin{DoxyReturn}{Returns}
 String coordenada em graus decimais (negativa para hemisférios Sul e Oeste). 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classGPSTrack_1_1GPSData_a5d80d5bd50eb5389f555be4f04ef7c3b_icgraph}
-\end{center}
-\end{figure}
+
+
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00123}{123}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
+
 \Hypertarget{classGPSTrack_1_1GPSData_abc5308215475b647cbbb9df696597ad0}\label{classGPSTrack_1_1GPSData_abc5308215475b647cbbb9df696597ad0} 
 \index{GPSTrack::GPSData@{GPSTrack::GPSData}!parsing@{parsing}}
 \index{parsing@{parsing}!GPSTrack::GPSData@{GPSTrack::GPSData}}
@@ -134,20 +139,10 @@ Tradução de códigos\+:
 \end{DoxyItemize}
 
 A partir do padrão de mensagem recebida, organizaremos o vetor com dados relevantes. ~\newline
- Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=348pt]{classGPSTrack_1_1GPSData_abc5308215475b647cbbb9df696597ad0_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classGPSTrack_1_1GPSData_abc5308215475b647cbbb9df696597ad0_icgraph}
-\end{center}
-\end{figure}
+ 
+
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00164}{164}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
+
 \Hypertarget{classGPSTrack_1_1GPSData_ac125cfce08d954bf5fdf6c415bf8e5b6}\label{classGPSTrack_1_1GPSData_ac125cfce08d954bf5fdf6c415bf8e5b6} 
 \index{GPSTrack::GPSData@{GPSTrack::GPSData}!to\_csv@{to\_csv}}
 \index{to\_csv@{to\_csv}!GPSTrack::GPSData@{GPSTrack::GPSData}}
@@ -161,13 +156,10 @@ Retorna os dados armazenados em formato CSV.
 \begin{DoxyReturn}{Returns}
 std\+::string Linha CSV com os valores. 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classGPSTrack_1_1GPSData_ac125cfce08d954bf5fdf6c415bf8e5b6_icgraph}
-\end{center}
-\end{figure}
+
+
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00216}{216}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
+
 
 
 \doxysubsection{Member Data Documentation}
@@ -181,11 +173,19 @@ Here is the caller graph for this function\+:\nopagebreak
 
 Organizaremos os dados neste vetor. 
 
+
+
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00103}{103}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
+
 \Hypertarget{classGPSTrack_1_1GPSData_a490160fc5fc89ea9fc0ff9b2d15dce36}\label{classGPSTrack_1_1GPSData_a490160fc5fc89ea9fc0ff9b2d15dce36} 
 \index{GPSTrack::GPSData@{GPSTrack::GPSData}!pattern@{pattern}}
 \index{pattern@{pattern}!GPSTrack::GPSData@{GPSTrack::GPSData}}
 \doxysubsubsection{\texorpdfstring{pattern}{pattern}}
 {\footnotesize\ttfamily std\+::string GPSTrack\+::\+GPSData\+::pattern\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{GPSTrack_8hpp_source_l00102}{102}} of file \mbox{\hyperlink{GPSTrack_8hpp_source}{GPSTrack.\+hpp}}.
 
 
 

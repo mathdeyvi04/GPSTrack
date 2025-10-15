@@ -365,7 +365,7 @@ private:
 	 * @brief Lê dados da porta serial até encontrar uma quebra de linha.
 	 * @details
 	 * 
-	 * - Caracteres de carriage return ('\r') são ignorados durante a leitura.
+	 * - Caracteres de carriage return ('\\r') são ignorados durante a leitura.
 	 * - A função termina quando encontra '\\n' ou quando não há mais dados para ler.
 	 * - A leitura é feita caractere por caractere para garantir processamento correto
 	 * dos dados do GPS que seguem protocolo NMEA.

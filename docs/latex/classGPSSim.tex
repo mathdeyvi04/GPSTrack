@@ -15,7 +15,7 @@ Collaboration diagram for GPSSim\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classGPSSim__coll__graph}
+\includegraphics[width=225pt]{classGPSSim__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Classes}
@@ -80,6 +80,10 @@ Versão Simulada do Sensor GPS, gerando frases no padrão NMEA.
 
 Criará um par de pseudo-\/terminais (PTY) para simular o funcionamento do sensor. Intervaladamente, gera frases NMEA simuladas. 
 
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00064}{64}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classGPSSim_af71018b7b54d324cd2ccfd619b220a9e}\label{classGPSSim_af71018b7b54d324cd2ccfd619b220a9e} 
 \index{GPSSim@{GPSSim}!GPSSim@{GPSSim}}
@@ -102,6 +106,10 @@ Inicializa alguns parâmetros de posição simulada e, criando os pseudo-\/termi
 {\em altitude\+\_\+metros} & Altitude inicial em metros, setada para 10. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00363}{363}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+
 \Hypertarget{classGPSSim_a7ee46b13b6a555764c544a5069854d32}\label{classGPSSim_a7ee46b13b6a555764c544a5069854d32} 
 \index{GPSSim@{GPSSim}!````~GPSSim@{\texorpdfstring{$\sim$}{\string~}GPSSim}}
 \index{````~GPSSim@{\texorpdfstring{$\sim$}{\string~}GPSSim}!GPSSim@{GPSSim}}
@@ -112,13 +120,10 @@ Inicializa alguns parâmetros de posição simulada e, criando os pseudo-\/termi
 
 Destrutor do \doxylink{classGPSSim}{GPSSim}. 
 
-Chama a função {\ttfamily \doxylink{classGPSSim_a114167ff50a457bd15b93f84242a6edc}{stop()}} e, após verificar existência de terminal Pai, fecha-\/o. Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=305pt]{classGPSSim_a7ee46b13b6a555764c544a5069854d32_cgraph}
-\end{center}
-\end{figure}
+Chama a função {\ttfamily \doxylink{classGPSSim_a114167ff50a457bd15b93f84242a6edc}{stop()}} e, após verificar existência de terminal Pai, fecha-\/o. 
+
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00404}{404}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+
 
 
 \doxysubsection{Member Function Documentation}
@@ -142,13 +147,10 @@ Calcula o valor de paridade (checksum) do corpo da frase fornecida, em seguida a
 \begin{DoxyReturn}{Returns}
 std\+::string Sentença NMEA completa, pronta para transmissão. 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classGPSSim_ab8935cddbaf6da72e856280cd6a8fd91_icgraph}
-\end{center}
-\end{figure}
+
+
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00180}{180}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+
 \Hypertarget{classGPSSim_a506709c04b71f7582b59a2cf318f7740}\label{classGPSSim_a506709c04b71f7582b59a2cf318f7740} 
 \index{GPSSim@{GPSSim}!degrees\_to\_NMEA@{degrees\_to\_NMEA}}
 \index{degrees\_to\_NMEA@{degrees\_to\_NMEA}!GPSSim@{GPSSim}}
@@ -171,13 +173,10 @@ Converte graus decimais para formato NMEA de localização, (ddmm.\+mmmm). ~\new
 \mbox{\texttt{ out}}  & {\em hemisf} & Caractere indicando Hemisfério \\
 \hline
 \end{DoxyParams}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classGPSSim_a506709c04b71f7582b59a2cf318f7740_icgraph}
-\end{center}
-\end{figure}
+
+
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00086}{86}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+
 \Hypertarget{classGPSSim_ad9340c7234c96b2ef5197df8ff3b32f1}\label{classGPSSim_ad9340c7234c96b2ef5197df8ff3b32f1} 
 \index{GPSSim@{GPSSim}!format\_integer@{format\_integer}}
 \index{format\_integer@{format\_integer}!GPSSim@{GPSSim}}
@@ -199,13 +198,10 @@ Formatada um número inteiro com dois dígitos, preenchendo com zero à esquerda
 string formatada ~\newline
  
 \end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classGPSSim_ad9340c7234c96b2ef5197df8ff3b32f1_icgraph}
-\end{center}
-\end{figure}
+
+
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00142}{142}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+
 \Hypertarget{classGPSSim_a9dd6c5b066c8dcb0ebbdfb7c526ff856}\label{classGPSSim_a9dd6c5b066c8dcb0ebbdfb7c526ff856} 
 \index{GPSSim@{GPSSim}!get\_path\_pseudo\_term@{get\_path\_pseudo\_term}}
 \index{get\_path\_pseudo\_term@{get\_path\_pseudo\_term}!GPSSim@{GPSSim}}
@@ -220,13 +216,10 @@ Obtém o caminho do terminal que estamos executando de forma filial.
 String correspondendo ao caminho do dispositivo. ~\newline
  
 \end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=330pt]{classGPSSim_a9dd6c5b066c8dcb0ebbdfb7c526ff856_icgraph}
-\end{center}
-\end{figure}
+
+
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00449}{449}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+
 \Hypertarget{classGPSSim_a68331c508bc9324c323d76799b03b46f}\label{classGPSSim_a68331c508bc9324c323d76799b03b46f} 
 \index{GPSSim@{GPSSim}!get\_utc\_time@{get\_utc\_time}}
 \index{get\_utc\_time@{get\_utc\_time}!GPSSim@{GPSSim}}
@@ -241,13 +234,10 @@ Obtém o tempo UTC atual, horário em Londres.
 Struct std\+::tm contendo o tempo em UTC ~\newline
  
 \end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classGPSSim_a68331c508bc9324c323d76799b03b46f_icgraph}
-\end{center}
-\end{figure}
+
+
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00159}{159}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+
 \Hypertarget{classGPSSim_a035f71a80ed040b260f68276d531de79}\label{classGPSSim_a035f71a80ed040b260f68276d531de79} 
 \index{GPSSim@{GPSSim}!init@{init}}
 \index{init@{init}!GPSSim@{GPSSim}}
@@ -261,20 +251,10 @@ Inicia a geração de frases no padrão NMEA em uma thread separada.
 O padrão NMEA é o protocolo padrão usado por módulos GPS, cada mensagem começa com \$ e termina com \textbackslash{}r\textbackslash{}n. Exemplo\+:
 \begin{DoxyItemize}
 \item \$origem,codificacao\+\_\+usada,dados1,dados2,...\texorpdfstring{$\ast$}{*}paridade 
-\end{DoxyItemize}Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classGPSSim_a035f71a80ed040b260f68276d531de79_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=234pt]{classGPSSim_a035f71a80ed040b260f68276d531de79_icgraph}
-\end{center}
-\end{figure}
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00415}{415}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+
 \Hypertarget{classGPSSim_afafb98bc1f19fbc19cb04b2dc4b038e9}\label{classGPSSim_afafb98bc1f19fbc19cb04b2dc4b038e9} 
 \index{GPSSim@{GPSSim}!loop@{loop}}
 \index{loop@{loop}!GPSSim@{GPSSim}}
@@ -299,20 +279,10 @@ O loop termina automaticamente quando {\ttfamily \+\_\+is\+\_\+exec} é definido
 \begin{DoxyNote}{Note}
 Esta função é bloqueante e deve ser executada em uma thread dedicada para não interromper o fluxo principal do programa. 
 \end{DoxyNote}
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classGPSSim_afafb98bc1f19fbc19cb04b2dc4b038e9_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classGPSSim_afafb98bc1f19fbc19cb04b2dc4b038e9_icgraph}
-\end{center}
-\end{figure}
+
+
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00335}{335}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+
 \Hypertarget{classGPSSim_a114167ff50a457bd15b93f84242a6edc}\label{classGPSSim_a114167ff50a457bd15b93f84242a6edc} 
 \index{GPSSim@{GPSSim}!stop@{stop}}
 \index{stop@{stop}!GPSSim@{GPSSim}}
@@ -324,13 +294,10 @@ Here is the caller graph for this function\+:\nopagebreak
 Encerrará a geração de frases NMEA e aguardará a finalização da thread. ~\newline
  
 
-Verifica a execução da thread e encerra-\/a caso exista. Força a finalização da thread geradora de mensagens. Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=305pt]{classGPSSim_a114167ff50a457bd15b93f84242a6edc_icgraph}
-\end{center}
-\end{figure}
+Verifica a execução da thread e encerra-\/a caso exista. Força a finalização da thread geradora de mensagens. 
+
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00432}{432}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+
 
 
 \doxysubsection{Member Data Documentation}
@@ -340,11 +307,19 @@ Verifica a execução da thread e encerra-\/a caso exista. Força a finalizaçã
 \doxysubsubsection{\texorpdfstring{alt}{alt}}
 {\footnotesize\ttfamily double GPSSim\+::alt\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00076}{76}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+
 \Hypertarget{classGPSSim_ad66808a3957267a3ba625a334fd50a37}\label{classGPSSim_ad66808a3957267a3ba625a334fd50a37} 
 \index{GPSSim@{GPSSim}!caminho\_do\_pseudo\_terminal@{caminho\_do\_pseudo\_terminal}}
 \index{caminho\_do\_pseudo\_terminal@{caminho\_do\_pseudo\_terminal}!GPSSim@{GPSSim}}
 \doxysubsubsection{\texorpdfstring{caminho\_do\_pseudo\_terminal}{caminho\_do\_pseudo\_terminal}}
 {\footnotesize\ttfamily char GPSSim\+::caminho\+\_\+do\+\_\+pseudo\+\_\+terminal\mbox{[}128\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00069}{69}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
 
 \Hypertarget{classGPSSim_a942f51db3911123b3ce391abecb4821f}\label{classGPSSim_a942f51db3911123b3ce391abecb4821f} 
 \index{GPSSim@{GPSSim}!fd\_filho@{fd\_filho}}
@@ -352,11 +327,19 @@ Verifica a execução da thread e encerra-\/a caso exista. Força a finalizaçã
 \doxysubsubsection{\texorpdfstring{fd\_filho}{fd\_filho}}
 {\footnotesize\ttfamily int GPSSim\+::fd\+\_\+filho \{0\}\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00068}{68}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+
 \Hypertarget{classGPSSim_a84ed7c00ac7830606fccd20379dda0fd}\label{classGPSSim_a84ed7c00ac7830606fccd20379dda0fd} 
 \index{GPSSim@{GPSSim}!fd\_pai@{fd\_pai}}
 \index{fd\_pai@{fd\_pai}!GPSSim@{GPSSim}}
 \doxysubsubsection{\texorpdfstring{fd\_pai}{fd\_pai}}
 {\footnotesize\ttfamily int GPSSim\+::fd\+\_\+pai \{0\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00068}{68}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
 
 \Hypertarget{classGPSSim_a65eb27b7b4b7962e1163a02895fb591d}\label{classGPSSim_a65eb27b7b4b7962e1163a02895fb591d} 
 \index{GPSSim@{GPSSim}!is\_exec@{is\_exec}}
@@ -364,11 +347,19 @@ Verifica a execução da thread e encerra-\/a caso exista. Força a finalizaçã
 \doxysubsubsection{\texorpdfstring{is\_exec}{is\_exec}}
 {\footnotesize\ttfamily std\+::atomic$<$bool$>$ GPSSim\+::is\+\_\+exec \{false\}\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00073}{73}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+
 \Hypertarget{classGPSSim_a052ca80ee24743edd53c0d08c47d9a19}\label{classGPSSim_a052ca80ee24743edd53c0d08c47d9a19} 
 \index{GPSSim@{GPSSim}!lat@{lat}}
 \index{lat@{lat}!GPSSim@{GPSSim}}
 \doxysubsubsection{\texorpdfstring{lat}{lat}}
 {\footnotesize\ttfamily double GPSSim\+::lat\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00076}{76}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
 
 \Hypertarget{classGPSSim_a9d7528c00cf9bc3335017739f1e9ff98}\label{classGPSSim_a9d7528c00cf9bc3335017739f1e9ff98} 
 \index{GPSSim@{GPSSim}!lon@{lon}}
@@ -376,11 +367,19 @@ Verifica a execução da thread e encerra-\/a caso exista. Força a finalizaçã
 \doxysubsubsection{\texorpdfstring{lon}{lon}}
 {\footnotesize\ttfamily double GPSSim\+::lon\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00076}{76}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+
 \Hypertarget{classGPSSim_aa74e5845eb8c1426edf7737c600c2ecd}\label{classGPSSim_aa74e5845eb8c1426edf7737c600c2ecd} 
 \index{GPSSim@{GPSSim}!worker@{worker}}
 \index{worker@{worker}!GPSSim@{GPSSim}}
 \doxysubsubsection{\texorpdfstring{worker}{worker}}
 {\footnotesize\ttfamily std\+::thread GPSSim\+::worker\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00072}{72}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
 
 
 
