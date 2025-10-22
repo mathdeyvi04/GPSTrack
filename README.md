@@ -18,7 +18,7 @@ Supondo que você deseje ser um contribuinte, atente-se às necessidades da apli
 ### Conhecimentos a cerca do Sensor GPS **GY-GPS6MV2**:
 
 Sugiro a observação do vídeo [linkado](https://youtu.be/lZumBl7zhoM) e busca inteligente no chatgpt.
-
+ 
 ### Kit de Desenvolvimento STM32
 
 O sensor deve ser conectado à placa da seguinte forma:
