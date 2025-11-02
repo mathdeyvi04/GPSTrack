@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['fd_5ffilho_0',['fd_filho',['../classGPSSim.html#a942f51db3911123b3ce391abecb4821f',1,'GPSSim']]],
-  ['fd_5fpai_1',['fd_pai',['../classGPSSim.html#a84ed7c00ac7830606fccd20379dda0fd',1,'GPSSim']]],
-  ['fd_5fserial_2',['fd_serial',['../classGPSTrack.html#a2d31e6311ccf72389dc521bc8b45ee59',1,'GPSTrack']]],
-  ['format_5finteger_3',['format_integer',['../classGPSSim.html#ad9340c7234c96b2ef5197df8ff3b32f1',1,'GPSSim']]]
+  ['data_0',['data',['../classGPSTracker_1_1GPSData.html#a57eec2c90ae3416222fc4de186dc3791',1,'GPSTracker::GPSData']]],
+  ['debug_2ecpp_1',['debug.cpp',['../debug_8cpp.html',1,'']]],
+  ['degrees_5fto_5fnmea_2',['degrees_to_NMEA',['../classGPSSim_1_1NMEAGenerator.html#a2f46c2c9a3df87950c9bde90c380ce9e',1,'GPSSim::NMEAGenerator']]]
 ];

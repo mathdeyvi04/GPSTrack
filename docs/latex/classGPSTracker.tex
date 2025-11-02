@@ -1,0 +1,380 @@
+\doxysection{GPSTracker Class Reference}
+\hypertarget{classGPSTracker}{}\label{classGPSTracker}\index{GPSTracker@{GPSTracker}}
+
+
+Classe responsável por obter o tracking da carga.  
+
+
+
+
+{\ttfamily \#include $<$GPSTracker.\+hpp$>$}
+
+
+
+Collaboration diagram for GPSTracker\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classGPSTracker__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classGPSTracker_1_1GPSData}{GPSData}}
+\begin{DoxyCompactList}\small\item\em Classe responsável por representar os dados do GPS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGPSTracker_adbc1caae1508b89b4cc98f3b5739f437}{GPSTracker}} (const std\+::string \&ip\+\_\+destino\+\_\+, int porta\+\_\+destino\+\_\+, const std\+::string \&porta\+\_\+serial\+\_\+)
+\begin{DoxyCompactList}\small\item\em Construtor da Classe. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGPSTracker_add6ffe67ca8de6b4cb593ad53c9a7ac6}{\texorpdfstring{$\sim$}{\string~}\+GPSTracker}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor da classe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGPSTracker_a5c09542835f5a0594bbd4a011182687e}{init}} ()
+\begin{DoxyCompactList}\small\item\em Inicializa a thread trabalhadora. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGPSTracker_a33bb9ca05150e7d4984c96dfee633a17}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Finaliza a thread de trabalho de forma segura. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classGPSTracker_a5cbe9dee353ee9a7ead55a5e2b599e8f}{split}} (const std\+::string \&string\+\_\+de\+\_\+entrada, char separador=\textquotesingle{},\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Função estática auxiliar para separar uma string em vetores de string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGPSTracker_a5b1fee62b74b3dd2cb2aac8b67929c1f}{open\+\_\+serial}} ()
+\begin{DoxyCompactList}\small\item\em Abre e configura a porta serial para comunicação o sensor. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classGPSTracker_a463fb30df3f17713d72487a9451a19f7}{read\+\_\+serial}} ()
+\begin{DoxyCompactList}\small\item\em Lê dados da porta serial até encontrar uma quebra de linha. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGPSTracker_ad04acd62e5e6daafe4c68188d249d996}{send}} (const std\+::string \&mensagem)
+\begin{DoxyCompactList}\small\item\em Envia uma string via socket UDP para um servidor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGPSTracker_aafc041e9030dadff6ba7e9714861bb52}{loop}} ()
+\begin{DoxyCompactList}\small\item\em Executa o loop principal de leitura, interpretação e envio de dados via UDP. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classGPSTracker_a25b2a9f97a641b0be027ade8e800970b}{ip\+\_\+destino}}
+\item 
+int \mbox{\hyperlink{classGPSTracker_afaf23aa93d79e4e392d929901a571770}{porta\+\_\+destino}}
+\item 
+int \mbox{\hyperlink{classGPSTracker_a0c07f77c6a7032af340777403c0eb92e}{sockfd}}
+\item 
+sockaddr\+\_\+in \mbox{\hyperlink{classGPSTracker_adc9d8f2720c0209df5b55a81516d3dc6}{addr\+\_\+dest}} \{\}
+\item 
+std\+::thread \mbox{\hyperlink{classGPSTracker_abdae4b33cc2129598ed8dc073576de98}{worker}}
+\item 
+std\+::atomic$<$ bool $>$ \mbox{\hyperlink{classGPSTracker_af5f9911d5c6e3edbad562ff5df53f588}{is\+\_\+exec}} \{false\}
+\item 
+\mbox{\hyperlink{classGPSTracker_1_1GPSData}{GPSData}} \mbox{\hyperlink{classGPSTracker_ab8f8f11d9183997b9d5b4d7d6d7079f9}{last\+\_\+data\+\_\+given}}
+\item 
+std\+::string \mbox{\hyperlink{classGPSTracker_a2839cd002c466deee625a321b0b365c5}{porta\+\_\+serial}}
+\item 
+int \mbox{\hyperlink{classGPSTracker_a6d1a70668f1742ebe67f729ec3548f99}{fd\+\_\+serial}} = -\/1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe responsável por obter o tracking da carga. 
+
+Responsabilidades\+:
+\begin{DoxyItemize}
+\item Obter os dados do sensor NEO6\+MV2
+\item Interpretar esses dados, gerando informações
+\item Enviar as informações via socket UDP em formato CSV
+\end{DoxyItemize}
+
+Cada uma dessas responsabilidades está associada a um método da classe, respectivamente\+:
+
+
+\begin{DoxyItemize}
+\item \doxylink{classGPSTracker_a463fb30df3f17713d72487a9451a19f7}{read\+\_\+serial()}
+\item \doxylink{classGPSTracker_1_1GPSData_af63d0b62c0b7cf92ceac852377b7adb1}{GPSData\+::parsing()}
+\item \doxylink{classGPSTracker_ad04acd62e5e6daafe4c68188d249d996}{send()}
+\end{DoxyItemize}
+
+Os quais estarão sendo repetidamente executados pela thread worker a fim de manter a continuidade de informações.
+
+Não há necessidade de mais explicações, já que o fluxo de funcionamento é simples. 
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00054}{54}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classGPSTracker_adbc1caae1508b89b4cc98f3b5739f437}\label{classGPSTracker_adbc1caae1508b89b4cc98f3b5739f437} 
+\index{GPSTracker@{GPSTracker}!GPSTracker@{GPSTracker}}
+\index{GPSTracker@{GPSTracker}!GPSTracker@{GPSTracker}}
+\doxysubsubsection{\texorpdfstring{GPSTracker()}{GPSTracker()}}
+{\footnotesize\ttfamily GPSTracker\+::\+GPSTracker (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ip\+\_\+destino\+\_\+,  }\item[{int}]{porta\+\_\+destino\+\_\+,  }\item[{const std\+::string \&}]{porta\+\_\+serial\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor da Classe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip\+\_\+destino\+\_\+} & Endereço IP de destino. \\
+\hline
+{\em porta\+\_\+destino\+\_\+} & Porta UDP de destino \\
+\hline
+{\em porta\+\_\+serial\+\_\+} & Caminho da porta serial\\
+\hline
+\end{DoxyParams}
+Inicializa a comunicação UDP e abre a comunicação serial. 
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00499}{499}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+\Hypertarget{classGPSTracker_add6ffe67ca8de6b4cb593ad53c9a7ac6}\label{classGPSTracker_add6ffe67ca8de6b4cb593ad53c9a7ac6} 
+\index{GPSTracker@{GPSTracker}!````~GPSTracker@{\texorpdfstring{$\sim$}{\string~}GPSTracker}}
+\index{````~GPSTracker@{\texorpdfstring{$\sim$}{\string~}GPSTracker}!GPSTracker@{GPSTracker}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GPSTracker()}{\string~GPSTracker()}}
+{\footnotesize\ttfamily GPSTracker\+::\texorpdfstring{$\sim$}{\string~}\+GPSTracker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destrutor da classe. 
+
+Realiza a limpeza adequada dos recursos da classe, garantindo o término seguro das operações.
+
+A ordem de operações é importante\+:
+\begin{DoxyEnumerate}
+\item Interrompe a thread de execução
+\item Fecha o socket de comunicação
+\item Fecha a porta serial 
+\end{DoxyEnumerate}
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00534}{534}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGPSTracker_a5c09542835f5a0594bbd4a011182687e}\label{classGPSTracker_a5c09542835f5a0594bbd4a011182687e} 
+\index{GPSTracker@{GPSTracker}!init@{init}}
+\index{init@{init}!GPSTracker@{GPSTracker}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void GPSTracker\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inicializa a thread trabalhadora. 
+
+Garante que apenas uma única instância da thread de execução será iniciada, utilizando um flag atômico para controle de estado. Se a thread já estiver em execução, a função retorna imediatamente sem realizar nova inicialização. Ao iniciar, exibe uma mensagem colorida no terminal e cria uma thread worker que executa o loop principal de leitura e comunicação. 
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00547}{547}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+\Hypertarget{classGPSTracker_aafc041e9030dadff6ba7e9714861bb52}\label{classGPSTracker_aafc041e9030dadff6ba7e9714861bb52} 
+\index{GPSTracker@{GPSTracker}!loop@{loop}}
+\index{loop@{loop}!GPSTracker@{GPSTracker}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void GPSTracker\+::loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Executa o loop principal de leitura, interpretação e envio de dados via UDP. 
+
+Esta função realiza continuamente a leitura de dados da porta serial, interpreta as mensagens GPS no formato GPGGA, armazena os dados processados e, se desejado, os exibe em formato CSV.
+
+O loop executa enquanto a flag de execução estiver ativa, com uma pausa de 1 segundo entre cada iteração para evitar consumo excessivo de CPU. 
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00441}{441}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+\Hypertarget{classGPSTracker_a5b1fee62b74b3dd2cb2aac8b67929c1f}\label{classGPSTracker_a5b1fee62b74b3dd2cb2aac8b67929c1f} 
+\index{GPSTracker@{GPSTracker}!open\_serial@{open\_serial}}
+\index{open\_serial@{open\_serial}!GPSTracker@{GPSTracker}}
+\doxysubsubsection{\texorpdfstring{open\_serial()}{open\_serial()}}
+{\footnotesize\ttfamily void GPSTracker\+::open\+\_\+serial (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Abre e configura a porta serial para comunicação o sensor. 
+
+Estabelece a conexão serial utilizando a porta serial especificada. Todos os parâmetros necessários para uma comunicação estável com o dispositivo, incluindo velocidade, formato de dados e controle de fluxo são setados.
+
+A porta é aberta em modo somente leitura (O\+\_\+\+RDONLY) e em modo raw, no qual não há processamento adicional dos caracteres.
+
+Aplicamos as seguintes configurações\+:
+
+
+\begin{DoxyItemize}
+\item 9600 bauds
+\item 8 bits de dados
+\item Sem paridade
+\item 1 bit de parada 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00305}{305}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+\Hypertarget{classGPSTracker_a463fb30df3f17713d72487a9451a19f7}\label{classGPSTracker_a463fb30df3f17713d72487a9451a19f7} 
+\index{GPSTracker@{GPSTracker}!read\_serial@{read\_serial}}
+\index{read\_serial@{read\_serial}!GPSTracker@{GPSTracker}}
+\doxysubsubsection{\texorpdfstring{read\_serial()}{read\_serial()}}
+{\footnotesize\ttfamily std\+::string GPSTracker\+::read\+\_\+serial (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Lê dados da porta serial até encontrar uma quebra de linha. 
+
+
+\begin{DoxyItemize}
+\item Caracteres de carriage return (\textquotesingle{}\textbackslash{}r\textquotesingle{}) são ignorados durante a leitura.
+\item A função termina quando encontra \textquotesingle{}\textbackslash{}n\textquotesingle{} ou quando não há mais dados para ler.
+\item A leitura é feita caractere por caractere para garantir processamento correto dos dados do GPS que seguem protocolo NMEA. 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00374}{374}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+\Hypertarget{classGPSTracker_ad04acd62e5e6daafe4c68188d249d996}\label{classGPSTracker_ad04acd62e5e6daafe4c68188d249d996} 
+\index{GPSTracker@{GPSTracker}!send@{send}}
+\index{send@{send}!GPSTracker@{GPSTracker}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily bool GPSTracker\+::send (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{mensagem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Envia uma string via socket UDP para um servidor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mensagem} & String a ser enviada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True se a mensagem foi enviada com sucesso. False, caso contrário. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00412}{412}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+\Hypertarget{classGPSTracker_a5cbe9dee353ee9a7ead55a5e2b599e8f}\label{classGPSTracker_a5cbe9dee353ee9a7ead55a5e2b599e8f} 
+\index{GPSTracker@{GPSTracker}!split@{split}}
+\index{split@{split}!GPSTracker@{GPSTracker}}
+\doxysubsubsection{\texorpdfstring{split()}{split()}}
+{\footnotesize\ttfamily static std\+::vector$<$ std\+::string $>$ GPSTracker\+::split (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{string\+\_\+de\+\_\+entrada,  }\item[{char}]{separador = {\ttfamily \textquotesingle{},\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Função estática auxiliar para separar uma string em vetores de string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string\+\_\+de\+\_\+entrada} & String que será fatiada. \\
+\hline
+{\em separador} & Caractere que será a flag de separação.\\
+\hline
+\end{DoxyParams}
+Similar ao método {\ttfamily split} do python, utiliza \textquotesingle{},\textquotesingle{} como caractere separador default. 
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00243}{243}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+\Hypertarget{classGPSTracker_a33bb9ca05150e7d4984c96dfee633a17}\label{classGPSTracker_a33bb9ca05150e7d4984c96dfee633a17} 
+\index{GPSTracker@{GPSTracker}!stop@{stop}}
+\index{stop@{stop}!GPSTracker@{GPSTracker}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void GPSTracker\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Finaliza a thread de trabalho de forma segura. 
+
+Esta função realiza o desligamento controlado da thread de trabalho. Primeiro, altera o flag de execução para falso usando operação atômica. Se a thread estiver joinable (executando), imprime uma mensagem de confirmação e realiza a operação de join para aguardar a finalização segura da thread. 
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00566}{566}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classGPSTracker_adc9d8f2720c0209df5b55a81516d3dc6}\label{classGPSTracker_adc9d8f2720c0209df5b55a81516d3dc6} 
+\index{GPSTracker@{GPSTracker}!addr\_dest@{addr\_dest}}
+\index{addr\_dest@{addr\_dest}!GPSTracker@{GPSTracker}}
+\doxysubsubsection{\texorpdfstring{addr\_dest}{addr\_dest}}
+{\footnotesize\ttfamily sockaddr\+\_\+in GPSTracker\+::addr\+\_\+dest \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00275}{275}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+\Hypertarget{classGPSTracker_a6d1a70668f1742ebe67f729ec3548f99}\label{classGPSTracker_a6d1a70668f1742ebe67f729ec3548f99} 
+\index{GPSTracker@{GPSTracker}!fd\_serial@{fd\_serial}}
+\index{fd\_serial@{fd\_serial}!GPSTracker@{GPSTracker}}
+\doxysubsubsection{\texorpdfstring{fd\_serial}{fd\_serial}}
+{\footnotesize\ttfamily int GPSTracker\+::fd\+\_\+serial = -\/1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00284}{284}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+\Hypertarget{classGPSTracker_a25b2a9f97a641b0be027ade8e800970b}\label{classGPSTracker_a25b2a9f97a641b0be027ade8e800970b} 
+\index{GPSTracker@{GPSTracker}!ip\_destino@{ip\_destino}}
+\index{ip\_destino@{ip\_destino}!GPSTracker@{GPSTracker}}
+\doxysubsubsection{\texorpdfstring{ip\_destino}{ip\_destino}}
+{\footnotesize\ttfamily std\+::string GPSTracker\+::ip\+\_\+destino\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00272}{272}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+\Hypertarget{classGPSTracker_af5f9911d5c6e3edbad562ff5df53f588}\label{classGPSTracker_af5f9911d5c6e3edbad562ff5df53f588} 
+\index{GPSTracker@{GPSTracker}!is\_exec@{is\_exec}}
+\index{is\_exec@{is\_exec}!GPSTracker@{GPSTracker}}
+\doxysubsubsection{\texorpdfstring{is\_exec}{is\_exec}}
+{\footnotesize\ttfamily std\+::atomic$<$bool$>$ GPSTracker\+::is\+\_\+exec \{false\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00279}{279}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+\Hypertarget{classGPSTracker_ab8f8f11d9183997b9d5b4d7d6d7079f9}\label{classGPSTracker_ab8f8f11d9183997b9d5b4d7d6d7079f9} 
+\index{GPSTracker@{GPSTracker}!last\_data\_given@{last\_data\_given}}
+\index{last\_data\_given@{last\_data\_given}!GPSTracker@{GPSTracker}}
+\doxysubsubsection{\texorpdfstring{last\_data\_given}{last\_data\_given}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGPSTracker_1_1GPSData}{GPSData}} GPSTracker\+::last\+\_\+data\+\_\+given\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00282}{282}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+\Hypertarget{classGPSTracker_afaf23aa93d79e4e392d929901a571770}\label{classGPSTracker_afaf23aa93d79e4e392d929901a571770} 
+\index{GPSTracker@{GPSTracker}!porta\_destino@{porta\_destino}}
+\index{porta\_destino@{porta\_destino}!GPSTracker@{GPSTracker}}
+\doxysubsubsection{\texorpdfstring{porta\_destino}{porta\_destino}}
+{\footnotesize\ttfamily int GPSTracker\+::porta\+\_\+destino\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00273}{273}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+\Hypertarget{classGPSTracker_a2839cd002c466deee625a321b0b365c5}\label{classGPSTracker_a2839cd002c466deee625a321b0b365c5} 
+\index{GPSTracker@{GPSTracker}!porta\_serial@{porta\_serial}}
+\index{porta\_serial@{porta\_serial}!GPSTracker@{GPSTracker}}
+\doxysubsubsection{\texorpdfstring{porta\_serial}{porta\_serial}}
+{\footnotesize\ttfamily std\+::string GPSTracker\+::porta\+\_\+serial\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00283}{283}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+\Hypertarget{classGPSTracker_a0c07f77c6a7032af340777403c0eb92e}\label{classGPSTracker_a0c07f77c6a7032af340777403c0eb92e} 
+\index{GPSTracker@{GPSTracker}!sockfd@{sockfd}}
+\index{sockfd@{sockfd}!GPSTracker@{GPSTracker}}
+\doxysubsubsection{\texorpdfstring{sockfd}{sockfd}}
+{\footnotesize\ttfamily int GPSTracker\+::sockfd\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00274}{274}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+\Hypertarget{classGPSTracker_abdae4b33cc2129598ed8dc073576de98}\label{classGPSTracker_abdae4b33cc2129598ed8dc073576de98} 
+\index{GPSTracker@{GPSTracker}!worker@{worker}}
+\index{worker@{worker}!GPSTracker@{GPSTracker}}
+\doxysubsubsection{\texorpdfstring{worker}{worker}}
+{\footnotesize\ttfamily std\+::thread GPSTracker\+::worker\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00278}{278}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{GPSTracker_8hpp}{GPSTracker.\+hpp}}\end{DoxyCompactItemize}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.8.14)  15 OCT 2025 12:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.8.14)  2 NOV 2025 09:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -821,7 +821,7 @@ Package hyperref Info: Option `unicode' set `true' on input line 191.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 12.9599pt on input line 196.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 198.
+(Font)              scaled to size 10.79993pt on input line 197.
  [1
 
 
@@ -833,42 +833,42 @@ st/fonts/enc/dvips/base/8r.enc}] [2
 \openout6 = `refman.toc'.
 
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 8.99994pt on input line 204.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 204
+(Font)              scaled to size 8.99994pt on input line 205.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 205
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 204
+LaTeX Font Info:    Trying to load font information for U+msb on input line 205
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+wasy on input line 20
-4.
+5.
 
 (/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 6.29996pt on input line 204.
+(Font)              scaled to size 6.29996pt on input line 205.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 6.29996pt on input line 204.
+(Font)              scaled to size 6.29996pt on input line 205.
  [1] [2] [3] [4
 
 ]
-Package hyperref Info: Option `pageanchor' set `true' on input line 207.
+Package hyperref Info: Option `pageanchor' set `true' on input line 208.
 
 Chapter 1.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 18.66588pt on input line 209.
+(Font)              scaled to size 18.66588pt on input line 210.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 18.66588pt on input line 209.
+(Font)              scaled to size 18.66588pt on input line 210.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 22.39185pt on input line 209.
-(./annotated.tex
+(Font)              scaled to size 22.39185pt on input line 210.
+(./namespaces.tex
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 12.9599pt on input line 1.
 ) [1
@@ -877,43 +877,57 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 
 ]
 Chapter 2.
-(./files.tex) [3] [4
+(./annotated.tex) [3] [4
 
 ]
 Chapter 3.
-(./classGPSTrack_1_1GPSData.tex
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 10
-.
+(./files.tex) [5] [6
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) <./classGPSTrack_1_1GPSData__coll__graph.pdf>
-<classGPSTrack_1_1GPSData__coll__graph.pdf, id=496, 264.99pt x 278.03876pt>
-File: classGPSTrack_1_1GPSData__coll__graph.pdf Graphic file (type pdf)
-<use classGPSTrack_1_1GPSData__coll__graph.pdf>
-Package pdftex.def Info: classGPSTrack_1_1GPSData__coll__graph.pdf  used on inp
-ut line 18.
-(pdftex.def)             Requested size: 264.0pt x 277.01985pt.
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 2
-4.
+]
+Chapter 4.
+(./namespaceGPSMonitor.tex
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 6
+.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 24.
+(Font)              scaled to size 8.99994pt on input line 6.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.09995pt on input line 25.
+(Font)              scaled to size 8.09995pt on input line 7.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 25.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 7.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.09995pt on input line 25.
- [5]
+(Font)              scaled to size 8.09995pt on input line 7.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 44.
+(Font)              scaled to size 10.79993pt on input line 15.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 76.
+(Font)              scaled to size 7.19995pt on input line 20.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 20
+.
 
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+\T1/pcr/m/n/8 str GPSMonitor.[]gps[]_[]monitor = [](img="src/antena.[]jpg", hos
+t="127.[]0.[]0.[]1", port=5000) if
+ []
+
+) [7] [8
+
+]
+Chapter 5.
+(./classGPSTracker_1_1GPSData.tex <./classGPSTracker_1_1GPSData__coll__graph.pd
+f>
+<classGPSTracker_1_1GPSData__coll__graph.pdf, id=683, 264.99pt x 278.03876pt>
+File: classGPSTracker_1_1GPSData__coll__graph.pdf Graphic file (type pdf)
+<use classGPSTracker_1_1GPSData__coll__graph.pdf>
+Package pdftex.def Info: classGPSTracker_1_1GPSData__coll__graph.pdf  used on i
+nput line 18.
+(pdftex.def)             Requested size: 264.0pt x 277.01985pt.
+ [9]
 Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
@@ -922,12 +936,12 @@ LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 94.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 94.
-[6]
+[10]
 Underfull \hbox (badness 10000) detected at line 107
 [][][]
  []
 
-[7]
+[11]
 Underfull \hbox (badness 10000) detected at line 131
 [][][]
  []
@@ -942,81 +956,66 @@ Underfull \hbox (badness 10000) detected at line 156
 [][][]
  []
 
-) (./classGPSSim.tex <./classGPSSim__coll__graph.pdf>
-<classGPSSim__coll__graph.pdf, id=561, 225.84375pt x 536.0025pt>
+) (./classGPSMonitor_1_1GPSMonitor.tex <./classGPSMonitor_1_1GPSMonitor__coll__
+graph.pdf>
+<classGPSMonitor_1_1GPSMonitor__coll__graph.pdf, id=745, 213.79875pt x 361.35pt
+>
+File: classGPSMonitor_1_1GPSMonitor__coll__graph.pdf Graphic file (type pdf)
+<use classGPSMonitor_1_1GPSMonitor__coll__graph.pdf>
+Package pdftex.def Info: classGPSMonitor_1_1GPSMonitor__coll__graph.pdf  used o
+n input line 15.
+(pdftex.def)             Requested size: 213.0pt x 359.99825pt.
+ [12] [13] [14] [15]) (./classGPSSim.tex [16] <./classGPSSim__coll__graph.pdf>
+<classGPSSim__coll__graph.pdf, id=854, 225.84375pt x 417.56pt>
 File: classGPSSim__coll__graph.pdf Graphic file (type pdf)
 <use classGPSSim__coll__graph.pdf>
 Package pdftex.def Info: classGPSSim__coll__graph.pdf  used on input line 18.
-(pdftex.def)             Requested size: 225.0pt x 534.0301pt.
- [8] [9]
+(pdftex.def)             Requested size: 225.0pt x 416.02344pt.
+
+Underfull \hbox (badness 2495) in paragraph at lines 29--30
+[][] \T1/phv/m/n/10 (dou-ble latitude[]_[]inicial[]_[]graus, dou-ble longitude[
+]_[]inicial[]_[]graus, dou-ble altitude[]_[]metros, bool
+ []
+
+[17]
 Underfull \hbox (badness 10000) in paragraph at lines 36--37
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
+Underfull \hbox (badness 10000) in paragraph at lines 44--45
 
  []
 
-[10] [11]
-Underfull \hbox (badness 10000) detected at line 147
+[18]
+Underfull \hbox (badness 10000) detected at line 135
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--163
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
+
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
 
  []
 
 
-Underfull \hbox (badness 10000) detected at line 197
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
+Underfull \hbox (badness 10000) in paragraph at lines 197--198
 
  []
 
-[12]
-Underfull \hbox (badness 10000) detected at line 215
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 216--217
-
- []
-
-
-Underfull \hbox (badness 10000) detected at line 233
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 234--235
-
- []
-
-
-Underfull \hbox (badness 10000) detected at line 279
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 294--295
-
- []
-
-[13] [14]) (./classGPSTrack.tex <./classGPSTrack__coll__graph.pdf>
-<classGPSTrack__coll__graph.pdf, id=719, 264.99pt x 699.61375pt>
-File: classGPSTrack__coll__graph.pdf Graphic file (type pdf)
-<use classGPSTrack__coll__graph.pdf>
-Package pdftex.def Info: classGPSTrack__coll__graph.pdf  used on input line 18.
-
+[20]) (./classGPSTracker.tex <./classGPSTracker__coll__graph.pdf>
+<classGPSTracker__coll__graph.pdf, id=980, 264.99pt x 699.61375pt>
+File: classGPSTracker__coll__graph.pdf Graphic file (type pdf)
+<use classGPSTracker__coll__graph.pdf>
+Package pdftex.def Info: classGPSTracker__coll__graph.pdf  used on input line 1
+8.
 (pdftex.def)             Requested size: 208.333pt x 550.0pt.
- [15]
-[16] [17] [18] [19]
+ [21] [22]
+[23] [24] [25] [26]
 Underfull \hbox (badness 10000) detected at line 241
 [][][]
  []
@@ -1028,97 +1027,116 @@ File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )
 LaTeX Font Info:    Font shape `TS1/pcr/m/it' in size <8> not available
 (Font)              Font shape `TS1/pcr/m/sl' tried instead on input line 252.
- [20] [21])
+ [27] [28])
 (./classGPSSim_1_1NMEAGenerator.tex <./classGPSSim_1_1NMEAGenerator__coll__grap
 h.pdf>
-<classGPSSim_1_1NMEAGenerator__coll__graph.pdf, id=870, 213.79875pt x 210.7875p
-t>
+<classGPSSim_1_1NMEAGenerator__coll__graph.pdf, id=1137, 232.87pt x 370.38374pt
+>
 File: classGPSSim_1_1NMEAGenerator__coll__graph.pdf Graphic file (type pdf)
 <use classGPSSim_1_1NMEAGenerator__coll__graph.pdf>
 Package pdftex.def Info: classGPSSim_1_1NMEAGenerator__coll__graph.pdf  used on
  input line 14.
-(pdftex.def)             Requested size: 213.0pt x 209.99898pt.
- [22]
-Underfull \hbox (badness 10000) detected at line 57
+(pdftex.def)             Requested size: 232.0pt x 369.01514pt.
+ [29] [30]
+Underfull \hbox (badness 10000) detected at line 61
 [][][]
  []
 
-[23]
-Underfull \hbox (badness 10000) detected at line 85
+[31]
+Underfull \hbox (badness 10000) detected at line 110
 [][][]
  []
 
-) [24]
-Chapter 4.
+
+Underfull \hbox (badness 10000) detected at line 138
+[][][]
+ []
+
+
+Overfull \vbox (11.00531pt too high) has occurred while \output is active []
+
+
+[32]
+Underfull \hbox (badness 10000) detected at line 166
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 183
+[][][]
+ []
+
+) [33] [34
+
+]
+Chapter 6.
 (./debug_8cpp.tex <./debug_8cpp__incl.pdf>
-<debug_8cpp__incl.pdf, id=913, 1454.43375pt x 209.78375pt>
+<debug_8cpp__incl.pdf, id=1217, 1454.43375pt x 209.78375pt>
 File: debug_8cpp__incl.pdf Graphic file (type pdf)
 <use debug_8cpp__incl.pdf>
 Package pdftex.def Info: debug_8cpp__incl.pdf  used on input line 15.
 (pdftex.def)             Requested size: 350.0pt x 50.48357pt.
-) (./debug_8cpp_source.tex [25
-
-])
+) (./debug_8cpp_source.tex [35])
+(./GPSMonitor_8py.tex [36]) (./GPSMonitor_8py_source.tex [37] [38])
 (./GPSSim_8hpp.tex <./GPSSim_8hpp__incl.pdf>
-<GPSSim_8hpp__incl.pdf, id=950, 1033.8625pt x 154.5775pt>
+<GPSSim_8hpp__incl.pdf, id=1513, 1033.8625pt x 154.5775pt>
 File: GPSSim_8hpp__incl.pdf Graphic file (type pdf)
 <use GPSSim_8hpp__incl.pdf>
 Package pdftex.def Info: GPSSim_8hpp__incl.pdf  used on input line 26.
 (pdftex.def)             Requested size: 350.0pt x 52.32921pt.
- <./GPSSim_8hpp__dep__incl.pdf>
-<GPSSim_8hpp__dep__incl.pdf, id=958, 173.64874pt x 154.5775pt>
+ [39] <./GPSSim_8hpp__dep__incl.pdf>
+<GPSSim_8hpp__dep__incl.pdf, id=1584, 173.64874pt x 154.5775pt>
 File: GPSSim_8hpp__dep__incl.pdf Graphic file (type pdf)
 <use GPSSim_8hpp__dep__incl.pdf>
 Package pdftex.def Info: GPSSim_8hpp__dep__incl.pdf  used on input line 33.
 (pdftex.def)             Requested size: 173.0pt x 154.0063pt.
-
-[26]) (./GPSSim_8hpp_source.tex [27] [28] [29] [30]) (./GPSTrack_8hpp.tex <./GP
-STrack_8hpp__incl.pdf>
-<GPSTrack_8hpp__incl.pdf, id=1385, 1396.21625pt x 154.5775pt>
-File: GPSTrack_8hpp__incl.pdf Graphic file (type pdf)
-<use GPSTrack_8hpp__incl.pdf>
-Package pdftex.def Info: GPSTrack_8hpp__incl.pdf  used on input line 30.
+) (./GPSSim_8hpp_source.tex [40] [41] [42] [43]) (./GPSTracker_8hpp.tex <./GPST
+racker_8hpp__incl.pdf>
+<GPSTracker_8hpp__incl.pdf, id=1954, 1396.21625pt x 154.5775pt>
+File: GPSTracker_8hpp__incl.pdf Graphic file (type pdf)
+<use GPSTracker_8hpp__incl.pdf>
+Package pdftex.def Info: GPSTracker_8hpp__incl.pdf  used on input line 30.
 (pdftex.def)             Requested size: 350.0pt x 38.74805pt.
- [31] <./GPSTrack_8hpp__dep__incl.pdf>
-<GPSTrack_8hpp__dep__incl.pdf, id=1440, 261.97874pt x 154.5775pt>
-File: GPSTrack_8hpp__dep__incl.pdf Graphic file (type pdf)
-<use GPSTrack_8hpp__dep__incl.pdf>
-Package pdftex.def Info: GPSTrack_8hpp__dep__incl.pdf  used on input line 37.
+ [44] <./GPSTracker_8hpp__dep__incl.pdf>
+<GPSTracker_8hpp__dep__incl.pdf, id=2029, 261.97874pt x 154.5775pt>
+File: GPSTracker_8hpp__dep__incl.pdf Graphic file (type pdf)
+<use GPSTracker_8hpp__dep__incl.pdf>
+Package pdftex.def Info: GPSTracker_8hpp__dep__incl.pdf  used on input line 37.
+
 (pdftex.def)             Requested size: 261.0pt x 154.00394pt.
 )
-(./GPSTrack_8hpp_source.tex [32] [33] [34] [35] [36]) (./main_8cpp.tex <./main_
-8cpp__incl.pdf>
-<main_8cpp__incl.pdf, id=1911, 1396.21625pt x 209.78375pt>
+(./GPSTracker_8hpp_source.tex [45] [46] [47] [48] [49]) (./main_8cpp.tex <./mai
+n_8cpp__incl.pdf>
+<main_8cpp__incl.pdf, id=2482, 1396.21625pt x 209.78375pt>
 File: main_8cpp__incl.pdf Graphic file (type pdf)
 <use main_8cpp__incl.pdf>
 Package pdftex.def Info: main_8cpp__incl.pdf  used on input line 13.
 (pdftex.def)             Requested size: 350.0pt x 52.58664pt.
- [37]) (./main_8cpp_source.tex) [38] (./refman.ind
+ [50]) (./main_8cpp_source.tex) [51] [52
+
+] (./refman.ind
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 22.39185pt on input line 1.
- [39
+
+[53
 
 
-
-] [40
-
-])
-(./refman.aux)
+] [54]) (./refman.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 7C19B6101E9157AC7EF50F492B9887FA;15511.
+(rerunfilecheck)             Checksum: 2E2DB7926E259B23E99345D314E891F3;21156.
  ) 
 Here is how much of TeX's memory you used:
- 19141 strings out of 476182
- 316709 string characters out of 5795595
- 1948975 words of memory out of 5000000
- 39762 multiletter control sequences out of 15000+600000
+ 19527 strings out of 476182
+ 328794 string characters out of 5795595
+ 1950975 words of memory out of 5000000
+ 39846 multiletter control sequences out of 15000+600000
  612725 words of font info for 104 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 101i,16n,117p,791b,744s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,16n,117p,811b,744s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texliv
@@ -1130,10 +1148,10 @@ ier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (46 pages, 328796 bytes).
+Output written on refman.pdf (60 pages, 371033 bytes).
 PDF statistics:
- 2401 PDF objects out of 2487 (max. 8388607)
- 2266 compressed objects within 23 object streams
- 1028 named destinations out of 1200 (max. 500000)
- 731 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3090 PDF objects out of 3580 (max. 8388607)
+ 2930 compressed objects within 30 object streams
+ 1318 named destinations out of 1440 (max. 500000)
+ 968 words of extra memory for PDF output out of 10000 (max. 10000000)
 

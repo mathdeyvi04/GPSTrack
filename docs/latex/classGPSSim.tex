@@ -26,7 +26,7 @@ class \mbox{\hyperlink{classGPSSim_1_1NMEAGenerator}{NMEAGenerator}}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classGPSSim_af71018b7b54d324cd2ccfd619b220a9e}{GPSSim}} (double latitude\+\_\+inicial\+\_\+graus, double longitude\+\_\+inicial\+\_\+graus, double altitude\+\_\+metros)
+\mbox{\hyperlink{classGPSSim_a905af6ba1ec74f4b677e349e7ce6dca0}{GPSSim}} (double latitude\+\_\+inicial\+\_\+graus, double longitude\+\_\+inicial\+\_\+graus, double altitude\+\_\+metros, bool \mbox{\hyperlink{classGPSSim_a3e015a39de86b4849bbc95871800fac2}{to\+\_\+move}})
 \begin{DoxyCompactList}\small\item\em Construtor do \doxylink{classGPSSim}{GPSSim}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classGPSSim_a7ee46b13b6a555764c544a5069854d32}{\texorpdfstring{$\sim$}{\string~}\+GPSSim}} ()
 \begin{DoxyCompactList}\small\item\em Destrutor do \doxylink{classGPSSim}{GPSSim}. \end{DoxyCompactList}\item 
@@ -40,20 +40,11 @@ std\+::string \mbox{\hyperlink{classGPSSim_a9dd6c5b066c8dcb0ebbdfb7c526ff856}{ge
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{classGPSSim_a013e2a135fd4d075fa0f63ec8a36eb41}{update}} ()
+\begin{DoxyCompactList}\small\item\em Responsável por prover alguma movimentação ao sensor simualado. ~\newline
+ \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classGPSSim_afafb98bc1f19fbc19cb04b2dc4b038e9}{loop}} ()
 \begin{DoxyCompactList}\small\item\em Loop principal responsável pela geração e transmissão de dados simulados. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Static Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-static void \mbox{\hyperlink{classGPSSim_a506709c04b71f7582b59a2cf318f7740}{degrees\+\_\+to\+\_\+\+NMEA}} (double graus\+\_\+decimais, bool is\+\_\+lat, std\+::string \&ddmm, char \&hemisf)
-\begin{DoxyCompactList}\small\item\em Converte graus decimais para formato NMEA de localização, (ddmm.\+mmmm). ~\newline
- \end{DoxyCompactList}\item 
-static std\+::string \mbox{\hyperlink{classGPSSim_ad9340c7234c96b2ef5197df8ff3b32f1}{format\+\_\+integer}} (int valor, int quant\+\_\+digitos)
-\begin{DoxyCompactList}\small\item\em Formatada um número inteiro com dois dígitos, preenchendo com zero à esquerda. \end{DoxyCompactList}\item 
-static std\+::tm \mbox{\hyperlink{classGPSSim_a68331c508bc9324c323d76799b03b46f}{get\+\_\+utc\+\_\+time}} ()
-\begin{DoxyCompactList}\small\item\em Obtém o tempo UTC atual, horário em Londres. \end{DoxyCompactList}\item 
-static std\+::string \mbox{\hyperlink{classGPSSim_ab8935cddbaf6da72e856280cd6a8fd91}{build\+\_\+nmea\+\_\+string}} (const std\+::string \&corpo\+\_\+frase)
-\begin{DoxyCompactList}\small\item\em Finaliza uma sentença NMEA a partir do corpo da frase. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -72,6 +63,8 @@ double \mbox{\hyperlink{classGPSSim_a052ca80ee24743edd53c0d08c47d9a19}{lat}}
 double \mbox{\hyperlink{classGPSSim_a9d7528c00cf9bc3335017739f1e9ff98}{lon}}
 \item 
 double \mbox{\hyperlink{classGPSSim_a4c280076655fb8a2440b90e514ce65a0}{alt}}
+\item 
+bool \mbox{\hyperlink{classGPSSim_a3e015a39de86b4849bbc95871800fac2}{to\+\_\+move}} = false
 \end{DoxyCompactItemize}
 
 
@@ -85,11 +78,11 @@ Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00064}{64}} of file \mbo
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classGPSSim_af71018b7b54d324cd2ccfd619b220a9e}\label{classGPSSim_af71018b7b54d324cd2ccfd619b220a9e} 
+\Hypertarget{classGPSSim_a905af6ba1ec74f4b677e349e7ce6dca0}\label{classGPSSim_a905af6ba1ec74f4b677e349e7ce6dca0} 
 \index{GPSSim@{GPSSim}!GPSSim@{GPSSim}}
 \index{GPSSim@{GPSSim}!GPSSim@{GPSSim}}
 \doxysubsubsection{\texorpdfstring{GPSSim()}{GPSSim()}}
-{\footnotesize\ttfamily GPSSim\+::\+GPSSim (\begin{DoxyParamCaption}\item[{double}]{latitude\+\_\+inicial\+\_\+graus,  }\item[{double}]{longitude\+\_\+inicial\+\_\+graus,  }\item[{double}]{altitude\+\_\+metros }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily GPSSim\+::\+GPSSim (\begin{DoxyParamCaption}\item[{double}]{latitude\+\_\+inicial\+\_\+graus,  }\item[{double}]{longitude\+\_\+inicial\+\_\+graus,  }\item[{double}]{altitude\+\_\+metros,  }\item[{bool}]{to\+\_\+move }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -105,10 +98,12 @@ Inicializa alguns parâmetros de posição simulada e, criando os pseudo-\/termi
 \hline
 {\em altitude\+\_\+metros} & Altitude inicial em metros, setada para 10. \\
 \hline
+{\em to\+\_\+move} & Flag para provocarmos algum movimento \\
+\hline
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00363}{363}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00346}{346}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
 
 \Hypertarget{classGPSSim_a7ee46b13b6a555764c544a5069854d32}\label{classGPSSim_a7ee46b13b6a555764c544a5069854d32} 
 \index{GPSSim@{GPSSim}!````~GPSSim@{\texorpdfstring{$\sim$}{\string~}GPSSim}}
@@ -122,86 +117,11 @@ Destrutor do \doxylink{classGPSSim}{GPSSim}.
 
 Chama a função {\ttfamily \doxylink{classGPSSim_a114167ff50a457bd15b93f84242a6edc}{stop()}} e, após verificar existência de terminal Pai, fecha-\/o. 
 
-Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00404}{404}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00389}{389}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
 
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classGPSSim_ab8935cddbaf6da72e856280cd6a8fd91}\label{classGPSSim_ab8935cddbaf6da72e856280cd6a8fd91} 
-\index{GPSSim@{GPSSim}!build\_nmea\_string@{build\_nmea\_string}}
-\index{build\_nmea\_string@{build\_nmea\_string}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{build\_nmea\_string()}{build\_nmea\_string()}}
-{\footnotesize\ttfamily static std\+::string GPSSim\+::build\+\_\+nmea\+\_\+string (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{corpo\+\_\+frase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
-
-
-
-Finaliza uma sentença NMEA a partir do corpo da frase. 
-
-Calcula o valor de paridade (checksum) do corpo da frase fornecida, em seguida adiciona os delimitadores e flags no formato NMEA (prefixo \textquotesingle{}\$\textquotesingle{}, sufixo \textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{}, valor de paridade em hexadecimal e "{}\textbackslash{}r\textbackslash{}n"{}).
-
-
-\begin{DoxyParams}{Parameters}
-{\em corpo\+\_\+frase} & Corpo da frase NMEA sem os indicadores iniciais (\textquotesingle{}\$\textquotesingle{}) e finais (\textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{} e checksum). \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-std\+::string Sentença NMEA completa, pronta para transmissão. 
-\end{DoxyReturn}
-
-
-Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00180}{180}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
-
-\Hypertarget{classGPSSim_a506709c04b71f7582b59a2cf318f7740}\label{classGPSSim_a506709c04b71f7582b59a2cf318f7740} 
-\index{GPSSim@{GPSSim}!degrees\_to\_NMEA@{degrees\_to\_NMEA}}
-\index{degrees\_to\_NMEA@{degrees\_to\_NMEA}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{degrees\_to\_NMEA()}{degrees\_to\_NMEA()}}
-{\footnotesize\ttfamily static void GPSSim\+::degrees\+\_\+to\+\_\+\+NMEA (\begin{DoxyParamCaption}\item[{double}]{graus\+\_\+decimais,  }\item[{bool}]{is\+\_\+lat,  }\item[{std\+::string \&}]{ddmm,  }\item[{char \&}]{hemisf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
-
-
-
-Converte graus decimais para formato NMEA de localização, (ddmm.\+mmmm). ~\newline
- 
-
-
-\begin{DoxyParams}[1]{Parameters}
- & {\em graus\+\_\+decimais} & Valor em graus decimais \\
-\hline
- & {\em is\+\_\+lat} & Flag de eixo \\
-\hline
-\mbox{\texttt{ out}}  & {\em ddmm} & String com valor formatado em graus e minutos \\
-\hline
-\mbox{\texttt{ out}}  & {\em hemisf} & Caractere indicando Hemisfério \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00086}{86}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
-
-\Hypertarget{classGPSSim_ad9340c7234c96b2ef5197df8ff3b32f1}\label{classGPSSim_ad9340c7234c96b2ef5197df8ff3b32f1} 
-\index{GPSSim@{GPSSim}!format\_integer@{format\_integer}}
-\index{format\_integer@{format\_integer}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{format\_integer()}{format\_integer()}}
-{\footnotesize\ttfamily static std\+::string GPSSim\+::format\+\_\+integer (\begin{DoxyParamCaption}\item[{int}]{valor,  }\item[{int}]{quant\+\_\+digitos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
-
-
-
-Formatada um número inteiro com dois dígitos, preenchendo com zero à esquerda. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em valor} & Número a ser formatado \\
-\hline
-{\em quant\+\_\+digitos} & Quantidade de Dígitos presente \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-string formatada ~\newline
- 
-\end{DoxyReturn}
-
-
-Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00142}{142}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
-
 \Hypertarget{classGPSSim_a9dd6c5b066c8dcb0ebbdfb7c526ff856}\label{classGPSSim_a9dd6c5b066c8dcb0ebbdfb7c526ff856} 
 \index{GPSSim@{GPSSim}!get\_path\_pseudo\_term@{get\_path\_pseudo\_term}}
 \index{get\_path\_pseudo\_term@{get\_path\_pseudo\_term}!GPSSim@{GPSSim}}
@@ -218,25 +138,7 @@ String correspondendo ao caminho do dispositivo. ~\newline
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00449}{449}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
-
-\Hypertarget{classGPSSim_a68331c508bc9324c323d76799b03b46f}\label{classGPSSim_a68331c508bc9324c323d76799b03b46f} 
-\index{GPSSim@{GPSSim}!get\_utc\_time@{get\_utc\_time}}
-\index{get\_utc\_time@{get\_utc\_time}!GPSSim@{GPSSim}}
-\doxysubsubsection{\texorpdfstring{get\_utc\_time()}{get\_utc\_time()}}
-{\footnotesize\ttfamily static std\+::tm GPSSim\+::get\+\_\+utc\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
-
-
-
-Obtém o tempo UTC atual, horário em Londres. 
-
-\begin{DoxyReturn}{Returns}
-Struct std\+::tm contendo o tempo em UTC ~\newline
- 
-\end{DoxyReturn}
-
-
-Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00159}{159}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00434}{434}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
 
 \Hypertarget{classGPSSim_a035f71a80ed040b260f68276d531de79}\label{classGPSSim_a035f71a80ed040b260f68276d531de79} 
 \index{GPSSim@{GPSSim}!init@{init}}
@@ -253,7 +155,7 @@ O padrão NMEA é o protocolo padrão usado por módulos GPS, cada mensagem come
 \item \$origem,codificacao\+\_\+usada,dados1,dados2,...\texorpdfstring{$\ast$}{*}paridade 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00415}{415}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00400}{400}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
 
 \Hypertarget{classGPSSim_afafb98bc1f19fbc19cb04b2dc4b038e9}\label{classGPSSim_afafb98bc1f19fbc19cb04b2dc4b038e9} 
 \index{GPSSim@{GPSSim}!loop@{loop}}
@@ -265,23 +167,9 @@ Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00415}{415}} of file \mb
 
 Loop principal responsável pela geração e transmissão de dados simulados. 
 
-Esta função executa um laço contínuo enquanto o simulador estiver ativo ({\ttfamily \+\_\+is\+\_\+exec}). Em cada iteração\+:
-\begin{DoxyItemize}
-\item Inicializa ou atualiza a posição simulada (latitude e longitude).
-\item Gera uma sentença NMEA do tipo GGA a partir da posição atual.
-\item Transmite a sentença gerada através do descritor de escrita {\ttfamily \+\_\+fd\+\_\+pai}.
-\item Aguarda o período de atualização definido em {\ttfamily \+\_\+periodo\+\_\+atualizacao}.
-\item Atualiza a posição simulada chamando {\ttfamily \+\_\+update\+\_\+position()}.
-\end{DoxyItemize}
+Esta função executa um laço contínuo enquanto o simulador estiver ativo ({\ttfamily \+\_\+is\+\_\+exec}). O loop termina automaticamente quando {\ttfamily \+\_\+is\+\_\+exec} é definido como falso. Também está presente a lógica de atualização de posição. 
 
-O loop termina automaticamente quando {\ttfamily \+\_\+is\+\_\+exec} é definido como falso.
-
-\begin{DoxyNote}{Note}
-Esta função é bloqueante e deve ser executada em uma thread dedicada para não interromper o fluxo principal do programa. 
-\end{DoxyNote}
-
-
-Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00335}{335}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00317}{317}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
 
 \Hypertarget{classGPSSim_a114167ff50a457bd15b93f84242a6edc}\label{classGPSSim_a114167ff50a457bd15b93f84242a6edc} 
 \index{GPSSim@{GPSSim}!stop@{stop}}
@@ -296,7 +184,22 @@ Encerrará a geração de frases NMEA e aguardará a finalização da thread. ~\
 
 Verifica a execução da thread e encerra-\/a caso exista. Força a finalização da thread geradora de mensagens. 
 
-Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00432}{432}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00417}{417}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+
+\Hypertarget{classGPSSim_a013e2a135fd4d075fa0f63ec8a36eb41}\label{classGPSSim_a013e2a135fd4d075fa0f63ec8a36eb41} 
+\index{GPSSim@{GPSSim}!update@{update}}
+\index{update@{update}!GPSSim@{GPSSim}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void GPSSim\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Responsável por prover alguma movimentação ao sensor simualado. ~\newline
+ 
+
+
+
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00083}{83}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
 
 
 
@@ -370,6 +273,16 @@ Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00076}{76}} of file \mbo
 
 
 Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00076}{76}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+
+\Hypertarget{classGPSSim_a3e015a39de86b4849bbc95871800fac2}\label{classGPSSim_a3e015a39de86b4849bbc95871800fac2} 
+\index{GPSSim@{GPSSim}!to\_move@{to\_move}}
+\index{to\_move@{to\_move}!GPSSim@{GPSSim}}
+\doxysubsubsection{\texorpdfstring{to\_move}{to\_move}}
+{\footnotesize\ttfamily bool GPSSim\+::to\+\_\+move = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00077}{77}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
 
 \Hypertarget{classGPSSim_aa74e5845eb8c1426edf7737c600c2ecd}\label{classGPSSim_aa74e5845eb8c1426edf7737c600c2ecd} 
 \index{GPSSim@{GPSSim}!worker@{worker}}

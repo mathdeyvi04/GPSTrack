@@ -1,0 +1,5 @@
+<map id="GPSTracker" name="GPSTracker">
+<area shape="rect" id="Node000001" title="Classe responsável por obter o tracking da carga." alt="" coords="7,331,249,828"/>
+<area shape="rect" id="Node000002" href="$classGPSTracker_1_1GPSData.html" title="Classe responsável por representar os dados do GPS." alt="" coords="5,5,251,268"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,268,131,314,125,314,125,268"/>
+</map>

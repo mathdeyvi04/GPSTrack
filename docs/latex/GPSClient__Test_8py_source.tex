@@ -1,0 +1,23 @@
+\doxysection{GPSClient\+\_\+\+Test.\+py}
+\hypertarget{GPSClient__Test_8py_source}{}\label{GPSClient__Test_8py_source}\index{src/GPSClient\_Test.py@{src/GPSClient\_Test.py}}
+\mbox{\hyperlink{GPSClient__Test_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{GPSClient__Test_8py_source_l00001}\mbox{\hyperlink{namespaceGPSClient__Test}{00001}}\ \textcolor{keyword}{import}\ socket}
+\DoxyCodeLine{\Hypertarget{GPSClient__Test_8py_source_l00002}00002\ \textcolor{keyword}{import}\ time}
+\DoxyCodeLine{\Hypertarget{GPSClient__Test_8py_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{GPSClient__Test_8py_source_l00004}\mbox{\hyperlink{namespaceGPSClient__Test_a54d0b18b38d7b04cae17f73097d6f86c}{00004}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceGPSClient__Test_a54d0b18b38d7b04cae17f73097d6f86c}{enviar\_teste}}(}
+\DoxyCodeLine{\Hypertarget{GPSClient__Test_8py_source_l00005}00005\ \ \ \ \ \ \ \ \ host='127.0.0.1',\ port=5000}
+\DoxyCodeLine{\Hypertarget{GPSClient__Test_8py_source_l00006}00006\ ):}
+\DoxyCodeLine{\Hypertarget{GPSClient__Test_8py_source_l00007}00007\ \ \ \ \ sock\ =\ socket.socket(socket.AF\_INET,\ socket.SOCK\_DGRAM)}
+\DoxyCodeLine{\Hypertarget{GPSClient__Test_8py_source_l00008}00008\ \ \ \ \ i\ =\ 0}
+\DoxyCodeLine{\Hypertarget{GPSClient__Test_8py_source_l00009}00009\ \ \ \ \ \textcolor{keywordflow}{while}\ i\ <\ 30:}
+\DoxyCodeLine{\Hypertarget{GPSClient__Test_8py_source_l00010}00010\ \ \ \ \ \ \ \ \ msg\ =\ \textcolor{stringliteral}{"{}185150.00,-\/22.955866,-\/43.166675,33.0"{}}}
+\DoxyCodeLine{\Hypertarget{GPSClient__Test_8py_source_l00011}00011\ \ \ \ \ \ \ \ \ sock.sendto(msg.encode(),\ (host,\ port))}
+\DoxyCodeLine{\Hypertarget{GPSClient__Test_8py_source_l00012}00012\ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Enviado:"{}},\ msg)}
+\DoxyCodeLine{\Hypertarget{GPSClient__Test_8py_source_l00013}00013\ \ \ \ \ \ \ \ \ time.sleep(2)}
+\DoxyCodeLine{\Hypertarget{GPSClient__Test_8py_source_l00014}00014\ \ \ \ \ \ \ \ \ i\ =\ i\ +\ 1}
+\DoxyCodeLine{\Hypertarget{GPSClient__Test_8py_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{GPSClient__Test_8py_source_l00016}00016\ \textcolor{keywordflow}{if}\ \_\_name\_\_\ ==\ \textcolor{stringliteral}{"{}\_\_main\_\_"{}}:}
+\DoxyCodeLine{\Hypertarget{GPSClient__Test_8py_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{namespaceGPSClient__Test_a54d0b18b38d7b04cae17f73097d6f86c}{enviar\_teste}}()}
+
+\end{DoxyCode}

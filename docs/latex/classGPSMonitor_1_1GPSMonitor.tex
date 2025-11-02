@@ -1,0 +1,254 @@
+\doxysection{GPSMonitor.\+GPSMonitor Class Reference}
+\hypertarget{classGPSMonitor_1_1GPSMonitor}{}\label{classGPSMonitor_1_1GPSMonitor}\index{GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}}
+
+
+Monitor que apresentará os dados do sensor.  
+
+
+
+
+Collaboration diagram for GPSMonitor.\+GPSMonitor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{classGPSMonitor_1_1GPSMonitor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_ab0b0bf55877d95112595d27d94b7a38a}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, str host, int port, img="{}"{})
+\begin{DoxyCompactList}\small\item\em Construtor da Classe, inicializando atributos cruciais. \end{DoxyCompactList}\item 
+datetime \mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a44a11b7dd3564db77b8d4f7b436fd427}{conversion\+\_\+utc\+\_\+to\+\_\+brasil}} (self, str time\+\_\+utc)
+\begin{DoxyCompactList}\small\item\em Converterá a string de time utc para string de time no fuso horário do Brasil. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a89e1f7db4817d1883292e9bb45ac54cf}{get\+\_\+data\+\_\+from\+\_\+client}} (self)
+\begin{DoxyCompactList}\small\item\em Verifica no buffer do socket o padrão de string setado. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_adf9740b99bbb8aa35ad59a1dd7a5a3a5}{set\+\_\+background}} (self)
+\begin{DoxyCompactList}\small\item\em Setará uma imagem como background da aplicação. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a7947e5fd13a7a8e697a4ab95f2e37ce0}{save\+\_\+historic}} (self)
+\begin{DoxyCompactList}\small\item\em Salvará dinamicamente os dados que já chegaram. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a65675579ce318950272e75d3aab4714f}{mainloop}} (self)
+\begin{DoxyCompactList}\small\item\em Responsável por executar as funcionalidades básicas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a597b4b08610c5e59f629950d5755eb7f}{time}}
+\item 
+\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a573fe9d6c606a3172f1b7c3002908642}{traject}}
+\item 
+\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_ae540969a2f5edb154b85a6c875aaf977}{altitude}}
+\item 
+\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_ae418906a0176a0fb419480f8123d84db}{placeholder}}
+\item 
+\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a6cc01df726e46943ca2d5a360973ff00}{zona\+\_\+brasileira}}
+\item 
+\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_ade5c6e280d1c1341e95c66bcf39d43e8}{sock}}
+\item 
+\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a57b9bd104f9987d21b0933c1a3425144}{img\+\_\+data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Monitor que apresentará os dados do sensor. 
+
+Responsável por\+:
+\begin{DoxyItemize}
+\item Apresentar os dados do sensor em tempo real
+\item Possuir um histórico de dados
+\item Possibilitar o salvamento deles 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{GPSMonitor_8py_source_l00015}{15}} of file \mbox{\hyperlink{GPSMonitor_8py_source}{GPSMonitor.\+py}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classGPSMonitor_1_1GPSMonitor_ab0b0bf55877d95112595d27d94b7a38a}\label{classGPSMonitor_1_1GPSMonitor_ab0b0bf55877d95112595d27d94b7a38a} 
+\index{GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily GPSMonitor.\+GPSMonitor.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{host,  }\item[{int}]{port,  }\item[{}]{img = {\ttfamily "{}"{}} }\end{DoxyParamCaption})}
+
+
+
+Construtor da Classe, inicializando atributos cruciais. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em host} & IP da máquina deve receber os pacotes \\
+\hline
+{\em port} & Porta de Comunicação \\
+\hline
+{\em img} & caminho da imagem de background \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GPSMonitor_8py_source_l00025}{25}} of file \mbox{\hyperlink{GPSMonitor_8py_source}{GPSMonitor.\+py}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGPSMonitor_1_1GPSMonitor_a44a11b7dd3564db77b8d4f7b436fd427}\label{classGPSMonitor_1_1GPSMonitor_a44a11b7dd3564db77b8d4f7b436fd427} 
+\index{GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}!conversion\_utc\_to\_brasil@{conversion\_utc\_to\_brasil}}
+\index{conversion\_utc\_to\_brasil@{conversion\_utc\_to\_brasil}!GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}}
+\doxysubsubsection{\texorpdfstring{conversion\_utc\_to\_brasil()}{conversion\_utc\_to\_brasil()}}
+{\footnotesize\ttfamily  datetime GPSMonitor.\+GPSMonitor.\+conversion\+\_\+utc\+\_\+to\+\_\+brasil (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str     }]{time\+\_\+utc }\end{DoxyParamCaption})}
+
+
+
+Converterá a string de time utc para string de time no fuso horário do Brasil. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+\_\+utc} & String time UTC \\
+\hline
+{\em String} & hora em Brasil \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GPSMonitor_8py_source_l00054}{54}} of file \mbox{\hyperlink{GPSMonitor_8py_source}{GPSMonitor.\+py}}.
+
+\Hypertarget{classGPSMonitor_1_1GPSMonitor_a89e1f7db4817d1883292e9bb45ac54cf}\label{classGPSMonitor_1_1GPSMonitor_a89e1f7db4817d1883292e9bb45ac54cf} 
+\index{GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}!get\_data\_from\_client@{get\_data\_from\_client}}
+\index{get\_data\_from\_client@{get\_data\_from\_client}!GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}}
+\doxysubsubsection{\texorpdfstring{get\_data\_from\_client()}{get\_data\_from\_client()}}
+{\footnotesize\ttfamily  None GPSMonitor.\+GPSMonitor.\+get\+\_\+data\+\_\+from\+\_\+client (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Verifica no buffer do socket o padrão de string setado. 
+
+Preenchendo as variáveis de estado. 
+\begin{DoxyParams}{Parameters}
+{\em host} & Endereço da Máquina Servidor \\
+\hline
+{\em port} & Porta de Entrada de Dados \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GPSMonitor_8py_source_l00072}{72}} of file \mbox{\hyperlink{GPSMonitor_8py_source}{GPSMonitor.\+py}}.
+
+\Hypertarget{classGPSMonitor_1_1GPSMonitor_a65675579ce318950272e75d3aab4714f}\label{classGPSMonitor_1_1GPSMonitor_a65675579ce318950272e75d3aab4714f} 
+\index{GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}!mainloop@{mainloop}}
+\index{mainloop@{mainloop}!GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}}
+\doxysubsubsection{\texorpdfstring{mainloop()}{mainloop()}}
+{\footnotesize\ttfamily  None GPSMonitor.\+GPSMonitor.\+mainloop (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Responsável por executar as funcionalidades básicas. 
+
+Dado o funcionamento do streamlit, executa as funções como se estivessem em loop. Verifique como o streamlit executa código python para mais informações. 
+
+Definition at line \mbox{\hyperlink{GPSMonitor_8py_source_l00144}{144}} of file \mbox{\hyperlink{GPSMonitor_8py_source}{GPSMonitor.\+py}}.
+
+\Hypertarget{classGPSMonitor_1_1GPSMonitor_a7947e5fd13a7a8e697a4ab95f2e37ce0}\label{classGPSMonitor_1_1GPSMonitor_a7947e5fd13a7a8e697a4ab95f2e37ce0} 
+\index{GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}!save\_historic@{save\_historic}}
+\index{save\_historic@{save\_historic}!GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}}
+\doxysubsubsection{\texorpdfstring{save\_historic()}{save\_historic()}}
+{\footnotesize\ttfamily  None GPSMonitor.\+GPSMonitor.\+save\+\_\+historic (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Salvará dinamicamente os dados que já chegaram. 
+
+
+
+Definition at line \mbox{\hyperlink{GPSMonitor_8py_source_l00122}{122}} of file \mbox{\hyperlink{GPSMonitor_8py_source}{GPSMonitor.\+py}}.
+
+\Hypertarget{classGPSMonitor_1_1GPSMonitor_adf9740b99bbb8aa35ad59a1dd7a5a3a5}\label{classGPSMonitor_1_1GPSMonitor_adf9740b99bbb8aa35ad59a1dd7a5a3a5} 
+\index{GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}!set\_background@{set\_background}}
+\index{set\_background@{set\_background}!GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}}
+\doxysubsubsection{\texorpdfstring{set\_background()}{set\_background()}}
+{\footnotesize\ttfamily  None GPSMonitor.\+GPSMonitor.\+set\+\_\+background (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Setará uma imagem como background da aplicação. 
+
+
+
+Definition at line \mbox{\hyperlink{GPSMonitor_8py_source_l00102}{102}} of file \mbox{\hyperlink{GPSMonitor_8py_source}{GPSMonitor.\+py}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classGPSMonitor_1_1GPSMonitor_ae540969a2f5edb154b85a6c875aaf977}\label{classGPSMonitor_1_1GPSMonitor_ae540969a2f5edb154b85a6c875aaf977} 
+\index{GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}!altitude@{altitude}}
+\index{altitude@{altitude}!GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}}
+\doxysubsubsection{\texorpdfstring{altitude}{altitude}}
+{\footnotesize\ttfamily GPSMonitor.\+GPSMonitor.\+altitude}
+
+
+
+Definition at line \mbox{\hyperlink{GPSMonitor_8py_source_l00036}{36}} of file \mbox{\hyperlink{GPSMonitor_8py_source}{GPSMonitor.\+py}}.
+
+\Hypertarget{classGPSMonitor_1_1GPSMonitor_a57b9bd104f9987d21b0933c1a3425144}\label{classGPSMonitor_1_1GPSMonitor_a57b9bd104f9987d21b0933c1a3425144} 
+\index{GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}!img\_data@{img\_data}}
+\index{img\_data@{img\_data}!GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}}
+\doxysubsubsection{\texorpdfstring{img\_data}{img\_data}}
+{\footnotesize\ttfamily GPSMonitor.\+GPSMonitor.\+img\+\_\+data}
+
+
+
+Definition at line \mbox{\hyperlink{GPSMonitor_8py_source_l00044}{44}} of file \mbox{\hyperlink{GPSMonitor_8py_source}{GPSMonitor.\+py}}.
+
+\Hypertarget{classGPSMonitor_1_1GPSMonitor_ae418906a0176a0fb419480f8123d84db}\label{classGPSMonitor_1_1GPSMonitor_ae418906a0176a0fb419480f8123d84db} 
+\index{GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}!placeholder@{placeholder}}
+\index{placeholder@{placeholder}!GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}}
+\doxysubsubsection{\texorpdfstring{placeholder}{placeholder}}
+{\footnotesize\ttfamily GPSMonitor.\+GPSMonitor.\+placeholder}
+
+
+
+Definition at line \mbox{\hyperlink{GPSMonitor_8py_source_l00037}{37}} of file \mbox{\hyperlink{GPSMonitor_8py_source}{GPSMonitor.\+py}}.
+
+\Hypertarget{classGPSMonitor_1_1GPSMonitor_ade5c6e280d1c1341e95c66bcf39d43e8}\label{classGPSMonitor_1_1GPSMonitor_ade5c6e280d1c1341e95c66bcf39d43e8} 
+\index{GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}!sock@{sock}}
+\index{sock@{sock}!GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}}
+\doxysubsubsection{\texorpdfstring{sock}{sock}}
+{\footnotesize\ttfamily GPSMonitor.\+GPSMonitor.\+sock}
+
+
+
+Definition at line \mbox{\hyperlink{GPSMonitor_8py_source_l00040}{40}} of file \mbox{\hyperlink{GPSMonitor_8py_source}{GPSMonitor.\+py}}.
+
+\Hypertarget{classGPSMonitor_1_1GPSMonitor_a597b4b08610c5e59f629950d5755eb7f}\label{classGPSMonitor_1_1GPSMonitor_a597b4b08610c5e59f629950d5755eb7f} 
+\index{GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}!time@{time}}
+\index{time@{time}!GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}}
+\doxysubsubsection{\texorpdfstring{time}{time}}
+{\footnotesize\ttfamily GPSMonitor.\+GPSMonitor.\+time}
+
+
+
+Definition at line \mbox{\hyperlink{GPSMonitor_8py_source_l00034}{34}} of file \mbox{\hyperlink{GPSMonitor_8py_source}{GPSMonitor.\+py}}.
+
+\Hypertarget{classGPSMonitor_1_1GPSMonitor_a573fe9d6c606a3172f1b7c3002908642}\label{classGPSMonitor_1_1GPSMonitor_a573fe9d6c606a3172f1b7c3002908642} 
+\index{GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}!traject@{traject}}
+\index{traject@{traject}!GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}}
+\doxysubsubsection{\texorpdfstring{traject}{traject}}
+{\footnotesize\ttfamily GPSMonitor.\+GPSMonitor.\+traject}
+
+
+
+Definition at line \mbox{\hyperlink{GPSMonitor_8py_source_l00035}{35}} of file \mbox{\hyperlink{GPSMonitor_8py_source}{GPSMonitor.\+py}}.
+
+\Hypertarget{classGPSMonitor_1_1GPSMonitor_a6cc01df726e46943ca2d5a360973ff00}\label{classGPSMonitor_1_1GPSMonitor_a6cc01df726e46943ca2d5a360973ff00} 
+\index{GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}!zona\_brasileira@{zona\_brasileira}}
+\index{zona\_brasileira@{zona\_brasileira}!GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}}
+\doxysubsubsection{\texorpdfstring{zona\_brasileira}{zona\_brasileira}}
+{\footnotesize\ttfamily GPSMonitor.\+GPSMonitor.\+zona\+\_\+brasileira}
+
+
+
+Definition at line \mbox{\hyperlink{GPSMonitor_8py_source_l00039}{39}} of file \mbox{\hyperlink{GPSMonitor_8py_source}{GPSMonitor.\+py}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{GPSMonitor_8py}{GPSMonitor.\+py}}\end{DoxyCompactItemize}

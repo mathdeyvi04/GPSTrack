@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['addr_5fdest_0',['addr_dest',['../classGPSTrack.html#a2bcd4334a211016814fc68202b9b7fd7',1,'GPSTrack']]],
-  ['alt_1',['alt',['../classGPSSim.html#a4c280076655fb8a2440b90e514ce65a0',1,'GPSSim']]]
+  ['_5f_5finit_5f_5f_0',['__init__',['../classGPSMonitor_1_1GPSMonitor.html#ab0b0bf55877d95112595d27d94b7a38a',1,'GPSMonitor::GPSMonitor']]]
 ];

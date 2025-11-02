@@ -1,0 +1,212 @@
+\doxysection{GPSMonitor.\+py}
+\hypertarget{GPSMonitor_8py_source}{}\label{GPSMonitor_8py_source}\index{src/GPSMonitor.py@{src/GPSMonitor.py}}
+\mbox{\hyperlink{GPSMonitor_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00001}\mbox{\hyperlink{namespaceGPSMonitor}{00001}}\ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00002}00002\ \textcolor{stringliteral}{@file\ GPSMonitor.py}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00003}00003\ \textcolor{stringliteral}{@brief\ Implementação\ da\ interface\ de\ visualização\ de\ dados}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00004}00004\ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00006}00006\ \textcolor{keyword}{import}\ base64}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00007}00007\ \textcolor{keyword}{import}\ streamlit\ \textcolor{keyword}{as}\ st}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00008}00008\ \textcolor{keyword}{from}\ streamlit\_autorefresh\ \textcolor{keyword}{import}\ st\_autorefresh}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00009}00009\ \textcolor{keyword}{import}\ pandas\ \textcolor{keyword}{as}\ pd}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00010}00010\ \textcolor{keyword}{import}\ socket}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00011}00011\ \textcolor{keyword}{from}\ datetime\ \textcolor{keyword}{import}\ datetime}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00012}00012\ \textcolor{keyword}{import}\ pytz}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00013}00013\ \textcolor{keyword}{import}\ pydeck\ \textcolor{keyword}{as}\ pdk}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00015}\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor}{00015}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor}{GPSMonitor}}:}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00016}00016\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00017}00017\ \textcolor{stringliteral}{\ \ \ \ @brief\ Monitor\ que\ apresentará\ os\ dados\ do\ sensor}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00018}00018\ \textcolor{stringliteral}{\ \ \ \ @details}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00019}00019\ \textcolor{stringliteral}{\ \ \ \ Responsável\ por:}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00020}00020\ \textcolor{stringliteral}{\ \ \ \ -\/\ Apresentar\ os\ dados\ do\ sensor\ em\ tempo\ real}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00021}00021\ \textcolor{stringliteral}{\ \ \ \ -\/\ Possuir\ um\ histórico\ de\ dados}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00022}00022\ \textcolor{stringliteral}{\ \ \ \ -\/\ Possibilitar\ o\ salvamento\ deles}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00023}00023\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00025}\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_ab0b0bf55877d95112595d27d94b7a38a}{00025}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_ab0b0bf55877d95112595d27d94b7a38a}{\_\_init\_\_}}(self,\ host:\ str,\ port:\ int,\ img=\textcolor{stringliteral}{"{}"{}}):}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00027}00027\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @brief\ Construtor\ da\ Classe,\ inicializando\ atributos\ cruciais.}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00028}00028\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @param\ host\ IP\ da\ máquina\ deve\ receber\ os\ pacotes}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00029}00029\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @param\ port\ Porta\ de\ Comunicação}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00030}00030\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @param\ img\ caminho\ da\ imagem\ de\ background}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00031}00031\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00033}00033\ \ \ \ \ \ \ \ \ st.session\_state[\textcolor{stringliteral}{"{}self"{}}]\ =\ self}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00034}\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a597b4b08610c5e59f629950d5755eb7f}{00034}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a597b4b08610c5e59f629950d5755eb7f}{time}}\ =\ []}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00035}\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a573fe9d6c606a3172f1b7c3002908642}{00035}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a573fe9d6c606a3172f1b7c3002908642}{traject}}\ =\ []}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00036}\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_ae540969a2f5edb154b85a6c875aaf977}{00036}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_ae540969a2f5edb154b85a6c875aaf977}{altitude}}\ =\ []}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00037}\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_ae418906a0176a0fb419480f8123d84db}{00037}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_ae418906a0176a0fb419480f8123d84db}{placeholder}}\ =\ st.empty()\ \textcolor{comment}{\#\ Apenas\ para\ conseguirmos\ renderizar\ o\ mapa\ corretamente}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00039}\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a6cc01df726e46943ca2d5a360973ff00}{00039}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a6cc01df726e46943ca2d5a360973ff00}{zona\_brasileira}}\ =\ pytz.timezone(\textcolor{stringliteral}{"{}America/Sao\_Paulo"{}})}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00040}\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_ade5c6e280d1c1341e95c66bcf39d43e8}{00040}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_ade5c6e280d1c1341e95c66bcf39d43e8}{sock}}\ =\ socket.socket(socket.AF\_INET,\ socket.SOCK\_DGRAM)}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00041}00041\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_ade5c6e280d1c1341e95c66bcf39d43e8}{sock}}.bind((host,\ port))}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00042}00042\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_ade5c6e280d1c1341e95c66bcf39d43e8}{sock}}.settimeout(0.5)}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00044}\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a57b9bd104f9987d21b0933c1a3425144}{00044}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a57b9bd104f9987d21b0933c1a3425144}{img\_data}}\ =\ \textcolor{keywordtype}{None}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ img:}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{with}\ open(}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ img,}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}rb"{}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ )\ \textcolor{keyword}{as}\ f:}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data\ =\ f.read()}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a57b9bd104f9987d21b0933c1a3425144}{img\_data}}\ =\ base64.b64encode(data).decode()}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00054}\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a44a11b7dd3564db77b8d4f7b436fd427}{00054}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a44a11b7dd3564db77b8d4f7b436fd427}{conversion\_utc\_to\_brasil}}(}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ self,}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ time\_utc:\ str}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00057}00057\ \ \ \ \ )\ -\/>\ datetime:}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00059}00059\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @brief\ Converterá\ a\ string\ de\ time\ utc\ para\ string\ de\ time\ no\ fuso\ horário\ do\ Brasil}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00060}00060\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @param\ time\_utc:\ String\ time\ UTC}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00061}00061\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @param\ String\ hora\ em\ Brasil}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00062}00062\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00064}00064\ \ \ \ \ \ \ \ \ hora\_utc\ =\ datetime.strptime(time\_utc,\ \textcolor{stringliteral}{"{}\%H\%M\%S"{}}).\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a597b4b08610c5e59f629950d5755eb7f}{time}}()}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00065}00065\ \ \ \ \ \ \ \ \ data\_hora\_utc\ =\ datetime.combine(datetime.now().date(),\ hora\_utc)}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00067}00067\ \ \ \ \ \ \ \ \ data\_hora\_utc\ =\ pytz.UTC.localize(data\_hora\_utc)}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00068}00068\ \ \ \ \ \ \ \ \ data\_hora\_brasil\ =\ data\_hora\_utc.astimezone(self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a6cc01df726e46943ca2d5a360973ff00}{zona\_brasileira}})}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ data\_hora\_brasil}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00072}\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a89e1f7db4817d1883292e9bb45ac54cf}{00072}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a89e1f7db4817d1883292e9bb45ac54cf}{get\_data\_from\_client}}(}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ self}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00074}00074\ \ \ \ \ )\ -\/>\ None:}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00076}00076\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @brief\ Verifica\ no\ buffer\ do\ socket\ o\ padrão\ de\ string\ setado.\ Preenchendo\ as\ variáveis\ de\ estado.}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00077}00077\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @param\ host:\ Endereço\ da\ Máquina\ Servidor}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00078}00078\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @param\ port:\ Porta\ de\ Entrada\ de\ Dados}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00079}00079\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ data,\ \_\ =\ self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_ade5c6e280d1c1341e95c66bcf39d43e8}{sock}}.recvfrom(1024)}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ numeros\ =\ data.decode().strip().split(\textcolor{stringliteral}{"{},"{}})}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ numeros:}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Obtendo\ informações\ de\ horário}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a597b4b08610c5e59f629950d5755eb7f}{time}}.append(}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}time"{}}:\ self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a44a11b7dd3564db77b8d4f7b436fd427}{conversion\_utc\_to\_brasil}}(numeros[0][:-\/3])\}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Obtendo\ informações\ de\ geolocalização}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a573fe9d6c606a3172f1b7c3002908642}{traject}}.append(}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}latitude"{}}:\ float(numeros[1]),\ \textcolor{stringliteral}{"{}longitude"{}}:\ float(numeros[2])\}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_ae540969a2f5edb154b85a6c875aaf977}{altitude}}.append(}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}altitude"{}}:\ float(numeros[3])\}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}\ TimeoutError:}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Esperando..."{}})}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00102}\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_adf9740b99bbb8aa35ad59a1dd7a5a3a5}{00102}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_adf9740b99bbb8aa35ad59a1dd7a5a3a5}{set\_background}}(}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ self}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00104}00104\ \ \ \ \ )\ -\/>\ None:}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00106}00106\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @brief\ Setará\ uma\ imagem\ como\ background\ da\ aplicação}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00107}00107\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00108}00108\ \ \ \ \ \ \ \ \ st.markdown(}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ f\textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00110}00110\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ <style>}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00111}00111\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ .stApp\ \{\{}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00112}00112\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ background-\/image:\ url("{}data:image/jpg;base64,\{self.img\_data\}"{});}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00113}00113\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ background-\/size:\ cover;}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00114}00114\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ background-\/position:\ center;}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00115}00115\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ background-\/repeat:\ no-\/repeat;}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00116}00116\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \}\}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00117}00117\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ </style>}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00118}00118\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ "{}"{}"{}},}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ unsafe\_allow\_html=\textcolor{keyword}{True}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00120}00120\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00122}\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a7947e5fd13a7a8e697a4ab95f2e37ce0}{00122}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a7947e5fd13a7a8e697a4ab95f2e37ce0}{save\_historic}}(self)\ -\/>\ None:}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00124}00124\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @brief\ Salvará\ dinamicamente\ os\ dados\ que\ já\ chegaram.}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00125}00125\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00126}00126\ \ \ \ \ \ \ \ \ \textcolor{keyword}{with}\ open(}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}historico.csv"{}},}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}w"{}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00129}00129\ \ \ \ \ \ \ \ \ )\ \textcolor{keyword}{as}\ file:}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ file.write(}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pd.DataFrame(}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a597b4b08610c5e59f629950d5755eb7f}{time}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ).join(}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pd.DataFrame(}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a573fe9d6c606a3172f1b7c3002908642}{traject}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ).join(}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pd.DataFrame(}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_ae540969a2f5edb154b85a6c875aaf977}{altitude}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ).to\_csv()}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00144}\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a65675579ce318950272e75d3aab4714f}{00144}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a65675579ce318950272e75d3aab4714f}{mainloop}}(self)\ -\/>\ None:}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00145}00145\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00146}00146\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @brief\ Responsável\ por\ executar\ as\ funcionalidades\ básicas.}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00147}00147\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @details}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00148}00148\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ Dado\ o\ funcionamento\ do\ streamlit,\ executa\ as\ funções\ como\ se\ estivessem\ em\ loop.}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00149}00149\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ Verifique\ como\ o\ streamlit\ executa\ código\ python\ para\ mais\ informações.}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00150}00150\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00152}00152\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a89e1f7db4817d1883292e9bb45ac54cf}{get\_data\_from\_client}}()}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00154}00154\ \ \ \ \ \ \ \ \ st.set\_page\_config(}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ layout=\textcolor{stringliteral}{"{}wide"{}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00156}00156\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00157}00157\ \ \ \ \ \ \ \ \ st.markdown(\textcolor{stringliteral}{'<h1\ style="{}color:\ white;"{}>Paz\ para\ Você,\ Proteção\ para\ Sua\ Carga.\ Tecnologia\ a\ Seu\ Favor.</h1>'},\ unsafe\_allow\_html=\textcolor{keyword}{True})}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00158}00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a573fe9d6c606a3172f1b7c3002908642}{traject}}:\ \textcolor{comment}{\#\ Apenas\ verificando\ se\ não\ está\ vazia}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ df\ =\ pd.DataFrame(}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a573fe9d6c606a3172f1b7c3002908642}{traject}}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ lat\_center\ =\ df[\textcolor{stringliteral}{"{}latitude"{}}].mean()}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ lon\_center\ =\ df[\textcolor{stringliteral}{"{}longitude"{}}].mean()}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ layer\ =\ pdk.Layer(}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ScatterplotLayer"{}},}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data=df,}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ get\_position=\textcolor{stringliteral}{'[longitude,\ latitude]'},}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ get\_color=\textcolor{stringliteral}{'[235,\ 140,\ 52,\ 255]'},}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ get\_radius=50,}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pickable=\textcolor{keyword}{True},}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ filled=\textcolor{keyword}{True}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ view\_state\ =\ pdk.ViewState(}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ latitude=lat\_center,}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ longitude=lon\_center,}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zoom=13,\ \ \textcolor{comment}{\#\ ajuste\ conforme\ necessário}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pitch=0}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ st.pydeck\_chart(}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pdk.Deck(}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ layers=[layer],\ initial\_view\_state=view\_state}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ st.button(\textcolor{stringliteral}{"{}Salvar\ Histórico"{}}):}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a7947e5fd13a7a8e697a4ab95f2e37ce0}{save\_historic}}()}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ st.success(\textcolor{stringliteral}{"{}Dados\ Salvos!"{}})}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00194}00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ st.write(\textcolor{stringliteral}{"{}Esperando\ dados\ chegarem..."{}})}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00196}00196\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00197}00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a57b9bd104f9987d21b0933c1a3425144}{img\_data}}:}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_adf9740b99bbb8aa35ad59a1dd7a5a3a5}{set\_background}}()}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00199}00199\ \ \ \ \ \ \ \ \ st\_autorefresh(interval=1000,\ limit=\textcolor{keywordtype}{None})\ \textcolor{comment}{\#\ Para\ recarregarmos\ a\ aplicação}}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00203}00203\ \textcolor{keywordflow}{if}\ \_\_name\_\_\ ==\ \textcolor{stringliteral}{'\_\_main\_\_'}:}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00205}\mbox{\hyperlink{namespaceGPSMonitor_a12e401e04bc867f718f5885a90d78b65}{00205}}\ \ \ \ \ gps\_monitor\ =\ \mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor}{GPSMonitor}}(img=\textcolor{stringliteral}{"{}src/antena.jpg"{}},\ host=\textcolor{stringliteral}{"{}127.0.0.1"{}},\ port=5000)\ \textcolor{keywordflow}{if}\ \textcolor{stringliteral}{"{}self"{}}\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ st.session\_state\ \textcolor{keywordflow}{else}\ st.session\_state[\textcolor{stringliteral}{"{}self"{}}]}
+\DoxyCodeLine{\Hypertarget{GPSMonitor_8py_source_l00206}00206\ \ \ \ \ gps\_monitor.mainloop()}
+
+\end{DoxyCode}

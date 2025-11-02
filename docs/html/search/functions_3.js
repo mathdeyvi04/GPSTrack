@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['format_5finteger_0',['format_integer',['../classGPSSim.html#ad9340c7234c96b2ef5197df8ff3b32f1',1,'GPSSim']]]
+  ['degrees_5fto_5fnmea_0',['degrees_to_NMEA',['../classGPSSim_1_1NMEAGenerator.html#a2f46c2c9a3df87950c9bde90c380ce9e',1,'GPSSim::NMEAGenerator']]]
 ];

@@ -11,33 +11,114 @@ Collaboration diagram for GPSSim\+::NMEAGenerator\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=213pt]{classGPSSim_1_1NMEAGenerator__coll__graph}
+\includegraphics[width=232pt]{classGPSSim_1_1NMEAGenerator__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static std\+::string \mbox{\hyperlink{classGPSSim_1_1NMEAGenerator_a8966ba1016d3c2545b1efec67b4a087d}{generate\+\_\+gga}} (int lat\+\_\+graus, int lon\+\_\+graus, int alt\+\_\+metros)
+static void \mbox{\hyperlink{classGPSSim_1_1NMEAGenerator_a2f46c2c9a3df87950c9bde90c380ce9e}{degrees\+\_\+to\+\_\+\+NMEA}} (double graus\+\_\+decimais, bool is\+\_\+lat, std\+::string \&ddmm, char \&hemisf)
+\begin{DoxyCompactList}\small\item\em Converte graus decimais para formato NMEA de localização, (ddmm.\+mmmm). \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classGPSSim_1_1NMEAGenerator_a953c188af53540e8dcbf0f69def7c80b}{format\+\_\+integer}} (int valor, int quant\+\_\+digitos)
+\begin{DoxyCompactList}\small\item\em Formatada um número inteiro com dois dígitos, preenchendo com zero à esquerda. \end{DoxyCompactList}\item 
+static std\+::tm \mbox{\hyperlink{classGPSSim_1_1NMEAGenerator_ac204e7c0273698ebf4d42e322044ebcf}{get\+\_\+utc\+\_\+time}} ()
+\begin{DoxyCompactList}\small\item\em Obtém o tempo UTC atual, horário em Londres. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classGPSSim_1_1NMEAGenerator_a2c35a106f35f71f5a2b3031cacedacd3}{build\+\_\+nmea\+\_\+string}} (const std\+::string \&corpo\+\_\+frase)
+\begin{DoxyCompactList}\small\item\em Finaliza uma sentença NMEA a partir do corpo da frase. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classGPSSim_1_1NMEAGenerator_a68dc5a582628e09587ed14679c7fa24a}{generate\+\_\+gga}} (double lat\+\_\+graus, double lon\+\_\+graus, double alt\+\_\+metros)
 \begin{DoxyCompactList}\small\item\em Gera uma frase GGA (Global Positioning System Fix Data) \end{DoxyCompactList}\item 
-static std\+::string \mbox{\hyperlink{classGPSSim_1_1NMEAGenerator_aeebf8c2237ee7692b1c35c22d8eb4de1}{generate\+\_\+rmc}} (int lat\+\_\+graus, int lon\+\_\+graus, int alt\+\_\+metros)
+static std\+::string \mbox{\hyperlink{classGPSSim_1_1NMEAGenerator_aeb26f1c4f7ddf3cfb215b2bd3b2a0415}{generate\+\_\+rmc}} (double lat\+\_\+graus, double lon\+\_\+graus, double alt\+\_\+metros)
 \begin{DoxyCompactList}\small\item\em Gera uma frase GGA (Recommended Minimum Navigation Information) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Classe responsável por agrupar as funções geradoras de sentenças NMEA. 
 
-Contém apenas os métodos estáticos que constroem a informação a ser posta na string NMEA. 
+Contém todas as funções que permitem a construção de sentenças NMEA a partir de informações precisas. 
 
-Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00212}{212}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00094}{94}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
 
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classGPSSim_1_1NMEAGenerator_a8966ba1016d3c2545b1efec67b4a087d}\label{classGPSSim_1_1NMEAGenerator_a8966ba1016d3c2545b1efec67b4a087d} 
+\Hypertarget{classGPSSim_1_1NMEAGenerator_a2c35a106f35f71f5a2b3031cacedacd3}\label{classGPSSim_1_1NMEAGenerator_a2c35a106f35f71f5a2b3031cacedacd3} 
+\index{GPSSim::NMEAGenerator@{GPSSim::NMEAGenerator}!build\_nmea\_string@{build\_nmea\_string}}
+\index{build\_nmea\_string@{build\_nmea\_string}!GPSSim::NMEAGenerator@{GPSSim::NMEAGenerator}}
+\doxysubsubsection{\texorpdfstring{build\_nmea\_string()}{build\_nmea\_string()}}
+{\footnotesize\ttfamily static std\+::string GPSSim\+::\+NMEAGenerator\+::build\+\_\+nmea\+\_\+string (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{corpo\+\_\+frase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Finaliza uma sentença NMEA a partir do corpo da frase. 
+
+Calcula o valor de paridade (checksum) do corpo da frase fornecida, em seguida adiciona os delimitadores e flags no formato NMEA (prefixo \textquotesingle{}\$\textquotesingle{}, sufixo \textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{}, valor de paridade em hexadecimal e "{}\textbackslash{}r\textbackslash{}n"{}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em corpo\+\_\+frase} & Corpo da frase NMEA sem os indicadores iniciais (\textquotesingle{}\$\textquotesingle{}) e finais (\textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{} e checksum). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string Sentença NMEA completa, pronta para transmissão. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00182}{182}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+
+\Hypertarget{classGPSSim_1_1NMEAGenerator_a2f46c2c9a3df87950c9bde90c380ce9e}\label{classGPSSim_1_1NMEAGenerator_a2f46c2c9a3df87950c9bde90c380ce9e} 
+\index{GPSSim::NMEAGenerator@{GPSSim::NMEAGenerator}!degrees\_to\_NMEA@{degrees\_to\_NMEA}}
+\index{degrees\_to\_NMEA@{degrees\_to\_NMEA}!GPSSim::NMEAGenerator@{GPSSim::NMEAGenerator}}
+\doxysubsubsection{\texorpdfstring{degrees\_to\_NMEA()}{degrees\_to\_NMEA()}}
+{\footnotesize\ttfamily static void GPSSim\+::\+NMEAGenerator\+::degrees\+\_\+to\+\_\+\+NMEA (\begin{DoxyParamCaption}\item[{double}]{graus\+\_\+decimais,  }\item[{bool}]{is\+\_\+lat,  }\item[{std\+::string \&}]{ddmm,  }\item[{char \&}]{hemisf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Converte graus decimais para formato NMEA de localização, (ddmm.\+mmmm). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em graus\+\_\+decimais} & Valor em graus decimais \\
+\hline
+ & {\em is\+\_\+lat} & Flag de eixo \\
+\hline
+\mbox{\texttt{ out}}  & {\em ddmm} & String com valor formatado em graus e minutos \\
+\hline
+\mbox{\texttt{ out}}  & {\em hemisf} & Caractere indicando Hemisfério \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00105}{105}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+
+\Hypertarget{classGPSSim_1_1NMEAGenerator_a953c188af53540e8dcbf0f69def7c80b}\label{classGPSSim_1_1NMEAGenerator_a953c188af53540e8dcbf0f69def7c80b} 
+\index{GPSSim::NMEAGenerator@{GPSSim::NMEAGenerator}!format\_integer@{format\_integer}}
+\index{format\_integer@{format\_integer}!GPSSim::NMEAGenerator@{GPSSim::NMEAGenerator}}
+\doxysubsubsection{\texorpdfstring{format\_integer()}{format\_integer()}}
+{\footnotesize\ttfamily static std\+::string GPSSim\+::\+NMEAGenerator\+::format\+\_\+integer (\begin{DoxyParamCaption}\item[{int}]{valor,  }\item[{int}]{quant\+\_\+digitos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Formatada um número inteiro com dois dígitos, preenchendo com zero à esquerda. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & Número a ser formatado \\
+\hline
+{\em quant\+\_\+digitos} & Quantidade de Dígitos presente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string formatada 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00144}{144}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+
+\Hypertarget{classGPSSim_1_1NMEAGenerator_a68dc5a582628e09587ed14679c7fa24a}\label{classGPSSim_1_1NMEAGenerator_a68dc5a582628e09587ed14679c7fa24a} 
 \index{GPSSim::NMEAGenerator@{GPSSim::NMEAGenerator}!generate\_gga@{generate\_gga}}
 \index{generate\_gga@{generate\_gga}!GPSSim::NMEAGenerator@{GPSSim::NMEAGenerator}}
 \doxysubsubsection{\texorpdfstring{generate\_gga()}{generate\_gga()}}
-{\footnotesize\ttfamily static std\+::string GPSSim\+::\+NMEAGenerator\+::generate\+\_\+gga (\begin{DoxyParamCaption}\item[{int}]{lat\+\_\+graus,  }\item[{int}]{lon\+\_\+graus,  }\item[{int}]{alt\+\_\+metros }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily static std\+::string GPSSim\+::\+NMEAGenerator\+::generate\+\_\+gga (\begin{DoxyParamCaption}\item[{double}]{lat\+\_\+graus,  }\item[{double}]{lon\+\_\+graus,  }\item[{double}]{alt\+\_\+metros }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -59,13 +140,13 @@ String correspondendo ao corpo de frase GGA
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00227}{227}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00220}{220}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
 
-\Hypertarget{classGPSSim_1_1NMEAGenerator_aeebf8c2237ee7692b1c35c22d8eb4de1}\label{classGPSSim_1_1NMEAGenerator_aeebf8c2237ee7692b1c35c22d8eb4de1} 
+\Hypertarget{classGPSSim_1_1NMEAGenerator_aeb26f1c4f7ddf3cfb215b2bd3b2a0415}\label{classGPSSim_1_1NMEAGenerator_aeb26f1c4f7ddf3cfb215b2bd3b2a0415} 
 \index{GPSSim::NMEAGenerator@{GPSSim::NMEAGenerator}!generate\_rmc@{generate\_rmc}}
 \index{generate\_rmc@{generate\_rmc}!GPSSim::NMEAGenerator@{GPSSim::NMEAGenerator}}
 \doxysubsubsection{\texorpdfstring{generate\_rmc()}{generate\_rmc()}}
-{\footnotesize\ttfamily static std\+::string GPSSim\+::\+NMEAGenerator\+::generate\+\_\+rmc (\begin{DoxyParamCaption}\item[{int}]{lat\+\_\+graus,  }\item[{int}]{lon\+\_\+graus,  }\item[{int}]{alt\+\_\+metros }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily static std\+::string GPSSim\+::\+NMEAGenerator\+::generate\+\_\+rmc (\begin{DoxyParamCaption}\item[{double}]{lat\+\_\+graus,  }\item[{double}]{lon\+\_\+graus,  }\item[{double}]{alt\+\_\+metros }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -87,7 +168,24 @@ String correspondendo ao corpo de frase GGA
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00275}{275}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00268}{268}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
+
+\Hypertarget{classGPSSim_1_1NMEAGenerator_ac204e7c0273698ebf4d42e322044ebcf}\label{classGPSSim_1_1NMEAGenerator_ac204e7c0273698ebf4d42e322044ebcf} 
+\index{GPSSim::NMEAGenerator@{GPSSim::NMEAGenerator}!get\_utc\_time@{get\_utc\_time}}
+\index{get\_utc\_time@{get\_utc\_time}!GPSSim::NMEAGenerator@{GPSSim::NMEAGenerator}}
+\doxysubsubsection{\texorpdfstring{get\_utc\_time()}{get\_utc\_time()}}
+{\footnotesize\ttfamily static std\+::tm GPSSim\+::\+NMEAGenerator\+::get\+\_\+utc\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtém o tempo UTC atual, horário em Londres. 
+
+\begin{DoxyReturn}{Returns}
+Struct std\+::tm contendo o tempo em UTC 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GPSSim_8hpp_source_l00161}{161}} of file \mbox{\hyperlink{GPSSim_8hpp_source}{GPSSim.\+hpp}}.
 
 
 

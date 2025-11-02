@@ -2,7 +2,7 @@
  * @file main.cpp
  * @brief Responsável por executar a aplicação
  */
-#include "GPSTrack.hpp"
+#include "GPSTracker.hpp"
 
 int main(
 	int argc,
@@ -25,7 +25,7 @@ int main(
 		return -1;
 	}
 
-	GPSTrack ss(
+	GPSTracker ss(
 		argv[1],
 		std::stoi(argv[2]),
 		"/dev/ttySTM2"

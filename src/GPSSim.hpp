@@ -74,148 +74,141 @@ private:
 
     // Informações de Localização 
     double lat, lon, alt;
+    bool to_move = false;
 
     /**
-     * @brief Converte graus decimais para formato NMEA de localização, (ddmm.mmmm).   
-     * @param graus_decimais Valor em graus decimais
-     * @param is_lat Flag de eixo
-     * @param[out] ddmm String com valor formatado em graus e minutos
-     * @param[out] hemisf Caractere indicando Hemisfério
-     */ 
-    static void 
-    degrees_to_NMEA(
-        double graus_decimais,
-        bool is_lat,
-        std::string& ddmm,
-        char& hemisf
-    ){
-
-        hemisf = (is_lat) ? (
-                            ( graus_decimais >= 0 ) ? 'N' : 'S'
-                            ) :
-                            (
-                            ( graus_decimais >= 0 ) ? 'E' : 'W'
-                            );
-
-        double valor_abs = std::fabs(graus_decimais);
-        int graus  = static_cast<int>(std::floor(valor_abs));
-        double min = (valor_abs - graus) * 60.0;
-
-        // Não utilizamos apenas a função de formatar_inteiro, pois
-        // utilizaremos o oss em seguida.
-        std::ostringstream oss;
-        if(
-            is_lat
-        ){
-
-            oss << std::setw(2)
-                << std::setfill('0')
-                << graus
-                << std::fixed
-                << std::setprecision(4)
-                << std::setw(7)
-                << std::setfill('0')
-                << min;
-        }
-        else{
-
-            oss << std::setw(3)
-                << std::setfill('0')
-                << graus
-                << std::fixed
-                << std::setprecision(4)
-                << std::setw(7)
-                << std::setfill('0')
-                << min;
-        }
-
-        ddmm = oss.str();
-    }
-
-    /**
-     * @brief Formatada um número inteiro com dois dígitos, preenchendo com zero à esquerda.
-     * @param valor Número a ser formatado
-     * @param quant_digitos Quantidade de Dígitos presente
-     * @return string formatada    
+     * @brief Responsável por prover alguma movimentação ao sensor simualado.    
      */
-    static std::string
-    format_integer(
-        int valor,
-        int quant_digitos
-    ){
-
-        std::ostringstream oss;
-        oss << std::setw(quant_digitos)
-            << std::setfill('0')
-            << valor;
-        return oss.str();
-    }
-
-    /**
-     * @brief Obtém o tempo UTC atual, horário em Londres. 
-     * @return Struct std::tm contendo o tempo em UTC  
-     */
-    static std::tm 
-    get_utc_time(){
-
-        using namespace std::chrono;
-        auto tempo_atual = system_clock::to_time_t(system_clock::now());
-        std::tm tempo_utc{}; 
-        gmtime_r(&tempo_atual, &tempo_utc); 
-        return tempo_utc;
-    }
-
-    /**
-     * @brief Finaliza uma sentença NMEA a partir do corpo da frase.
-     * @details 
-     * 
-     * Calcula o valor de paridade (checksum) do corpo da frase fornecida,
-     * em seguida adiciona os delimitadores e flags no formato NMEA 
-     * (prefixo '$', sufixo '*', valor de paridade em hexadecimal e "\r\n").
-     *
-     * @param corpo_frase Corpo da frase NMEA sem os indicadores iniciais ('$') e finais ('*' e checksum).
-     * @return std::string Sentença NMEA completa, pronta para transmissão.
-     */
-    static std::string 
-    build_nmea_string(
-        const std::string& corpo_frase
-    ){
-
-        uint8_t paridade = 0;
-        for(
-            const char& caract : corpo_frase
-        ){
-
-            paridade ^= (uint8_t)caract;
-        }
-
-        std::ostringstream oss;
-        oss << '$'
-            << corpo_frase
-            << '*'
-            << std::uppercase
-            << std::hex
-            << std::setw(2)
-            << std::setfill('0')
-            << (int)paridade 
-            << "\r\n";
-
-        return oss.str();
+    void
+    update(){
+        lat -= 0.0001;
+        lon -= 0.0001;
     }
 
     /**
      * @brief Classe responsável por agrupar as funções geradoras de sentenças NMEA
      * @details
      * 
-     * Contém apenas os métodos estáticos que constroem a informação a ser posta na string NMEA.
+     * Contém todas as funções que permitem a construção de sentenças NMEA a partir de informações precisas.
      */
     class NMEAGenerator {
     public:
 
         /**
+         * @brief Converte graus decimais para formato NMEA de localização, (ddmm.mmmm).
+         * @param graus_decimais Valor em graus decimais
+         * @param is_lat Flag de eixo
+         * @param[out] ddmm String com valor formatado em graus e minutos
+         * @param[out] hemisf Caractere indicando Hemisfério
+         */
+        static void
+        degrees_to_NMEA(
+            double graus_decimais,
+            bool is_lat,
+            std::string& ddmm,
+            char& hemisf
+        ){
+            hemisf = (is_lat) ? (
+                                ( graus_decimais >= 0 ) ? 'N' : 'S'
+                                ) :
+                                (
+                                ( graus_decimais >= 0 ) ? 'E' : 'W'
+                                );
+
+            double valor_abs = std::fabs(graus_decimais);
+            int graus  = static_cast<int>(std::floor(valor_abs));
+            double min = (valor_abs - graus) * 60.0;
+
+            // Não utilizamos apenas a função de formatar_inteiro, pois
+            // utilizaremos o oss em seguida.
+            std::ostringstream oss;
+            oss << std::setfill('0')
+                << std::setw(is_lat ? 2 : 3)
+                << graus
+                << std::fixed
+                << std::setprecision(4)
+                << std::setw(7)
+                << std::right
+                << min;
+
+            ddmm = oss.str();
+        }
+
+        /**
+         * @brief Formatada um número inteiro com dois dígitos, preenchendo com zero à esquerda.
+         * @param valor Número a ser formatado
+         * @param quant_digitos Quantidade de Dígitos presente
+         * @return string formatada
+         */
+        static std::string
+        format_integer(
+            int valor,
+            int quant_digitos
+        ){
+
+            std::ostringstream oss;
+            oss << std::setw(quant_digitos)
+                << std::setfill('0')
+                << valor;
+            return oss.str();
+        }
+
+        /**
+         * @brief Obtém o tempo UTC atual, horário em Londres.
+         * @return Struct std::tm contendo o tempo em UTC
+         */
+        static std::tm
+        get_utc_time(){
+
+            using namespace std::chrono;
+            auto tempo_atual = system_clock::to_time_t(system_clock::now());
+            std::tm tempo_utc{};
+            gmtime_r(&tempo_atual, &tempo_utc);
+            return tempo_utc;
+        }
+
+        /**
+         * @brief Finaliza uma sentença NMEA a partir do corpo da frase.
+         * @details
+         *
+         * Calcula o valor de paridade (checksum) do corpo da frase fornecida,
+         * em seguida adiciona os delimitadores e flags no formato NMEA
+         * (prefixo '$', sufixo '*', valor de paridade em hexadecimal e "\r\n").
+         *
+         * @param corpo_frase Corpo da frase NMEA sem os indicadores iniciais ('$') e finais ('*' e checksum).
+         * @return std::string Sentença NMEA completa, pronta para transmissão.
+         */
+        static std::string
+        build_nmea_string(
+            const std::string& corpo_frase
+        ){
+
+            uint8_t paridade = 0;
+            for(
+                const char& caract : corpo_frase
+            ){
+
+                paridade ^= (uint8_t)caract;
+            }
+
+            std::ostringstream oss;
+            oss << '$'
+                << corpo_frase
+                << '*'
+                << std::uppercase
+                << std::hex
+                << std::setw(2)
+                << std::setfill('0')
+                << (int)paridade
+                << "\r\n";
+
+            return oss.str();
+        }
+
+        /**
          * @brief Gera uma frase GGA (Global Positioning System Fix Data)
          * @details
-         * 
+         *
          * Apesar de usar apenas valores de lat, long e alt, zera os demais valores.
          * 
          * @param lat_graus Latitude  em graus decimais
@@ -225,9 +218,9 @@ private:
          */
         static std::string
         generate_gga(
-            int lat_graus,
-            int lon_graus, 
-            int alt_metros
+            double lat_graus,
+            double lon_graus,
+            double alt_metros
         ){ 
 
             auto tempo_utc = get_utc_time();
@@ -249,8 +242,8 @@ private:
             
             // Formato: hhmmss.ss,lat,N/S,lon,E/W,qualidade,satelites,HDOP,altitude,M,...
             std::ostringstream oss;
-            oss << "GPGGA," << format_integer(tempo_utc.tm_hour, 2) 
-                << format_integer(tempo_utc.tm_min, 2) 
+            oss << "GPGGA," << format_integer(tempo_utc.tm_hour, 2)
+                << format_integer(tempo_utc.tm_min, 2)
                 << format_integer(tempo_utc.tm_sec, 2) << ".00,"
                 << lat_nmea   << "," << hemisferio_lat << ","
                 << lon_nmea   << "," << hemisferio_lon << ",1,"
@@ -273,9 +266,9 @@ private:
          */
         static std::string
         generate_rmc(
-            int lat_graus,
-            int lon_graus,
-            int alt_metros
+            double lat_graus,
+            double lon_graus,
+            double alt_metros
         ){
 
             auto tempo_utc = get_utc_time();
@@ -315,30 +308,19 @@ private:
 
     /**
      * @brief Loop principal responsável pela geração e transmissão de dados simulados.
-     *
      * @details
      * Esta função executa um laço contínuo enquanto o simulador estiver ativo (`_is_exec`).
-     * Em cada iteração:
-     *  - Inicializa ou atualiza a posição simulada (latitude e longitude).
-     *  - Gera uma sentença NMEA do tipo GGA a partir da posição atual.
-     *  - Transmite a sentença gerada através do descritor de escrita `_fd_pai`.
-     *  - Aguarda o período de atualização definido em `_periodo_atualizacao`.
-     *  - Atualiza a posição simulada chamando `_update_position()`.
-     *
      * O loop termina automaticamente quando `_is_exec` é definido como falso.
-     *
-     * @note 
-     * Esta função é bloqueante e deve ser executada em uma thread dedicada
-     * para não interromper o fluxo principal do programa.
+     * Também está presente a lógica de atualização de posição.
      */
     void 
     loop(){
         
         while (is_exec){
-            
 
+            if(to_move){ update(); }
             std::string saida = NMEAGenerator::generate_gga(lat, lon, alt);
-            std::cout << "\033[7mGPS6MV2 Simulado Emitindo:\033[0m \n" << saida << std::endl;
+            std::cout << "\033[7mGPS6MV2 Simulado Emitindo:\033[0m " << saida << std::endl;
             
             // Imprimimos no terminal serial
             (void)!::write(fd_pai, saida.data(), saida.size());
@@ -359,14 +341,17 @@ public:
      * @param latitude_inicial_graus Latitude inicial em graus decimais
      * @param longitude_inicial_graus Longitude inicial em graus decimais
      * @param altitude_metros Altitude inicial em metros, setada para 10.
+     * @param to_move Flag para provocarmos algum movimento
      */
     GPSSim(
         double latitude_inicial_graus,
         double longitude_inicial_graus,
-        double altitude_metros
+        double altitude_metros,
+        bool to_move
     ) : lat(latitude_inicial_graus), 
         lon(longitude_inicial_graus), 
-        alt(altitude_metros)
+        alt(altitude_metros),
+        to_move(to_move)
     {
         
         // Cria o par de pseudo-terminais

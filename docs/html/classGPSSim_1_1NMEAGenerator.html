@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GPSTrack: GPSSim::NMEAGenerator Class Reference</title>
+<title>GPSTracker: GPSSim::NMEAGenerator Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">GPSTrack
+   <div id="projectname">GPSTracker<span id="projectnumber">&#160;Paz para Você, Proteção para Sua Carga. Tecnologia a Seu Favor.</span>
    </div>
    <div id="projectbrief">Paz para Você, Proteção para Sua Carga. Tecnologia a Seu Favor.</div>
   </td>
@@ -88,27 +88,186 @@ Collaboration diagram for GPSSim::NMEAGenerator:</div>
 <div class="dyncontent">
 <div class="center"><img src="classGPSSim_1_1NMEAGenerator__coll__graph.png" border="0" usemap="#aGPSSim_1_1NMEAGenerator_coll__map" alt="Collaboration graph"/></div>
 <map name="aGPSSim_1_1NMEAGenerator_coll__map" id="aGPSSim_1_1NMEAGenerator_coll__map">
-<area shape="rect" title="Classe responsável por agrupar as funções geradoras de sentenças NMEA." alt="" coords="5,5,183,179"/>
+<area shape="rect" title="Classe responsável por agrupar as funções geradoras de sentenças NMEA." alt="" coords="5,5,208,391"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a8966ba1016d3c2545b1efec67b4a087d" id="r_a8966ba1016d3c2545b1efec67b4a087d"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGPSSim_1_1NMEAGenerator.html#a8966ba1016d3c2545b1efec67b4a087d">generate_gga</a> (int lat_graus, int lon_graus, int alt_metros)</td></tr>
-<tr class="memdesc:a8966ba1016d3c2545b1efec67b4a087d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gera uma frase GGA (Global Positioning System Fix Data)  <br /></td></tr>
-<tr class="separator:a8966ba1016d3c2545b1efec67b4a087d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeebf8c2237ee7692b1c35c22d8eb4de1" id="r_aeebf8c2237ee7692b1c35c22d8eb4de1"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGPSSim_1_1NMEAGenerator.html#aeebf8c2237ee7692b1c35c22d8eb4de1">generate_rmc</a> (int lat_graus, int lon_graus, int alt_metros)</td></tr>
-<tr class="memdesc:aeebf8c2237ee7692b1c35c22d8eb4de1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gera uma frase GGA (Recommended Minimum Navigation Information)  <br /></td></tr>
-<tr class="separator:aeebf8c2237ee7692b1c35c22d8eb4de1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f46c2c9a3df87950c9bde90c380ce9e" id="r_a2f46c2c9a3df87950c9bde90c380ce9e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGPSSim_1_1NMEAGenerator.html#a2f46c2c9a3df87950c9bde90c380ce9e">degrees_to_NMEA</a> (double graus_decimais, bool is_lat, std::string &amp;ddmm, char &amp;hemisf)</td></tr>
+<tr class="memdesc:a2f46c2c9a3df87950c9bde90c380ce9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converte graus decimais para formato NMEA de localização, (ddmm.mmmm).  <br /></td></tr>
+<tr class="separator:a2f46c2c9a3df87950c9bde90c380ce9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a953c188af53540e8dcbf0f69def7c80b" id="r_a953c188af53540e8dcbf0f69def7c80b"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGPSSim_1_1NMEAGenerator.html#a953c188af53540e8dcbf0f69def7c80b">format_integer</a> (int valor, int quant_digitos)</td></tr>
+<tr class="memdesc:a953c188af53540e8dcbf0f69def7c80b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formatada um número inteiro com dois dígitos, preenchendo com zero à esquerda.  <br /></td></tr>
+<tr class="separator:a953c188af53540e8dcbf0f69def7c80b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac204e7c0273698ebf4d42e322044ebcf" id="r_ac204e7c0273698ebf4d42e322044ebcf"><td class="memItemLeft" align="right" valign="top">static std::tm&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGPSSim_1_1NMEAGenerator.html#ac204e7c0273698ebf4d42e322044ebcf">get_utc_time</a> ()</td></tr>
+<tr class="memdesc:ac204e7c0273698ebf4d42e322044ebcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtém o tempo UTC atual, horário em Londres.  <br /></td></tr>
+<tr class="separator:ac204e7c0273698ebf4d42e322044ebcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c35a106f35f71f5a2b3031cacedacd3" id="r_a2c35a106f35f71f5a2b3031cacedacd3"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGPSSim_1_1NMEAGenerator.html#a2c35a106f35f71f5a2b3031cacedacd3">build_nmea_string</a> (const std::string &amp;corpo_frase)</td></tr>
+<tr class="memdesc:a2c35a106f35f71f5a2b3031cacedacd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finaliza uma sentença NMEA a partir do corpo da frase.  <br /></td></tr>
+<tr class="separator:a2c35a106f35f71f5a2b3031cacedacd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68dc5a582628e09587ed14679c7fa24a" id="r_a68dc5a582628e09587ed14679c7fa24a"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGPSSim_1_1NMEAGenerator.html#a68dc5a582628e09587ed14679c7fa24a">generate_gga</a> (double lat_graus, double lon_graus, double alt_metros)</td></tr>
+<tr class="memdesc:a68dc5a582628e09587ed14679c7fa24a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gera uma frase GGA (Global Positioning System Fix Data)  <br /></td></tr>
+<tr class="separator:a68dc5a582628e09587ed14679c7fa24a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb26f1c4f7ddf3cfb215b2bd3b2a0415" id="r_aeb26f1c4f7ddf3cfb215b2bd3b2a0415"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGPSSim_1_1NMEAGenerator.html#aeb26f1c4f7ddf3cfb215b2bd3b2a0415">generate_rmc</a> (double lat_graus, double lon_graus, double alt_metros)</td></tr>
+<tr class="memdesc:aeb26f1c4f7ddf3cfb215b2bd3b2a0415"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gera uma frase GGA (Recommended Minimum Navigation Information)  <br /></td></tr>
+<tr class="separator:aeb26f1c4f7ddf3cfb215b2bd3b2a0415"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Classe responsável por agrupar as funções geradoras de sentenças NMEA. </p>
-<p>Contém apenas os métodos estáticos que constroem a informação a ser posta na string NMEA. </p>
+<p>Contém todas as funções que permitem a construção de sentenças NMEA a partir de informações precisas. </p>
 
-<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00212">212</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00094">94</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8966ba1016d3c2545b1efec67b4a087d" name="a8966ba1016d3c2545b1efec67b4a087d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8966ba1016d3c2545b1efec67b4a087d">&#9670;&#160;</a></span>generate_gga()</h2>
+<a id="a2c35a106f35f71f5a2b3031cacedacd3" name="a2c35a106f35f71f5a2b3031cacedacd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c35a106f35f71f5a2b3031cacedacd3">&#9670;&#160;</a></span>build_nmea_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string GPSSim::NMEAGenerator::build_nmea_string </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>corpo_frase</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Finaliza uma sentença NMEA a partir do corpo da frase. </p>
+<p>Calcula o valor de paridade (checksum) do corpo da frase fornecida, em seguida adiciona os delimitadores e flags no formato NMEA (prefixo '$', sufixo '*', valor de paridade em hexadecimal e "\r\n").</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">corpo_frase</td><td>Corpo da frase NMEA sem os indicadores iniciais ('$') e finais ('*' e checksum). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string Sentença NMEA completa, pronta para transmissão. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00182">182</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a2f46c2c9a3df87950c9bde90c380ce9e" name="a2f46c2c9a3df87950c9bde90c380ce9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f46c2c9a3df87950c9bde90c380ce9e">&#9670;&#160;</a></span>degrees_to_NMEA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GPSSim::NMEAGenerator::degrees_to_NMEA </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>graus_decimais</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>ddmm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char &amp;&#160;</td>
+          <td class="paramname"><em>hemisf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converte graus decimais para formato NMEA de localização, (ddmm.mmmm). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">graus_decimais</td><td>Valor em graus decimais </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">is_lat</td><td>Flag de eixo </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">ddmm</td><td>String com valor formatado em graus e minutos </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">hemisf</td><td>Caractere indicando Hemisfério </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00105">105</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a953c188af53540e8dcbf0f69def7c80b" name="a953c188af53540e8dcbf0f69def7c80b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a953c188af53540e8dcbf0f69def7c80b">&#9670;&#160;</a></span>format_integer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string GPSSim::NMEAGenerator::format_integer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>valor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>quant_digitos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Formatada um número inteiro com dois dígitos, preenchendo com zero à esquerda. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">valor</td><td>Número a ser formatado </td></tr>
+    <tr><td class="paramname">quant_digitos</td><td>Quantidade de Dígitos presente </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>string formatada </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00144">144</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a68dc5a582628e09587ed14679c7fa24a" name="a68dc5a582628e09587ed14679c7fa24a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68dc5a582628e09587ed14679c7fa24a">&#9670;&#160;</a></span>generate_gga()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -119,19 +278,19 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">static std::string GPSSim::NMEAGenerator::generate_gga </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>lat_graus</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>lon_graus</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>alt_metros</em>&#160;</td>
         </tr>
         <tr>
@@ -159,12 +318,12 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String correspondendo ao corpo de frase GGA </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00227">227</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00220">220</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
 
 </div>
 </div>
-<a id="aeebf8c2237ee7692b1c35c22d8eb4de1" name="aeebf8c2237ee7692b1c35c22d8eb4de1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeebf8c2237ee7692b1c35c22d8eb4de1">&#9670;&#160;</a></span>generate_rmc()</h2>
+<a id="aeb26f1c4f7ddf3cfb215b2bd3b2a0415" name="aeb26f1c4f7ddf3cfb215b2bd3b2a0415"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb26f1c4f7ddf3cfb215b2bd3b2a0415">&#9670;&#160;</a></span>generate_rmc()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -175,19 +334,19 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">static std::string GPSSim::NMEAGenerator::generate_rmc </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>lat_graus</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>lon_graus</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>alt_metros</em>&#160;</td>
         </tr>
         <tr>
@@ -215,7 +374,37 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String correspondendo ao corpo de frase GGA </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00275">275</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00268">268</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ac204e7c0273698ebf4d42e322044ebcf" name="ac204e7c0273698ebf4d42e322044ebcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac204e7c0273698ebf4d42e322044ebcf">&#9670;&#160;</a></span>get_utc_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::tm GPSSim::NMEAGenerator::get_utc_time </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtém o tempo UTC atual, horário em Londres. </p>
+<dl class="section return"><dt>Returns</dt><dd>Struct std::tm contendo o tempo em UTC </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="GPSSim_8hpp_source.html#l00161">161</a> of file <a class="el" href="GPSSim_8hpp_source.html">GPSSim.hpp</a>.</p>
 
 </div>
 </div>

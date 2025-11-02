@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GPSTrack: src/main.cpp Source File</title>
+<title>GPSTracker: src/main.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">GPSTrack
+   <div id="projectname">GPSTracker<span id="projectnumber">&#160;Paz para Você, Proteção para Sua Carga. Tecnologia a Seu Favor.</span>
    </div>
    <div id="projectbrief">Paz para Você, Proteção para Sua Carga. Tecnologia a Seu Favor.</div>
   </td>
@@ -83,10 +83,10 @@ $(document).ready(function() { init_codefold(0); });
 </div><!--header-->
 <div class="contents">
 <a href="main_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="GPSTrack_8hpp.html">GPSTrack.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="GPSTracker_8hpp.html">GPSTracker.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">    7</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>(</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">    7</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordtype">int</span> argc,</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordtype">char</span>* argv[]</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>){</div>
@@ -107,26 +107,26 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_class" href="classGPSTrack.html">GPSTrack</a> ss(</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_class" href="classGPSTracker.html">GPSTracker</a> ss(</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        argv[1],</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        std::stoi(argv[2]),</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="stringliteral">&quot;/dev/ttySTM2&quot;</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    );</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    ss.<a class="code hl_function" href="classGPSTrack.html#a30cc30a3290df68a9dcc3906811319db">init</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    ss.<a class="code hl_function" href="classGPSTracker.html#a5c09542835f5a0594bbd4a011182687e">init</a>();</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    std::this_thread::sleep_for(std::chrono::seconds(60));</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    ss.<a class="code hl_function" href="classGPSTrack.html#a3ddcdc3c1599f4efa7f3938d9a5f2eee">stop</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    ss.<a class="code hl_function" href="classGPSTracker.html#a33bb9ca05150e7d4984c96dfee633a17">stop</a>();</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
 </div>
-<div class="ttc" id="aGPSTrack_8hpp_html"><div class="ttname"><a href="GPSTrack_8hpp.html">GPSTrack.hpp</a></div><div class="ttdoc">Implementação da solução embarcada.</div></div>
-<div class="ttc" id="aclassGPSTrack_html"><div class="ttname"><a href="classGPSTrack.html">GPSTrack</a></div><div class="ttdoc">Classe responsável por obter o tracking da carga.</div><div class="ttdef"><b>Definition</b> <a href="GPSTrack_8hpp_source.html#l00054">GPSTrack.hpp:54</a></div></div>
-<div class="ttc" id="aclassGPSTrack_html_a30cc30a3290df68a9dcc3906811319db"><div class="ttname"><a href="classGPSTrack.html#a30cc30a3290df68a9dcc3906811319db">GPSTrack::init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">Inicializa a thread trabalhadora.</div><div class="ttdef"><b>Definition</b> <a href="GPSTrack_8hpp_source.html#l00549">GPSTrack.hpp:549</a></div></div>
-<div class="ttc" id="aclassGPSTrack_html_a3ddcdc3c1599f4efa7f3938d9a5f2eee"><div class="ttname"><a href="classGPSTrack.html#a3ddcdc3c1599f4efa7f3938d9a5f2eee">GPSTrack::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Finaliza a thread de trabalho de forma segura.</div><div class="ttdef"><b>Definition</b> <a href="GPSTrack_8hpp_source.html#l00568">GPSTrack.hpp:568</a></div></div>
-<div class="ttc" id="adebug_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="debug_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> <a href="debug_8cpp_source.html#l00015">debug.cpp:15</a></div></div>
+<div class="ttc" id="aGPSTracker_8hpp_html"><div class="ttname"><a href="GPSTracker_8hpp.html">GPSTracker.hpp</a></div><div class="ttdoc">Implementação da solução embarcada.</div></div>
+<div class="ttc" id="aclassGPSTracker_html"><div class="ttname"><a href="classGPSTracker.html">GPSTracker</a></div><div class="ttdoc">Classe responsável por obter o tracking da carga.</div><div class="ttdef"><b>Definition</b> <a href="GPSTracker_8hpp_source.html#l00054">GPSTracker.hpp:54</a></div></div>
+<div class="ttc" id="aclassGPSTracker_html_a33bb9ca05150e7d4984c96dfee633a17"><div class="ttname"><a href="classGPSTracker.html#a33bb9ca05150e7d4984c96dfee633a17">GPSTracker::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Finaliza a thread de trabalho de forma segura.</div><div class="ttdef"><b>Definition</b> <a href="GPSTracker_8hpp_source.html#l00566">GPSTracker.hpp:566</a></div></div>
+<div class="ttc" id="aclassGPSTracker_html_a5c09542835f5a0594bbd4a011182687e"><div class="ttname"><a href="classGPSTracker.html#a5c09542835f5a0594bbd4a011182687e">GPSTracker::init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">Inicializa a thread trabalhadora.</div><div class="ttdef"><b>Definition</b> <a href="GPSTracker_8hpp_source.html#l00547">GPSTracker.hpp:547</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00007">main.cpp:7</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

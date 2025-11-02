@@ -2,9 +2,11 @@
 
 - [Objetivo](#objetivo)
 - [Caso Deseje **Contribuir**](#caso-deseje-contribuir)
+  - [Acesso à Placa](#acesso-à-placa)
 - [Caso Deseje **Utilizar**](#caso-deseje-utilizar)
 - [Descrições Sucintas de Código](#descrições-sucintas-de-código)
-- [Confirmação de Leitura de Dados](#confirmação-de-leitura-de-dados)
+- [Confirmação de Envio de Dados](#confirmação-de-envio-de-dados)
+- [Apresentação na Interface](#apresentação-na-interface)
 
 # Objetivo
 
@@ -15,7 +17,7 @@ o sensor **GY-GPS6MV2**, a fim de monitorar de forma remota e contínua qualquer
 
 Supondo que você deseje ser um contribuinte, atente-se às necessidades da aplicação:
 
-### Conhecimentos a cerca do Sensor GPS **GY-GPS6MV2**:
+### Conhecimentos acerca do Sensor GPS **GY-GPS6MV2**:
 
 Sugiro a observação do vídeo [linkado](https://youtu.be/lZumBl7zhoM) e busca inteligente no chatgpt.
  
@@ -77,7 +79,7 @@ sudo apt install doxygen graphviz
 sudo apt install texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-latex-recommended
 ```
 
-O segundo download faz referência ao construção do arquivo `.pdf`.
+O segundo download faz referência à construção do arquivo `.pdf`.
 
 ### Acesso à Placa
 
@@ -96,50 +98,57 @@ Será solicitado a senha e, posteriormente, o acesso será permitido.
 Para enviar arquivos para a placa, volte novamente ao PowerShell e:
 
 ```
-scp -O GPSTrack root@192.168.42.2:/
+scp -O GPSTracker root@192.168.42.2:/
 ```
 
 Assim, o arquivo estará no mesmo local que as pastas root do sistema linux. Além disso, pode ser necessário dar permissão de execução ao binário, para tanto:
 
 ```
-chmod +x GPSTrack
+chmod +x GPSTracker
 ```
 
 # Caso Deseje Utilizar
 
 A seguir, regras de compilação e execução.
 
-### `GPSTrack`
+### `GPSTracker`
 
-O arquivo binário `GPSTrack` presente neste diretório já representa o executável a ser inserido na placa para completa operacionalidade.
+O arquivo binário `GPSTracker` presente neste diretório já representa o executável a ser inserido na placa para completa operacionalidade.
 
 Com a adição da feature de envio via rede, torna-se necessário a entrada de novos argumentos, o _ip e a porta de destino_.
 
-Sendo assim, a execução fica, por exemplo: `./GPSTrack 127.0.0.1 1234`.
+Sendo assim, a execução fica, por exemplo: `./GPSTracker 127.0.0.1 1234`.
 
-### `make`
+### `make build`
 
 Compilará a aplicação utilizando as flags necessárias e o compilador específico, gerando 
 um executável de pronto uso no módulo.
 
-### `make debug` 
+### `make debug IP=... PORTA=...` 
 
-Compilará a aplicação para o Linux, executará e apagará o executável gerado.
-Neste caso, há um simulador para o módulo GPS que estaremos usando a fim de que 
-possamos realmente realizar testes.
-
-Esse modo também é interessante para aqueles que não possuem o sensor, nem a placa. Neste caso, 
-a aplicação via as informações para o localhost e para a porta 9000.
+Compilará, executará e, posteriormente, apagará uma simulação para debug, na qual um módulo GPS
+virtual envia dados seriais para nosso interpretador, permitindo que possamos analisar insights e simular
+a realidade.
 
 ### `make docs`
 
 Para contribuintes, gerará um PDF contendo a documentação da aplicação geral.
 
+### `make showup`
+
+Apresentará uma interface inteligente referente aos dados do sensor, mostrando:
+
+- Dados em tempo real
+- Histórico de Dados 
+- Salvamento de Histórico de Dados
+
+_Necessário ambiente virtual e bibliotecas streamlit, streamlit_autorefresh_.
+
 # Descrições Sucintas de Código
 
-### GPSTrack
+### GPSTracker
 
-Classe responsável por:
+Classe interpretadora responsável por:
 
 - Ler dados do sensor GPS6MV2
 - Interpretar os dados lidos
@@ -171,7 +180,7 @@ Para informações mais precisas e profundas, sugiro verificar o arquivo
 
 # Confirmação de Leitura de Dados
 
-Como nem todas as placas são iguais, não como definir com propriedade o procedimento para visualização dos dados. 
+Como nem todas as placas são iguais, não há como definir com propriedade o procedimento para visualização dos dados. 
 
 Em nosso caso, o sensor conectou-se pelo terminal serial `/dev/ttySTM2`.
 
@@ -196,7 +205,7 @@ Dependendo de quando o comando foi executado, diferentes formas de texto surgir�
 Considerando que um determinado tempo foi esperado, execute:
 
 ```
-./GPSTrack <ip_de_destino> <porta_de_destino>
+./GPSTracker <ip_de_destino> <porta_de_destino>
 ```
 
 Então as seguintes mensagens devem surgir à tela:
@@ -206,9 +215,22 @@ Então as seguintes mensagens devem surgir à tela:
 Observe como nossa aplicação apenas interpreta o padrão _GGA_ lançado pelo sensor, retornando
 as informações de _Hora_em_UTC_, _Latitude_, _Longitude_, _Altitude_.
 
-### Visualização na Máquina Conectada
+### Confirmação de Envio de Dados
 
 Utilizando NetCat para filtrar as entradas em uma porta específica da máquina, é possível ver o fluxo de dados entrando no servidor.
 
 ![](https://github.com/user-attachments/assets/ae476e05-20e1-4470-b4e1-daf2db0c7e3e)
+
+### Apresentação na Interface
+
+Conforme o monitor recebe dados, é possível visualizá-los na interface.
+É necessário ter as bibliotecas instaladas para visualização, `pip install streamlit streamlit_autorefresh`.
+
+![](https://github.com/user-attachments/assets/0fff52cd-365c-4918-9eee-584d144b2dac)
+
+Observe que assim temos acesso aos dados em tempo real e ao histórico de dados. Também 
+é possível salvá-los caso desejado.
+
+
+
 

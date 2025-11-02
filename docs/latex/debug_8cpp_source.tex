@@ -4,37 +4,58 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00001}00001\ }
 \DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GPSTrack_8hpp}{GPSTrack.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GPSTracker_8hpp}{GPSTracker.hpp}}"{}}}
 \DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GPSSim_8hpp}{GPSSim.hpp}}"{}}}
 \DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00012}00012\ }
 \DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00013}00013\ \textcolor{comment}{//\ IME\ -\/\ -\/22.9559,\ -\/43.1659}}
 \DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00014}00014\ }
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00015}\mbox{\hyperlink{debug_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00015}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{debug_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\{}
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00016}00016\ }
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{comment}{//\ Inicializamos\ o\ módulo\ gps\ simulado}}
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{classGPSSim}{GPSSim}}\ gps\_module(}
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ -\/22.9559,}
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ -\/43.1659,}
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ 760.0}
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00022}00022\ \ \ \ \ );}
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00023}00023\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Executando\ simulator\_gps\_module\ em:\ "{}}}
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ gps\_module.\mbox{\hyperlink{classGPSSim_a9dd6c5b066c8dcb0ebbdfb7c526ff856}{get\_path\_pseudo\_term}}()}
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00026}00026\ \ \ \ \ gps\_module.\mbox{\hyperlink{classGPSSim_a035f71a80ed040b260f68276d531de79}{init}}();}
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00027}00027\ }
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00028}00028\ \ \ \ \ std::this\_thread::sleep\_for(std::chrono::seconds(1));}
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{classGPSTrack}{GPSTrack}}\ sensor(}
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}127.0.0.1"{}},}
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ 9000,}
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ gps\_module.\mbox{\hyperlink{classGPSSim_a9dd6c5b066c8dcb0ebbdfb7c526ff856}{get\_path\_pseudo\_term}}()}
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00034}00034\ \ \ \ \ );}
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00035}00035\ \ \ \ \ sensor.\mbox{\hyperlink{classGPSTrack_a30cc30a3290df68a9dcc3906811319db}{init}}();}
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00036}00036\ }
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00037}00037\ \ \ \ \ std::this\_thread::sleep\_for(std::chrono::seconds(10));}
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00038}00038\ \ \ \ \ sensor.\mbox{\hyperlink{classGPSTrack_a3ddcdc3c1599f4efa7f3938d9a5f2eee}{stop}}();}
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00039}00039\ \ \ \ \ gps\_module.\mbox{\hyperlink{classGPSSim_a114167ff50a457bd15b93f84242a6edc}{stop}}();}
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00015}\mbox{\hyperlink{debug_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00015}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{debug_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}}(}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordtype}{int}\ argc,}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordtype}{char}*\ argv[]}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00018}00018\ )\{}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{if}(argc\ ==\ 1)\{}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Falta\ informar\ o\ IP\ e\ a\ PORTA\ de\ destino."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(argc\ ==\ 2)\{}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Falta\ informar\ a\ PORTA\ de\ destino."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(argc\ >\ 3)\{}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Há\ argumentos\ inválidos,\ informe\ apenas\ IP\ e\ PORTA\ de\ destino."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{comment}{//\ Inicializamos\ o\ módulo\ gps\ simulado}}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{classGPSSim}{GPSSim}}\ gps\_module(}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ -\/22.9559,}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ -\/43.1659,}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ 32.0,}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{true}}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00041}00041\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00042}00042\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Executando\ simulator\_gps\_module\ em:\ "{}}}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ gps\_module.\mbox{\hyperlink{classGPSSim_a9dd6c5b066c8dcb0ebbdfb7c526ff856}{get\_path\_pseudo\_term}}()}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00045}00045\ \ \ \ \ gps\_module.\mbox{\hyperlink{classGPSSim_a035f71a80ed040b260f68276d531de79}{init}}();}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{comment}{//\ Apenas\ espera\ para\ não\ encher\ o\ buffer}}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00048}00048\ \ \ \ \ std::this\_thread::sleep\_for(std::chrono::seconds(1));}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{classGPSTracker}{GPSTracker}}\ sensor(}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ argv[1],}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ std::stoi(argv[2]),}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ gps\_module.\mbox{\hyperlink{classGPSSim_a9dd6c5b066c8dcb0ebbdfb7c526ff856}{get\_path\_pseudo\_term}}()}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00054}00054\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00055}00055\ \ \ \ \ sensor.\mbox{\hyperlink{classGPSTracker_a5c09542835f5a0594bbd4a011182687e}{init}}();}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00057}00057\ \ \ \ \ std::this\_thread::sleep\_for(std::chrono::seconds(60));}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00059}00059\ \ \ \ \ sensor.\mbox{\hyperlink{classGPSTracker_a33bb9ca05150e7d4984c96dfee633a17}{stop}}();}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00060}00060\ \ \ \ \ gps\_module.\mbox{\hyperlink{classGPSSim_a114167ff50a457bd15b93f84242a6edc}{stop}}();}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{debug_8cpp_source_l00062}00062\ \}}
 
 \end{DoxyCode}

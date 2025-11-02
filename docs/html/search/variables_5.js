@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['last_5fdata_5fgiven_0',['last_data_given',['../classGPSTrack.html#a395ef8fd118c1f23bc4f414ad74d218d',1,'GPSTrack']]],
-  ['lat_1',['lat',['../classGPSSim.html#a052ca80ee24743edd53c0d08c47d9a19',1,'GPSSim']]],
-  ['lon_2',['lon',['../classGPSSim.html#a9d7528c00cf9bc3335017739f1e9ff98',1,'GPSSim']]]
+  ['img_5fdata_0',['img_data',['../classGPSMonitor_1_1GPSMonitor.html#a57b9bd104f9987d21b0933c1a3425144',1,'GPSMonitor::GPSMonitor']]],
+  ['ip_5fdestino_1',['ip_destino',['../classGPSTracker.html#a25b2a9f97a641b0be027ade8e800970b',1,'GPSTracker']]],
+  ['is_5fexec_2',['is_exec',['../classGPSSim.html#a65eb27b7b4b7962e1163a02895fb591d',1,'GPSSim::is_exec'],['../classGPSTracker.html#af5f9911d5c6e3edbad562ff5df53f588',1,'GPSTracker::is_exec']]]
 ];

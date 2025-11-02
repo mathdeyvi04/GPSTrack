@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['pattern_0',['pattern',['../classGPSTrack_1_1GPSData.html#a490160fc5fc89ea9fc0ff9b2d15dce36',1,'GPSTrack::GPSData']]],
-  ['porta_5fdestino_1',['porta_destino',['../classGPSTrack.html#a2ba64ba9d9ab5bfba95781bb49436fdf',1,'GPSTrack']]],
-  ['porta_5fserial_2',['porta_serial',['../classGPSTrack.html#a0f5873c0551489c3d505f36539b92d55',1,'GPSTrack']]]
+  ['last_5fdata_5fgiven_0',['last_data_given',['../classGPSTracker.html#ab8f8f11d9183997b9d5b4d7d6d7079f9',1,'GPSTracker']]],
+  ['lat_1',['lat',['../classGPSSim.html#a052ca80ee24743edd53c0d08c47d9a19',1,'GPSSim']]],
+  ['lon_2',['lon',['../classGPSSim.html#a9d7528c00cf9bc3335017739f1e9ff98',1,'GPSSim']]]
 ];

@@ -1,0 +1,194 @@
+\doxysection{GPSTracker\+::GPSData Class Reference}
+\hypertarget{classGPSTracker_1_1GPSData}{}\label{classGPSTracker_1_1GPSData}\index{GPSTracker::GPSData@{GPSTracker::GPSData}}
+
+
+Classe responsável por representar os dados do GPS.  
+
+
+
+
+{\ttfamily \#include $<$GPSTracker.\+hpp$>$}
+
+
+
+Collaboration diagram for GPSTracker\+::GPSData\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{classGPSTracker_1_1GPSData__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGPSTracker_1_1GPSData_a0bed2a0a19a063a3a732a076ac4334ce}{GPSData}} ()
+\begin{DoxyCompactList}\small\item\em Construtor Default. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGPSTracker_1_1GPSData_af63d0b62c0b7cf92ceac852377b7adb1}{parsing}} (int code\+\_\+pattern, const std\+::vector$<$ std\+::string $>$ \&data\+\_\+splitted)
+\begin{DoxyCompactList}\small\item\em Setará os dados baseado no padrão de mensagem recebido. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classGPSTracker_1_1GPSData_a92644b598eac6fab69e4d0d2121ed63e}{to\+\_\+csv}} () const
+\begin{DoxyCompactList}\small\item\em Retorna os dados armazenados em formato CSV. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classGPSTracker_1_1GPSData_af8cddb502eacb92d3153a8bbe6a980a7}{converter\+\_\+lat\+\_\+lon}} (const std\+::string \&string\+\_\+numerica, const std\+::string \&string\+\_\+hemisf)
+\begin{DoxyCompactList}\small\item\em Função estática auxiliar para converter coordenadas NMEA (latitude/longitude) para graus decimais. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classGPSTracker_1_1GPSData_a9e0e780d6a86e3f7fe39dc7cddfe4a69}{pattern}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classGPSTracker_1_1GPSData_a57eec2c90ae3416222fc4de186dc3791}{data}}
+\begin{DoxyCompactList}\small\item\em Organizaremos os dados neste vetor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe responsável por representar os dados do GPS. 
+
+Utilizar struct mostrou-\/se básico demais para atenter as necessidades de representação dos dados do GPS. Com isso, a evolução para Class tornou-\/se inevitável.
+
+O sensor inicia a comunicação enviando mensagens do tipo \$\+GPTXT. Essas mensagens são mensagens de texto informativas, geralmente vazias. Esse é um comportamento normal nos primeiros segundos após energizar o módulo.
+
+Após adquirir sinais de satélites e iniciar a navegação, o módulo passa a enviar sentenças NMEA padrão, que trazem informações úteis\+:
+
+
+\begin{DoxyItemize}
+\item \$\+GPRMC (Recommended Minimum Navigation Information)\+: Fornece dados essenciais de navegação, como horário UTC, status, latitude, longitude, velocidade, curso e data.
+\item \$\+GPVTG (Course over Ground and Ground Speed)\+: Informa direção do movimento (rumo) e velocidade sobre o solo.
+\item \$\+GPGGA (Global Positioning System Fix Data)\+: Dados de fixação do GPS, incluindo número de satélites usados, qualidade do sinal, altitude e posição.
+\item \$\+GPGSA (GNSS DOP and Active Satellites)\+: Status dos satélites em uso e precisão (DOP -\/ Dilution of Precision).
+\item \$\+GPGSV (GNSS Satellites in View)\+: Informações sobre os satélites visíveis, como elevação, azimute e intensidade de sinal.
+\item \$\+GPGLL (Geographic Position -\/ Latitude/\+Longitude)\+: Posição geográfica em latitude e longitude, com horário associado.
+\end{DoxyItemize}
+
+Sendo assim, o sensor sai de um modo de inicialização para operacionalidade completa.
+
+Como nosso próposito é apenas localização, nos interessa apenas o padrão GGA, o qual oferece dados profundos de localização. 
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00099}{99}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classGPSTracker_1_1GPSData_a0bed2a0a19a063a3a732a076ac4334ce}\label{classGPSTracker_1_1GPSData_a0bed2a0a19a063a3a732a076ac4334ce} 
+\index{GPSTracker::GPSData@{GPSTracker::GPSData}!GPSData@{GPSData}}
+\index{GPSData@{GPSData}!GPSTracker::GPSData@{GPSTracker::GPSData}}
+\doxysubsubsection{\texorpdfstring{GPSData()}{GPSData()}}
+{\footnotesize\ttfamily GPSTracker\+::\+GPSData\+::\+GPSData (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor Default. 
+
+Reserva no vetor de dados 4 strings, respectivamente para horário UTC, latitude, longitude e altitude. ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00114}{114}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGPSTracker_1_1GPSData_af8cddb502eacb92d3153a8bbe6a980a7}\label{classGPSTracker_1_1GPSData_af8cddb502eacb92d3153a8bbe6a980a7} 
+\index{GPSTracker::GPSData@{GPSTracker::GPSData}!converter\_lat\_lon@{converter\_lat\_lon}}
+\index{converter\_lat\_lon@{converter\_lat\_lon}!GPSTracker::GPSData@{GPSTracker::GPSData}}
+\doxysubsubsection{\texorpdfstring{converter\_lat\_lon()}{converter\_lat\_lon()}}
+{\footnotesize\ttfamily static std\+::string GPSTracker\+::\+GPSData\+::converter\+\_\+lat\+\_\+lon (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{string\+\_\+numerica,  }\item[{const std\+::string \&}]{string\+\_\+hemisf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Função estática auxiliar para converter coordenadas NMEA (latitude/longitude) para graus decimais. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string\+\_\+numerica} & String com a coordenada em formato NMEA (ex\+: "{}2257.\+34613"{}). \\
+\hline
+{\em string\+\_\+hemisf} & String com o hemisfério correspondente ("{}\+N"{}, "{}\+S"{}, "{}\+E"{}, "{}\+W"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String coordenada em graus decimais (negativa para hemisférios Sul e Oeste). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00123}{123}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+\Hypertarget{classGPSTracker_1_1GPSData_af63d0b62c0b7cf92ceac852377b7adb1}\label{classGPSTracker_1_1GPSData_af63d0b62c0b7cf92ceac852377b7adb1} 
+\index{GPSTracker::GPSData@{GPSTracker::GPSData}!parsing@{parsing}}
+\index{parsing@{parsing}!GPSTracker::GPSData@{GPSTracker::GPSData}}
+\doxysubsubsection{\texorpdfstring{parsing()}{parsing()}}
+{\footnotesize\ttfamily bool GPSTracker\+::\+GPSData\+::parsing (\begin{DoxyParamCaption}\item[{int}]{code\+\_\+pattern,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{data\+\_\+splitted }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setará os dados baseado no padrão de mensagem recebido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code\+\_\+pattern} & Código para informar que padrão de mensagem recebeu. \\
+\hline
+{\em data\+\_\+splitted} & Vetor de dados da mensagem recebida. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retornará true caso seja bem sucedido. False, caso contrário.
+\end{DoxyReturn}
+Tradução de códigos\+:
+
+
+\begin{DoxyItemize}
+\item 0 == GPGGA
+\end{DoxyItemize}
+
+A partir do padrão de mensagem recebida, organizaremos o vetor com dados relevantes. ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00164}{164}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+\Hypertarget{classGPSTracker_1_1GPSData_a92644b598eac6fab69e4d0d2121ed63e}\label{classGPSTracker_1_1GPSData_a92644b598eac6fab69e4d0d2121ed63e} 
+\index{GPSTracker::GPSData@{GPSTracker::GPSData}!to\_csv@{to\_csv}}
+\index{to\_csv@{to\_csv}!GPSTracker::GPSData@{GPSTracker::GPSData}}
+\doxysubsubsection{\texorpdfstring{to\_csv()}{to\_csv()}}
+{\footnotesize\ttfamily std\+::string GPSTracker\+::\+GPSData\+::to\+\_\+csv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna os dados armazenados em formato CSV. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string Linha CSV com os valores. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00216}{216}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classGPSTracker_1_1GPSData_a57eec2c90ae3416222fc4de186dc3791}\label{classGPSTracker_1_1GPSData_a57eec2c90ae3416222fc4de186dc3791} 
+\index{GPSTracker::GPSData@{GPSTracker::GPSData}!data@{data}}
+\index{data@{data}!GPSTracker::GPSData@{GPSTracker::GPSData}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ GPSTracker\+::\+GPSData\+::data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Organizaremos os dados neste vetor. 
+
+
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00103}{103}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+\Hypertarget{classGPSTracker_1_1GPSData_a9e0e780d6a86e3f7fe39dc7cddfe4a69}\label{classGPSTracker_1_1GPSData_a9e0e780d6a86e3f7fe39dc7cddfe4a69} 
+\index{GPSTracker::GPSData@{GPSTracker::GPSData}!pattern@{pattern}}
+\index{pattern@{pattern}!GPSTracker::GPSData@{GPSTracker::GPSData}}
+\doxysubsubsection{\texorpdfstring{pattern}{pattern}}
+{\footnotesize\ttfamily std\+::string GPSTracker\+::\+GPSData\+::pattern\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{GPSTracker_8hpp_source_l00102}{102}} of file \mbox{\hyperlink{GPSTracker_8hpp_source}{GPSTracker.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{GPSTracker_8hpp}{GPSTracker.\+hpp}}\end{DoxyCompactItemize}
