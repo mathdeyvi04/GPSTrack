@@ -58,7 +58,7 @@ class GPSMonitor:
         """
         @brief Converterá a string de time utc para string de time no fuso horário do Brasil
         @param time_utc: String time UTC
-        @param String hora em Brasil
+        @return String hora em Brasil
         """
 
         hora_utc = datetime.strptime(time_utc, "%H%M%S").time()
@@ -74,8 +74,6 @@ class GPSMonitor:
     ) -> None:
         """
         @brief Verifica no buffer do socket o padrão de string setado. Preenchendo as variáveis de estado.
-        @param host: Endereço da Máquina Servidor
-        @param port: Porta de Entrada de Dados
         """
 
         try:
@@ -119,6 +117,22 @@ class GPSMonitor:
             unsafe_allow_html=True
         )
 
+    def get_all_data(self) -> pd.DataFrame:
+        """
+        @brief Responsável por prover uma parte do histórico para a tabela apresentada
+        """
+        return pd.DataFrame(
+                    self.time[-15:] # Manteremos sempre no máximo os últimos 15 pontos na tabela
+                ).join(
+                    pd.DataFrame(
+                        self.traject[-15:] # Manteremos sempre no máximo os últimos 15 pontos na tabela
+                    ).join(
+                        pd.DataFrame(
+                            self.altitude[-15:] # Manteremos sempre no máximo os últimos 15 pontos na tabela
+                        )
+                    )
+                )
+
     def save_historic(self) -> None:
         """
         @brief Salvará dinamicamente os dados que já chegaram.
@@ -161,6 +175,9 @@ class GPSMonitor:
                 self.traject
             )
 
+            df["norm"] = df.index / (len(df) - 1 if len(df) > 1 else 1)
+            df["norm255"] = (df["norm"] * 255).astype(int)
+
             lat_center = df["latitude"].mean()
             lon_center = df["longitude"].mean()
 
@@ -171,13 +188,14 @@ class GPSMonitor:
                 get_color='[235, 140, 52, 255]',
                 get_radius=50,
                 pickable=True,
-                filled=True
+                filled=True,
+                get_fill_color='[norm255, 0, 255-norm255]'
             )
 
             view_state = pdk.ViewState(
                 latitude=lat_center,
                 longitude=lon_center,
-                zoom=13,  # ajuste conforme necessário
+                zoom=11,  # ajuste conforme necessário
                 pitch=0
             )
 
@@ -186,6 +204,8 @@ class GPSMonitor:
                     layers=[layer], initial_view_state=view_state
                 )
             )
+
+            st.dataframe(self.get_all_data())
 
             if st.button("Salvar Histórico"):
                 self.save_historic()
@@ -199,8 +219,7 @@ class GPSMonitor:
         st_autorefresh(interval=1000, limit=None) # Para recarregarmos a aplicação
 
 
-
 if __name__ == '__main__':
 
-    gps_monitor = GPSMonitor(img="src/antena.jpg", host="127.0.0.1", port=5000) if "self" not in st.session_state else st.session_state["self"]
+    gps_monitor = GPSMonitor(img="src/antena.jpg", host="172.20.38.168", port=5000) if "self" not in st.session_state else st.session_state["self"]
     gps_monitor.mainloop()

@@ -3,7 +3,7 @@
   \item {\_\_init\_\_}
     \subitem {GPSMonitor.GPSMonitor}, \hyperpage{14}
   \item {\texorpdfstring{$\sim$}{\string~}GPSSim}
-    \subitem {GPSSim}, \hyperpage{19}
+    \subitem {GPSSim}, \hyperpage{20}
   \item {\texorpdfstring{$\sim$}{\string~}GPSTracker}
     \subitem {GPSTracker}, \hyperpage{25}
 
@@ -12,7 +12,7 @@
   \item {addr\_dest}
     \subitem {GPSTracker}, \hyperpage{28}
   \item {alt}
-    \subitem {GPSSim}, \hyperpage{20}
+    \subitem {GPSSim}, \hyperpage{21}
   \item {altitude}
     \subitem {GPSMonitor.GPSMonitor}, \hyperpage{16}
 
@@ -24,7 +24,7 @@
   \indexspace
 
   \item {caminho\_do\_pseudo\_terminal}
-    \subitem {GPSSim}, \hyperpage{20}
+    \subitem {GPSSim}, \hyperpage{21}
   \item {conversion\_utc\_to\_brasil}
     \subitem {GPSMonitor.GPSMonitor}, \hyperpage{14}
   \item {converter\_lat\_lon}
@@ -56,10 +56,12 @@
     \subitem {GPSSim::NMEAGenerator}, \hyperpage{32}
   \item {generate\_rmc}
     \subitem {GPSSim::NMEAGenerator}, \hyperpage{32}
+  \item {get\_all\_data}
+    \subitem {GPSMonitor.GPSMonitor}, \hyperpage{15}
   \item {get\_data\_from\_client}
     \subitem {GPSMonitor.GPSMonitor}, \hyperpage{15}
   \item {get\_path\_pseudo\_term}
-    \subitem {GPSSim}, \hyperpage{19}
+    \subitem {GPSSim}, \hyperpage{20}
   \item {get\_utc\_time}
     \subitem {GPSSim::NMEAGenerator}, \hyperpage{33}
   \item {gps\_monitor}
@@ -72,41 +74,42 @@
     \subitem {\_\_init\_\_}, \hyperpage{14}
     \subitem {altitude}, \hyperpage{16}
     \subitem {conversion\_utc\_to\_brasil}, \hyperpage{14}
+    \subitem {get\_all\_data}, \hyperpage{15}
     \subitem {get\_data\_from\_client}, \hyperpage{15}
     \subitem {img\_data}, \hyperpage{16}
     \subitem {mainloop}, \hyperpage{15}
     \subitem {placeholder}, \hyperpage{16}
     \subitem {save\_historic}, \hyperpage{15}
-    \subitem {set\_background}, \hyperpage{15}
+    \subitem {set\_background}, \hyperpage{16}
     \subitem {sock}, \hyperpage{16}
     \subitem {time}, \hyperpage{16}
-    \subitem {traject}, \hyperpage{16}
-    \subitem {zona\_brasileira}, \hyperpage{16}
+    \subitem {traject}, \hyperpage{17}
+    \subitem {zona\_brasileira}, \hyperpage{17}
   \item {GPSSim}, \hyperpage{17}
-    \subitem {\texorpdfstring{$\sim$}{\string~}GPSSim}, \hyperpage{19}
-    \subitem {alt}, \hyperpage{20}
-    \subitem {caminho\_do\_pseudo\_terminal}, \hyperpage{20}
+    \subitem {\texorpdfstring{$\sim$}{\string~}GPSSim}, \hyperpage{20}
+    \subitem {alt}, \hyperpage{21}
+    \subitem {caminho\_do\_pseudo\_terminal}, \hyperpage{21}
     \subitem {fd\_filho}, \hyperpage{21}
     \subitem {fd\_pai}, \hyperpage{21}
-    \subitem {get\_path\_pseudo\_term}, \hyperpage{19}
+    \subitem {get\_path\_pseudo\_term}, \hyperpage{20}
     \subitem {GPSSim}, \hyperpage{19}
-    \subitem {init}, \hyperpage{19}
+    \subitem {init}, \hyperpage{20}
     \subitem {is\_exec}, \hyperpage{21}
-    \subitem {lat}, \hyperpage{21}
-    \subitem {lon}, \hyperpage{21}
+    \subitem {lat}, \hyperpage{22}
+    \subitem {lon}, \hyperpage{22}
     \subitem {loop}, \hyperpage{20}
     \subitem {stop}, \hyperpage{20}
-    \subitem {to\_move}, \hyperpage{21}
-    \subitem {update}, \hyperpage{20}
-    \subitem {worker}, \hyperpage{21}
-  \item {GPSSim::NMEAGenerator}, \hyperpage{29}
+    \subitem {to\_move}, \hyperpage{22}
+    \subitem {update}, \hyperpage{21}
+    \subitem {worker}, \hyperpage{22}
+  \item {GPSSim::NMEAGenerator}, \hyperpage{30}
     \subitem {build\_nmea\_string}, \hyperpage{31}
     \subitem {degrees\_to\_NMEA}, \hyperpage{31}
     \subitem {format\_integer}, \hyperpage{31}
     \subitem {generate\_gga}, \hyperpage{32}
     \subitem {generate\_rmc}, \hyperpage{32}
     \subitem {get\_utc\_time}, \hyperpage{33}
-  \item {GPSTracker}, \hyperpage{22}
+  \item {GPSTracker}, \hyperpage{23}
     \subitem {\texorpdfstring{$\sim$}{\string~}GPSTracker}, 
 		\hyperpage{25}
     \subitem {addr\_dest}, \hyperpage{28}
@@ -114,17 +117,17 @@
     \subitem {GPSTracker}, \hyperpage{25}
     \subitem {init}, \hyperpage{26}
     \subitem {ip\_destino}, \hyperpage{28}
-    \subitem {is\_exec}, \hyperpage{28}
-    \subitem {last\_data\_given}, \hyperpage{28}
+    \subitem {is\_exec}, \hyperpage{29}
+    \subitem {last\_data\_given}, \hyperpage{29}
     \subitem {loop}, \hyperpage{26}
     \subitem {open\_serial}, \hyperpage{26}
-    \subitem {porta\_destino}, \hyperpage{28}
+    \subitem {porta\_destino}, \hyperpage{29}
     \subitem {porta\_serial}, \hyperpage{29}
-    \subitem {read\_serial}, \hyperpage{26}
+    \subitem {read\_serial}, \hyperpage{27}
     \subitem {send}, \hyperpage{27}
     \subitem {sockfd}, \hyperpage{29}
-    \subitem {split}, \hyperpage{27}
-    \subitem {stop}, \hyperpage{27}
+    \subitem {split}, \hyperpage{28}
+    \subitem {stop}, \hyperpage{28}
     \subitem {worker}, \hyperpage{29}
   \item {GPSTracker::GPSData}, \hyperpage{9}
     \subitem {converter\_lat\_lon}, \hyperpage{11}
@@ -139,22 +142,22 @@
   \item {img\_data}
     \subitem {GPSMonitor.GPSMonitor}, \hyperpage{16}
   \item {init}
-    \subitem {GPSSim}, \hyperpage{19}
+    \subitem {GPSSim}, \hyperpage{20}
     \subitem {GPSTracker}, \hyperpage{26}
   \item {ip\_destino}
     \subitem {GPSTracker}, \hyperpage{28}
   \item {is\_exec}
     \subitem {GPSSim}, \hyperpage{21}
-    \subitem {GPSTracker}, \hyperpage{28}
+    \subitem {GPSTracker}, \hyperpage{29}
 
   \indexspace
 
   \item {last\_data\_given}
-    \subitem {GPSTracker}, \hyperpage{28}
+    \subitem {GPSTracker}, \hyperpage{29}
   \item {lat}
-    \subitem {GPSSim}, \hyperpage{21}
+    \subitem {GPSSim}, \hyperpage{22}
   \item {lon}
-    \subitem {GPSSim}, \hyperpage{21}
+    \subitem {GPSSim}, \hyperpage{22}
   \item {loop}
     \subitem {GPSSim}, \hyperpage{20}
     \subitem {GPSTracker}, \hyperpage{26}
@@ -183,14 +186,14 @@
   \item {placeholder}
     \subitem {GPSMonitor.GPSMonitor}, \hyperpage{16}
   \item {porta\_destino}
-    \subitem {GPSTracker}, \hyperpage{28}
+    \subitem {GPSTracker}, \hyperpage{29}
   \item {porta\_serial}
     \subitem {GPSTracker}, \hyperpage{29}
 
   \indexspace
 
   \item {read\_serial}
-    \subitem {GPSTracker}, \hyperpage{26}
+    \subitem {GPSTracker}, \hyperpage{27}
 
   \indexspace
 
@@ -199,21 +202,21 @@
   \item {send}
     \subitem {GPSTracker}, \hyperpage{27}
   \item {set\_background}
-    \subitem {GPSMonitor.GPSMonitor}, \hyperpage{15}
+    \subitem {GPSMonitor.GPSMonitor}, \hyperpage{16}
   \item {sock}
     \subitem {GPSMonitor.GPSMonitor}, \hyperpage{16}
   \item {sockfd}
     \subitem {GPSTracker}, \hyperpage{29}
   \item {split}
-    \subitem {GPSTracker}, \hyperpage{27}
+    \subitem {GPSTracker}, \hyperpage{28}
   \item {src/debug.cpp}, \hyperpage{35, 36}
   \item {src/GPSMonitor.py}, \hyperpage{36, 37}
-  \item {src/GPSSim.hpp}, \hyperpage{39}, \hyperpage{41}
+  \item {src/GPSSim.hpp}, \hyperpage{40, 41}
   \item {src/GPSTracker.hpp}, \hyperpage{44}, \hyperpage{46}
   \item {src/main.cpp}, \hyperpage{50, 51}
   \item {stop}
     \subitem {GPSSim}, \hyperpage{20}
-    \subitem {GPSTracker}, \hyperpage{27}
+    \subitem {GPSTracker}, \hyperpage{28}
 
   \indexspace
 
@@ -222,24 +225,24 @@
   \item {to\_csv}
     \subitem {GPSTracker::GPSData}, \hyperpage{12}
   \item {to\_move}
-    \subitem {GPSSim}, \hyperpage{21}
+    \subitem {GPSSim}, \hyperpage{22}
   \item {traject}
-    \subitem {GPSMonitor.GPSMonitor}, \hyperpage{16}
+    \subitem {GPSMonitor.GPSMonitor}, \hyperpage{17}
 
   \indexspace
 
   \item {update}
-    \subitem {GPSSim}, \hyperpage{20}
+    \subitem {GPSSim}, \hyperpage{21}
 
   \indexspace
 
   \item {worker}
-    \subitem {GPSSim}, \hyperpage{21}
+    \subitem {GPSSim}, \hyperpage{22}
     \subitem {GPSTracker}, \hyperpage{29}
 
   \indexspace
 
   \item {zona\_brasileira}
-    \subitem {GPSMonitor.GPSMonitor}, \hyperpage{16}
+    \subitem {GPSMonitor.GPSMonitor}, \hyperpage{17}
 
 \end{theindex}

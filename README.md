@@ -6,6 +6,9 @@
 - [Caso Deseje **Utilizar**](#caso-deseje-utilizar)
 - [Descrições Sucintas de Código](#descrições-sucintas-de-código)
 - [Confirmação de Envio de Dados](#confirmação-de-envio-de-dados)
+  - [Protocolo de Mensagem](#protocolo-de-mensagem)
+  - [Para Executar Aplicação](#para-executar-a-aplicação)
+  - [Confirmação de Leitura de Dados](#confirmação-de-envio-de-dados)
 - [Apresentação na Interface](#apresentação-na-interface)
 
 # Objetivo
@@ -184,7 +187,7 @@ Como nem todas as placas são iguais, não há como definir com propriedade o pr
 
 Em nosso caso, o sensor conectou-se pelo terminal serial `/dev/ttySTM2`.
 
-### Caso deseje ver a comunicação entre o sensor e a placa em tempo real
+### Ver a comunicação entre o sensor e a placa em tempo real:
 
 ```
 cat /dev/ttySTM2
@@ -196,13 +199,42 @@ Dependendo de quando o comando foi executado, diferentes formas de texto surgir�
 
 ![](https://github.com/user-attachments/assets/147db746-8515-40b2-8a8a-10a0ac17ed0e)
 
+Até que mensagens com a flag `$GPGGA` sejam enviadas pelo sensor, a classe interpretadora não enviará nenhuma mensagem ao servidor.
+
 - Caso tenha sido após tempo _suficientemente_ longo e em local aberto:
 
 ![](https://github.com/user-attachments/assets/c890a3d0-9aae-40e2-99f5-d13a59aba50e)
 
+#### Protocolo de Mensagem
+
+Neste caso, a classe interpretadora enviará mensagens no seguinte padrão:
+
+```
+TIME_IN_UTC,LATITUDE,LONGITUDE,ALTITUDE
+```
+
+Exemplo:
+```
+164918.00,-22.956000,-43.166000,32.0
+165027.00,22.955500,43.165500,32.0
+165358.00,-22.956000,-43.166000,-32.0
+```
+
+De tal forma que a mensagem final tenha sempre, no mínimo 33 bytes. Conforme
+alguma coordenada seja negativa, isso acrescentará os bytes correspondentes aos
+caracteres `'-'`, sem que haja perda de precisão, isto é:
+
+- `TIME_IN_UTC`: Sempre terá 9 bytes destinados a si, dado que não há horário negativo.
+- `LATITUDE`: Sempre terá no mínimo 9 bytes destinados, podendo haver mais 1 para o `'-'`, mantendo a mesma precisão.
+- `LONGITUDE`: Sempre terá no mínimo 9 bytes destinados, podendo haver mais 1 para o `'-'`, mantendo a mesma precisão.
+- `ALTITUDE`: Sempre terá no mínimo 3 bytes destinados, podendo haver mais conforme se sobe ou se desce, mantendo a mesma precisão.
+
+Não há checksum nem cabeçalho de tamanho, entretanto, caso se deseje adicionar ampliar esses requisitos,
+basta analisar a função `send()` do GPSTracker.
+
 ### Para executar a aplicação
 
-Considerando que um determinado tempo foi esperado, execute:
+Considerando que um determinado tempo foi esperado, **EXECUTE NA PLACA**:
 
 ```
 ./GPSTracker <ip_de_destino> <porta_de_destino>
@@ -223,14 +255,17 @@ Utilizando NetCat para filtrar as entradas em uma porta específica da máquina,
 
 ### Apresentação na Interface
 
-Conforme o monitor recebe dados, é possível visualizá-los na interface.
-É necessário ter as bibliotecas instaladas para visualização, `pip install streamlit streamlit_autorefresh`.
+Conforme o monitor recebe dados, é possível visualizá-los em uma interface inteligente.
 
-![](https://github.com/user-attachments/assets/0fff52cd-365c-4918-9eee-584d144b2dac)
+Para ser possível executá-la, é necessário ter bibliotecas python específicas no ambiente: `pip install streamlit streamlit_autorefresh`.
 
-Observe que assim temos acesso aos dados em tempo real e ao histórico de dados. Também 
-é possível salvá-los caso desejado.
+Posteriormente, **deve-se modificar** o arquivo [GPSMonitor.py](src/GPSMonitor.py) colocando-se os dados
+de IP e PORTA que representam o servidor. Essa necessidade se deve ao `streamlit` que é uma biblioteca python
+para aplicações web e não executa código python do jeito tradicional.
 
+Conclusão:
 
+![](https://github.com/user-attachments/assets/cd50bbf8-5cc1-4272-9d07-44a87bb680b2)
 
-
+**A imagem foi esticada para ser possível a visualização completa da interface.**
+Note que os pontos mais recentes estão em vermelho forte enquanto mais antigos estão em azul.

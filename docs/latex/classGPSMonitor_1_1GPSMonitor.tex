@@ -7,8 +7,7 @@ Monitor que apresentará os dados do sensor.
 
 
 
-Collaboration diagram for GPSMonitor.\+GPSMonitor\+:
-\nopagebreak
+Collaboration diagram for GPSMonitor.\+GPSMonitor\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -26,6 +25,8 @@ None \mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a89e1f7db4817d1883292e9bb45a
 \begin{DoxyCompactList}\small\item\em Verifica no buffer do socket o padrão de string setado. \end{DoxyCompactList}\item 
 None \mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_adf9740b99bbb8aa35ad59a1dd7a5a3a5}{set\+\_\+background}} (self)
 \begin{DoxyCompactList}\small\item\em Setará uma imagem como background da aplicação. \end{DoxyCompactList}\item 
+pd.\+Data\+Frame \mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_ad0b63d86fb821bee15018f85d6ed971b}{get\+\_\+all\+\_\+data}} (self)
+\begin{DoxyCompactList}\small\item\em Responsável por prover uma parte do histórico para a tabela apresentada. \end{DoxyCompactList}\item 
 None \mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a7947e5fd13a7a8e697a4ab95f2e37ce0}{save\+\_\+historic}} (self)
 \begin{DoxyCompactList}\small\item\em Salvará dinamicamente os dados que já chegaram. \end{DoxyCompactList}\item 
 None \mbox{\hyperlink{classGPSMonitor_1_1GPSMonitor_a65675579ce318950272e75d3aab4714f}{mainloop}} (self)
@@ -104,12 +105,27 @@ Converterá a string de time utc para string de time no fuso horário do Brasil.
 \begin{DoxyParams}{Parameters}
 {\em time\+\_\+utc} & String time UTC \\
 \hline
-{\em String} & hora em Brasil \\
-\hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String hora em Brasil 
+\end{DoxyReturn}
 
 
 Definition at line \mbox{\hyperlink{GPSMonitor_8py_source_l00054}{54}} of file \mbox{\hyperlink{GPSMonitor_8py_source}{GPSMonitor.\+py}}.
+
+\Hypertarget{classGPSMonitor_1_1GPSMonitor_ad0b63d86fb821bee15018f85d6ed971b}\label{classGPSMonitor_1_1GPSMonitor_ad0b63d86fb821bee15018f85d6ed971b} 
+\index{GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}!get\_all\_data@{get\_all\_data}}
+\index{get\_all\_data@{get\_all\_data}!GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}}
+\doxysubsubsection{\texorpdfstring{get\_all\_data()}{get\_all\_data()}}
+{\footnotesize\ttfamily  pd.\+Data\+Frame GPSMonitor.\+GPSMonitor.\+get\+\_\+all\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Responsável por prover uma parte do histórico para a tabela apresentada. 
+
+
+
+Definition at line \mbox{\hyperlink{GPSMonitor_8py_source_l00120}{120}} of file \mbox{\hyperlink{GPSMonitor_8py_source}{GPSMonitor.\+py}}.
 
 \Hypertarget{classGPSMonitor_1_1GPSMonitor_a89e1f7db4817d1883292e9bb45ac54cf}\label{classGPSMonitor_1_1GPSMonitor_a89e1f7db4817d1883292e9bb45ac54cf} 
 \index{GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}!get\_data\_from\_client@{get\_data\_from\_client}}
@@ -122,13 +138,6 @@ Definition at line \mbox{\hyperlink{GPSMonitor_8py_source_l00054}{54}} of file \
 Verifica no buffer do socket o padrão de string setado. 
 
 Preenchendo as variáveis de estado. 
-\begin{DoxyParams}{Parameters}
-{\em host} & Endereço da Máquina Servidor \\
-\hline
-{\em port} & Porta de Entrada de Dados \\
-\hline
-\end{DoxyParams}
-
 
 Definition at line \mbox{\hyperlink{GPSMonitor_8py_source_l00072}{72}} of file \mbox{\hyperlink{GPSMonitor_8py_source}{GPSMonitor.\+py}}.
 
@@ -144,7 +153,7 @@ Responsável por executar as funcionalidades básicas.
 
 Dado o funcionamento do streamlit, executa as funções como se estivessem em loop. Verifique como o streamlit executa código python para mais informações. 
 
-Definition at line \mbox{\hyperlink{GPSMonitor_8py_source_l00144}{144}} of file \mbox{\hyperlink{GPSMonitor_8py_source}{GPSMonitor.\+py}}.
+Definition at line \mbox{\hyperlink{GPSMonitor_8py_source_l00158}{158}} of file \mbox{\hyperlink{GPSMonitor_8py_source}{GPSMonitor.\+py}}.
 
 \Hypertarget{classGPSMonitor_1_1GPSMonitor_a7947e5fd13a7a8e697a4ab95f2e37ce0}\label{classGPSMonitor_1_1GPSMonitor_a7947e5fd13a7a8e697a4ab95f2e37ce0} 
 \index{GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}!save\_historic@{save\_historic}}
@@ -158,7 +167,7 @@ Salvará dinamicamente os dados que já chegaram.
 
 
 
-Definition at line \mbox{\hyperlink{GPSMonitor_8py_source_l00122}{122}} of file \mbox{\hyperlink{GPSMonitor_8py_source}{GPSMonitor.\+py}}.
+Definition at line \mbox{\hyperlink{GPSMonitor_8py_source_l00136}{136}} of file \mbox{\hyperlink{GPSMonitor_8py_source}{GPSMonitor.\+py}}.
 
 \Hypertarget{classGPSMonitor_1_1GPSMonitor_adf9740b99bbb8aa35ad59a1dd7a5a3a5}\label{classGPSMonitor_1_1GPSMonitor_adf9740b99bbb8aa35ad59a1dd7a5a3a5} 
 \index{GPSMonitor.GPSMonitor@{GPSMonitor.GPSMonitor}!set\_background@{set\_background}}
@@ -172,7 +181,7 @@ Setará uma imagem como background da aplicação.
 
 
 
-Definition at line \mbox{\hyperlink{GPSMonitor_8py_source_l00102}{102}} of file \mbox{\hyperlink{GPSMonitor_8py_source}{GPSMonitor.\+py}}.
+Definition at line \mbox{\hyperlink{GPSMonitor_8py_source_l00100}{100}} of file \mbox{\hyperlink{GPSMonitor_8py_source}{GPSMonitor.\+py}}.
 
 
 
