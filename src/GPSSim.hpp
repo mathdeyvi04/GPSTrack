@@ -81,8 +81,9 @@ private:
      */
     void
     update(){
-        lat -= 0.0001;
-        lon -= 0.0001;
+//        lat -= 0.0001;
+//        lon -= 0.0001;
+        return;
     }
 
     /**

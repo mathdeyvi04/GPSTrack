@@ -454,8 +454,13 @@ private:
 
 				if( mensagem.find("GGA") != std::string::npos ){
 
-					last_data_given.parsing(0, split(mensagem));
-					parsed = true;
+					try{
+					    last_data_given.parsing(0, split(mensagem));
+				        parsed = true;
+					}catch(...){
+					    std::cout << "Talvez não esteja calibrado ainda..." << std::endl;
+					    parsed = false;
+					}
 				}
 				// ... para escalarmos novos padrões de mensagem
 				else{

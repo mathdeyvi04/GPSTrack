@@ -79,6 +79,7 @@ class GPSMonitor:
         try:
             data, _ = self.sock.recvfrom(1024)
             numeros = data.decode().strip().split(",")
+            print(f"Estou recebendo {numeros}")
             if numeros:
                 # Obtendo informações de horário
                 self.time.append(
@@ -87,11 +88,11 @@ class GPSMonitor:
 
                 # Obtendo informações de geolocalização
                 self.traject.append(
-                    {"latitude": float(numeros[1]), "longitude": float(numeros[2])}
+                    {"latitude": float(numeros[1].strip()), "longitude": float(numeros[2].strip())}
                 )
 
                 self.altitude.append(
-                    {"altitude": float(numeros[3])}
+                    {"altitude": float(numeros[3].strip())}
                 )
 
         except TimeoutError:
@@ -195,7 +196,7 @@ class GPSMonitor:
             view_state = pdk.ViewState(
                 latitude=lat_center,
                 longitude=lon_center,
-                zoom=11,  # ajuste conforme necessário
+                zoom=13,  # ajuste conforme necessário
                 pitch=0
             )
 
@@ -220,6 +221,7 @@ class GPSMonitor:
 
 
 if __name__ == '__main__':
-
+    # 192.168.42.10
+    # 172.20.38.168
     gps_monitor = GPSMonitor(img="src/antena.jpg", host="172.20.38.168", port=5000) if "self" not in st.session_state else st.session_state["self"]
     gps_monitor.mainloop()

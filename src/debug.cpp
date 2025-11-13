@@ -36,7 +36,7 @@ int main(
 	GPSSim gps_module(
 		-22.9559,
 		-43.1659,
-		0,
+		24.0,
 		true
 	);
 	std::cout << "Executando simulator_gps_module em: "
